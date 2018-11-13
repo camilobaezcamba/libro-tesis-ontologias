@@ -194,58 +194,58 @@ Un proceso de contratación agrupa información sobre diferentes etapas o fases 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas_ProcesoLicitatorio.png}
-    \caption{Fases del Proceso Licitatorio}
+    \caption{Modelo de fases del Proceso Licitatorio}
     \label{img:fases del proceso licitatorio }
 \end{figure}
 
 Las etapas son correlativas, esto significa que necesariamente debe de existir la etapa anterior antes de existir la siguiente. Todas las etapas representan un bloque de información.
 
 Además de estas etapas existe otro concepto importante que es el bloque de Organización, que puede corresponder tanto al comprador como al oferente. Esta Organización puede estar ligada a cualquiera de las etapas del proceso de contratación. A continuación se detallan cada una de las etapas.
-\subsubsection{Planificación (Planning)}
+\paragraph{Planificación (Planning)}
 
 Este bloque contiene información necesaria para describir los antecedentes de un proceso de contratación y puede incluir detalles del presupuesto del que se extraen los fondos o proyectos relacionados. Todo proceso de contratación posee una única planificación, dicha planificación tiene un presupuesto (budget) asociado donde finalmente se indica el valor o monto estimado para la adquisición del bien o servicio. Un diagrama de los componentes principales de la clase Planificación puede verse en la figura \ref{img:Fase de Planificacion}.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas_Planificacion.png}
-    \caption{Fases del Proceso Licitatorio}
+    \caption{Modelo de fase de Planificación}
     \label{img:Fase de Planificacion}
 \end{figure}
 
-subsubsection{Convocatoria (Tender)}
+paragraph{Convocatoria (Tender)}
 
 Este bloque incluye detalles del anuncio indicando que una organización tiene la intención de abastecerse de algunos bienes o servicios y establecer uno o más contratos para estos. Todo proceso de contratación posee una única convocatoria, dicha convocatoria tiene asociada la organización involucrada en el proceso. Además, la convocatoria indica los ítems requeridos, el período establecido, los documentos utilizados, las adendas que pudieran haberse realizado sobre la convocatoria original y la lista de hitos. Se observa el esquema en la figura \ref{img:Fase de Convocatoria}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas_Convocatoria.png}
-    \caption{Fase de Convocatoria}
+    \caption{Modelo de fase de Convocatoria}
     \label{img:Fase de Convocatoria}
 \end{figure}
 
-\subsection{Adjudicación (Award)}
+\paragraph{Adjudicación (Award)}
 Este bloque se utiliza para anunciar las adjudicaciones emitidas para una licitación. Todo proceso de contratación puede involucrar una o más adjudicaciones, dichas adjudicaciones indican, para cada proveedor (organización), los ítems adjudicados, el valor o monto adjudicado y los documentos asociados al proceso. Esto se aprecia en la figura \ref{img:Fase de Adjudiacion}
 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas_Adjudicacion.png}.
-    \caption{Fase de Adjudicación}
+    \caption{Modelo de fase de Adjudicación}
     \label{img:Fase de Adjudiacion}
 \end{figure}
 
 
-\subsubsection{Contrato (Contract)}
+\paragraph{Contrato (Contract)}
 Este bloque se utiliza para proporcionar detalles de los contratos que se han celebrado. Todo proceso de contratación puede involucrar uno o más contratos, cada uno de los cuales debe estar asociado a una adjudicación específica. El proveedor (organización) adjudicado está indicado en la adjudicación, no así en el contrato. El contrato también indica los ítems adjudicados, los documentos asociados al proceso y la implementación del contrato. La implementación del contrato contiene información acerca de los hitos, las transacciones realizadas y los documentos utilizados. En la figura \ref{img:Fase de Contrato} vemos un esquema de la estructura del Contrato.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas_Contrato.png}
-    \caption{Fase de Contrato}
+    \caption{Modelo de fase de Contrato}
     \label{img:Fase de Contrato}
 \end{figure}
 
-\subsubsection{Otros componentes del estándar}
+\paragraph{Otros componentes del estándar}
 
 El estándar posee además otros componentes o bloques que agrupan y contienen metadatos de publicación de los datos.  A continuación se detallan dichos componentes.
 
@@ -330,3 +330,78 @@ Para el concepto Value del OCDS, que representan valores monetarios, se utilizó
     \label{img:Modelo de Precio}
     
 \end{figure}
+
+En cuanto a la implementación, se optó por mantener Value y Currency como DataType properties para mantener la simplicidad de nuestra ontología.
+
+Para el concepto Period, que representan periodos de tiempo se utilizó el patrón “TimeInterval”. El patrón describe un intervalo de tiempo que contiene una fecha de inicio, una fecha de fin y una fecha del intervalo. Un posible uso del patrón sería la fecha “Agosto del 2018” tiene un fecha de inicio “1 de Agosto” y una fecha de fin “31 de Agosto”.En la implementación se omitió la propiedad Intervalo de tiempo, ya que no es necesaria para este este dominio. El modelo se puede ver en la figura \ref{img:Modelo de Intervalo de precio}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{figuras/Diagramas_Tiempo.png}
+    \caption{Modelo de Intervalo de tiempo}
+    \label{img:Modelo de Intervalo de precio}
+    
+\end{figure}
+
+Para la relación que existe entre Planning, Tender, Award, Contract e Implementation, que tienen una relación de dependencia y de secuencia, se utilizó el patrón “Sequence”. El patrón describe una secuencia de hecho a través de las propiedades Precede, Precede Directamente, Antecede y Antecede Directamente. Por ejemplo, decidir qué camisa utilizare precede directamente a colocarse la camisa, y precede a colocarse la corbata. En la figura \ref{img:Modelo de dependencia y secuencia} se presenta el diagrama del patrón. Se utilizó este patrón para describir la secuencia del proceso de contrataciones.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{figuras/Diagramas_Follows.png}
+    \caption{Modelo de dependencia y secuencia}
+    \label{img:Modelo de dependencia y secuencia}
+    
+\end{figure}
+
+\subsubsection{Construcción de la ontología}
+
+Una vez concluido el modelo conceptual de la ontología procedemos a la construcción de la misma utilizando el lenguaje OWL y la herramienta Protégé.
+
+Dentro de la fase de búsqueda de recursos Ontológicos, se encontró una ontología desarrollada por un colaborador al proyecto OCDS, la ontología siguió una transformación directa de JSON SCHEMA del estándar, la misma representa un punto de partida para seguir desarrollando la ontología. De esta manera además queremos incentivar la colaboración y hacer partícipe a toda la comunidad del OCDS.
+
+El primer paso fue importar la ontología elaborada por Collin al software Protégé. Al hacer esto el software reestructuró el código de la ontología e hizo inferencias básicas detalladas a continuación. La estructura del documento del cual se partió estaba agrupada según conceptos semánticos relacionados. Protégé estructuró la ontología según sean Annotation Property, DataType Property u Object property y luego ordenó de forma alfabética tomando como referencia el nombre de la propiedad.
+
+Se encontraron algunas inconsistencias sintácticas dentro de la ontología, debido a que la misma fue hecha sin utilizar ninguna herramienta para desarrollo de ontologías, lo cual da lugar a errores sintácticos. Por ejemplo, el rango de la clase FormerValue estaba definido como “xsd:Integer”, Protégé infiere de que se trataba de un nuevo tipo de dato,  debido a que no existe este tipo de dato sino que debe ser “xsd:integer”. Así también otro error en el documento en donde se escribió “commnent” en lugar de “comment”, inmediatamente Protégé infiere como un nuevo tipo de dato. Como aprendizaje, el uso de una herramienta ontológica como Protégé nos ayuda a prevenir errores de sintaxis en la creación de la ontología y además acelera el proceso de desarrollo gracias a una interfaz gráfica que nos ayuda a distinguir entre Clases, DataType Properties por citar algunas funcionalidades.
+
+Toda la ontología inicial utilizó el tipo rdf:Property para definir las propiedades. Debido a que owl:ObjectProperty y owl:DataTypeProperty son subclases de Property, se decidió especializar las relaciones con estas subclases. Las propiedades que relacionan dos instancias fueron asignadas como owl:ObjectProperty y las propiedades relacionadas entre una instancia y un valor fueron asignadas como owl:DataTypeProperty.
+
+Una propiedad de objeto (ObjectProperty) se utiliza para conectar pares de individuos a través de IRIs, mientras que una propiedad de tipo de dato (DataTypeProperty) relaciona una instancia de una clase con un literal.
+
+Una propiedad funcional (FunctionalProperty) es una propiedad que solamente puede tener un valor Y por cada instancia X, por ejemplo no puede haber dos valores distintos Y1 e Y2 tal que los pares (X,Y1) y (X,Y2) sean instancias de esta propiedad. Tanto los “ObjectProperty” como los “DataTypeProperty” pueden ser declarados como “FunctionalProperty”.
+
+
+Una consideración importante es que para los DataType Properties no es necesario definir como la propiedad functional ya que la mayoría de los motores de razonamiento pueden deducir que dos literales son distintos. Ejemplo: un razonador puede inferir que  el literal “1” es distinto que  "2".
+
+El motor de inferencia agregó un axioma indicando que rdf:descriptions es igual a owl:AnnotationProperty, que es una manera de anotar información descriptiva de la propiedad. Además se utilizó la propiedad rdf:Resource, clase que no existe en en el estándar RDF, debería indicar la clase RDFS rdfs:Resource para indicar hipervínculos. En este caso se vió que semánticamente se adecua mejor la propiedad DCTERMS.URI.
+
+Así, se pudo construir la ontología base partir de un recurso No-Ontológico como ser el Open Contracting Data Estándar. En el siguiente apartado se abocará a la búsqueda y reutilización de recursos Ontológicos para enriquecer la ontología desarrollada.
+
+\subsection{Reuso de Recursos Ontológicos}
+Los pasos para el reuso de una ontología son la búsqueda, análisis y comparación de ontologías desarrolladas y luego la selección e integración de las ontologías a reutilizar. Al mismo tiempo existen distintas maneras de reutilizar una ontología, como veremos más adelante. 
+
+\subsubsection{Búsqueda de Ontologías}
+
+Un parámetro importante a la hora de hacerlo es la cantidad de veces que esta ya fue reutilizada. Linked Open Vocabularies (LOV) es un repositorio de ontologías bien curado y estable mantenido por la Open Knowledge Foundation (OKF) que nos muestra la cantidad de conexiones entre las ontologías.
+
+\subsubsection{Ontologías Relacionadas}
+
+Con relación a ontologías más generales y relacionadas de alguna manera al dominio que pudieran ayudar a enriquecer las ontologías desarrolladas se encontraron las siguientes:
+\begin{itemize}
+    \item Organization: Ontología central para las estructuras de una organización, destinada a apoyar la publicación de datos vinculados de la información de la organización en una serie de dominios. Está diseñada para permitir extensiones específicas de dominio para agregar clasificación de organizaciones y roles, así como extensiones para admitir información relacionada, como actividades de la organización.
+    \item Good Relations: es un vocabulario estandarizado para datos de productos, precios, tiendas y empresas que pueden integrarse en páginas web estáticas y dinámicas existentes y eso puede ser procesado por otras computadoras. Esto aumenta la visibilidad de sus productos y servicios en la última generación de motores de búsqueda, sistemas de recomendación y otras aplicaciones novedosas.
+    \item DCTERMS:Una especificación actualizada de todos los términos de metadatos mantenidos por la Dublin Core Metadata Initiative, que incluye propiedades, esquemas de codificación de vocabulario, esquemas de codificación de sintaxis y clases. 
+\end{itemize}
+
+
+\begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\ttfamily,frame=single]
+ PREFIX java: <http://evolizer.org/ontologies/seon/2009/06/java.owl#>
+ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ SELECT ?url ?name
+ WHERE {
+    ?url rdf:type java:Package .
+    ?url rdfs:label ?name
+ }
+ \end{lstlisting}
+

@@ -15,6 +15,9 @@
 \usepackage{tabularx}		
 \usepackage{pdflscape}
 \usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.85]{beramono}
+
 % para la lista de símbolos
 %\usepackage{subfigure} %conflicto con subcaption
 \usepackage{array}
@@ -39,6 +42,16 @@
 %tabla
 \usepackage{arydshln}
 
+
+\usepackage{titlesec}
+
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+
 %Colores
 \definecolor{color1}{HTML}{4F81BD}
 \definecolor{color2}{HTML}{9BBB59}
@@ -51,7 +64,7 @@
 \include{./util/custom}
 
 
-% \setcounter{tocdepth}{3}
+ \setcounter{tocdepth}{4}
 
 %Datos de la tesis
 \title{Mejora de la interoperabilidad semántica de los datos utilizando ontologías para el dominio de Contrataciones Públicas del Paraguay}
@@ -79,6 +92,9 @@
 \usepackage[xindy]{imakeidx}
 
 \newtoks\customtok
+
+
+\lstset{language=SQL,morekeywords={PREFIX,java,rdf,rdfs,url}}
 
 
 \renewcommand*{\newacronymhook}{%
@@ -128,6 +144,8 @@
 
 % los siguientes comandos producen 'indices.
 
+\renewcommand{\lstlistlistingname}{Lista de Cuadros}
+
 
 % Tabla de contenidos
 \tableofcontents
@@ -136,10 +154,13 @@
 % Lista de tablas
 \listoftables
 % Lista de algoritmos
-\listofalgorithms
-\printglossary[type=\acronymtype,title=Lista de Siglas]
-\addcontentsline{toc}{chapter}{Lista de Siglas}
+%\listofalgorithms
+\lstlistoflistings
+%\printglossary[type=\acronymtype,title=Lista de Siglas]
+%\addcontentsline{toc}{chapter}{Lista de Siglas}
 \include{acronimos}
+
+
 
 % Lista de simbolos
 \listofsymbols
