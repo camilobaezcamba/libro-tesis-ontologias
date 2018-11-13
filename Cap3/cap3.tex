@@ -128,8 +128,11 @@ Para obtener el número de términos de la especificación de requisitos de onto
 Para calcular la cobertura y la precisión del recurso no-ontológico se realizó la unión de términos equivalentes semánticamente. Dicha unión consiste en verificar términos equivalentes entre las entradas léxicas que estaban presentes en los requerimientos y en el recurso no-ontológico analizado. Cabe destacar que la metodología utilizada sólo tomó en cuenta las propiedades del esquema JSON del OCDS y el diccionario de datos de la API desarrollada por la DNCP, esto limita la cobertura, que podría ser más amplia si consideramos todos los términos del dominio de conocimiento. El resultado arrojó que existen 65 entradas léxicas comunes. Con estos datos se puede calcular la cobertura y la precisión a través de las siguientes fórmulas.
 
 \begin{equation}
-    Precision =  \frac{{NORLexicalEntries}*{ORDSTerminology} }{{NORLexicalEntries}}    \\
-    Coverage = \frac{{NORLexicalEntries}* {ORDSTerminology}}{{ORDSTerminology}}   
+    Precision =  \frac{{NORLexicalEntries}*{ORDSTerminology} }{{NORLexicalEntries}}    
+\end{equation}
+
+\begin{equation}
+     Coverage = \frac{{NORLexicalEntries}* {ORDSTerminology}}{{ORDSTerminology}}   
 \end{equation}
 
 Esto nos da una cobertura de 0.59 y una precisión de 0.57. 
