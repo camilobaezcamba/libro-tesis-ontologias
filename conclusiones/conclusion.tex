@@ -1,0 +1,17 @@
+%!TEX root = ../tesis.tex
+\section{Conclusiones}
+\label{chap:analisis}
+Las conclusiones que se obtienen para cada uno de los objetivos específicos del trabajo descritos en la sección \ref{objetivos} se muestran a continuación:
+
+El objetivo \ref{obj:1} es identificar distintos métodos de ordenamiento vectorial y espacios de color apropiados para la segmentación de los amastigotes de Trypanosoma cruzi. Se propuso la utilización de tres métodos de ordenamiento en el espacio de color CIELab utilizando la distancia a un color de referencia, se identificaron 14 métodos de ordenamiento en el espacio de color RGB, 1 método en el espacio HSI y se utilizó la intensidad de los píxeles en imágenes en escala de grises.
+
+El objetivo \ref{obj:2} es implementar la transformada watershed por inundación para imágenes a color en el espacio de color CIELab. La implementación en el espacio de color CIELab del algoritmo de watershed presenta mejoras en los resultados de la segmentación de las imágenes infectadas con amastigotes de Trypanosoma Cruzi. El ordenamiento con el mejor promedio en las tres métricas es el que utiliza como color de referencia la media en el espacio de color CIELab, seguido por la mediana en CIELab y por la distancia euclidiana en CIELab.
+
+El objetivo \ref{obj:3} es comparar la transformada watershed por inundación utilizando el espacio de color CIELab con la implementación de Vincent y Soille en escala de grises para la segmentación de los amastigotes de Trypanosoma cruzi. La implementación en el espacio de color CIELab utilizando el mejor método de ordenamiento (\textbf{MEDIANA-CIELAB}) demostró una mejora de 4.5\% en especificidad y 4.3\% en exactitud al ser comparado con la implementación en escala de grises para la segmentación de amastigotes de Trypanosoma Cruzi en imágenes microscópicas.
+
+El objetivo \ref{obj:4} es comparar la transformada watershed por inundación utilizando el espacio de color CIELab con la implementación de Meyer en el espacio de color RGB para la segmentación de los amastigotes de Trypanosoma cruzi. La implementación en el espacio de color CIELab utilizando el mejor método de ordenamiento (\textbf{MEDIANA-CIELAB}) presentó una mejora de 2.78\% en especificidad y 2.65\% de exactitud comparada con la implementación propuesta por Meyer en el espacio de color RGB.
+
+El objetivo \ref{obj:5} es comparar la transformada watershed por inundación utilizando el espacio de color CIELab con los distintos métodos de orden de píxeles en los espacios de color más representativos de la literatura para la segmentación de amastigotes de Trypanosoma cruzi. En relación con los métodos de ordenamiento de la literatura la implementación utilizando el espacio de color CIELab superó a los demás métodos en las métricas de especificidad y exactitud para la segmentación de los amastigotes de Trypanosoma Cruzi.
+
+El espacio de color CIELab mostró ser el adecuado para realizar las implementaciones e identificar los amastigotes de Trypanosoma Cruzi, de esta manera poder contabilizar y sacar estadísticas necesarias para producir nuevos fármacos para el mal de Chagas.
+El error predominante en todas las implementaciones fue un aumento en el tamaño de los objetos segmentados. En las implementaciones con el espacio de color CIELab se redujeron en tamaño, mostrando un mayor porcentaje de verdaderos positivos.

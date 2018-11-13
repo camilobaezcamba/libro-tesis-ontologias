@@ -1,0 +1,37 @@
+%!TEX root = ../tesis.tex
+\section{Experimentos}
+Para los experimentos se utilizó una base de datos con 100 imágenes microscópicas de células infectadas con amastigotes de Trypanosoma Cruzi~\cite{noguera2013mathematical}.
+
+Los diferentes órdenes  utilizados se muestran en la Tabla \ref{metodos-ordenamiento}. Los métodos propuestos son los que utilizan la distancia a un color de referencia en el espacio de color CIELab, en nuestro caso se propuso la utilización de la distancia euclidiana al color origen, media y mediana de la imagen. Para las imágenes en escala de grises se utilizó el orden natural entre las intensidades de los píxeles, en el espacio de color HSI se utilizó el orden lexicográfico y en el espacio de color RGB se utilizaron los órdenes lexicográfico, alpha-lexicográfico, el ordenamiento propuesto por Meyer y los ordenamientos propuesto por Vázquez.
+
+\begin{table}[]
+\centering
+\caption{Métodos de ordenamiento}
+\label{metodos-ordenamiento}
+\resizebox{15cm}{!} {
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Método}} & \multicolumn{1}{c|}{\textbf{Espacio de color}} & \multicolumn{1}{c|}{\textbf{Observación}}  \\ \hline
+\textbf{MEDIANA-CIELAB} & CIELab & Espacio propuesto \\ \hline
+\textbf{MEDIA-CIELAB} & CIELab & Espacio propuesto \\ \hline
+\textbf{DISTANCIA-EUCLIDIANA-CIELAB} & CIELab & Espacio propuesto \\ \hline
+\textbf{LEXICOGRAFICO-RGB} & RGB & Sección \ref{chap:marco-lex} \\ \hline
+\textbf{ALGORITMO-MEYER} & RGB & Sección \ref{chap:marco-meyer} \\ \hline
+\textbf{ALPHA-MOD-LEXICOGRAFICO-RGB} & RGB & Sección \ref{chap:marco-alphalex} \\ \hline
+\textbf{DISTANCIA-EUCLIDIANA-RGB} & RGB & Sección \ref{chap:marco-distanciaeuclidianta} \\ \hline
+\textbf{ESCALA-DE-GRISES} & Escala de Gris & Sección \ref{chap:marco-lex}  \\ \hline
+\textbf{VAZQUEZ-ET-AL} & RGB & Sección \ref{chap:marco-lex} \\ \hline
+\textbf{ENTRELAZADO-RGB} & RGB & Sección \ref{chap:marco-entrelazado} \\ \hline
+\textbf{LEXICOGRAFICO-HSI} & HSI & Sección \ref{chap:marco-lex} \\ \hline
+\textbf{ENTROPIA-RGB} & RGB & Sección \ref{chap:marco-vazquez}  \\ \hline
+\textbf{MAXIMO-RGB} & RGB & Sección \ref{chap:marco-vazquez}  \\ \hline
+\textbf{MINIMO-RGB} & RGB & Sección \ref{chap:marco-vazquez} \\ \hline
+\textbf{MODA-RGB} & RGB & Sección \ref{chap:marco-vazquez}  \\ \hline
+\textbf{MODA-MAXIMO-RGB} & RGB & Sección \ref{chap:marco-vazquez} \\ \hline
+\textbf{MODA-MINIMO-RGB} & RGB & Sección \ref{chap:marco-vazquez}  \\ \hline
+\textbf{SUAVIDAD-RGB} & RGB & Sección \ref{chap:marco-vazquez} \\ \hline
+\textbf{VARIANZA-RGB} & RGB & Sección \ref{chap:marco-vazquez}   \\ \hline
+\end{tabular}
+}
+\end{table}
+

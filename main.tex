@@ -1,0 +1,171 @@
+\documentclass[final,fmstyle]{util/ucathesis}
+%\documentclass[draft, fmstyle]{util/ucathesis}
+
+% La opción 'final' muestra los graficos, para generar una version sin los graficos utiliza la opcion 'draft'
+
+% paquetes recomendados
+%\usepackage[chapter]{theorems}
+%\usepackage{symbols}
+%\usepackage{url}
+\usepackage{amsmath,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
+\usepackage{tabularx}		
+\usepackage{pdflscape}
+\usepackage{listings}
+% para la lista de símbolos
+%\usepackage{subfigure} %conflicto con subcaption
+\usepackage{array}
+\usepackage{perpage}
+\usepackage{backnaur}
+\usepackage{enumerate}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{float}
+\usepackage{pifont}
+
+%%agregados
+%Hipervinculos
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{longtable}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+%tabla
+\usepackage{arydshln}
+
+%Colores
+\definecolor{color1}{HTML}{4F81BD}
+\definecolor{color2}{HTML}{9BBB59}
+
+\MakePerPage{footnote}
+\addbibresource{referencias.bib}
+
+
+%se importan las configuraciones customizadas realizadas.
+\include{./util/custom}
+
+
+% \setcounter{tocdepth}{3}
+
+%Datos de la tesis
+\title{Transformada watershed por inundación en espacio de color CIELab para la segmentación de amastigotes de trypanosoma cruzi}
+\author{Rodrigo Valdez y Camilo Báez}
+\degree{Informática}
+
+\advisors{Orientadores:}{Phd. Gustavo Gimenez Lugo
+\\Phd. Juan Pane}
+
+\logosource{./figuras/politecnica_logo.jpg}
+\institution{Universidad Nacional de Asunción}
+\faculty{Facultad Politécnica}
+\address{San Lorenzo - Paraguay}
+
+%\newtheorem{definicion}{Definicin}
+%\numberwithin{algorithm}{chapter}
+
+% \logosource{./graphics/logo.jpg}
+% \institution{Universidad Nacional de Asunci\'{o}n}
+% \faculty{Facultad Polit\'{e}cnica}
+% \address{San Lorenzo - Paraguay}
+
+\usepackage{glossaries}
+\usepackage{etoolbox}
+\usepackage[xindy]{imakeidx}
+
+\newtoks\customtok
+
+
+\renewcommand*{\newacronymhook}{%
+ \edef\dosetkeys{\noexpand\setkeys{glossentry}{user1={},\the\glskeylisttok}}%
+ \dosetkeys
+ \ifcsempty{@glo@useri}%
+ {%
+   \expandafter\customtok\expandafter{\the\glsshorttok}%
+ }%
+ {%
+   \edef\custom{\the\glsshorttok, \csexpandonce{@glo@useri}}%
+   \expandafter\customtok\expandafter{\custom}%
+ }%
+}
+
+\newcommand*{\custompostdesc}[1]{%
+  \ifcsempty{glo@#1@useri}{}{ (\glsentryuseri{#1})}%
+}
+
+\renewcommand*{\CustomAcronymFields}{%
+  user1={},%
+  name={\the\glsshorttok},%
+  description={\the\glslongtok\noexpand\custompostdesc{\the\glslabeltok}},%
+  first={\the\glslongtok\space(\the\customtok)},%
+  firstplural={\the\glslongtok\noexpand\acrpluralsuffix
+    \space (\the\customtok)}%
+  text={\the\glsshorttok},%
+  plural={\the\glsshorttok\noexpand\acrpluralsuffix}%
+}
+
+\SetCustomStyle
+
+\makeglossaries
+\makeindex
+
+\pgfplotsset{compat=1.12}
+
+\begin{document}
+
+\maketitle     % esto hace las portadas
+
+% Agradecimientos y dedicatoria
+\include{dedicatoria}
+\include{agradecimientos}
+\include{resumen}
+\include{abstract}
+
+% los siguientes comandos producen 'indices.
+
+
+% Tabla de contenidos
+\tableofcontents
+% Lista de figuras
+\listoffigures
+% Lista de tablas
+\listoftables
+% Lista de algoritmos
+\listofalgorithms
+\printglossary[type=\acronymtype,title=Lista de Siglas]
+\addcontentsline{toc}{chapter}{Lista de Siglas}
+\include{acronimos}
+
+% Lista de simbolos
+\listofsymbols
+
+
+\mainmatter  % inician los capitulos de la tesis
+
+% incluye aqui los capitulos (un archivo .tex por capitulo)
+% los capitulos
+\include{introduccion/Intro}
+\include{Cap2/cap2}
+\include{Cap3/cap3}
+% \include{capitulo-ej/capitulo-ej}
+% \include{antecedentes/main}
+% \include{color/main}
+% \include{marco/main}
+% \include{watershed/main}
+% \include{resultados/main}
+% \include{conclusiones/main}
+
+\appendix   % inician los apendices de tu tesis
+	
+% los capitulos que incluyas a partir de aqui aparecen 
+% como apendices
+% \include{anexos/main}
+% estos comandos generan la bibliografica
+\printbibliography
+
+\end{document}

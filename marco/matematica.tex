@@ -1,0 +1,32 @@
+\section{Matemática Morfológica}
+La segmentación es el proceso de particionar imágenes digitales en múltiples segmentos. El objetivo de la segmentación es modificar y/o simplificar la forma en la que se representa una imagen, para que sea más significativa y fácil de analizar~\cite{wiki:segmentacion}. La matemática morfológica es una rama del análisis de imágenes basada en la teoría de conjuntos y principios algebraicos y geométricos~\cite{matheron2002birth}.
+
+Los operadores básicos de la matemática morfológica son la erosión ($\varepsilon$) y la dilatación ($\delta$), que pueden ser definidos a partir del mínimo y el máximo respectivamente dentro de una ventana llamada elemento estructurante~\cite{noguera2014color}. 
+
+Dada una ventana $E$, representada como el elemento estructurante, y una imagen $F$. 
+\addsymbol{symbol:E} \addsymbol{symbol:F} 
+\addsymbol{symbol:erosion} \addsymbol{symbol:dilatacion} \addsymbol{symbol:estructurante} 
+La erosión ($\varepsilon$) de $F$ utilizando $E$ se puede definir como:
+\begin{equation}
+\varepsilon(F,E)(u,v)  = \min_{(i,j) \in E} \{F(u-i,v-j) + E(i,j) \},
+\end{equation}
+y la dilatación ($\delta$) de $F$ utilizando $E$ se puede definir como:
+\begin{equation}
+\delta(F,E)(u,v)  =  \max_{(i,j) \in E} \{F(u+i,v+j) - E(i,j) \}.
+\end{equation}
+\addsymbol{symbol:F}
+\addsymbol{symbol:j}
+La gradiente ($\gamma$) es el cambio direccional en la intensidad o color de una imagen. La gradiente ($\gamma$) es la resultante de la diferencia entre la dilatación ($\delta$) y la erosión ($\varepsilon$) de la imagen $F$~\cite{beucher}, se define como:
+\begin{equation}
+\gamma(F,E)(u,v) = \delta(F,E)(u,v) - \varepsilon(F,E)(u,v).
+\end{equation}
+\addsymbol{symbol:F}
+\addsymbol{symbol:gradiente}
+En escala de grises obtener la relación de orden entre los pixeles es trivial, debido a que están clasificados de acuerdo al orden natural de los valores que representan la intensidad de los píxeles. En imágenes a color los píxeles están representados por vectores. Un problema abierto es la extensión de la matemática morfológica para imágenes multivaloradas, como son las imágenes a color~\cite{aptoula2007}.
+Los principales tipos de procesamiento morfológico para imágenes multivaloradas son~\cite{aptoula2007}:
+\begin{itemize}
+\item Procesamiento Marginal: en el procesamiento marginal cada canal es procesado de manera independiente y no existe la correlación entre los canales.
+\item Procesamiento Vectorial: en el procesamiento vectorial se procesan todos los canales de manera conjunta. Se considera a los píxeles como vectores, y son tratados como una unidad de procesamiento. Requiere de un esquema de ordenamiento vectorial.
+\end{itemize}
+
+El procesamiento marginal tiene como principal desventaja la pérdida de información de la imagen al procesar por separado cada uno de los canales. Por otra parte, el procesamiento vectorial aprovecha dicha información obteniendo mejores resultados.

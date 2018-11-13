@@ -1,0 +1,114 @@
+\section{Ordenamientos}
+\label{chap:marco}
+A continuación se presentan los ordenamientos utilizados en este trabajo. Se utilizan píxeles $q$, $s$ y $t$ y sus respectivos componentes $(V_{1},V_{2},V_{3})$, $(V_{1},V_{2},V_{3})$ y $(V_{1},V_{2},V_{3})$ para ejemplificar el comportamiento de los ordenamientos que se explican posteriormente.
+
+\subsection{Lexicográfico}
+\label{chap:marco-lex}
+El orden lexicográfico es también conocido como el orden de diccionario~\cite{chanussot1998total}~\cite{talbot98complete}. Una prioridad es asignada a cada componente del vector par que unos tengan mayor importancia que los otros al momento de realizar una comparación y definir un orden.
+\addsymbol{symbol:q} \addsymbol{symbol:V}
+\addsymbol{symbol:n} \addsymbol{symbol:lex}
+\begin{equation}
+q \leq q^{\prime} \Leftrightarrow \left[  V_{1},...,V_{n} \right]^{T} \leq_{L} \left[  V^{\prime}_{1},...,V^{\prime}_{n} \right]^{T},
+\end{equation}
+donde $\leq_{L}$ es el orden lexicográfico.
+
+Para determinar si uno es mayor al otro se realiza los siguiente: se establece la prioridad entre los componentes, es decir, el componente $r$ tiene la mayor prioridad, luego el componente $g$ y por ultimo el $b$. Luego se compara inicialmente el primer componente con mayor prioridad, en caso de darse una igualdad, se compara el siguiente componente de mayor prioridad y así sucesivamente. De acuerdo a como se realice la selección de la prioridad, se podrían obtener resultados distintos.
+\addsymbol{symbol:vec}
+Por ejemplo, dados los píxeles $q=\left\{2,4,9\right\}, s=\left\{2,5,9\right\}, t=\left\{8,4,1\right\}$, se comparan los valores del componente con mayor prioridad, donde el componente $r$ tiene mayor prioridad, luego $g$ y $b$. Se puede observar que $t>s$ y $t>q$. No se puede determinar el orden entre $q$ y $s$, por lo cual se toma el siguiente componente con mayor prioridad, donde se puede observar que $t>s>q$.
+
+\subsection{Alpha modulus lexicográfico}
+\label{chap:marco-alphalex}
+Una extensión del ordenamiento lexicográfico mostrado anteriormente fue propuesta en~\cite{angulo2003morphologie} que consiste en utilizar un valor $\alpha$ que el usuario defina, para modificar el grado de influencia que posee el primer componente. Se formula de la siguiente manera:
+\addsymbol{symbol:q} \addsymbol{symbol:V}
+\addsymbol{symbol:n} \addsymbol{symbol:lex}
+\addsymbol{symbol:alpha}
+\begin{equation}
+q \leq q^{\prime} \Leftrightarrow \left[  \lceil V_{1}/\alpha\rceil , V_{2},...,V_{n} \right]^{T} \leq_{L} \left[  \lceil V^{\prime}_{1}/\alpha\rceil, V^{\prime}_{2},...,V^{\prime}_{n} \right]^{T}.
+\end{equation}
+\addsymbol{symbol:vec}
+Por ejemplo, dados los píxeles $q=\left\{5,4,9\right\}, s=\left\{8,5,9\right\}, t=\left\{18,4,1\right\}$, se comparan los valores del componente con mayor prioridad dividido por el valor $\alpha$, donde se puede observar que $t>s$ y $t>q$, ya que $\lceil q_{1}/\alpha\rceil = 1,\lceil s_{1}/\alpha\rceil = 1,\lceil t_{1}/\alpha\rceil = 2$. No se puede determinar el orden entre $q$ y $s$, por lo cual se toma el siguiente componente con mayor prioridad, donde se puede observar que $t>s>q$.
+
+
+\subsection{Vázquez et al}
+\label{chap:marco-vazquez}
+\addsymbol{symbol:T} \addsymbol{symbol:V} \addsymbol{symbol:w} \addsymbol{symbol:q}
+\addsymbol{symbol:j} \addsymbol{symbol:F}
+\addsymbol{symbol:n}\addsymbol{symbol:Sp}
+\addsymbol{symbol:win}
+
+Vázquez~\cite{noguera2014color} propuso una modificación del ordenamiento lexicográfico, tomando información de la imagen para obtener una transformación que se utiliza como el componente de mayor prioridad del orden lexicográfico.
+
+La transformación propuesta por Vázquez en~\cite{noguera2014color} esta expresada como sigue: Para considerar la información local analizada por los operadores morfológicos, la imagen $F$ es particionada en ventanas denotadas por $win$, donde $win \subset F$. La transformada $T(q): \mathbb{Z}^{n}\rightarrow \mathbb{R}$ del píxel $q$ se obtiene mediante el producto escalar del vector $V = \left\{V_{1},V_{2},V_{3} \right\}$ correspondiente al píxel $q$ en el espacio de color $Sp$ con el vector de pesos $w = \left\{w1,w2,w3 \right\}$, es decir:
+\begin{equation}
+T\left(q\right) = \sum_{j=1}^n w_{j} \times V_{j}.
+\end{equation}
+\addsymbol{symbol:vec}
+Por ejemplo, dados los píxeles $q=\left\{2,4,9\right\}, s=\left\{1,5,9\right\}, t=\left\{8,4,1\right\}$, utilizando la media en cada uno de los componentes, se forma el vector de pesos con los valores $w=\left\{5,6,9\right\}$, posteriormente se tienen los resultados:
+$T(q)=2\times5+4\times6+9\times9=115,
+T(s)=1\times5+5\times6+9\times9=116,
+T(t)=8\times5+4\times6+1\times9=73$, donde se puede observar que $s>q>t$.
+
+Las variaciones están dadas en el cálculo del vector de pesos $w$, para el cual se realizaron cálculos con la media, mínimo, máximo, entropia, moda, moda máximo, moda mínimo, suavidad y varianza de la imagen. Las comparaciones fueron realizadas en el espacio de color RGB para todas las variantes y se utiliza solo la transformada para la comparación debido a que para la transformada de watershed el hecho de que dos colores diferentes tengan la misma transformada no es un problema ya que se agruparán en el mismo nivel.
+
+\subsection{Distancia euclidiana}
+\label{chap:marco-distanciaeuclidianta}
+Para el espacio de color RGB se realiza el cálculo con la distancia al origen, mientras que en el espacio de color CIELab se calcula con las distancias al origen, media y mediana de la imagen. 
+
+Para el espacio de color CIELab se utiliza la fórmula descrita en \ref{formula:eucli}. Para el espacio de color RGB se utiliza la diferencia de color entre dos coordenadas $(r_{1},g_{1},b_{1})$ y $(r_{2},g_{2},b_{2})$ definido como $\Delta E_{rgb}$:~\cite{robertson1977cie}.
+\addsymbol{symbol:r}\addsymbol{symbol:g}
+\addsymbol{symbol:b}\addsymbol{symbol:ergb}
+\begin{equation}
+\label{formula:euclirgb}
+\Delta E_{rgb} = \sqrt{(\Delta r)^2 + (\Delta g)^2 +(\Delta b)^2},
+\end{equation}
+donde 
+\addsymbol{symbol:deltargbR}
+\addsymbol{symbol:deltargbG}
+\addsymbol{symbol:deltargbB}
+\begin{equation}
+\Delta r = r_{1} - r_{2},
+\Delta g = g_{1} - g_{2},
+\Delta b = b_{1} - b_{2}.
+\end{equation}
+\addsymbol{symbol:vec}
+Por ejemplo, dados los píxeles $q=\left\{2,4,9\right\}, s=\left\{1,5,9\right\}, t=\left\{8,4,1\right\}$, utilizando la distancia al origen, se tienen los resultados:
+$T(q)=\sqrt{(2-0)^{2}+(4-0)^{2}+(9-0)^{2}}=10.04$ ,
+$T(s)=\sqrt{(1-0)^{2}+(5-0)^{2}+(9-0)^{2}}=10.34$ ,
+$T(t)=\sqrt{(8-0)^{2}+(4-0)^{2}+(1-0)^{2}}=9$ , donde se puede observar que $s>q>t$.
+
+
+\subsection{Entrelazado de bits}
+\label{chap:marco-entrelazado}
+El ordenamiento por entrelazado de bits consiste en una transformación inyectiva explotando la representación binaria de cada uno de los componentes, obteniendo un orden total en el espacio vectorial~\cite{chanussot1997bit}~\cite{chanussot1998total}.
+Para un píxel $q$ con componentes ${x,y,z}$ en el espacio de color $Sp$, codificado en $k$ bits, la transformación por reducción $T: \mathbb{Z}^{n}\rightarrow \mathbb{Z}$ se calcula mediante la fórmula:
+\addsymbol{symbol:q} \addsymbol{symbol:V}
+\addsymbol{symbol:n} \addsymbol{symbol:k} 
+\addsymbol{symbol:m} \addsymbol{symbol:T}
+\addsymbol{symbol:j} \addsymbol{symbol:Sp}
+\begin{equation}
+T\left(q\right):\sum_{m=1}^k\left\{
+2^{n.(k-m)}.\sum_{j=1}^n 2^{n-j}.V_{j,m}\right\},
+\end{equation}
+donde $V_{j,m}$ corresponde al m-ésimo bit del j-ésimo componente del píxel $q$. La representación binaria de $T(q)$ resultante se convierte en:
+\begin{equation}
+V_{1,1}V_{2,1}...V_{n,1}V_{1,2}V_{2,2}...V_{n,2}...V_{1,k}V_{2,k}...V_{n,k}.
+\end{equation}
+\addsymbol{symbol:vec}
+Por ejemplo, dados los píxeles $q=\left\{2,4,9\right\}, s=\left\{1,5,9\right\}, t=\left\{8,4,1\right\}$, y la función de transformación T, los componentes expresados en 4 bits, se tienen los resultados:
+
+$T(q)=\overbrace{0010}^2\overbrace{0100}^4\overbrace{1001}^9,
+T(s)=\overbrace{0001}^1\overbrace{0101}^5\overbrace{1001}^9,
+T(t)=\overbrace{1000}^8\overbrace{0100}^4\overbrace{0001}^1$, donde se puede observar que $t>q>s$.
+
+\subsection{Ordenamiento utilizado por Meyer}
+\label{chap:marco-meyer}
+El ordenamiento de los píxeles utilizado en la propuesta de Meyer~\cite{Meyer} utiliza el espacio de color RGB. El mismo realiza una transformación por reducción a un valor escalar mediante la fórmula:
+\addsymbol{symbol:r} \addsymbol{symbol:g}
+\addsymbol{symbol:b} 
+\begin{equation}
+Max\left(|r_{s}-r_{t}|,|g_{s}-g_{t}|,|b_{s}-b_{t}|\right).
+\end{equation}
+Posteriormente el orden natural de los números es utilizado para realizar la comparación. Para la implementación se asume como píxel de referencia el origen $\left\{0,0,0\right\}$.
+Por ejemplo, dados los píxeles $s=\left\{2,4,8\right\}, t=\left\{1,5,9\right\}$, se tienen los resultados:
+$T(s)=Max\left(|2-0|,|4-0|,|8-0|\right)=8,
+T(t)=Max\left(|1-0|,|5-0|,|9-0|\right)=9$, donde se puede observar que $t>s$. Podría darse el caso que para ambos píxeles se obtenga el mismo resultado, lo que haría que dos pixeles tengan la misma transformación y no se pueda determinar el orden entre $t$ y $s$.
