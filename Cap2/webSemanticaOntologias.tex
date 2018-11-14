@@ -1,0 +1,44 @@
+
+
+\section{Web Semántica y Ontologías}
+
+\subsection{Open Data}
+Open Data se refiere al hecho de mantener los datos publicados en internet de tal manera a cumplir con algunos requisitos para que éstos puedan ser utilizados y reutilizados en cualquier momento y desde cualquier sitio \cite{linkedOpenData}.
+
+\subsubsection{Linked Open Data (LOD)}
+Linked Open Data se enfoca en un método de publicación de datos abiertos estructurados para que puedan ser interconectados. Para lograr esto se utilizan las tecnologías como RDF, RDFa, etc. para estructurar los datos, utilizando URIs para identificar los datos individualmente. Tim Berners Lee define un modelo de 5 estrellas para clasificar e identificar el grado de publicación de datos abiertos.
+
+\begin{table}[]
+\centering
+\caption{Modelo de publicación de 5 estrellas}
+\label{modelo-5-estrellas}
+\resizebox{15cm}{!} {
+\begin{tabular}{|c|l|}
+\hline
+\ding{72} & La información está disponible en la web (en cualquier formato) bajo una licencia abierta \\ \hline
+\ding{72} \ding{72} & La información está disponible como dato estructurado (Ej. Excel en lugar de una imagen de una tabla) \\ \hline
+\ding{72} \ding{72} \ding{72} & Son utilizados formatos no-propietarios (Ej. CSV en lugar de Excel) \\ \hline
+\ding{72} \ding{72} \ding{72} \ding{72}  & URIs son utilizadas para que se puedan individualizar los datos \\ \hline
+\ding{72} \ding{72} \ding{72} \ding{72} \ding{72}  & Los datos son enlazados con otros datos para proveer un contexto \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsection{La Web Semántica}
+La Web Semántica consiste en una serie de estándares y tecnologías propuestas por la W3C que promueven el uso de formatos de datos común y además de un protocolo de datos dentro de la web que nos permite compartir y reusar datos -procesables por máquinas- a través de la web. Se puede pensar la Web Semántica como una manera eficiente de representar datos en la web.
+
+El principal problema de los datos en la web es la dificultad de su utilización a gran escala, ya que no siempre se aplican estándares de publicación de datos de manera a que facilite su procesamiento. Por otra parte, los datos enlazados a través de identificadores comunes en la web nos dan la capacidad de consultar datos de distintas fuentes y contestar preguntas complejas pero interpretar el significado de los mismos no resulta una tarea sencilla. Es por eso que las ontologías juegan un rol fundamental en la web semántica, ya que gracias a ellas podemos representar conocimiento legible y entendible por máquinas y humanos en la web.
+
+\subsection{Ontologías}
+Las ontologías son utilizadas para la representación del conocimiento, logrando así que la información esté representada de forma a que pueda ser interpretada por los computadores y humanos \citep{horrocks2011kr}. En ella se definen los conceptos de un determinado dominio, sus propiedades y relaciones entre los mismos, así también reglas para combinar términos y relaciones que permitan extender el vocabulario.
+
+A continuación se pone a conocimiento algunas definiciones hechas acerca de las ontologías en el ámbito de sistemas de información.
+
+\cite{gruber1993translation} definió originalmente el concepto de ontología como “Una especificación explícita de una conceptualización”. \cite{borst1997construction} definió una ontología como “Una especificación formal de una conceptualización compartida”. La definición que se eligió en este trabajo es la de \cite{studer1998knowledge}: “Una ontología se define como una especificación formal y explícita de una conceptualización compartida”.  En esta definición, conceptualización se refiere a un modelo abstracto de algún fenómeno del mundo derivado de la identificación de sus conceptos relevantes; explícita se refiere a que los tipos de conceptos y las restricciones usadas sobre ellos se definen explícitamente; formal se refiere a que la ontología debe ser “legible” por una computadora; y compartida refleja que una ontología capta un conocimiento consensual. \cite{guarino1998formal} también definió como “Un conjunto de axiomas lógicos diseñados para tener en cuenta el significado deseado de un vocabulario”.
+
+Actualmente existen ontologías para diversos dominios de conocimiento. Algunas de las más representativas son: \textit{Simple Knowledge Organization System} (SKOS) \citep{isaac2009skos}, \textit{ Friend of a Friend} (FOAF) \citep{brickley2012foaf}, \textit{Good Relations} \citep{hepp2008goodrelations}, MGED Ontology \citep{whetzel2006mged} y National Cancer Institute Ontology \citep{golbeck2011national}. Así también existen ontologías que no pertenecen a un dominio específico (de alto nivel) y describen conceptos generales como DOLCE \citep{Masolo02thewonderweb}.
+
+La ontología posee varios usos en Ciencias de la Computación, como ser en el ámbito legal, médico, científico y otros, pero ganó mayor popularidad en el ámbito de la Web Semántica. A continuación veremos las ontologías en el caso de uso de la web semántica.
+
+
+\subsection{Ontologías en la Web Semántica}
