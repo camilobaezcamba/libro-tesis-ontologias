@@ -1,0 +1,72 @@
+
+\section{Reuso de Recursos Ontológicos}
+Los pasos para el reuso de una ontología son la búsqueda, análisis y comparación de ontologías desarrolladas y luego la selección e integración de las ontologías a reutilizar. Al mismo tiempo existen distintas maneras de reutilizar una ontología, como veremos más adelante. 
+
+\subsection{Búsqueda de Ontologías}
+
+Un parámetro importante a la hora de hacerlo es la cantidad de veces que esta ya fue reutilizada. Linked Open Vocabularies (LOV) es un repositorio de ontologías bien curado y estable mantenido por la Open Knowledge Foundation (OKF) que nos muestra la cantidad de conexiones entre las ontologías.
+
+\subsection{Ontologías Relacionadas}
+
+Con relación a ontologías más generales y relacionadas de alguna manera al dominio que pudieran ayudar a enriquecer las ontologías desarrolladas se encontraron las siguientes:
+\begin{itemize}
+    \item Organization: Ontología central para las estructuras de una organización, destinada a apoyar la publicación de datos vinculados de la información de la organización en una serie de dominios. Está diseñada para permitir extensiones específicas de dominio para agregar clasificación de organizaciones y roles, así como extensiones para admitir información relacionada, como actividades de la organización.
+    \item Good Relations: es un vocabulario estandarizado para datos de productos, precios, tiendas y empresas que pueden integrarse en páginas web estáticas y dinámicas existentes y eso puede ser procesado por otras computadoras. Esto aumenta la visibilidad de sus productos y servicios en la última generación de motores de búsqueda, sistemas de recomendación y otras aplicaciones novedosas.
+    \item DCTERMS:Una especificación actualizada de todos los términos de metadatos mantenidos por la Dublin Core Metadata Initiative, que incluye propiedades, esquemas de codificación de vocabulario, esquemas de codificación de sintaxis y clases. 
+\end{itemize}
+
+\subsection{Ontologías del dominio de Contrataciones Públicas.}
+
+Observando LOV dentro del dominio de estudio, se realizó una búsqueda a través de la etiqueta “Contract”, teniendo como resultado los siguientes recursos ontológicos:
+
+\begin{itemize}
+    \item c4n - Call for Anything vocabulary (https://lov.linkeddata.es/dataset/lov/vocabs/c4n)
+    \item     el i- The European Legislation Identifier(https://lov.linkeddata.es/dataset/lov/vocabs/eli)
+    \item ldr - Linked Data Rights (https://lov.linkeddata.es/dataset/lov/vocabs/ldr)
+    \item loted - LOTED ontology (https://lov.linkeddata.es/dataset/lov/vocabs/loted)
+    \item pay - Payments ontology (https://lov.linkeddata.es/dataset/lov/vocabs/pay)
+    \item  pc - Public Contracts Ontology (https://lov.linkeddata.es/dataset/lov/vocabs/pc)
+    \item pproc - PPROC ontology (https://lov.linkeddata.es/dataset/lov/vocabs/pproc)
+    \item  
+\end{itemize}
+
+
+Haciendo una búsqueda más exhaustiva dentro del dominio de contrataciones públicas a través de internet se pudo identificar también las ontologías LOTED 2 y la ontología desarrollada por la DNCP.
+
+En este trabajo se pone bajo análisis las ontologías de LOTED 2 , LOTED, Public Contract y PPROC, esta última es la más reciente y en su desarrollo se tomó en cuenta la experiencia de las primeras. Por último también se pone bajo consideración la ontología de la DNCP.
+
+La más utilizada en el sector de contrataciones públicas es la Public Contract Ontology (PCO) [Jindrich Mynarz, 2012] ya que ofrece un medio de expresión para describir los conceptos básicos de este dominio logrando así que otras ontologías puedan extender de ésta fácilmente. Otra ontología que cabe mencionar es la ontología LOTED Valle et al. [2010] ya que fue desarrollada para enriquecer los datos de licitaciones, expuestas por el sistema TED, con enlaces a Geonames y DBpedia. A continuación de LOTED y viendo la necesidad de dar un contexto legal al ámbito de contrataciones fue desarrollada la ontología LOTED2 [Distinto et al., 2014] cuyo principal objetivo es la representación de los conceptos jurídicos relacionados al dominio de las contrataciones públicas, por esto puede resultar un tanto difícil su utilización.
+
+La ontología PPROC [Muñoz-Soro et al., 2016] fue desarrollada siguiendo las especificaciones de OWL, utiliza clases de PCO, así como también de otras ontologías como Organization Ontology, Schema.org, SKOS y para la definición de conceptos relacionados a ofertas realizadas utiliza Good Relations. Uno de los objetivos específicos de PPROC es la publicación del perfil del contratante de las administraciones que participan en los proceso de licitación.
+
+Tanto LOTED como LOTED2, PCO y PPROC utilizan RDF/XML para la definición de la ontología debido a su fuerte poder de describir los atributos de los recursos. 
+
+Otra ontología que vale mencionar es la desarrollada por la DNCP, la misma está definida en OWL con la serialización XML. Si bien la misma utilizó el lenguaje OWL como sintaxis, no tuvo en cuenta principios importantes en el modelado y desarrollo de una ontología. Como ejemplo, la ontología desarrollada no tuvo en cuenta el nivel de especificación de los datos, se encuentran definiciones de Clases como Número, Texto, Fecha , Email, siendo que estos conceptos podrían modelarse como DataType Properties de tipo Texto o Número.De igual manera, la misma representa un diccionario de datos importante y un acercamiento a la formalización sintactica y semantica de su modelo de datos.
+
+En la  tabla xx se muestra una comparación entre las 5 ontologías analizadas.
+
+
+
+\begin{table}[]
+    \centering
+    \caption{Comparación de ontologías del dominio de Contrataciones Públicas}
+    \label{tabla-ontologias}
+    \resizebox{14cm}{!} {
+    \begin{tabular}{|p|p|p|p|p|p}
+
+    \hline
+               asdf             & LOTED & LOTED2 & PCO & PPROC & DNCP \\ \hline
+        Cantidad de Axiomas & 172 & 1709 & 450 & 1501 & 802 \\ \hline
+        Cantidad de Clases  & 23  & 177  & 22  & 92   & 36 \\  \hline
+        Lenguaje            & OWL (RDF/XML) & OWL (RDF/XML) & OWL & OWL (RDF/XML) & OWL (RDF/XML) \\ \hline
+        Metodología         & Propia & Un enfoque de arriba hacia abajo (extracción de conceptos jurídicos de fuentes legales) y en una de abajo hacia arriba (análisis de las formas estándar). &  Propia & Ontology Development 101 & Desconocida \\
+      
+    \end{tabular}
+}
+    \end{table}
+    
+
+
+
+
+
