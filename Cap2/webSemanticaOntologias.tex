@@ -1,11 +1,11 @@
-
-
 \section{Web Semántica y Ontologías}
 
 \subsection{Open Data}
-Open Data se refiere al hecho de mantener los datos publicados en internet de tal manera a cumplir con algunos requisitos para que éstos puedan ser utilizados y reutilizados en cualquier momento y desde cualquier sitio \cite{linkedOpenData}.
+
+Open Data se refiere al hecho de mantener los datos publicados en internet de tal manera a cumplir con algunos requisitos para que éstos puedan ser utilizados y reutilizados en cualquier momento y desde cualquier sitio \cite{bauer2011linked}.
 
 \subsubsection{Linked Open Data (LOD)}
+
 Linked Open Data se enfoca en un método de publicación de datos abiertos estructurados para que puedan ser interconectados. Para lograr esto se utilizan las tecnologías como RDF, RDFa, etc. para estructurar los datos, utilizando URIs para identificar los datos individualmente. Tim Berners Lee define un modelo de 5 estrellas para clasificar e identificar el grado de publicación de datos abiertos.
 
 \begin{table}[]
@@ -30,15 +30,41 @@ La Web Semántica consiste en una serie de estándares y tecnologías propuestas
 El principal problema de los datos en la web es la dificultad de su utilización a gran escala, ya que no siempre se aplican estándares de publicación de datos de manera a que facilite su procesamiento. Por otra parte, los datos enlazados a través de identificadores comunes en la web nos dan la capacidad de consultar datos de distintas fuentes y contestar preguntas complejas pero interpretar el significado de los mismos no resulta una tarea sencilla. Es por eso que las ontologías juegan un rol fundamental en la web semántica, ya que gracias a ellas podemos representar conocimiento legible y entendible por máquinas y humanos en la web.
 
 \subsection{Ontologías}
-Las ontologías son utilizadas para la representación del conocimiento, logrando así que la información esté representada de forma a que pueda ser interpretada por los computadores y humanos \citep{horrocks2011kr}. En ella se definen los conceptos de un determinado dominio, sus propiedades y relaciones entre los mismos, así también reglas para combinar términos y relaciones que permitan extender el vocabulario.
-
+Las ontologías son utilizadas para la representación del conocimiento, logrando así que la información esté representada de forma a que pueda ser interpretada por los computadores y humanos \cite{horrocks2011kr}. En ella se definen los conceptos de un determinado dominio, sus propiedades y relaciones entre los mismos, así también reglas para combinar términos y relaciones que permitan extender el vocabulario.
 A continuación se pone a conocimiento algunas definiciones hechas acerca de las ontologías en el ámbito de sistemas de información.
 
 \cite{gruber1993translation} definió originalmente el concepto de ontología como “Una especificación explícita de una conceptualización”. \cite{borst1997construction} definió una ontología como “Una especificación formal de una conceptualización compartida”. La definición que se eligió en este trabajo es la de \cite{studer1998knowledge}: “Una ontología se define como una especificación formal y explícita de una conceptualización compartida”.  En esta definición, conceptualización se refiere a un modelo abstracto de algún fenómeno del mundo derivado de la identificación de sus conceptos relevantes; explícita se refiere a que los tipos de conceptos y las restricciones usadas sobre ellos se definen explícitamente; formal se refiere a que la ontología debe ser “legible” por una computadora; y compartida refleja que una ontología capta un conocimiento consensual. \cite{guarino1998formal} también definió como “Un conjunto de axiomas lógicos diseñados para tener en cuenta el significado deseado de un vocabulario”.
 
-Actualmente existen ontologías para diversos dominios de conocimiento. Algunas de las más representativas son: \textit{Simple Knowledge Organization System} (SKOS) \citep{isaac2009skos}, \textit{ Friend of a Friend} (FOAF) \citep{brickley2012foaf}, \textit{Good Relations} \citep{hepp2008goodrelations}, MGED Ontology \citep{whetzel2006mged} y National Cancer Institute Ontology \citep{golbeck2011national}. Así también existen ontologías que no pertenecen a un dominio específico (de alto nivel) y describen conceptos generales como DOLCE \citep{Masolo02thewonderweb}.
-
+Actualmente existen ontologías para diversos dominios de conocimiento. Algunas de las más representativas son: \textit{Simple Knowledge Organization System} (SKOS) \cite{isaac2009skos}, \textit{ Friend of a Friend} (FOAF) \cite{brickley2012foaf}, \textit{Good Relations}, \cite{hepp2008goodrelations}, MGED Ontology \cite{whetzel2006mged} y National Cancer Institute Ontology \cite{golbeck2011national}. Así también existen ontologías que no pertenecen a un dominio específico (de alto nivel) y describen conceptos generales como DOLCE \cite{Masolo02thewonderweb}.
 La ontología posee varios usos en Ciencias de la Computación, como ser en el ámbito legal, médico, científico y otros, pero ganó mayor popularidad en el ámbito de la Web Semántica. A continuación veremos las ontologías en el caso de uso de la web semántica.
 
 
 \subsection{Ontologías en la Web Semántica}
+Uno de los principios fundamentales de las ontologías dentro de la web semántica es su reutilización y extensión, esto significa utilizar conceptos de otras ontologías, siempre y cuando sea posible, mejorando el procesamiento y la integración de datos enlazados. En lugar de duplicar esfuerzos definiendo conceptos y propiedades que ya fueron definidos en otra otología, se puede referenciar a estos elementos dentro de la nueva ontología. 
+
+Existe una variedad de tipos de ontologías que dependen del nivel de formalidad, razonamiento y la cantidad de restricciones. En el caso más simple una ontología puede describir una jerarquía de conceptos vinculados por relaciones de subsunción y en casos más sofisticados incluir axiomas para expresar relaciones entre conceptos y restringir la interpretación pretendida.
+
+Las ontologías para la Web Semántica son de tipo ligeras en términos de niveles de formalidad y normalmente pequeñas en tamaño haciéndolas fáciles de manejar y mantener. El poder de expresión de una ontología en la Web Semántica debe ser adecuado, el lenguaje debe ser tan expresivo como para poder describir conceptos con suficiente detalle, pero no tan expresivo como para perder la capacidad de razonamiento. Una ontología más formal o expresiva es computacionalmente más costosa, por lo que se debe encontrar un equilibrio entre los dos puntos. En la Figura \ref{img:expresividad complejidad } se puede ver el espectro de ontologías según su expresividad y complejidad computacional, en donde el lenguaje OWL y la Lógica de Descripciones se encuentran dentro de las más expresivas y costosas computacionalmente.
+La capacidad de razonamiento es importante para asegurar la calidad de la ontología construida, por ejemplo, en la etapa de diseño puede ser utilizada para probar si existen conceptos contradictorios y derivar nuevas relaciones.
+
+Las formas de representar ontologías en la Web Semántica son diversas en cuanto a lenguajes y formas de serialización, a continuación se presenta algunas de ellas.
+
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{figuras/Diagramas-ComplejidadOntologica}
+    \caption{Expresividad vs Complejidad}
+    \label{img:expresividad complejidad }
+    \end{figure}
+
+
+
+\subsection{RDF y RDFS (RDF)}
+
+Marco de Descripción de Recursos, RDF por sus siglas en inglés Resource Description Framework \cite{rdf}, es un framework para representar información en la Web Semántica. El lenguaje RDF forma parte de la W3C's Semantic Web Activity y es recomendado por la W3C. El modelo de datos RDF está diseñado para que sea procesable por computadoras. 
+
+RDF nos permite representar modelos de datos basados en grafos, los cuales son representados en triplas. Las triplas RDF contienen tres componentes:
+El sujeto, que puede ser una referencia tipo URI o un Blank Node
+El predicado, que es una referencia tipo URI
+El objeto que puede ser una referencia tipo URI, un literal o un Blank Node
+
+En la Figura  se expone un grafo de ejemplo en el cual se visualizan estos tres componentes.
