@@ -6,7 +6,7 @@ Los pasos para el reuso de una ontología son la búsqueda, análisis y comparac
 
 Un parámetro importante a la hora de hacerlo es la cantidad de veces que esta ya fue reutilizada. Linked Open Vocabularies (LOV) es un repositorio de ontologías bien curado y estable mantenido por la Open Knowledge Foundation (OKF) que nos muestra la cantidad de conexiones entre las ontologías.
 
-\subsection{Ontologías Relacionadas}
+\subsubsection{Ontologías Relacionadas}
 
 Con relación a ontologías más generales y relacionadas de alguna manera al dominio que pudieran ayudar a enriquecer las ontologías desarrolladas se encontraron las siguientes:
 \begin{itemize}
@@ -15,7 +15,7 @@ Con relación a ontologías más generales y relacionadas de alguna manera al do
     \item DCTERMS:Una especificación actualizada de todos los términos de metadatos mantenidos por la Dublin Core Metadata Initiative, que incluye propiedades, esquemas de codificación de vocabulario, esquemas de codificación de sintaxis y clases. 
 \end{itemize}
 
-\subsection{Ontologías del dominio de Contrataciones Públicas.}
+\subsubsection{Ontologías del dominio de Contrataciones Públicas.}
 
 Observando LOV dentro del dominio de estudio, se realizó una búsqueda a través de la etiqueta “Contract”, teniendo como resultado los siguientes recursos ontológicos:
 
@@ -26,8 +26,7 @@ Observando LOV dentro del dominio de estudio, se realizó una búsqueda a travé
     \item loted - LOTED ontology (https://lov.linkeddata.es/dataset/lov/vocabs/loted)
     \item pay - Payments ontology (https://lov.linkeddata.es/dataset/lov/vocabs/pay)
     \item  pc - Public Contracts Ontology (https://lov.linkeddata.es/dataset/lov/vocabs/pc)
-    \item pproc - PPROC ontology (https://lov.linkeddata.es/dataset/lov/vocabs/pproc)
-    \item  
+    \item pproc - PPROC ontology (https://lov.linkeddata.es/dataset/lov/vocabs/pproc)  
 \end{itemize}
 
 
@@ -80,4 +79,87 @@ En la  tabla xx se muestra una comparación entre las 5 ontologías analizadas.
     \bigskip
     \small\textit{Nota}. Cabe destacar que todas utilizan OWL(RDF/XML) como lenguaje de desarrollo. LOTED2 tiene mayor cantidad de axiomas y cantidad de clases definidas.
     \end{table}
-    
+
+    \subsection{Reutilización de Ontologías}
+
+
+    Según NeOn, las ontologías pueden ser reutilizadas de varias maneras según la necesidad. 
+Podemos utilizar la totalidad de una ontología que cumple con las expectativas para construir la nueva ontología. En ciertos casos sólo se necesita utilizar un módulo o una parte de la ontología ya que podrían haber conceptos que interesen y otros que no, por lo tanto no se utilizaría en su totalidad. Por último, para tener mayor control de los conceptos reutilizados, se puede utilizar la ontología a nivel de enunciado o tripla, importando solamente el enunciado que interese. 
+
+Como en este trabajo se desarrolló una ontología desde el principio utilizando como insumo principal un recurso no-ontológico, se abordará la reutilización por enunciados, de esta forma se enriquece la ontología primeramente desarrollada. La reutilización por enunciado se puede hacer en varios momentos del ciclo de vida del la ontología desarrollada. En este trabajo sólo se utilizarán los conceptos principales de las ontologías antes analizadas, pudiendo seguir reutilizando nuevos enunciados en fases posteriores.
+
+Para los documentos correspondientes a cada fase del proceso licitatorio se hizo una especialización de la clase Document, siendo así una subclase del mismo. Por lo tanto tenemos el enunciado de la tabla xx
+
+
+
+\begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\ttfamily,frame=single]
+:Document rdf:type owl:Class ;
+    rdfs:subClassOf foaf:Document .
+ \end{lstlisting}
+
+ Al mismo tiempo se reutilizaron de la ontología Public Contract, los conceptos de Tender y Contract de un proceso licitatorio
+
+ \begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\ttfamily,frame=single]
+:Tender rdf:type owl:Class ;
+    rdfs:subClassOf pc:Tender .
+:Contract rdf:type owl:Class ;
+    rdfs:subClassOf pc:Contract .
+ \end{lstlisting}
+
+ Good Relations es una ontología para modelar compras de bienes y servicios a través de internet, por lo que también se procedió a la reutilización de los conceptos gr:Offering, gr:BusinessEntity y gr:PriceSpecification.
+
+
+ \begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\ttfamily,frame=single]
+:Item rdf:type owl:Class ;
+    rdfs:subClassOf gr:Offering .
+:Organization rdf:type owl:Class ;
+    owl:equivalentClass gr:BusinessEntity .
+:Value rdf:type owl:Class ;
+    owl:equivalentClass gr:PriceSpecification .
+
+
+ \end{lstlisting}
+
+
+ Se reutilizó la ontología de Schema.org para conceptos básicos como los presentados a continuación.
+
+
+ \begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\ttfamily,frame=single]
+:Address rdf:type owl:Class ;
+    rdfs:subClassOf sch:PostalAddress .
+:ContactPoint rdf:type owl:Class ;
+    rdfs:subClassOf sch:ContactPoint .
+ \end{lstlisting}
+
+
+ Además se utilizó la ontología Sequence para modelar la relación de secuencia que existe dentro del proceso licitatorio. En el cuadro muestra como ejemplo la propiedad que indica que la Planificación precede directamente al Llamado.
+
+
+
+ \begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\ttfamily,frame=single]
+:planningPrecedes rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf seq:directlyPrecedes ;
+    rdfs:domain :Planning ;
+    rdfs:range :Tender .
+
+
+
+
+ \end{lstlisting}
+
+
+Estos enunciados utilizados fueron elegidos teniendo en cuenta todas las ontologías del dominio y también la forma de reuso que existían entre las mismas. 
+
+Con esto se concluyó con la reutilización de ontologías, paso necesario para poder enriquecer la semántica de la ontología desarrollada. La figura xx es una representación visual en forma de grafo de la ontología desarrolla. A continuación, se procederá al uso de la ontología desarrollada y posteriores pruebas con la misma.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{figuras/grafoOntologia2.png}
+    \caption{Grafo de la ontología desarrollada}
+    \label{img:secuencia de desarrollo}
+    \end{figure}

@@ -14,10 +14,16 @@ Siguiendo la metodología NeOn se identifica que la ontología a desarrollar sig
 
 
 
-\section{Discusión del Capitulo}
 
-En este capítulo se desarrolló una ontología teniendo como base de conocimiento un recurso no-ontológico (OCDS). Se utilizó la metodología NeOn y el software Protégé para el desarrollo de ontología. Las actividades principales fueron la planificación de actividades, especificación de los requerimientos, el reuso de recursos ontológicos y no-ontológicos. El resultado de todo este proceso fue una ontología desarrollada en lenguaje OWL que responde a la base de conocimiento de la OCDS y al esquema de datos de la DNCP teniendo en cuenta las buenas prácticas de desarrollo de ontologías propuestas por la metodología.
-
-
-
+\begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\ttfamily,frame=single]
+ PREFIX java: <http://evolizer.org/ontologies/seon/2009/06/java.owl#>
+ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ SELECT ?url ?name
+ WHERE {
+    ?url rdf:type java:Package .
+    ?url rdfs:label ?name
+ }
+ \end{lstlisting}
 
