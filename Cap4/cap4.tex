@@ -1,0 +1,35 @@
+%!TEX root = ../main.tex
+\chapter{Implementación}
+\label{chap:Implementación de la Ontologia}
+
+
+La intención del trabajo es enriquecer los datos publicados por la DNCP en formato JSON a través de inserción de las propiedades necesarias para convertir un objeto JSON a JSON-LD para luego transformarlos a RDF. Una vez construida la base de datos en formato RDF se podrá montar a un punto SPARQL para realizar consultas y experimentaciones.
+
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=150mm]{figuras/Diagramas-Implementacion.png}
+   \caption{Modelo de Implementación}
+   \label{img:modelo de Implementacion}
+\end{figure}
+
+A continuación explicaremos algunos conceptos relacionados y también las tareas realizadas para lograr montar correctamente el punto SPARQL.
+
+
+\input{Cap4/contextoJSONLD}
+
+
+
+
+\begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\ttfamily,frame=single]
+ PREFIX java: <http://evolizer.org/ontologies/seon/2009/06/java.owl#>
+ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ SELECT ?url ?name
+ WHERE {
+    ?url rdf:type java:Package .
+    ?url rdfs:label ?name
+ }
+ \end{lstlisting}
+

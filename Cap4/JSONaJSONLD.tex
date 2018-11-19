@@ -1,0 +1,32 @@
+\section{De JSON a JSON-LD}
+
+
+Se consultó la API de la DNCP que sigue el formato de OCDS, a modo de ejemplo se utlizó el proceso de licitación numero 193399 a través de la siguiente URL https://www.contrataciones.gov.py/datos/api/v2/doc/ocds/record-package/193399 .
+
+Se extrajo solamente el objeto Compiled Release, que posee toda la información del proceso licitatorio. Una versión resumida del objeto se puede visualizar en la Figura. Se puede ver que el objeto tiene las siguientes propiedades,
+
+\begin{itemize}
+    \item language
+    \item ocid
+    \item date
+    \item tag
+    \item Initiation Type
+    \item planning
+    \item tender
+    \item buyer
+    \item awards
+    \item contracts
+    
+\end{itemize}
+
+FALTA PRINT NEGROO XX
+
+
+
+Para enriquecer semánticamente un objeto debemos agregar un contexto y los respectivos @id para poder convertirlo a JSON-LD. 
+
+Nos encontramos con que no sería suficiente un solo contexto para todo el objeto. Esto se debe a las colisiones que existen entre propiedades que poseen el mismo nombre y distintos significados.
+
+Dado que la definición de los contextos se da en forma de cascada, es decir se toma la definición más próxima, se definió un contexto para cada objeto hijo.
+
+A continuación se muestra la colisión entre conceptos, donde amount (del objeto budget) se refiere al valor monetario (número y moneda) del presupuesto, y la siguiente propiedad amount (del objeto amount) se refiere al valor numérico específicamente.
