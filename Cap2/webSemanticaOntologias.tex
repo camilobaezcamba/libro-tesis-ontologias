@@ -67,4 +67,29 @@ El sujeto, que puede ser una referencia tipo URI o un Blank Node
 El predicado, que es una referencia tipo URI
 El objeto que puede ser una referencia tipo URI, un literal o un Blank Node
 
-En la Figura  se expone un grafo de ejemplo en el cual se visualizan estos tres componentes.
+En la Figura \ref{img:componentes rdf } se expone un grafo de ejemplo en el cual se visualizan estos tres componentes.
+
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{figuras/Diagramas-RDFGraph}
+    \caption{Componentes RDF}
+    \label{img:componentes rdf }
+    \end{figure}
+    
+El sujeto es la fuente de la arista y debe ser un recurso. En RDF, un recurso puede ser cualquier cosa que sea identificable de forma única a través de un URI. Comúnmente este identificador es un URL, que es un caso especial de URI. Sin embargo, los URI son más generales que las URL. En particular, no es requerimiento que un URI se pueda utilizar para localizar un documento en Internet. El objeto de una sentencia es el objetivo de la arista. Al igual que el sujeto, puede ser un recurso identificado por un URI, pero alternativamente puede ser un valor literal como una cadena o un número. Los predicados de una sentencia determinan qué tipo de relación se mantiene entre el sujeto y el objeto. También es identificado por un URI.
+
+Un identificador uniforme de recursos (URI por sus siglas inglés Uniform Resource Identifier) es una cadena de caracteres que identifica inequívocamente un recurso en particular. 
+
+Todos los literales tienen una forma léxica que es una cadena Unicode. Un literal en un grafo RDF puede presentarse de dos formas:
+\begin{itemize}
+    \item Los literales simples tienen una forma léxica y, opcionalmente, una etiqueta de idioma normalizada a minúscula. Ej.: “Hola mundo”@es.
+    \item Los literales tipados que tienen una forma léxica y una URI de tipo de datos que es una referencia de URI RDF. Ej.: “Hola mundo”xsd:string.
+\end{itemize}
+
+Un Blank Node es un nodo en un documento RDF que representa un recurso para el que no se proporciona un URI o literal y también es llamado recurso anónimo.
+
+RDF es simplemente un modelo de datos y no provee significado semántico de los mismos. RDF Schema (RDFS) en cambio es una extensión de RDF que nos permite definir un vocabulario para el uso en modelos de datos RDF, permite definir tipo de clases de un recurso y propiedades que un recurso puede tener, esto a través de un vocabulario que incluye rdfs:Class, rdf:Property , rdfs:subClassOf, rdfs:subPropertyOf, rdfs:domain, rdfs:range y otras propiedades de documentación como son rdfs:label y rdfs:comment.
+
+La sintaxis de RDF puede escribirse en distintos formatos de serialización: RDF/XML, Turtle, TriG, N-Triples, N-Quads y JSON-LD.
+
+
