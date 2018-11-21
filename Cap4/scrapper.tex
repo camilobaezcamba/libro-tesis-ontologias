@@ -1,0 +1,25 @@
+\section{Scrapper y convertidor de JSON-LD}
+
+En la sección anterior se vió el proceso para convertir un objeto JSON a JSON-LD, en esta sección nos enfocaremos en automatizar el proceso de manera programática y tener una base de datos en formato RDF.
+
+Como primer insumo se utilizó la API V2 de la DNCP, se utilizó como base un software desarrollado en Java por Diego Torres también para un trabajo de grado https://github.com/diegotorrespy/scraper, el mismo disponibilizó el trabajo bajo una licencia de libre uso. El software fue optimizado y adaptado según las necesidades de este trabajo, mejorando la velocidad de consulta de los registros.
+
+Como primer paso se utilizó el servicio de buscador de contratos. Se utilizó el buscador para extraer los identificadores de los procesos licitatorios en un rango de fechas. Para este trabajo se decidió trabajar con contrataciones del 1 de Enero del 2016 al 31 de Diciembre del 2016, ya que los mismos contemplan un año completo de ejercicio fiscal y las variaciones de los contratos son mínimas con relación al año actual.
+
+
+
+Como siguiente paso, con los Identificadores recogidos, se consultó la información del proceso licitatorio de los servicios del Estándar Open Contracting. Al realizar las experimentaciones previas se detectó de que el servicio tiende a fallar cuando se solicitan varios procesos licitatorios por segundo, por lo que el software hace varios intentos hasta conseguir descargar el registro. La cantidad y el intervalo entre cada intento es parametrizable dentro del software desarrollado.
+
+El Récord package contiene mucha información, incluyendo todos los Releases del proceso licitatorio. Para este trabajo se consideró solamente el Compiled Release que se encuentra dentro del arreglo de Records, el mismo contiene un recopilado de todos los Releases y la versión final de todos los atributos. Con esta decisión, se pierde el historial de cambios que contempla el OCDS, aunque la DNCP tampoco implementó la publicación del historial de cambios.
+
+El Compiled Release es guardado en un sistema de base de datos no relacional, que nos permite guardar la información en formato JSON, se utilizó este sistema por su versatilidad para el manejo de documentos con este formato.
+
+El siguiente paso, luego de almacenar todos los procesos licitatorios en el sistema de base de datos  (MongoDB), fue la conversión del objeto JSON a JSON-LD esto se hace sistemáticamente identificando las propiedades que son de Tipo JsonObject y agregando las propiedades @id, @context y @type según el nombre de la propiedad, siguiendo el procedimiento y las salvedades expuestas anteriormente. Luego de la conversión se procede a guardar ese nuevo Objeto JSON en una nueva colección en la base de datos mencionada.
+
+El proceso siguiente fue la conversión de los objetos JSON-LD a RDF utilizando la librería Apache Jena. Una vez incluida la librería en el proyecto fue posible realizar esta conversión pasando los objetos JSON-LD e indicando la ubicación del TDB en la que se almacenarán los datos en RDF. TDB es una capa de almacenamiento de grafos persistente para Jena.
+
+De la misma manera se obtuvo los datos de todos los Proveedores del Estado del servicio en JSON-LD que brinda la DNCP, se almacenó en la base de datos MongoDB para su posterior conversión a RDF. 
+
+El software desarrollado va desde la obtención de los datos hasta la transformación y almacenamiento a RDF. Para este trabajo se optó por utilizar Apache Jena, por el gran soporte para JAVA, que es el lenguaje utilizado en el Scrapper de datos. Además de contar con un servidor SPARQL llamado Apache Jena Fuseki.
+
+

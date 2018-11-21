@@ -7,29 +7,5 @@ Para dar contexto a un objeto JSON es necesario agregar el atributo @context. É
 Se puede ir agregando @context a los objetos hijos de forma recursiva. Esto es muy importante debido a que se pueden sobrescribir los contextos exclusivamente para un objeto en particular sin que afecte a la definición de los demás. Más adelante en este capítulos se abordará cada uno de los temas.
 
 
-\begin{lstlisting}[language=json,firstnumber=1]
-    "budget": {
-        "description": "Adquisicion de Scanner",
-        "amount": {
-              "amount": 12000000,
-              "currency": "PYG"
-         }
-     }  
-    \end{lstlisting}
 
-
-    \begin{lstlisting}[language=json,firstnumber=1]
-        "budget": {
-            "@context": "http://girolabs.com.py/ocds/context-budget.json",
-            "@type": "Budget",
-            "description": "Adquisicion de Scanner",
-            "amount": {
-                "@context": "http://girolabs.com.py/ocds/context-value.json",
-                "@type": "Value",
-                "amount": 12000000,
-                "currency": "PYG"
-           }
-       }   
-        \end{lstlisting}
-    
  

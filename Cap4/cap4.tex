@@ -17,19 +17,21 @@ A continuación explicaremos algunos conceptos relacionados y también las tarea
 
 
 \input{Cap4/contextoJSONLD}
+\input{Cap4/JSONaJSONLD}
+\input{Cap4/JSONLD-RDF}
+\input{Cap4/scrapper}
+\input{Cap4/puntoSparql}
+\input{Cap4/conjuntoDeDatos}
 
 
 
 
-\begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\ttfamily,frame=single]
- PREFIX java: <http://evolizer.org/ontologies/seon/2009/06/java.owl#>
- PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
- PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
- SELECT ?url ?name
- WHERE {
-    ?url rdf:type java:Package .
-    ?url rdfs:label ?name
- }
- \end{lstlisting}
+
+
+
+ \section{Discusión del Capítulo }
+
+ Se puso a conocimiento los procesos realizados con relación a la manipulación de los datos así como también las cuestiones de implementación del software desarrollado y la utilización y configuración del Punto SPARQL (Jena Fuseki). Con todo esto puesto a punto, en la siguiente sección explicaremos el proceso de pruebas y resultados obtenidos.
+
+
 

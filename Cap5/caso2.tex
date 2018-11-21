@@ -1,0 +1,111 @@
+\section{Caso 2. Dos fuentes de datos y dos ontología.}
+
+
+Este caso consiste en la integración e interoperabilidad de dos fuentes con semántica enriquecida por el uso de dos ontologías. Se pretende demostrar la facilidad de realizar consultas a dos fuentes de datos a modo de enriquecer la información obtenida.
+
+Se ejecutó una consulta al punto SPARQL que utiliza por un lado la ontología de OCDS y los datos de los procesos licitatorios de la DNCP y por otro lado la ontología desarrollada por la DNCP y los datos de Proveedores. En este caso el publicador de los datos es el mismo, pero las ontologías son distintas.
+
+La consulta presentada en el cuadro xx consiste en obtener datos de una organización cuyo RUC es 80008004-1. Se utiliza el comando SERVICE para realizar consultas a una fuente de datos distinta indicando su URL.
+
+\begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso1,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\ttfamily,frame=single]
+SELECT  *
+    WHERE
+          {   
+             { SELECT DISTINCT   ?c ?d
+                WHERE
+                  { ?organization
+                              rdf:type          ocds:Organization ;
+                              ocds:identifier    ?identifier .
+                    ?identifier  ocds:identifierId  "80008004-1" .
+                    ?organization
+                              ?a                 ?b
+                    OPTIONAL
+                      { ?b  ?c  ?d }
+                  }
+              }
+            UNION {
+            SERVICE <http://localhost:3030/proveedores_completas_no_inf/sparql>
+                  {  ?empresa  rdf:type  dncp:Proveedor ;
+                          dncp:ruc   "80008004-1" ;
+                          ?x         ?y
+                  }
+          }
+          }
+    
+ \end{lstlisting}
+
+
+ En la imagen xx se observan (a la izquierda) los datos obtenidos a partir de los Procesos Licitatorios utilizando la ontología OCDS y a la derecha se observan los datos obtenidos a partir de la fuente de datos de Proveedores que utiliza la ontología de la DNCP.
+
+
+ \begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{figuras/caso2Resultado.png}
+    \caption{Despliegue de resultado de la consulta de l caso 2}
+    \label{img:caso1Resultado}
+ \end{figure}
+
+
+ Se puede observar que ambas fuentes de datos pueden relacionarse entre sí a partir de la propiedad “ocds:identifierId” y “dncp:ruc”. Es posible realizar esta relación debido a que un experto de dominio puede deducir que ambas propiedades denotan los mismos valores. Esta igualdad entre propiedades no está explícitamente definida en la ontología. En el caso que se desee expresar de manera explícita esta información bastaría agregar la propiedad “owl:equivalentProperty” a la definición de la propiedad “identifierId”. Un ejemplo de cómo quedaría la definición de la propiedad “identifierId” puede verse en el cuadro xx. Con esto es posible utilizar indistintamente cualquiera de las dos propiedades para referirse a la misma relación.
+
+
+ \begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso1,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\ttfamily,frame=single]
+###  http://purl.org/onto-ocds/ocds#identifierId
+:identifierId rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+                owl:equivalentProperty dncp:ruc ;
+                rdfs:domain :Identifier ;
+                rdfs:range xsd:integer ,
+                            xsd:string ;
+                rdfs:comment "The identifier of the organization in the selected scheme."@en ;
+                rdfs:label "Identifier ID"@en .
+ \end{lstlisting}
+
+
+ Las propiedades equivalentes tienen los mismos valores, pero pueden ser semánticamente diferentes, en este caso dncp:ruc y ocds:identifierId tienen el mismo valor, y dncp:ruc se refiere al “Código Único del Contribuyente (RUC) de la Secretaría de Estado y Tributación (SET)” y ocds:identifierID se refiere al “Identificador Único de la Organización”. En la tabla xx se expresa la comparación entre las propiedades mencionadas.
+
+ Que dos individuos tengan una propiedad con el mismo valor no necesariamente implica que se trate del mismo individuo. En ontologías, a menos que haya una sentencia que indique que dos individuos son iguales o diferentes, no se puede asumir ninguna de las dos situaciones. 
+
+ Como en los datos no está definida la equivalencia entre ambas instancias, entonces los datos obtenidos de las distintas fuentes deben ser asumidos como iguales por el conocimiento del experto de dominio. La forma de expresar explícitamente la igualdad semántica entre dos instancias seria agregando la sentencia de cuadro xx. En la figura xx se observa como quedaría esta unión semántica entre ambas instancias.
+ 
+
+
+ \begin{table}[]
+    \centering
+    \caption{Modelo de publicación de 5 estrellas}
+    \label{modelo-5-estrellas}
+    \resizebox{15cm}{!} {
+    \begin{tabular}{|c|l|l|}
+    \hline
+    
+Propiedad & Valor &  Significado \\ \hline
+
+ocds:identifierID  & 80008004-1 &  Identificador de la Organización \\ \hline
+Propiedaddncp:ruc & 80008004-1 &  Código Único del Contribuyente de la Secretaría de Estado y Tributación \\ \hline
+
+    \end{tabular}
+    }
+    \end{table}
+
+
+
+    \begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso1,  numbers=left,  numberstyle=\tiny\color{mygray},
+        basicstyle=\ttfamily,frame=single]
+
+<http://www.contrataciones.gov.py/datos/api/v2/doc/proveedores/ruc/80008004-1> 
+owl:sameAs <http://www.contrataciones.gov.py/datos/id/proveedores/fax-comtel-srl>  .
+
+     \end{lstlisting}
+
+     \begin{figure}[h!]
+        \centering
+        \includegraphics[width=150mm]{figuras/Diagramas-Caso 2.png}
+        \caption{Grafo de la consulta del caso 2}
+        \label{img:caso1Resultado}
+     \end{figure}
+
+     Aquí se observa que ambos conjuntos de datos pertenecen al mismo Proveedor/Publicador y los datos de las organizaciones se complementan en cuanto a información se refiere. Por una parte podemos obtener datos como el nombre del punto de contacto (ocds:contactPointName), email y teléfono. Por otra parte se pueden obtener datos como el código de tipo de proveedor, el cual en este ejemplo es “SRL”. 
+
+    

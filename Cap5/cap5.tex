@@ -1,0 +1,74 @@
+%!TEX root = ../main.tex
+\chapter{Contexto experimental}
+\label{chap:Contexto experimental}
+
+
+En esta sección se expondrán los experimentos realizados basados en distintas fuentes de datos y distintas ontologías. La intención de este capítulo es demostrar que gracias a la utilización de ontologías es posible la interoperabilidad semántica y sintáctica entre distintas fuentes de datos. Para ésto mostramos como realizar consultas al Punto SPARQL y pretendemos dar una pequeña demostración de casos prácticos utilizando fuentes de datos y ontologías reales ya existentes. 
+
+Luego del despliegue del Punto SPARQL se procedió a organizar los experimentos. Para ello se definió el siguiente procedimiento:
+
+Clasificar las consultas en casos específicos según complejidad sintactica, semantica o computacional que se requiere teniendo también en cuenta el conjunto de fuentes de datos y ontologías utilizados para realizar las consultas correspondientes.
+En cada caso se definieron consultas lo suficientemente claras y concisas que demuestren el funcionamiento correcto de la ontología utilizada para esa fuente de datos.
+
+En SPARQL es necesario definir primeramente todos los prefijos de las ontologías a utilizar en una determinada consulta. Los prefijos se definen de manera a facilitar la lectura de las consultas. De manera a facilitar la lectura de este documento las agrupamos en el cuadro xx, los prefijos deben ir declarados antes de las consultas a realizar y solamente las ontologías utilizadas en esa consulta en específico.
+
+
+
+
+\begin{lstlisting}[captionpos=b, caption=Prefijos de las consultas SPARQL, label=lst:prefijos,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\ttfamily,frame=single]
+
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX co: <http://rhizomik.net/ontologies/copyrightonto.owl#>
+    PREFIX oc: <http://opencoinage.org/rdf/>
+    PREFIX ocd: <http://dati.camera.it/ocd/>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    PREFIX lic: <http://example.org/licitaciones>
+    PREFIX prov: <http://example.org/proveedores>
+    PREFIX ocds: <http://purl.org/onto-ocds/ocds#>
+    PREFIX dncp: <http://girolabs.com.py/ocds/dncp.owl#>
+    PREFIX pc: <http://purl.org/procurement/public-contracts#>
+    PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+    PREFIX fd: <http://foodable.co/ns/>
+    PREFIX wd: <http://www.wikidata.org/entity/>
+    PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX wikibase: <http://wikiba.se/ontology#>
+    PREFIX p: <http://www.wikidata.org/prop/>
+    PREFIX ps: <http://www.wikidata.org/prop/statement/>
+    PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX bd: <http://www.bigdata.com/rdf#>
+    PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+    PREFIX pproc: <http://contsem.unizar.es/def/sector-publico/pproc#> 
+    PREFIX dcterms: <http://purl.org/dc/terms/> 
+    PREFIX pc: <http://purl.org/procurement/public-contracts#> 
+    PREFIX s: <http://schema.org/> 
+    
+ \end{lstlisting}
+
+
+ A continuación se explica en cada caso los datos utilizados y cual es la intención. También se muestra cuál fue la consulta realizada al punto SPARQL.
+
+
+
+
+\input{Cap5/caso1}
+\input{Cap5/caso2}
+\input{Cap5/caso3}
+\input{Cap5/caso4}
+\input{Cap5/caso5}
+
+
+
+
+
+
+
+
+ \section{Discusión del Capítulo }
+
+ Se puso a conocimiento los procesos realizados con relación a la manipulación de los datos así como también las cuestiones de implementación del software desarrollado y la utilización y configuración del Punto SPARQL (Jena Fuseki). Con todo esto puesto a punto, en la siguiente sección explicaremos el proceso de pruebas y resultados obtenidos.
+
+
+

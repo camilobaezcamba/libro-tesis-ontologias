@@ -1,0 +1,19 @@
+\section{Punto SPARQL}
+
+Para este trabajo se implementó el Jena Fuseki en un servidor para realizar las consultas. Cabe mencionar que todo lo desarrollado se hizo en un entorno experimental, como futuro trabajo queda hacer las optimizaciones correspondientes de tiempo de ejecución y uso de recursos para un entorno de producción o industrial.
+
+Se consulta la colección de la base de datos MongDB generada y se utiliza la librería JENA para transformar y convertir la serialización de JSON-LD a RDF. Luego de la serialización se procede a guardar los datos en un TDB, un sistema de almacenamiento y consulta de RDF, para que luego este sirva como insumo para el punto SPARQL implementado utilizando Apache Jena FUSEKI.
+
+Previo al despliegue del servidor fue necesario realizar una serie de configuraciones.
+
+\begin{enumerate}
+    \item Se indicaron los conjuntos de datos (TDB).
+    \item Se configuraron 2 servicios independientes (Procesos Licitatorios y Proveedores)
+    \item Se activaron los servicios de Razonamiento de FUSEKI indicando que utilizaremos las Reglas Básicas de Razonamiento de OWL. 
+    \item Se realizaron ajustes a la cantidad máxima de memoria (RAM) utilizada ya que la configurada por defecto ocasiona interrupciones o paradas inesperadas del servidor. 
+
+\end{enumerate}
+
+Una vez desplegado el servidor se procedió a cargar las ontologías correspondientes. Desde este momento el punto SPARQL quedó totalmente configurado para realizar las consultas necesarias.
+
+El gráfico siguiente muestra el proceso de conversión, almacenamiento y disponibilización de datos.
