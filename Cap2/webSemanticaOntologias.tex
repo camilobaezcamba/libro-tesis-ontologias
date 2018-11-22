@@ -121,3 +121,135 @@ En el cuadro \ref{lst:n-quads} se muestra un ejemplo de triplas en formato RDF/N
 
 
 En linea 1, <http://www.rodrivaldez5.com/> es el sujeto, <http://schema.org/image> es el predicado y <http://www.rodrivaldez5.com/images/rodri.png> es el objeto, donde el objeto en este caso es una URI. En la línea 2 se puede ver que el objeto se trata de un dato literal de tipo String.  A continuación se presenta JSON-LD, una forma de representación de datos compatible con RDF.
+
+\subsection{Serialización JSON-LD}
+
+JSON, por sus siglas en inglés JavaScript Object Notation es un formato de texto utilizado para la representación e intercambio de datos en la web. JSON-LD \cite{JSONLDSy39:online}, donde LD proviene de Linked Data, es una extensión de JSON cuya idea es lograr el enlace de datos y agregar una capa de semántica a la web. JSON-LD define un mecanismo para mapear los términos JSON (propiedad y valor) a URIs que poseen información semántica acerca del término. 
+
+Todo objeto JSON-LD es es también un objeto JSON. JSON-LD es compatible con RDF, ya que se puede representar en triplas, en este caso el nombre de la propiedad (JSON) corresponde al predicado (RDF), el sujeto (RDF) corresponde al objeto (JSON) y el valor de la propiedad (JSON) corresponde al objeto (RDF).
+
+A continuación se plantea un ejemplo de transformación de un documento JSON a JSON-LD 
+
+En el Cuadro \ref{lst:json} se muestra un ejemplo de documento JSON y en el Cuadro \ref{lst:json-ld} se muestra su transformación a JSON-LD
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+\lstset{
+    language=json
+}
+\begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON, label=lst:json,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\tiny,frame=single]
+{
+  "id": "http://www.rodrivaldez5.com/",
+  "name": "Rodrigo Valdez",
+  "telephone": "0981530572",
+  "jobTitle": "Developer",
+  "image": "http://www.rodrivaldez5.com/images/rodri.png"
+}
+\end{lstlisting}
+
+\begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD, label=lst:json-ld,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\tiny,frame=single]
+{
+"@id": "http://www.rodrivaldez5.com/",
+“@type”: “http://schema.org/person”,
+"http://schema.org/name": "Rodrigo Valdez",
+"http://schema.org/telephone" : "0981530572",
+"http://schema.org/jobTitle": "Developer",
+"http://schema.org/image":   {"@id": "http://www.rodrivaldez5.com/images/rodri.png"} 
+}
+\end{lstlisting}
+
+De aquí se puede observar que el principal cambio radica en los nombres de las propiedades, las cuales ahora son URIs válidos, el resultado es equivalente a las triplas RDF del Cuadro \ref{lst:n-quads}
+
+Además JSON-LD permite crear un contexto que contiene el mapeamiento entre el nombre de la propiedad y la URI, dando como resultado el objeto JSON-LD del Cuadro \ref{lst:json-ld-contexto}
+
+\begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD con Contexto, label=lst:json-ld-contexto,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\tiny,frame=single]
+{
+  "@context": {
+    "name": "http://schema.org/name",  
+    "joTitle": "http://schema.org/jobTitle",  
+    "telephone": "http://schema.org/telephone",  
+    "image": {
+      "@id": "http://schema.org/image",  
+      "@type": "@id"  
+    },
+  
+  },
+  "@id": "http://www.rodrivaldez5.com/",
+  "@type”: "http://schema.org/person",
+  "image": "http://www.rodrivaldez5.com/images/rodri.png",
+  "jobTitle": "Developer",
+  "name": "Rodrigo Valdez",
+  "telephone": "0981530572"
+}
+\end{lstlisting}
+
+El contexto también puede definirse en otro documento diferente y solamente haciendo referencia a éste, quedando el JSON final como se muestra en el Cuadro \ref{lst:json-ld-contexto-referencia}
+
+\begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD con Contexto referenciado, label=lst:json-ld-contexto-referencia,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\tiny,frame=single]
+{
+"@context": "http://schema.org/",
+"@id": "http://www.rodrivaldez5.com/",
+"http://schema.org/name": "Rodrigo Valdez",
+"http://schema.org/telephone" : "0981530572",
+"http://schema.org/jobTitle": "Developer",
+"http://schema.org/image":   {"@id": "http://www.rodrivaldez5.com/images/rodri.png"} 
+}
+\end{lstlisting}
+
+El formato JSON es ampliamente utilizado y preferido por los desarrolladores en la web, en comparación con el formato de representación RDF. En la Tabla \ref{prefencia-uso} se muestra la preferencia de uso entre la serialización RDF y JSON-LD en algunas categorías de aplicaciones \cite{rdfjson}.
+
+\FloatBarrier
+\begin{table}[h]
+\centering
+\caption{Preferencias de uso de serialización RDF y JSON-LD}
+\label{prefencia-uso}
+\resizebox{15cm}{!} {
+\begin{tabular}{|l|l|l|}
+\hline
+ \thead{Categoría de Aplicación} & \thead{RDF o JSON-LD} & \thead{Comentarios}\\\hline
+\multicolumn{1}{|m{5cm}|}{Aplicación Web API} & JSON-LD & \multicolumn{1}{m{5cm}|}{La sintaxis está diseñada para integrar fácilmente en sistemas desplegados que ya usan JSON, y proporciona un camino de actualización sin problemas de JSON a JSON-LD}\\\hline
+\multicolumn{1}{|m{5cm}|}{Aplicaciones de UI basadas en navegador} & JSON-LD & \multicolumn{1}{m{5cm}|}{La gran cantidad de parsers basados en JSON. Javascript es el lenguaje del navegador}\\\hline
+\multicolumn{1}{|m{5cm}|}{Aplicaciones basadas en Inferencia, Razonamiento} & RDF & 
+\multicolumn{1}{m{5cm}|}{Gran soporte para razonadores y almacenes de tripletas escalables}\\\hline
+\multicolumn{1}{|m{5cm}|}{Herramientas de consultas Expresivas} & RDF & \multicolumn{1}{m{5cm}|}{El estado avanzado de SPARQL 1.1 ayuda a escribir consultas potentes y expresivas}\\ \hline
+\end{tabular}
+}
+\end{table}
+\FloatBarrier
+
+
