@@ -1,1 +1,34 @@
-\section{Caso 5. Mejora de la expresividad de la ontología}
+\section{Caso 5. Mejora de la expresividad de la ontología. }
+
+Se puede extender la capacidad semántica de la ontología actualizando el modelo ontológico sin que implique un alto costo debido a que éste se encuentra desacoplado de los datos.
+
+Para este caso se utilizó la fuente de datos de procesos licitatorios y la ontología OCDS. Se define el concepto de “Proceso Licitatorio con Contrato” a través de una una clase (PLConContrato) a partir de una restricción de propiedad. Esta clase se define como una subclase de Release, que tiene como restricción todas las instancias de la clase Release que tengan al menos una relación en la propiedad ocds:contracts.
+
+
+\begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso1,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\small,frame=single]
+INSERT DATA {
+    ocds:PLConContrato rdfs:subClassOf ocds:Release ; 
+    owl:equivalentClass    [ 
+        rdf:type owl:Class ;
+        owl:intersectionOf (   
+            ocds:Release [ rdf:type owl:Restriction ;
+                                        owl:onProperty ocds:contracts; 
+                    owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+                            ] )
+                ] .
+}
+    
+ \end{lstlisting}
+
+ De esta manera basta solo con realizar la consulta SPARQL presentada en el cuadro xx para obtener todos los procesos licitatorios con al menos un contrato. La restricción consigue filtrar solo los “Release” cuya propiedad “contracts” tiene al menos una instancia.
+
+ \begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso1,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\small,frame=single]
+SELECT  *
+    WHERE
+      { ?a  ?b  ocds:PLConContrato }
+    
+ \end{lstlisting}
+
+ Esta capacidad de extender la ontología nos permite hacer consultas de manera simple sin la necesidad de hacer modificaciones a los datos y agregando conocimiento de dominio a la ontología
