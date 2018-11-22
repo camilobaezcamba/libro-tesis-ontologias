@@ -92,4 +92,32 @@ RDF es simplemente un modelo de datos y no provee significado semántico de los 
 
 La sintaxis de RDF puede escribirse en distintos formatos de serialización: RDF/XML, Turtle, TriG, N-Triples, N-Quads y JSON-LD.
 
+En el cuadro \ref{lst:n-quads} se muestra un ejemplo de triplas en formato RDF/N-Quads :
 
+\definecolor{maroon}{rgb}{0.5,0,0}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\lstdefinelanguage{XML}
+{
+  basicstyle=\ttfamily,
+  morestring=[s]{"}{"},
+  morecomment=[s]{?}{?},
+  morecomment=[s]{!--}{--},
+  commentstyle=\color{darkgreen},
+  moredelim=[s][\color{black}]{>}{<},
+  moredelim=[s][\color{red}]{\ }{=},
+  stringstyle=\color{blue},
+  identifierstyle=\color{maroon}
+}
+\lstset{language=XML, morekeywords={encoding,
+    xs:schema,xs:element,xs:complexType,xs:sequence,xs:attribute}}
+\begin{lstlisting}[captionpos=b, caption=Ejemplo en RDF/N-Quads, label=lst:n-quads,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\tiny,frame=single]
+<http://www.rodrivaldez5.com/><http://www.w3.org/2000/01/rdf-schema#type><http://schema.org/person> .  
+<http://www.rodrivaldez5.com/><http://schema.org/name>"Rodrigo Valdez" .
+<http://www.rodrivaldez5.com/><http://schema.org/telephone>"0981530572" .
+<http://www.rodrivaldez5.com/><http://schema.org/jobTitle>"Developer" .
+<http://www.rodrivaldez5.com/><http://schema.org/image><http://www.rodrivaldez5.com/images/rodri.png> .
+\end{lstlisting}
+
+
+En linea 1, <http://www.rodrivaldez5.com/> es el sujeto, <http://schema.org/image> es el predicado y <http://www.rodrivaldez5.com/images/rodri.png> es el objeto, donde el objeto en este caso es una URI. En la línea 2 se puede ver que el objeto se trata de un dato literal de tipo String.  A continuación se presenta JSON-LD, una forma de representación de datos compatible con RDF.
