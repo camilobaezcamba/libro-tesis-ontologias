@@ -4,7 +4,7 @@ En este caso se pretende demostrar la capacidad de reutilización e inferencia p
 
 Para obtener las convocatorias de la DNCP es necesario que el Punto SPARQL utiliza el motor de inferencia ya que los datos no están anotados directamente con la propiedad “pc:Tender” pero sí están anotados con “ocds:Tender” la cual, en la ontología de OCDS, está definida como una subclase de “pc:Tender” (como se muestra en el cuadro xx).
 
-\begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso1,  numbers=left,  numberstyle=\tiny\color{mygray},
+\begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso4-1,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 ###  http://purl.org/onto-ocds/ocds#Tender
 :Tender rdf:type owl:Class ;
@@ -13,9 +13,11 @@ Para obtener las convocatorias de la DNCP es necesario que el Punto SPARQL utili
         rdfs:label "Tender"@en .
  \end{lstlisting}
 
+ 
+
  La consulta realizada en el cuadro xx consiste en listar los primeros 6 contratos encontrados (3 de Paraguay y 3 de Zaragoza)”.
 
- \begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso1,  numbers=left,  numberstyle=\tiny\color{mygray},
+ \begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso4-2,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 select ?tender
 where {
@@ -53,7 +55,7 @@ where {
 
  \begin{figure}[h!]
     \centering
-    \includegraphics[width=150mm]{figuras/Diagramas-Caso 4.png}
+    \includegraphics[width=150mm]{figuras/Diagramas-Caso4.png}
     \caption{Diagrama de la consulta del caso 4}
     \label{img:Diagramas-Caso 4}
  \end{figure}

@@ -5,7 +5,7 @@ Se pretende demostrar la integración e interoperabilidad con una ontología esp
 La consulta realizada en el cuadro xx consiste en obtener la cantidad de todos los Procesos Licitatorios cuyos proveedores residen en países que no son limítrofes con Paraguay, agrupando estas cantidades de acuerdo al país.
 
 
-\begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso1,  numbers=left,  numberstyle=\tiny\color{mygray},
+\begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso2-3,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 select *
     where {
@@ -45,7 +45,7 @@ Se utilizó el nombre del país en ambos conjuntos de datos como elemento de rel
     \centering
     \includegraphics[width=150mm]{figuras/caso3Resultado1.png}
     \caption{Despliegue de resultado de la consulta del caso 3}
-    \label{img:caso1Resultado}
+    \label{img:caso3Resultado1}
  \end{figure}
 
 
@@ -56,22 +56,22 @@ En la figura xx se ve el resultado si se suprime el filtro por países limítrof
     \centering
     \includegraphics[width=150mm]{figuras/caso3Resultado2.png}
     \caption{Despliegue de resultado de la consulta del caso 3}
-    \label{img:caso1Resultado}
+    \label{img:caso3Resultado2}
  \end{figure}
 
 
  \begin{figure}[h!]
     \centering
-    \includegraphics[width=150mm]{figuras/Diagramas-Caso 3.png}
+    \includegraphics[width=150mm]{figuras/Diagramas-Caso3.png}
     \caption{Despliegue de resultado de la consulta del caso 3}
-    \label{img:caso1Resultado}
+    \label{img:DiagramaCaso3}
  \end{figure}
 
  Esta consulta podría tener inconvenientes si la forma de escribir del nombre de los país cambiara, es el caso de ISRAEL en la línea 5 de la figura xx que se encuentra en mayúsculas. Para evitar esto, lo óptimo sería que los atributos no sean de tipo texto sino más bien sean objetos dentro del conjunto de datos de la DNCP y éstos estén relacionados con otros semejantes dentro de la Web Semántica.
 
 En el cuadro xx se muestra la definición actual de la propiedad “countryName” que pertenece a la clase “Address". Se observa que el tipo de propiedad es “DatatypeProperty” el cual representa un literal. 
 
-\begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso1,  numbers=left,  numberstyle=\tiny\color{mygray},
+\begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=3-2,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\small,frame=single]
 ###  http://purl.org/onto-ocds/ocds#countryName
 :countryName rdf:type owl:DatatypeProperty ,
@@ -85,7 +85,7 @@ En el cuadro xx se muestra la definición actual de la propiedad “countryName�
 
  En el cuadro xx se muestra una posible solución al inconveniente mencionado. Primeramente se debe renombrar la propiedad “countryName” a “country” para que de esta forma denote la relación con un país y no con el nombre del país solamente. Luego se debe cambiar el rango de valores de “rdfs: range xsd:string” a “rdfs:range :Country” donde “Country” se refiere a una nueva clase a ser definida en la ontología. Esta última será la que represente al concepto “País”. Luego deberá definirse una instancia del país (por cada país que exista en la fuente de datos) de tipo “Country”. Finalmente faltaría relacionar este recurso con otro semejante dentro de la Web Semántica, en este caso se puede realizar con los datos disponibles en Wikidata a través de la sentencia “owl:sameAs wd:Q733” donde “wd:Q733” es el identificador único (URI) de Paraguay en Wikidata.
 
- \begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso1,  numbers=left,  numberstyle=\tiny\color{mygray},
+ \begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso3-3,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\small,frame=single]
 PREFIX wd: <http://www.wikidata.org/entity/>
 
