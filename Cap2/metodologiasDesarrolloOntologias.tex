@@ -1,0 +1,44 @@
+\section{Metodologías para el desarrollo de Ontologías}
+
+En este apartado se dará un resumen de las metodologías más utilizadas para la creación de una ontología; Ontology Development 101, OntoKnowledge , Methontology, y NeOn. Luego se realizará un análisis y elección según los requerimientos de este trabajo.
+
+\subsection{Ontology Development 101}
+
+Esta metodología describe una serie de pasos y recomendaciones a la hora de crear una ontología. 
+
+Se describen a continuación los pasos:
+\begin{description}
+\item[Paso 1:] Determinar el dominio y alcance de la ontología.
+\item[Paso 2:] Considerar la reutilización de ontologías.
+\item[Paso 3:] Enumerar términos importantes de la ontología.
+\item[Paso 4:] Definir las clases y las jerarquías de las clases.
+\item[Paso 5:] Definir las propiedades de las clases.
+\item[Paso 6:] Definir las características de cada clase y propiedad.
+\item[Paso 7:] Crear instancias.
+\end{description}
+
+Además la guía propone algunas buenas prácticas de desarrollo de ontologías relacionadas a la definición de clases como la correcta creación de jerarquías, herencias múltiples,  cuándo crear una clase o una propiedad, cuando es una instancia o una clase, etc. También algunos delineamientos sobre las propiedades como valores por defecto, cardinalidad, etc. Por último, una serie de convenciones de nombres dentro de la ontología. La metodología no tiene en cuenta el proceso de especificación ni el mantenimiento de la ontología.
+
+\subsection{OntoKnowledge} 
+
+Ontoknowledge propone crear ontologías teniendo en cuenta su uso posterior en sistemas de administración de conocimiento, por tanto las ontologías creadas son dependientes de la aplicación. La metodología incluye la identificación de metas a ser logradas a través de herramientas de control basadas en los escenarios de usos.
+
+El proceso que propone la metodología se puede resumir en los siguientes pasos:
+
+\textbf{Estudio de Factibilidad.} Esta debe ser aplicada a toda la aplicación y debe llevarse a cabo antes del desarrollo de la ontología. Aquí se identifica el problema y las áreas de oportunidades, se selecciona la mejor área de enfoque para la solución.
+
+\textbf{Patada Inicial.} El resultado de este proceso es el Documento de Especificación de Requerimientos de la Ontología (ORSD). Se describen las metas y el dominio de la ontología, líneas de diseño (convenciones de nombres), lista de recursos disponibles (libros, revistas, documentación, etc), potenciales usuarios y casos de uso, así como las aplicaciones que utilizarán la ontología. Para esto se propone crear una lista de preguntas de competencia las cuales debe satisfacer la ontología creada. Los conceptos y relaciones más importantes son identificados en un nivel informal. También se debe de buscar ontologías para su potencial reuso, la metodología no provee un delineamiento para identificar dichas ontologías.
+
+\textbf{Refinamiento.} Aquí se construye una ontología sólida orientada a la aplicación acorde al proceso de especificación. Este proceso se divide en dos actividades:
+
+\begin{description}
+\item[Actividad 1:] Extracción del conocimiento del los expertos del dominio. Los axiomas de la ontología son definidos y modelados por los expertos del dominio. La metodología propone el uso de una representación intermedia para modelar el conocimiento.
+\item[Actividad 2:] Formalización de la ontología. La ontología es implementada en un lenguaje ontológico, el lenguaje es seleccionado según los requerimientos del uso de la ontología.
+\end{description}
+
+Evaluación. Este paso sirve para probar la usabilidad de la ontología desarrollada dentro del entorno para la cual fue desarrollada. En este proceso se verifica que se puedan responder las preguntas de competencia y que se satisfagan los requerimientos, además se prueba la ontología en el entorno de software para el cual se desarrolló.
+
+Mantenimiento. En esta etapa es importante recalcar quién es el responsable de mantener la ontología y cómo se debe hacerlo.
+
+La metodología propone un ciclo de vida incremental y cíclico como se muestra en la figura xx.
+

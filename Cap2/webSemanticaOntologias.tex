@@ -255,3 +255,25 @@ El formato JSON es ampliamente utilizado y preferido por los desarrolladores en 
 \FloatBarrier
 
 
+
+\subsection{Web Ontology Language (OWL)}
+OWL es un estándar internacional para codificar e intercambiar ontologías y es diseñado para soportar la Web Semántica.
+
+OWL es el lenguaje de representación de conocimientos recomendado por la W3C y es una extensión de RDFS, dándole mayor expresividad a través de operaciones booleanas (intersección, unión, complemento), restricciones de cardinalidad, cuantificación existencial, etc. El mismo está basado en lenguajes de representación de conocimientos llamados Lógica de Descripciones (DL). DL es un lenguaje formal usado para construir ontologías y permite declarar conocimiento de un dominio específico e incluir reglas de razonamiento para poder procesarlo [Kalibatiene and Vasilecas, 2011]
+
+Al estar basado en DL, OWL nos trae consigo las siguientes ventajas
+\begin{itemize}
+    \item Expresividad: La Lógica de Descripciones nos permite tener expresiones complejas de los conceptos a modelar.
+    \item Razonador Automático: la Lógica de Descripciones está basado en lógica formal, eso nos permite desarrollar razonadores capaces de verificar la consistencia de la ontológica e inferir nuevo conocimiento.
+\end{itemize}
+
+OWL posee tres sub lenguajes: OWL Lite, OWL DL y OWL Full. Todos permiten describir clases, propiedades e instancias pero difieren uno de otro en el nivel de especificación requerido. OWL Lite está diseñado para usuarios cuyas necesidades de modelado sean simples. OWL DL es lo más cercano a una DL expresiva manteniendo la completitud computacional, esto significa que la ontología es procesable computacionalmente. OWL Full posee mayor expresividad sacrificando la completitud computacional de la ontología. En la Figura \ref{img:subclases owl} se muestra la relación entre los tres sublenguajes.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=150mm]{figuras/Diagramas-OwlSubClasses}
+    \caption{Subclases OWL}
+    \label{img:subclases owl}
+    \end{figure}
+
+OWL DL posee todas las características de OWL Lite más sus propias complejidades. OWL Full posee las mismas características de OWL DL agregando otras que resultan en mayor complejidad.
