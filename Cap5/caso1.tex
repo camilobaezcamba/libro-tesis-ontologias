@@ -5,9 +5,6 @@ Aquí se pretende dar una demostración de cómo realizar una consulta simple a 
 
 En el cuadro xx se muestra la consulta realizada al Punto SPARQL
 
-
-
-
 \begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es 302438, label=lst:caso1,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\tiny,frame=single]
 SELECT *  
@@ -28,7 +25,7 @@ En la línea 3 encontramos la restricción cuya intención es asegurar que el re
 Como podemos ver en el cuadro xx, no es necesario conocer las propiedades, tipos de datos ni relaciones existentes entre los conceptos para realizar la consulta, es decir nos permite realizar consultas donde el modelo de datos no es necesariamente conocido. El único dato necesario fue la URI de un Proceso de Contratación. En cambio, si comparamos con una consulta en una base de datos relacional, para obtener todos los datos de un Proceso de Contratación, posiblemente se requeriría realizar un JOIN entre varias tablas relacionadas. Para poder realizar esto necesitaríamos conocer cuáles son las tablas involucradas y cuáles son las columnas para aplicar el JOIN correctamente.
 
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=150mm]{figuras/caso1Resultado.png}
     \caption{Despliegue de resultado de la consulta de l caso 1}

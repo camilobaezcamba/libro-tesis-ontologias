@@ -31,7 +31,7 @@ Un proceso de contratación se define como toda la información relativa a la pl
 
 Un proceso de contratación agrupa información sobre diferentes etapas o fases relacionadas a la vida útil de un contrato, a partir de la planificación, progresando a través de las etapas de iniciación u oferta, luego por la adjudicación y contrato y finalizando con la implementación del producto o servicio como se muestra en la figura \ref{img:fases del proceso licitatorio }.
 
-\begin{figure}[h!]
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas_ProcesoLicitatorio.png}
     \caption{Modelo de fases del Proceso Licitatorio}
@@ -45,7 +45,7 @@ Además de estas etapas existe otro concepto importante que es el bloque de Orga
 
 Este bloque contiene información necesaria para describir los antecedentes de un proceso de contratación y puede incluir detalles del presupuesto del que se extraen los fondos o proyectos relacionados. Todo proceso de contratación posee una única planificación, dicha planificación tiene un presupuesto (budget) asociado donde finalmente se indica el valor o monto estimado para la adquisición del bien o servicio. Un diagrama de los componentes principales de la clase Planificación puede verse en la figura \ref{img:Fase de Planificacion}.
 
-\begin{figure}[h!]
+\begin{figure}[htbp!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas_Planificacion.png}
     \caption{Modelo de fase de Planificación}
@@ -56,7 +56,7 @@ paragraph{Convocatoria (Tender)}
 
 Este bloque incluye detalles del anuncio indicando que una organización tiene la intención de abastecerse de algunos bienes o servicios y establecer uno o más contratos para estos. Todo proceso de contratación posee una única convocatoria, dicha convocatoria tiene asociada la organización involucrada en el proceso. Además, la convocatoria indica los ítems requeridos, el período establecido, los documentos utilizados, las adendas que pudieran haberse realizado sobre la convocatoria original y la lista de hitos. Se observa el esquema en la figura \ref{img:Fase de Convocatoria}
 
-\begin{figure}[h!]
+\begin{figure}[htbp!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas_Convocatoria.png}
     \caption{Modelo de fase de Convocatoria}
@@ -67,7 +67,7 @@ Este bloque incluye detalles del anuncio indicando que una organización tiene l
 Este bloque se utiliza para anunciar las adjudicaciones emitidas para una licitación. Todo proceso de contratación puede involucrar una o más adjudicaciones, dichas adjudicaciones indican, para cada proveedor (organización), los ítems adjudicados, el valor o monto adjudicado y los documentos asociados al proceso. Esto se aprecia en la figura \ref{img:Fase de Adjudiacion}
 
 
-\begin{figure}[h!]
+\begin{figure}[htbp!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas_Adjudicacion.png}.
     \caption{Modelo de fase de Adjudicación}
@@ -78,7 +78,7 @@ Este bloque se utiliza para anunciar las adjudicaciones emitidas para una licita
 \paragraph{Contrato (Contract)}
 Este bloque se utiliza para proporcionar detalles de los contratos que se han celebrado. Todo proceso de contratación puede involucrar uno o más contratos, cada uno de los cuales debe estar asociado a una adjudicación específica. El proveedor (organización) adjudicado está indicado en la adjudicación, no así en el contrato. El contrato también indica los ítems adjudicados, los documentos asociados al proceso y la implementación del contrato. La implementación del contrato contiene información acerca de los hitos, las transacciones realizadas y los documentos utilizados. En la figura \ref{img:Fase de Contrato} vemos un esquema de la estructura del Contrato.
 
-\begin{figure}[h!]
+\begin{figure}[htbp!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas_Contrato.png}
     \caption{Modelo de fase de Contrato}
@@ -114,7 +114,7 @@ Un Record Package es un esquema de agrupación para la publicación de Records, 
 
 
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas-RecordPackage.png}
     \caption{Record Package}
@@ -160,7 +160,7 @@ Para los Codelist Abiertos se los convirtió en individuals, en otros términos,
 Por último, se consideraron los patrones mencionados anteriormente para los siguientes conceptos:
 Para el concepto Value del OCDS, que representan valores monetarios, se utilizó el patrón “Price”. El patrón describe el precio de alguna entidad, dicho precio contiene un valor y una moneda. En la figura \ref{img:Modelo de Precio} se muestra el diagrama del patrón.
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas_Precio.png}
     \caption{Modelo de Precio}
@@ -172,7 +172,7 @@ En cuanto a la implementación, se optó por mantener Value y Currency como Data
 
 Para el concepto Period, que representan periodos de tiempo se utilizó el patrón “TimeInterval”. El patrón describe un intervalo de tiempo que contiene una fecha de inicio, una fecha de fin y una fecha del intervalo. Un posible uso del patrón sería la fecha “Agosto del 2018” tiene un fecha de inicio “1 de Agosto” y una fecha de fin “31 de Agosto”.En la implementación se omitió la propiedad Intervalo de tiempo, ya que no es necesaria para este este dominio. El modelo se puede ver en la figura \ref{img:Modelo de Intervalo de precio}
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas_Tiempo.png}
     \caption{Modelo de Intervalo de tiempo}
@@ -182,7 +182,7 @@ Para el concepto Period, que representan periodos de tiempo se utilizó el patr�
 
 Para la relación que existe entre Planning, Tender, Award, Contract e Implementation, que tienen una relación de dependencia y de secuencia, se utilizó el patrón “Sequence”. El patrón describe una secuencia de hecho a través de las propiedades Precede, Precede Directamente, Antecede y Antecede Directamente. Por ejemplo, decidir qué camisa utilizare precede directamente a colocarse la camisa, y precede a colocarse la corbata. En la figura \ref{img:Modelo de dependencia y secuencia} se presenta el diagrama del patrón. Se utilizó este patrón para describir la secuencia del proceso de contrataciones.
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas_Follows.png}
     \caption{Modelo de dependencia y secuencia}

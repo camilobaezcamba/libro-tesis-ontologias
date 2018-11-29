@@ -8,7 +8,7 @@ Open Data se refiere al hecho de mantener los datos publicados en internet de ta
 
 Linked Open Data se enfoca en un método de publicación de datos abiertos estructurados para que puedan ser interconectados. Para lograr esto se utilizan las tecnologías como RDF, RDFa, etc. para estructurar los datos, utilizando URIs para identificar los datos individualmente. Tim Berners Lee define un modelo de 5 estrellas para clasificar e identificar el grado de publicación de datos abiertos.
 
-\begin{table}[]
+\begin{table}[tbp]
 \centering
 \caption{Modelo de publicación de 5 estrellas}
 \label{modelo-5-estrellas}
@@ -49,7 +49,7 @@ La capacidad de razonamiento es importante para asegurar la calidad de la ontolo
 
 Las formas de representar ontologías en la Web Semántica son diversas en cuanto a lenguajes y formas de serialización, a continuación se presenta algunas de ellas.
 
-    \begin{figure}[h!]
+    \begin{figure}[ht!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas-ComplejidadOntologica}
     \caption{Expresividad vs Complejidad}
@@ -69,7 +69,7 @@ El objeto que puede ser una referencia tipo URI, un literal o un Blank Node
 
 En la Figura \ref{img:componentes rdf } se expone un grafo de ejemplo en el cual se visualizan estos tres componentes.
 
-    \begin{figure}[h!]
+    \begin{figure}[ht!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas-RDFGraph}
     \caption{Componentes RDF}
@@ -110,13 +110,14 @@ En el cuadro \ref{lst:n-quads} se muestra un ejemplo de triplas en formato RDF/N
 }
 \lstset{language=XML, morekeywords={encoding,
     xs:schema,xs:element,xs:complexType,xs:sequence,xs:attribute}}
+\footnotesize
 \begin{lstlisting}[captionpos=b, caption=Ejemplo en RDF/N-Quads, label=lst:n-quads,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\tiny,frame=single]
-<http://www.rodrivaldez5.com/><http://www.w3.org/2000/01/rdf-schema#type><http://schema.org/person> .  
-<http://www.rodrivaldez5.com/><http://schema.org/name>"Rodrigo Valdez" .
-<http://www.rodrivaldez5.com/><http://schema.org/telephone>"0981530572" .
-<http://www.rodrivaldez5.com/><http://schema.org/jobTitle>"Developer" .
-<http://www.rodrivaldez5.com/><http://schema.org/image><http://www.rodrivaldez5.com/images/rodri.png> .
+<http://www.rodrivaldez5.com/> <http://www.w3.org/2000/01/rdf-schema#type> <http://schema.org/person> .  
+<http://www.rodrivaldez5.com/> <http://schema.org/name>"Rodrigo Valdez" .
+<http://www.rodrivaldez5.com/> <http://schema.org/telephone>"0981530572" .
+<http://www.rodrivaldez5.com/> <http://schema.org/jobTitle>"Developer" .
+<http://www.rodrivaldez5.com/> <http://schema.org/image> <http://www.rodrivaldez5.com/images/rodri.png> .
 \end{lstlisting}
 
 
@@ -234,7 +235,8 @@ El contexto también puede definirse en otro documento diferente y solamente hac
 El formato JSON es ampliamente utilizado y preferido por los desarrolladores en la web, en comparación con el formato de representación RDF. En la Tabla \ref{prefencia-uso} se muestra la preferencia de uso entre la serialización RDF y JSON-LD en algunas categorías de aplicaciones \cite{rdfjson}.
 
 \FloatBarrier
-\begin{table}[h]
+\begin{table}[ht!]
+\footnotesize
 \centering
 \caption{Preferencias de uso de serialización RDF y JSON-LD}
 \label{prefencia-uso}

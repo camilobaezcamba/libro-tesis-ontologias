@@ -52,7 +52,7 @@ En la  tabla xx se muestra una comparación entre las 5 ontologías analizadas.
 
 
 
-\begin{table}[htpb]
+\begin{table}[!htpb]
     \caption{Comparación entre las ontologías LOTED, LOTED2, PCO y PPROC.}
     \label{tab:comparacion_ontologias}
     
@@ -92,7 +92,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
 
 
     
-\begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
+\begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql1,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 :Document rdf:type owl:Class ;
     rdfs:subClassOf foaf:Document .
@@ -100,7 +100,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
 
  Al mismo tiempo se reutilizaron de la ontología Public Contract, los conceptos de Tender y Contract de un proceso licitatorio
 
- \begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
+ \begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql2,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 :Tender rdf:type owl:Class ;
     rdfs:subClassOf pc:Tender .
@@ -111,7 +111,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
  Good Relations es una ontología para modelar compras de bienes y servicios a través de internet, por lo que también se procedió a la reutilización de los conceptos gr:Offering, gr:BusinessEntity y gr:PriceSpecification.
 
 
- \begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
+ \begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql3,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 :Item rdf:type owl:Class ;
     rdfs:subClassOf gr:Offering .
@@ -127,7 +127,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
  Se reutilizó la ontología de Schema.org para conceptos básicos como los presentados a continuación.
 
 
- \begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
+ \begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql4,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 :Address rdf:type owl:Class ;
     rdfs:subClassOf sch:PostalAddress .
@@ -140,7 +140,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
 
 
 
- \begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
+ \begin{lstlisting}[captionpos=b, caption=SPARQL query, label=lst:sparql5,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 :planningPrecedes rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf seq:directlyPrecedes ;
@@ -157,7 +157,7 @@ Estos enunciados utilizados fueron elegidos teniendo en cuenta todas las ontolog
 
 Con esto se concluyó con la reutilización de ontologías, paso necesario para poder enriquecer la semántica de la ontología desarrollada. La figura xx es una representación visual en forma de grafo de la ontología desarrolla. A continuación, se procederá al uso de la ontología desarrollada y posteriores pruebas con la misma.
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=150mm]{figuras/grafoOntologia2.png}
     \caption{Grafo de la ontología desarrollada}
