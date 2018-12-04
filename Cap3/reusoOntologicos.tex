@@ -20,13 +20,13 @@ Con relación a ontologías más generales y relacionadas de alguna manera al do
 Observando LOV dentro del dominio de estudio, se realizó una búsqueda a través de la etiqueta “Contract”, teniendo como resultado los siguientes recursos ontológicos:
 
 \begin{itemize}
-    \item c4n - Call for Anything vocabulary\footnote{https://lov.linkeddata.es/dataset/lov/vocabs/c4n}
-    \item eli- The European Legislation Identifier\footnote{https://lov.linkeddata.es/dataset/lov/vocabs/eli}
-    \item ldr - Linked Data Rights\footnote{https://lov.linkeddata.es/dataset/lov/vocabs/ldr}
-    \item loted - LOTED ontology\footnote{https://lov.linkeddata.es/dataset/lov/vocabs/loted}
-    \item pay - Payments ontology\footnote{https://lov.linkeddata.es/dataset/lov/vocabs/pay}
-    \item  pc - Public Contracts Ontology\footnote{https://lov.linkeddata.es/dataset/lov/vocabs/pc}
-    \item pproc - PPROC ontology\footnote{https://lov.linkeddata.es/dataset/lov/vocabs/pproc}  
+    \item c4n - Call for Anything vocabulary \footnote{https://lov.linkeddata.es/dataset/lov/vocabs/c4n}
+    \item eli- The European Legislation Identifier \footnote{https://lov.linkeddata.es/dataset/lov/vocabs/eli}
+    \item ldr - Linked Data Rights \footnote{https://lov.linkeddata.es/dataset/lov/vocabs/ldr}
+    \item loted - LOTED ontology \footnote{https://lov.linkeddata.es/dataset/lov/vocabs/loted}
+    \item pay - Payments ontology \footnote{https://lov.linkeddata.es/dataset/lov/vocabs/pay}
+    \item  pc - Public Contracts Ontology \footnote{https://lov.linkeddata.es/dataset/lov/vocabs/pc}
+    \item pproc - PPROC ontology \footnote{https://lov.linkeddata.es/dataset/lov/vocabs/pproc} 
 \end{itemize}
 
 
@@ -39,6 +39,8 @@ La más utilizada en el sector de contrataciones públicas es la Public Contract
 La ontología PPROC [Muñoz-Soro et al., 2016] fue desarrollada siguiendo las especificaciones de OWL, utiliza clases de PCO, así como también de otras ontologías como Organization Ontology, Schema.org, SKOS y para la definición de conceptos relacionados a ofertas realizadas utiliza Good Relations. Uno de los objetivos específicos de PPROC es la publicación del perfil del contratante de las administraciones que participan en los proceso de licitación.
 
 Tanto LOTED como LOTED2, PCO y PPROC utilizan RDF/XML para la definición de la ontología debido a su fuerte poder de describir los atributos de los recursos. 
+
+Otra ontología que vale mencionar es la desarrollada por la DNCP, la misma está definida en OWL con la serialización XML. Si bien la misma utilizó el lenguaje OWL como sintaxis, no tuvo en cuenta principios importantes en el modelado y desarrollo de una ontología. Como ejemplo, la ontología desarrollada no tuvo en cuenta el nivel de especificación de los datos, se encuentran definiciones de Clases como Número, Texto, Fecha , Email, siendo que estos conceptos podrían modelarse como DataType Properties de tipo Texto o Número.De igual manera, la misma representa un diccionario de datos importante y un acercamiento a la formalización sintactica y semantica de su modelo de datos.
 
 En la  tabla xx se muestra una comparación entre las 5 ontologías analizadas.
 
