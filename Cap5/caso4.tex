@@ -2,9 +2,9 @@
 
 En este caso se pretende demostrar la capacidad de reutilización e inferencia para la integración de datos. Utilizamos la fuente de Procesos Licitatorios de la DNCP y la fuente de Procesos Licitatorios de Zaragoza, donde ambos reutilizan la ontología de Public Contract dentro de sus respectivas ontologías.
 
-Para obtener las convocatorias de la DNCP es necesario que el Punto SPARQL utiliza el motor de inferencia ya que los datos no están anotados directamente con la propiedad “pc:Tender” pero sí están anotados con “ocds:Tender” la cual, en la ontología de OCDS, está definida como una subclase de “pc:Tender” (como se muestra en el cuadro xx).
+Para obtener las convocatorias de la DNCP es necesario que el Punto SPARQL utiliza el motor de inferencia ya que los datos no están anotados directamente con la propiedad “pc:Tender” pero sí están anotados con “ocds:Tender” la cual, en la ontología de OCDS, está definida como una subclase de “pc:Tender” (como se muestra en el cuadro \ref{lst:caso4-1}).
 
-\begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso4-1,  numbers=left,  numberstyle=\tiny\color{mygray},
+\begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label={lst:caso4-1},  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 ###  http://purl.org/onto-ocds/ocds#Tender
 :Tender rdf:type owl:Class ;
@@ -15,9 +15,9 @@ Para obtener las convocatorias de la DNCP es necesario que el Punto SPARQL utili
 
  
 
- La consulta realizada en el cuadro xx consiste en listar los primeros 6 contratos encontrados (3 de Paraguay y 3 de Zaragoza)”.
+ La consulta realizada en el cuadro  consiste en listar los primeros 6 contratos encontrados (3 de Paraguay y 3 de Zaragoza)”.
 
- \begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label=lst:caso4-2,  numbers=left,  numberstyle=\tiny\color{mygray},
+ \begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label={lst:caso4-2},  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 select ?tender
 where {
