@@ -5,7 +5,7 @@ Aquí se pretende dar una demostración de cómo realizar una consulta simple a 
 
 En el cuadro \ref{lst:caso1} se muestra la consulta realizada al Punto SPARQL
 
-\begin{lstlisting}[captionpos=b, caption={Información referente al proceso licitatorio cuyo identificacor es 302438}, label={lst:caso1},  numbers=left,  numberstyle=\tiny\color{mygray},
+\begin{lstlisting}[captionpos=b, caption={Tripas referente al proceso licitatorio cuyo identificacor es 302438}, label={lst:caso1},  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\tiny,frame=single]
 SELECT *  
 where {    	
@@ -23,6 +23,7 @@ En la imagen \ref{img:caso1Resultado} se muestran los resultados obtenidos. Los 
 En la línea 3 encontramos la restricción cuya intención es asegurar que el recurso se trate de un Release, esto es posible debido a la utilización de la ontología desarrollada. En la línea 4 se consulta por el conjunto de triplas que cumplan la condición de tener como sujeto la IRI del proceso licitatorio. Con dicha sentencia, se obtiene una serie de triplas correspondientes a todas las relaciones de dicho proceso. Con la sentencia de la línea 5 se obtienen las triplas que tengan como sujeto el objeto proveniente del resultado de la primera sentencia. En otras otras palabras, se obtienen datos provenientes del segundo nivel del árbol. Haciendo esta segunda sentencia opcional, se puede también desplegar aquellas triplas que no tienen un segundo nivel en el árbol, por ende se muestran los datos directos del Proceso Licitatorio.
 
 Como podemos ver en el cuadro \ref{lst:caso1} , no es necesario conocer las propiedades, tipos de datos ni relaciones existentes entre los conceptos para realizar la consulta, es decir nos permite realizar consultas donde el modelo de datos no es necesariamente conocido. El único dato necesario fue la URI de un Proceso de Contratación. En cambio, si comparamos con una consulta en una base de datos relacional, para obtener todos los datos de un Proceso de Contratación, posiblemente se requeriría realizar un JOIN entre varias tablas relacionadas. Para poder realizar esto necesitaríamos conocer cuáles son las tablas involucradas y cuáles son las columnas para aplicar el JOIN correctamente.
+
 
 
 \begin{figure}[ht!]

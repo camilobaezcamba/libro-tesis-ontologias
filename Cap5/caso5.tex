@@ -5,7 +5,7 @@ Se puede extender la capacidad semántica de la ontología actualizando el model
 Para este caso se utilizó la fuente de datos de procesos licitatorios y la ontología OCDS. Se define el concepto de “Proceso Licitatorio con Contrato” a través de una una clase (PLConContrato) a partir de una restricción de propiedad. Esta clase se define como una subclase de Release, que tiene como restricción todas las instancias de la clase Release que tengan al menos una relación en la propiedad ocds:contracts.
 
 
-\begin{lstlisting}[captionpos=b, caption=Información referente al proceso licitatorio cuyo identificacor es, label={lst:caso5-1},  numbers=left,  numberstyle=\tiny\color{mygray},
+\begin{lstlisting}[captionpos=b, caption=Extension de la ontologia utilizando restricciones ontologicas, label={lst:caso5-1},  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\small,frame=single]
 INSERT DATA {
     ocds:PLConContrato rdfs:subClassOf ocds:Release ; 
@@ -23,7 +23,7 @@ INSERT DATA {
 
  De esta manera basta solo con realizar la consulta SPARQL presentada en el cuadro \ref{lst:caso5-2} para obtener todos los procesos licitatorios con al menos un contrato. La restricción consigue filtrar solo los “Release” cuya propiedad “contracts” tiene al menos una instancia.
 
- \begin{lstlisting}[captionpos=b, caption=Información referente a un proceso licitatorio, label=lst:caso5-2,  numbers=left,  numberstyle=\tiny\color{mygray},
+ \begin{lstlisting}[captionpos=b, caption=Consulta SPARQL utilizando la Clase PLConContrato, label=lst:caso5-2,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\small,frame=single]
 SELECT  *
     WHERE
