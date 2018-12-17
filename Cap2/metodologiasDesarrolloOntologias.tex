@@ -143,20 +143,35 @@ Los escenarios están ligados a un modelo dentro del ciclo de vida, como se mues
 \caption{Escenarios vs Modelo}
 \label{escenarios vs modelo}
 \resizebox{15cm}{!} {
-\begin{tabular}{|l|C|c|c|c|c|}
+\begin{tabular}{|l|c|c|c|c|c|}
 \hline
- & \multicolumn{1}{|m{2cm}|}{Modelo de 4-fases} & \multicolumn{1}{|m{2cm}|}{Modelo de 5-fases} & \multicolumn{1}{|m{2cm}|}{Modelo de 5-fases + mezcla} & \multicolumn{1}{|m{2cm}|}{Modelo de 6-fases} & \multicolumn{1}{|m{2cm}|}{Modelo de 6-fases + mezcla} \\ \hline
+ & \multicolumn{1}{m{2cm}|}{Modelo de 4-fases} & \multicolumn{1}{m{2cm}}{Modelo de 5-fases} & \multicolumn{1}{|m{2cm}|}{Modelo de 5-fases + mezcla} & \multicolumn{1}{m{2cm}}{Modelo de 6-fases} & \multicolumn{1}{|m{2cm}|}{Modelo de 6-fases + mezcla} \\ \hline
  Escenario 1 & x & & & & \\ \hline
- Escenario 2 & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{x} & \multicolumn{1}{|m{2cm}|}{} \\ \hline
- Escenario 3 & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{x} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} \\ \hline
- Escenario 4 & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{x} & \multicolumn{1}{|m{2cm}|}{} \\ \hline
- Escenario 5 & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{x} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} \\ \hline
- Escenario 6 & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{x} \\ \hline
- Escenario 7 & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{x} & \multicolumn{1}{|m{2cm}|}{} \\ \hline
- Escenario 8 & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{x} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} \\ \hline
- Escenario 9 & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{x} & \multicolumn{1}{|m{2cm}|}{} & \multicolumn{1}{|m{2cm}|}{} \\ \hline
+ Escenario 2 & & & & x & \\ \hline
+ Escenario 3 & & x & & & \\ \hline
+ Escenario 4 & & & & x & \\ \hline
+ Escenario 5 & & & x & & \\ \hline
+ Escenario 6 & & & & & x \\ \hline
+ Escenario 7 & & & & x & \\ \hline
+ Escenario 8 & & & x & & \\ \hline
+ Escenario 9 & & & x & & \\ \hline
 \end{tabular}
 }
 \end{table}
 
+Cabe mencionar que estos escenarios se pueden combinar de maneras diferentes y flexibles, y que cualquier combinación de escenarios debería incluir el Escenario 1 porque este escenario está compuesto por las actividades centrales que deben realizarse en cualquier desarrollo de ontología.
+En la Tabla \ref{tab:comparacion} se presenta un cuadro comparativo con las metodologías introducida en las secciones anteriores. 
 
+\begin{table}[tbp]
+\centering
+\caption{Comparación de Metodologías de Desarrollo de Ontologías}
+\label{tab:comparacion}
+\resizebox{15cm}{!} {
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|m{3cm}|}{Metodología/ Criterios} & \multicolumn{1}{|m{3cm}|}{Ontology Development 101} & \multicolumn{1}{|m{3cm}|}{OntoKnowledge} & \multicolumn{1}{|m{3cm}|}{Methontology} & \multicolumn{1}{|m{3cm}|}{NeOn Methodology} \\ \hline
+\multicolumn{1}{|m{3cm}|}{Colaboración} & \multicolumn{1}{|m{3cm}|}{No} & \multicolumn{1}{|m{3cm}|}{No} & \multicolumn{1}{|m{3cm}|}{No} & \multicolumn{1}{|m{3cm}|}{Si} \\ \hline
+
+\end{tabular}
+}
+\end{table}
