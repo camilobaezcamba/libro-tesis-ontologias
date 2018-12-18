@@ -191,9 +191,8 @@
 \include{abstract}
 
 % los siguientes comandos producen 'indices.
-
-\renewcommand{\lstlistlistingname}{Lista de Cuadros}
-
+\renewcommand{\lstlistingname}{Cuadro}
+\renewcommand{\lstlistlistingname}{Índice de \lstlistingname s}
 
 % Tabla de contenidos
 \tableofcontents
@@ -203,7 +202,11 @@
 \listoftables
 % Lista de algoritmos
 %\listofalgorithms
-\lstlistoflistings
+\newpage
+\renewcommand\lstlistlistingname{Índice de Cuadros}
+ \addcontentsline{toc}{chapter}{Índice de Cuadros}
+ \lstlistoflistings
+ 
 %\printglossary[type=\acronymtype,title=Lista de Siglas]
 %\addcontentsline{toc}{chapter}{Lista de Siglas}
 \include{acronimos}
