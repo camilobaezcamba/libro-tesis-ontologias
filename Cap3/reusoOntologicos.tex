@@ -57,21 +57,31 @@ En la  tabla \ref{tab:comparacion_ontologias} se muestra una comparación entre 
     \label{tab:comparacion_ontologias}
     
     \scriptsize 
-    \begin{tabular}{L{2cm}C{3cm}C{3cm}C{2.5cm}C{3cm}}
-    
+    \begin{tabular}{|L{2cm}|C{3cm}|C{3cm}|C{2.5cm}|C{3cm}|}
+    \hline
      & LOTED & LOTED2 & PCO & PPROC \\
-    
+    \hline
+
     
     Cantidad de Axiomas & 172 & 1709 & 450 & 1501 \\
+    \hline
+
     Cantidad de Clases & 23 & 177 & 22 & 92\\
-    Lenguaje & OWL (RDF/XML) & OWL (RDF/XML) & OWL(RDF/XML) & OWL (RDF/XML)\\\\
+    \hline
+
+    Lenguaje & OWL (RDF/XML) & OWL (RDF/XML) & OWL(RDF/XML) & OWL (RDF/XML)\\
+    \hline
     Metodología & Propia & 
     Un enfoque de arriba hacia abajo (extracción de conceptos jurídicos de fuentes legales) y en una de abajo hacia arriba (análisis de las formas estándar).
      & Propia & Ontology Development 101\\
+     \hline
     Cantidad de ontologías reutilizadas & 2 (DBpedia, geonames) & 2 & 7 & 6\\
+    \hline
     Propósito de la ontología & Agregar un nivel de estructura a los datos obtenidos de TED & Dar un contexto legal. Permitir la construcción de aplicaciones legales de Web Semántica para contrataciones publicas. & Modelar contratos públicos en general & Incorporar las técnicas
     semánticas en las herramientas utilizadas por las Administraciones públicas en los procesos de contratación\\
+    \hline
     Ultima versión & 03 Jul. 2012 & 24 Jul. 2013 & 10 Oct. 2012 & (1.0.0)29 Oct. 2014\\
+    \hline
     \end{tabular}
     
     \bigskip
@@ -89,7 +99,7 @@ Como en este trabajo se desarrolló una ontología desde el principio utilizando
 Para los documentos correspondientes a cada fase del proceso licitatorio se hizo una especialización de la clase Document, siendo así una subclase del mismo. Por lo tanto tenemos el enunciado del cuadro  \ref{lst:sparql1}
 
 
-    
+
 \begin{lstlisting}[captionpos=b, caption={Reutilización de la Clase Document}, label={lst:sparql1},  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 :Document rdf:type owl:Class ;
