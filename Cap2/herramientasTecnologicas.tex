@@ -28,6 +28,9 @@ Para consultar triplas basadas en RDF han surgido varios lenguajes de consulta, 
 
 A forma de explicar la semántica y sintaxis completa de este lenguaje en el Cuadro \ref{lst:consulta-sparql} se muestra en un ejemplo la utilización del lenguaje realizando una consulta básica a la base de datos de DBPEDIA \cite{DBpedia:online} donde se listaron los nombres, fechas de nacimiento, fallecimiento y las URIs de personas nacidas en Paraguay antes de 1900, ordenadas por nombre.
 
+\lstset{
+    language=SPARQL
+}
 \begin{lstlisting}[captionpos=b, caption=Ejemplo de consulta SPARQL, label=lst:consulta-sparql,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\tiny,frame=single]
 PREFIX dbo: <http://dbpedia.org/ontology/>
