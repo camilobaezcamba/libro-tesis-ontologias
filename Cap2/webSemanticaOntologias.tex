@@ -112,7 +112,8 @@ En el cuadro \ref{lst:n-quads} se muestra un ejemplo de triplas en formato RDF/N
 }
 \lstset{language=XML, morekeywords={encoding,
     xs:schema,xs:element,xs:complexType,xs:sequence,xs:attribute}}
-
+    
+\noindent\begin{minipage}{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Ejemplo en RDF/N-Quads, label=lst:n-quads,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\tiny,frame=single]
 <http://rodrivaldez5.com/> <http://www.w3.org/2000/01/rdf-schema#type> <http://schema.org/person> .  
@@ -121,7 +122,7 @@ En el cuadro \ref{lst:n-quads} se muestra un ejemplo de triplas en formato RDF/N
 <http://www.rodrivaldez5.com/> <http://schema.org/jobTitle>"Developer" .
 <http://www.rodrivaldez5.com/> <http://schema.org/image> <http://www.rodrivaldez5.com/images/rodri.png> .
 \end{lstlisting}
-
+\end{minipage}
 
 En linea 1, <http://www.rodrivaldez5.com/> es el sujeto, <http://schema.org/image> es el predicado y <http://www.rodrivaldez5.com/images/rodri.png> es el objeto, donde el objeto en este caso es una URI. En la línea 2 se puede ver que el objeto se trata de un dato literal de tipo String.  A continuación se presenta JSON-LD, una forma de representación de datos compatible con RDF.
 
@@ -201,6 +202,7 @@ De aquí se puede observar que el principal cambio radica en los nombres de las 
 
 Además JSON-LD permite crear un contexto que contiene el mapeamiento entre el nombre de la propiedad y la URI, dando como resultado el objeto JSON-LD del Cuadro \ref{lst:json-ld-contexto}
 
+\noindent\begin{minipage}{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD con Contexto, label=lst:json-ld-contexto,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\tiny,frame=single]
 {
@@ -222,7 +224,7 @@ Además JSON-LD permite crear un contexto que contiene el mapeamiento entre el n
   "telephone": "0981530572"
 }
 \end{lstlisting}
-
+\end{minipage}
 El contexto también puede definirse en otro documento diferente y solamente haciendo referencia a éste, quedando el JSON final como se muestra en el Cuadro \ref{lst:json-ld-contexto-referencia}
 
 \noindent\begin{minipage}{\textwidth}
