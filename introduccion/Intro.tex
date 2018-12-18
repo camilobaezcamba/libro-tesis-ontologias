@@ -1,5 +1,6 @@
 %!TEX root = ../main.tex
 \chapter{Introducción}
+\label{chap:introduccion}
 Según el reporte de la Open Contracting Partnership (OCP), los Gobiernos de todo el mundo gastan un estimado de 9.5 billones de dólares anualmente mediante contratos. Sin embargo, en la mayoría de los países, la información sobre estos contratos no está disponible para el escrutinio público, haciendo al proceso de contratación vulnerable a la corrupción y la mala gestión. Además, los países que sí lo hacen, no proveen un contexto apropiado para entender, reutilizar e integrar dichos datos con otros.
 
 Debido a la creciente importancia de publicar los datos de contrataciones públicas  los Estados crean portales de datos con el fin de transparentar los procesos y establecer mecanismos para que la ciudadanía, empresas y organizaciones puedan ejercer un rol de contralores y a la vez facilitar a los entes gubernamentales a contratar bienes y servicios. Este es el caso del portal Tender Electronic Daily (TED) en la Unión Europea, República Checa, y la Municipalidad de Palmares en Costa Rica. En Paraguay, estos datos pueden ser obtenidos desde el Portal de Datos Abiertos de la Dirección Nacional de Contrataciones Públicas (DNCP).
@@ -20,25 +21,31 @@ El problema computacional que se quiere resolver es la interoperabilidad sintác
 
 \section{Objetivo General del Proyecto}
 
+El objetivo general es verificar experimentalmente la expresividad asociada a la interoperabilidad semántica establecida por una ontologías desarrollada con base en un protocolo de intercambio de datos.
 
 
 \section{Objetivos Específicos}
-\label{objetivos}
+\label{objetivos especiicos}
 
+\begin{enumerate}
+    \item \label{obj:1}  Identificar y comparar las bases representación de conocimientos asociado al dominio de Contrataciones Públicas.
+    \item \label{obj:2}  Describir el proceso de modelado de una ontologia utilizando una base de representacion de conocimiento de dominio.
+    \item \label{obj:3}  Modelar un sistema de extracción y consultas de datos del dominio Contrataciones Públicas.
+    \item \label{obj:4}  Mostrar el uso de la ontologia con datos de Contrataciones Publicas del Paraguay.
+\end{enumerate}
 
 
 \section{Contribuciones}
 \label{Contribuciones}
 \begin{itemize}
-\item Serie de mejoras y propuestas de solución de errores a la API de la DNCP.
-\item Software de extracción y manipulación de datos de Procesos Licitatorios disponibilizados por la DNCP.
-\item Documentación del proceso del desarrollo de una Ontología, reutilizando de un recurso no-ontológico basado en JSON-SCHEMA.
+\item Modelado e implementación de un sistema de extracción y manipulación de datos de Procesos Licitatorios disponibilizados por la DNCP.
+\item Descripción del proceso de modelado de una Ontología, reutilizando de un recurso no-ontológico basado en JSON-SCHEMA.
 \item Una Ontología basada en el OCDS.
-\item Casos de cómo lograr la interoperabilidad entre los datos publicados por la DNCP y otras fuentes de datos.
+\item Descripciones experimentales descriptas sobre cómo aumentar la interoperabilidad en los datos publicados.
 \end{itemize}
  
 
 \section{Estructura del documento}
-El trabajo está estructurado de la siguiente manera; en  en el  Capítulo \ref{chap:Marco Teorico}  trataremos el marco teórico del trabajo abordando los temas de la web semántica, las ontologías, sus metodologías y herramientas. En el Capítulo \ref{chap:Desarrollo de la Ontologia} se mostrará el proceso del modelado de la ontología, en el Capítulo \ref{chap:Implementación de la Ontologia} se implementará el entorno tecnológico de experimentación para luego en el Capítulo  \ref{chap:Contexto experimental} mostrar las pruebas realizadas a los datos que utilizan la ontología desarrollada. En el Capítulo \ref{chap:Conclusiones} se evaluará el cumplimiento de los objetivos propuestos, las conclusiones finales y futuros trabajos que pudieran abordarse. Al final de este documento  se  incluyen las referencias bibliográficas utilizadas para su elaboración y el anexo que provee información complementaria al trabajo.
+El trabajo está estructurado de la siguiente manera; en  en el  Capítulo \ref{chap:Marco Teorico}  trataremos el marco teórico del trabajo abordando los temas de la web semántica, las ontologías, sus metodologías y herramientas. En el Capítulo \ref{chap:Desarrollo de la Ontologia} se mostrará el proceso del modelado de la ontología, en el Capítulo \ref{chap:Implementación de la Ontologia} se implementará el entorno tecnológico de experimentación para luego en el Capítulo  \ref{chap:Contexto experimental} mostrar las pruebas realizadas a los datos que utilizan la ontología desarrollada. En el Capítulo \ref{chap:conclusiones} se evaluará el cumplimiento de los objetivos propuestos, las conclusiones finales y futuros trabajos que pudieran abordarse. Al final de este documento  se  incluyen las referencias bibliográficas utilizadas para su elaboración y el anexo que provee información complementaria al trabajo.
 
 
