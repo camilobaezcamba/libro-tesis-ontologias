@@ -57,21 +57,31 @@ En la  tabla \ref{tab:comparacion_ontologias} se muestra una comparación entre 
     \label{tab:comparacion_ontologias}
     
     \scriptsize 
-    \begin{tabular}{L{2cm}C{3cm}C{3cm}C{2.5cm}C{3cm}}
-    
+    \begin{tabular}{|L{2cm}|C{3cm}|C{3cm}|C{2.5cm}|C{3cm}|}
+    \hline
      & LOTED & LOTED2 & PCO & PPROC \\
-    
+    \hline
+
     
     Cantidad de Axiomas & 172 & 1709 & 450 & 1501 \\
+    \hline
+
     Cantidad de Clases & 23 & 177 & 22 & 92\\
-    Lenguaje & OWL (RDF/XML) & OWL (RDF/XML) & OWL(RDF/XML) & OWL (RDF/XML)\\\\
+    \hline
+
+    Lenguaje & OWL (RDF/XML) & OWL (RDF/XML) & OWL(RDF/XML) & OWL (RDF/XML)\\
+    \hline
     Metodología & Propia & 
     Un enfoque de arriba hacia abajo (extracción de conceptos jurídicos de fuentes legales) y en una de abajo hacia arriba (análisis de las formas estándar).
      & Propia & Ontology Development 101\\
+     \hline
     Cantidad de ontologías reutilizadas & 2 (DBpedia, geonames) & 2 & 7 & 6\\
+    \hline
     Propósito de la ontología & Agregar un nivel de estructura a los datos obtenidos de TED & Dar un contexto legal. Permitir la construcción de aplicaciones legales de Web Semántica para contrataciones publicas. & Modelar contratos públicos en general & Incorporar las técnicas
     semánticas en las herramientas utilizadas por las Administraciones públicas en los procesos de contratación\\
+    \hline
     Ultima versión & 03 Jul. 2012 & 24 Jul. 2013 & 10 Oct. 2012 & (1.0.0)29 Oct. 2014\\
+    \hline
     \end{tabular}
     
     \bigskip
@@ -86,29 +96,33 @@ Podemos utilizar la totalidad de una ontología que cumple con las expectativas 
 
 Como en este trabajo se desarrolló una ontología desde el principio utilizando como insumo principal un recurso no-ontológico, se abordará la reutilización por enunciados, de esta forma se enriquece la ontología primeramente desarrollada. La reutilización por enunciado se puede hacer en varios momentos del ciclo de vida del la ontología desarrollada. En este trabajo sólo se utilizarán los conceptos principales de las ontologías antes analizadas, pudiendo seguir reutilizando nuevos enunciados en fases posteriores.
 
-Para los documentos correspondientes a cada fase del proceso licitatorio se hizo una especialización de la clase Document, siendo así una subclase del mismo. Por lo tanto tenemos el enunciado del cuadro  \ref{lst:sparql1}
+Para los documentos correspondientes a cada fase del proceso licitatorio se hizo una especialización de la clase Document, siendo así una subclase del mismo. Por lo tanto tenemos el enunciado del Cuadro \ref{lst:sparql1}.\hfill \break
 
 
-    
+\noindent\begin{minipage}{\textwidth}
+
 \begin{lstlisting}[captionpos=b, caption={Reutilización de la Clase Document}, label={lst:sparql1},  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 :Document rdf:type owl:Class ;
     rdfs:subClassOf foaf:Document .
- \end{lstlisting}
+\end{lstlisting}
+\end{minipage}
 
- Al mismo tiempo se reutilizaron de la ontología Public Contract, los conceptos de Tender y Contract de un proceso licitatorio(cuadro \ref{lst:sparql2})
+ Al mismo tiempo se reutilizaron de la ontología Public Contract, los conceptos de Tender y Contract de un proceso licitatorio(Cuadro \ref{lst:sparql2}).\hfill \break
 
+\noindent\begin{minipage}{\textwidth}
  \begin{lstlisting}[captionpos=b, caption={Conceptos de Tender y Contract}, label={lst:sparql2},  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 :Tender rdf:type owl:Class ;
     rdfs:subClassOf pc:Tender .
 :Contract rdf:type owl:Class ;
     rdfs:subClassOf pc:Contract .
- \end{lstlisting}
+\end{lstlisting}
+\end{minipage}
 
- Good Relations es una ontología para modelar compras de bienes y servicios a través de internet, por lo que también se procedió a la reutilización de los conceptos gr:Offering, gr:BusinessEntity y gr:PriceSpecification (cuadro \ref{lst:sparql3})
+ Good Relations es una ontología para modelar compras de bienes y servicios a través de internet, por lo que también se procedió a la reutilización de los conceptos gr:Offering, gr:BusinessEntity y gr:PriceSpecification (Cuadro \ref{lst:sparql3}).\hfill \break
 
-
+\noindent\begin{minipage}{\textwidth}
  \begin{lstlisting}[captionpos=b, caption={Conceptos de Organization y Price}, label={lst:sparql3},  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 :Item rdf:type owl:Class ;
@@ -120,11 +134,11 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
 
 
  \end{lstlisting}
+\end{minipage}
 
+ Se reutilizó la ontología de Schema.org para conceptos básicos como los presentados el Cuadro \ref{lst:sparql4}.\hfill \break
 
- Se reutilizó la ontología de Schema.org para conceptos básicos como los presentados el cuadro \ref{lst:sparql4}.
-
-
+\noindent\begin{minipage}{\textwidth}
  \begin{lstlisting}[captionpos=b, caption={Reutilizacion de Schema.org}, label={lst:sparql4},  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 :Address rdf:type owl:Class ;
@@ -132,12 +146,12 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
 :ContactPoint rdf:type owl:Class ;
     rdfs:subClassOf sch:ContactPoint .
  \end{lstlisting}
+\end{minipage}
+
+ Además se utilizó la ontología Sequence para modelar la relación de secuencia que existe dentro del proceso licitatorio. En el Cuadro \ref{lst:sparql5} muestra como ejemplo la propiedad que indica que la Planificación precede directamente al Llamado.\hfill \break
 
 
- Además se utilizó la ontología Sequence para modelar la relación de secuencia que existe dentro del proceso licitatorio. En el cuadro \ref{lst:sparql5} muestra como ejemplo la propiedad que indica que la Planificación precede directamente al Llamado.
-
-
-
+\noindent\begin{minipage}{\textwidth}
  \begin{lstlisting}[captionpos=b, caption={Reutilizacion del patron de Secuencia}, label={lst:sparql5},  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\ttfamily,frame=single]
 :planningPrecedes rdf:type owl:ObjectProperty ;
@@ -149,11 +163,11 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
 
 
  \end{lstlisting}
-
+\end{minipage}
 
 Estos enunciados utilizados fueron elegidos teniendo en cuenta todas las ontologías del dominio y también la forma de reuso que existían entre las mismas. 
 
-Con esto se concluyó con la reutilización de ontologías, paso necesario para poder enriquecer la semántica de la ontología desarrollada. La figura \ref{img:grafo ontologia desarrolla} es una representación visual en forma de grafo de la ontología desarrolla. A continuación, se procederá al uso de la ontología desarrollada y posteriores pruebas con la misma.
+Con esto se concluyó con la reutilización de ontologías, paso necesario para poder enriquecer la semántica de la ontología desarrollada. La Figura \ref{img:grafo ontologia desarrolla} es una representación visual en forma de grafo de la ontología desarrolla. A continuación, se procederá al uso de la ontología desarrollada y posteriores pruebas con la misma.
 
 \begin{figure}[ht!]
     \centering

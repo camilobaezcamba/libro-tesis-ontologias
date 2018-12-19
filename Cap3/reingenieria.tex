@@ -41,8 +41,7 @@ Un proceso de contratación agrupa información sobre diferentes etapas o fases 
 Las etapas son correlativas, esto significa que necesariamente debe de existir la etapa anterior antes de existir la siguiente. Todas las etapas representan un bloque de información.
 
 Además de estas etapas existe otro concepto importante que es el bloque de Organización, que puede corresponder tanto al comprador como al oferente. Esta Organización puede estar ligada a cualquiera de las etapas del proceso de contratación. A continuación se detallan cada una de las etapas.
-\paragraph{Planificación (Planning)}
-
+\paragraph{Planificación (Planning)}\hfill \break
 Este bloque contiene información necesaria para describir los antecedentes de un proceso de contratación y puede incluir detalles del presupuesto del que se extraen los fondos o proyectos relacionados. Todo proceso de contratación posee una única planificación, dicha planificación tiene un presupuesto (budget) asociado donde finalmente se indica el valor o monto estimado para la adquisición del bien o servicio. Un diagrama de los componentes principales de la clase Planificación puede verse en la figura \ref{img:Fase de Planificacion}.
 
 \begin{figure}[htbp!]
@@ -52,8 +51,7 @@ Este bloque contiene información necesaria para describir los antecedentes de u
     \label{img:Fase de Planificacion}
 \end{figure}
 
-paragraph{Convocatoria (Tender)}
-
+\paragraph{Convocatoria (Tender)}\hfill \break
 Este bloque incluye detalles del anuncio indicando que una organización tiene la intención de abastecerse de algunos bienes o servicios y establecer uno o más contratos para estos. Todo proceso de contratación posee una única convocatoria, dicha convocatoria tiene asociada la organización involucrada en el proceso. Además, la convocatoria indica los ítems requeridos, el período establecido, los documentos utilizados, las adendas que pudieran haberse realizado sobre la convocatoria original y la lista de hitos. Se observa el esquema en la figura \ref{img:Fase de Convocatoria}
 
 \begin{figure}[htbp!]
@@ -63,7 +61,7 @@ Este bloque incluye detalles del anuncio indicando que una organización tiene l
     \label{img:Fase de Convocatoria}
 \end{figure}
 
-\paragraph{Adjudicación (Award)}
+\paragraph{Adjudicación (Award)}\hfill \break
 Este bloque se utiliza para anunciar las adjudicaciones emitidas para una licitación. Todo proceso de contratación puede involucrar una o más adjudicaciones, dichas adjudicaciones indican, para cada proveedor (organización), los ítems adjudicados, el valor o monto adjudicado y los documentos asociados al proceso. Esto se aprecia en la figura \ref{img:Fase de Adjudiacion}
 
 
@@ -75,7 +73,7 @@ Este bloque se utiliza para anunciar las adjudicaciones emitidas para una licita
 \end{figure}
 
 
-\paragraph{Contrato (Contract)}
+\paragraph{Contrato (Contract)}\hfill \break
 Este bloque se utiliza para proporcionar detalles de los contratos que se han celebrado. Todo proceso de contratación puede involucrar uno o más contratos, cada uno de los cuales debe estar asociado a una adjudicación específica. El proveedor (organización) adjudicado está indicado en la adjudicación, no así en el contrato. El contrato también indica los ítems adjudicados, los documentos asociados al proceso y la implementación del contrato. La implementación del contrato contiene información acerca de los hitos, las transacciones realizadas y los documentos utilizados. En la figura \ref{img:Fase de Contrato} vemos un esquema de la estructura del Contrato.
 
 \begin{figure}[htbp!]
@@ -85,18 +83,16 @@ Este bloque se utiliza para proporcionar detalles de los contratos que se han ce
     \label{img:Fase de Contrato}
 \end{figure}
 
-\paragraph{Otros componentes del estándar}
-
+\paragraph{Otros componentes del estándar}\hfill \break
 El estándar posee además otros componentes o bloques que agrupan y contienen metadatos de publicación de los datos.  A continuación se detallan dichos componentes.
 
-\paragraph{Releases}
+\paragraph{Releases}\hfill \break
 Para fomentar la mayor apertura de información el estándar está preparado para publicar la información en tiempo real. En cada etapa del proceso de contratación o con cada cambio que ocurra sobre los datos, el estándar prevé la publicación de esa nueva porción de información mediante releases.
 Los releases son acumulativos, es decir, durante un proceso de contratación se pueden proporcionar uno o más releases, por ejemplo: describir una licitación, anunciar la adjudicación de contratos y proporcionar actualizaciones sobre los mismos.
 Una vez que un release ha sido publicado no puede cambiar. La información actualizada debe ser compartida a través de un nuevo release.
 Los releases pueden ser publicados a través de un único sistema o de manera distribuida por diferentes sistemas, pero todos éstos deben estar relacionados a partir de un identificador único denominado Open Contracting ID (OCID).
 
-\paragraph{Records}
-
+\paragraph{Records}\hfill \break
 Un registro (Record) de contratación provee una instantánea del proceso de contratación en un punto dado en el tiempo, que reúne todas las versiones por las cuales pasó ese proceso en un solo lugar.
 Un Record contiene tres elementos clave: 
 \begin{itemize}
@@ -105,11 +101,10 @@ Un Record contiene tres elementos clave:
     \item Una versión histórica de releases que contiene la historia con todos los cambios realizados sobre los datos.
 \end{itemize}
 
-\paragraph{Release package}
+\paragraph{Release package}\hfill \break
 Un release package es un esquema de agrupación para la publicación de releases, describe el documento contenedor y metadatos para la publicación de releases.
 
-\paragraph{Record package}
-
+\paragraph{Record package}\hfill \break
 Un Record Package es un esquema de agrupación para la publicación de Records, describe el documento contenedor y metadatos para la publicación de Records. En la Figura \ref{img:Record Package} se muestra el modelo conceptual de Record Package.
 
 
@@ -124,7 +119,7 @@ Un Record Package es un esquema de agrupación para la publicación de Records, 
 
 \subsubsection{Transformación del recurso no-ontológico}
 En esta sección se utilizaron los patrones de diseño para seguir construyendo un modelo conceptual y luego proseguir con la implementación de la ontología. 
-\paragraph{Búsqueda de Patrones de Diseño}
+\paragraph{Búsqueda de Patrones de Diseño}\hfill \break
 El objetivo de este paso es buscar posibles patrones de diseño que conviertan el recurso no-ontológico en un modelo conceptual. 
 Una vez analizado el esquema del OCDS se procedió a la búsqueda de patrones de diseño de ontologías, se utilizó el repositorio ontologydesingpatterns.org para realizar esta búsqueda de patrones bien conocidos por la comunidad de desarrolladores de ontologías y recomendado por la metodología NeOn.
 Los patrones que son relevantes son aquellos que involucran tiempo, dinero, empresas u organizaciones, lugares y procesos en general. Luego de una búsqueda se encontraron los siguientes patrones de diseño que podrían ser útiles al momento del desarrollo de la ontología.
@@ -156,7 +151,7 @@ Se creó un patrón de conversión del estándar de documentacion JSON SCHEMA ht
 El esquema del OCDS posee una lista de códigos (Codelist) de dos tipos, abiertos y cerrados. Los Codelist Abiertos proveen códigos sugeridos, los publicadores pueden extender esta lista con nuevos códigos sin el consenso de otros publicadores. Mientras que los Codelist Cerrados proveen códigos mandatorios, los publicadores solo pueden utilizar los valores de la lista oficial, cambios a codelist cerrados deben hacerse a través de la gobernanza y revisión de la lista. Esta lista de códigos fueron transformados utilizando el patrón mencionado a continuación. 
 
 Para los Codelist Abiertos se los convirtió en individuals, en otros términos, instancias de los conceptos. Para los Codelist Cerrados  se los convirtió en Enumerated Classes. Las Enumerated Classes impiden la declaración de nuevos individuos que pertenecen a esta clase, siendo así más restrictivos.
-\paragraph{Utilización de patrones}
+\paragraph{Utilización de patrones}\hfill \break
 Por último, se consideraron los patrones mencionados anteriormente para los siguientes conceptos:
 Para el concepto Value del OCDS, que representan valores monetarios, se utilizó el patrón “Price”. El patrón describe el precio de alguna entidad, dicho precio contiene un valor y una moneda. En la figura \ref{img:Modelo de Precio} se muestra el diagrama del patrón.
 

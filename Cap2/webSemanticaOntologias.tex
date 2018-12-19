@@ -99,6 +99,7 @@ En el cuadro \ref{lst:n-quads} se muestra un ejemplo de triplas en formato RDF/N
 \lstdefinelanguage{XML}
 {
   basicstyle=\ttfamily,
+  numberstyle=\scriptsize,
   morestring=[s]{"}{"},
   morecomment=[s]{?}{?},
   morecomment=[s]{!--}{--},
@@ -106,11 +107,13 @@ En el cuadro \ref{lst:n-quads} se muestra un ejemplo de triplas en formato RDF/N
   moredelim=[s][\color{black}]{>}{<},
   moredelim=[s][\color{red}]{\ }{=},
   stringstyle=\color{blue},
+  breaklines=true,
   identifierstyle=\color{maroon}
 }
 \lstset{language=XML, morekeywords={encoding,
     xs:schema,xs:element,xs:complexType,xs:sequence,xs:attribute}}
-\footnotesize
+    
+\noindent\begin{minipage}{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Ejemplo en RDF/N-Quads, label=lst:n-quads,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\tiny,frame=single]
 <http://rodrivaldez5.com/> <http://www.w3.org/2000/01/rdf-schema#type> <http://schema.org/person> .  
@@ -119,7 +122,7 @@ En el cuadro \ref{lst:n-quads} se muestra un ejemplo de triplas en formato RDF/N
 <http://www.rodrivaldez5.com/> <http://schema.org/jobTitle>"Developer" .
 <http://www.rodrivaldez5.com/> <http://schema.org/image> <http://www.rodrivaldez5.com/images/rodri.png> .
 \end{lstlisting}
-
+\end{minipage}
 
 En linea 1, <http://www.rodrivaldez5.com/> es el sujeto, <http://schema.org/image> es el predicado y <http://www.rodrivaldez5.com/images/rodri.png> es el objeto, donde el objeto en este caso es una URI. En la línea 2 se puede ver que el objeto se trata de un dato literal de tipo String.  A continuación se presenta JSON-LD, una forma de representación de datos compatible con RDF.
 
@@ -131,13 +134,12 @@ Todo objeto JSON-LD es es también un objeto JSON. JSON-LD es compatible con RDF
 
 A continuación se plantea un ejemplo de transformación de un documento JSON a JSON-LD 
 
-En el Cuadro \ref{lst:json} se muestra un ejemplo de documento JSON y en el Cuadro \ref{lst:json-ld} se muestra su transformación a JSON-LD
+En el Cuadro \ref{lst:json} se muestra un ejemplo de documento JSON y en el Cuadro \ref{lst:json-ld} se muestra su transformación a JSON-LD.  
+\newline
 
 \colorlet{punct}{red!60!black}
-\definecolor{background}{HTML}{EEEEEE}
 \definecolor{delim}{RGB}{20,105,176}
 \colorlet{numb}{magenta!60!black}
-
 \lstdefinelanguage{json}{
     basicstyle=\normalfont\ttfamily,
     numbers=left,
@@ -147,7 +149,6 @@ En el Cuadro \ref{lst:json} se muestra un ejemplo de documento JSON y en el Cuad
     showstringspaces=false,
     breaklines=true,
     frame=lines,
-    backgroundcolor=\color{background},
     literate=
      *{0}{{{\color{numb}0}}}{1}
       {1}{{{\color{numb}1}}}{1}
@@ -168,7 +169,10 @@ En el Cuadro \ref{lst:json} se muestra un ejemplo de documento JSON y en el Cuad
 }
 \lstset{
     language=json
-}
+}  
+
+
+\noindent\begin{minipage}{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON, label=lst:json,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\tiny,frame=single]
 {
@@ -179,7 +183,9 @@ En el Cuadro \ref{lst:json} se muestra un ejemplo de documento JSON y en el Cuad
   "image": "http://www.rodrivaldez5.com/images/rodri.png"
 }
 \end{lstlisting}
+\end{minipage}
 
+\noindent\begin{minipage}{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD, label=lst:json-ld,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\tiny,frame=single]
 {
@@ -191,11 +197,12 @@ En el Cuadro \ref{lst:json} se muestra un ejemplo de documento JSON y en el Cuad
 "http://schema.org/image":   {"@id": "http://www.rodrivaldez5.com/images/rodri.png"} 
 }
 \end{lstlisting}
-
+\end{minipage}
 De aquí se puede observar que el principal cambio radica en los nombres de las propiedades, las cuales ahora son URIs válidos, el resultado es equivalente a las triplas RDF del Cuadro \ref{lst:n-quads}
 
 Además JSON-LD permite crear un contexto que contiene el mapeamiento entre el nombre de la propiedad y la URI, dando como resultado el objeto JSON-LD del Cuadro \ref{lst:json-ld-contexto}
 
+\noindent\begin{minipage}{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD con Contexto, label=lst:json-ld-contexto,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\tiny,frame=single]
 {
@@ -217,9 +224,10 @@ Además JSON-LD permite crear un contexto que contiene el mapeamiento entre el n
   "telephone": "0981530572"
 }
 \end{lstlisting}
-
+\end{minipage}
 El contexto también puede definirse en otro documento diferente y solamente haciendo referencia a éste, quedando el JSON final como se muestra en el Cuadro \ref{lst:json-ld-contexto-referencia}
 
+\noindent\begin{minipage}{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD con Contexto referenciado, label=lst:json-ld-contexto-referencia,  numbers=left,  numberstyle=\tiny\color{mygray},
     basicstyle=\tiny,frame=single]
 {
@@ -231,7 +239,7 @@ El contexto también puede definirse en otro documento diferente y solamente hac
 "http://schema.org/image":   {"@id": "http://www.rodrivaldez5.com/images/rodri.png"} 
 }
 \end{lstlisting}
-
+\end{minipage}
 El formato JSON es ampliamente utilizado y preferido por los desarrolladores en la web, en comparación con el formato de representación RDF. En la Tabla \ref{prefencia-uso} se muestra la preferencia de uso entre la serialización RDF y JSON-LD en algunas categorías de aplicaciones \cite{rdfjson}.
 
 \FloatBarrier
