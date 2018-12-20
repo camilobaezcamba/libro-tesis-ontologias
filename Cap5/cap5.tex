@@ -10,13 +10,13 @@ Luego del despliegue del Punto SPARQL se procedió a organizar los experimentos.
 Clasificar las consultas en casos específicos según complejidad sintáctica, semántica o computacional que se requiere teniendo también en cuenta el conjunto de fuentes de datos y ontologías utilizados para realizar las consultas correspondientes.
 En cada caso se definieron consultas lo suficientemente claras y concisas que demuestren el funcionamiento correcto de la ontología utilizada para esa fuente de datos.
 
-En SPARQL es necesario definir primeramente todos los prefijos de las ontologías a utilizar en una determinada consulta. Los prefijos se definen de manera a facilitar la lectura de las consultas. De manera a facilitar la lectura de este documento las agrupamos en el cuadro \ref{lst:prefijos}, los prefijos deben ir declarados antes de las consultas a realizar y solamente las ontologías utilizadas en esa consulta en específico.
+En SPARQL es necesario definir primeramente todos los prefijos de las ontologías a utilizar en una determinada consulta. Los prefijos se definen de manera a facilitar la lectura de las consultas. De manera a facilitar la lectura de este documento las agrupamos en el Cuadro \ref{lst:prefijos}, los prefijos deben ir declarados antes de las consultas a realizar y solamente las ontologías utilizadas en esa consulta en específico.
 
 
 
-
-\begin{lstlisting}[captionpos=b, caption={Prefijos de las consultas SPARQL}, label={lst:prefijos},  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\ttfamily,frame=single]
+\noindent\begin{minipage}[t]{\textwidth}
+\begin{lstlisting}[captionpos=b, caption={Prefijos de las consultas SPARQL}, label={lst:prefijos},  numbers=left,  numberstyle=\tiny\color{mygray}, 
+    basicstyle=\tiny\ttfamily,frame=single]
     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
     PREFIX co: <http://rhizomik.net/ontologies/copyrightonto.owl#>
     PREFIX oc: <http://opencoinage.org/rdf/>
@@ -45,7 +45,7 @@ En SPARQL es necesario definir primeramente todos los prefijos de las ontología
     PREFIX s: <http://schema.org/> 
     
  \end{lstlisting}
-
+\end{minipage}
 
  A continuación se explica en cada caso los datos utilizados y cual es la intención. También se muestra cuál fue la consulta realizada al punto SPARQL.
 

@@ -2,11 +2,12 @@
 
 Se puede extender la capacidad semántica de la ontología actualizando el modelo ontológico sin que implique un alto costo debido a que éste se encuentra desacoplado de los datos.
 
-Para este caso se utilizó la fuente de datos de procesos licitatorios y la ontología OCDS. Se define el concepto de “Proceso Licitatorio con Contrato” a través de una una clase (\textit{PLConContrato}) a partir de una restricción de propiedad. Esta clase se define como una subclase de \textit{Release}, que tiene como restricción todas las instancias de la clase \textit{Release} que tengan al menos una relación en la propiedad \textit{ocds:contracts}.
+Para este caso se utilizó la fuente de datos de procesos licitatorios y la ontología OCDS. Se define el concepto de “Proceso Licitatorio con Contrato” a través de una una clase (\textit{PLConContrato}) a partir de una restricción de propiedad. Esta clase se define como una subclase de \textit{Release}, que tiene como restricción todas las instancias de la clase \textit{Release} que tengan al menos una relación en la propiedad \textit{ocds:contracts}.\hfill \break
 
 
+\noindent\begin{minipage}[c]{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Extension de la ontologia utilizando restricciones ontologicas, label={lst:caso5-1},  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\small,frame=single]
+    basicstyle=\footnotesize\ttfamily,frame=single]
 INSERT DATA {
     ocds:PLConContrato rdfs:subClassOf ocds:Release ; 
     owl:equivalentClass    [ 
@@ -20,15 +21,16 @@ INSERT DATA {
 }
     
  \end{lstlisting}
+\end{minipage}
+ De esta manera basta solo con realizar la consulta SPARQL presentada en el cuadro \ref{lst:caso5-2} para obtener todos los procesos licitatorios con al menos un contrato. La restricción consigue filtrar solo los \textit{Release} cuya propiedad \textit{contracts} tiene al menos una instancia.\hfill \break
 
- De esta manera basta solo con realizar la consulta SPARQL presentada en el cuadro \ref{lst:caso5-2} para obtener todos los procesos licitatorios con al menos un contrato. La restricción consigue filtrar solo los \textit{Release} cuya propiedad \textit{contracts} tiene al menos una instancia.
-
+\noindent\begin{minipage}[c]{\textwidth}
  \begin{lstlisting}[captionpos=b, caption=Consulta SPARQL utilizando la Clase PLConContrato, label=lst:caso5-2,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\small,frame=single]
+    basicstyle=\footnotesize\ttfamily,frame=single]
 SELECT  *
     WHERE
       { ?a  ?b  ocds:PLConContrato }
     
  \end{lstlisting}
-
+\end{minipage}
  Esta capacidad de extender la ontología nos permite hacer consultas de manera simple sin la necesidad de hacer modificaciones a los datos y agregando conocimiento de dominio a la ontología
