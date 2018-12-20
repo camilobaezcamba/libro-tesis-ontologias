@@ -22,11 +22,11 @@ Nos encontramos con que no sería suficiente un solo contexto para todo el objet
 
 Dado que la definición de los contextos se da en forma de cascada, es decir se toma la definición más próxima, se definió un contexto para cada objeto hijo.
 
-A continuación se muestra la colisión entre conceptos, donde amount (del objeto budget) se refiere al valor monetario (número y moneda) del presupuesto, y la siguiente propiedad amount (del objeto amount) se refiere al valor numérico específicamente.
+A continuación se muestra la colisión entre conceptos, donde amount (del objeto budget) se refiere al valor monetario (número y moneda) del presupuesto, y la siguiente propiedad amount (del objeto amount) se refiere al valor numérico específicamente.\hfill \break
 
 \noindent\begin{minipage}{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Objeto JSON con colisión semántica entre conceptos, label=lst:oJson,language=json,firstnumber=1,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\tiny,frame=single]
+    basicstyle=\footnotesize\ttfamily,frame=single]
     "budget": {
         "description": "Adquisicion de Scanner",
         "amount": {
@@ -38,7 +38,7 @@ A continuación se muestra la colisión entre conceptos, donde amount (del objet
 \end{minipage}
 \noindent\begin{minipage}{\textwidth}
     \begin{lstlisting}[captionpos=b, caption=Objeto JSON-LD. Sin colisión semántica entre conceptos , label=lst:oJsonLd, language=json,firstnumber=1,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\tiny,frame=single]
+    basicstyle=\footnotesize\ttfamily,frame=single]
         "budget": {
             "@context": "http://girolabs.com.py/ocds/context-budget.json",
             "@type": "Budget",

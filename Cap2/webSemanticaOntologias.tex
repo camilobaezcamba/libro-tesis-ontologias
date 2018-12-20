@@ -92,7 +92,7 @@ RDF es simplemente un modelo de datos y no provee significado semántico de los 
 
 La sintaxis de RDF puede escribirse en distintos formatos de serialización: \textit{RDF/XML, Turtle, TriG, N-Triples, N-Quads y JSON-LD}.
 
-En el cuadro \ref{lst:n-quads} se muestra un ejemplo de triplas en formato RDF/N-Quads :
+En el cuadro \ref{lst:n-quads} se muestra un ejemplo de triplas en formato RDF/N-Quads. \hfill \break
 
 \definecolor{maroon}{rgb}{0.5,0,0}
 \definecolor{darkgreen}{rgb}{0,0.5,0}
@@ -174,7 +174,7 @@ En el Cuadro \ref{lst:json} se muestra un ejemplo de documento JSON y en el Cuad
 
 \noindent\begin{minipage}{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON, label=lst:json,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\tiny,frame=single]
+    basicstyle=\footnotesize\ttfamily,frame=single]
 {
   "id": "http://www.rodrivaldez5.com/",
   "name": "Rodrigo Valdez",
@@ -187,7 +187,7 @@ En el Cuadro \ref{lst:json} se muestra un ejemplo de documento JSON y en el Cuad
 
 \noindent\begin{minipage}{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD, label=lst:json-ld,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\tiny,frame=single]
+    basicstyle=\footnotesize\ttfamily,frame=single]
 {
 "@id": "http://www.rodrivaldez5.com/",
 "@type": "http://schema.org/person",
@@ -200,11 +200,11 @@ En el Cuadro \ref{lst:json} se muestra un ejemplo de documento JSON y en el Cuad
 \end{minipage}
 De aquí se puede observar que el principal cambio radica en los nombres de las propiedades, las cuales ahora son URIs válidos, el resultado es equivalente a las triplas RDF del Cuadro \ref{lst:n-quads}
 
-Además JSON-LD permite crear un contexto que contiene el mapeamiento entre el nombre de la propiedad y la URI, dando como resultado el objeto JSON-LD del Cuadro \ref{lst:json-ld-contexto}
+Además JSON-LD permite crear un contexto que contiene el mapeamiento entre el nombre de la propiedad y la URI, dando como resultado el objeto JSON-LD del Cuadro \ref{lst:json-ld-contexto}. \hfill \break
 
 \noindent\begin{minipage}{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD con Contexto, label=lst:json-ld-contexto,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\tiny,frame=single]
+    basicstyle=\footnotesize\ttfamily,frame=single]
 {
   "@context": {
     "name": "http://schema.org/name",  
@@ -229,7 +229,7 @@ El contexto también puede definirse en otro documento diferente y solamente hac
 
 \noindent\begin{minipage}{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD con Contexto referenciado, label=lst:json-ld-contexto-referencia,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\tiny,frame=single]
+    basicstyle=\footnotesize\ttfamily,frame=single]
 {
 "@context": "http://schema.org/",
 "@id": "http://www.rodrivaldez5.com/",
