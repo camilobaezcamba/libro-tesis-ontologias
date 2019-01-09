@@ -1,0 +1,20 @@
+{
+	"@context": {
+	"foaf": "http://xmlns.com/foaf/0.1/",
+	"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+	"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+	"xsd": "http://www.w3.org/2001/XMLSchema#"
+	},
+	"@id": "Bbaran",
+	"@type": "foaf:Person",
+	"foaf:family_name": "Baran",
+	"foaf:givenname": "Benjamin",
+	"foaf:name": {
+		"@language": "en",
+		"@value": "Benjamin Baran"
+	} ,
+	"foaf:nick": "Bbaran",
+	"foaf:title": "Professor"
+}
+
+
