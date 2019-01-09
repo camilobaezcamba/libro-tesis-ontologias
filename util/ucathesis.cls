@@ -3,7 +3,7 @@
 %%
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{ucathesis}[2008/08/27 v0.01 Formato para tesis de la UCA]
+%%\ProvidesClass{ucathesis}[2008/08/27 v0.01 Formato para tesis de la UCA]
 
 \newif\if@isdraft
 \newif\if@atstyle
