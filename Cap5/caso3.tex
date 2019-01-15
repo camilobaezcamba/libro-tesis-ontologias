@@ -2,7 +2,7 @@
 
 Se pretende demostrar la integración e interoperabilidad con una ontología específica y una genérica. Para esto, se utilizaron los datos de Procesos Licitatorios de la DNCP junto con la ontología OCDS, y también los datos disponibles en Wikidata junto con su ontología propia. Con esto se enriqueció la fuente de datos primaria a partir de una fuente de datos externa, la cual permitió obtener más información relevante y contextual.
 
-La consulta realizada en el cuadro  \ref{lst:caso3-1}consiste en obtener la cantidad de todos los Procesos Licitatorios cuyos proveedores residen en países que no son limítrofes con Paraguay, agrupando estas cantidades de acuerdo al país.
+La consulta realizada en el Cuadro  \ref{lst:caso3-1}consiste en obtener la cantidad de todos los Procesos Licitatorios cuyos proveedores residen en países que no son limítrofes con Paraguay, agrupando estas cantidades de acuerdo al país.
 
 \noindent\begin{minipage}[c]{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Integracion con una fuente de datos externa utilizando dos ontologias, label=lst:caso3-1,  numbers=left,  numberstyle=\tiny\color{mygray},
@@ -70,7 +70,7 @@ En la Figura \ref{img:caso3Resultado2} se ve el resultado si se suprime el filtr
 
  Esta consulta podría tener inconvenientes si la forma de escribir del nombre de los país cambiara, es el caso de ISRAEL en la línea 5 de la Figura \ref{img:caso3Resultado1} que se encuentra en mayúsculas. Para evitar esto, lo óptimo sería que los atributos no sean de tipo texto sino más bien sean objetos dentro del conjunto de datos de la DNCP y éstos estén relacionados con otros semejantes dentro de la Web Semántica.
 
-En el cuadro \ref{lst:3-2} se muestra la definición actual de la propiedad “countryName” que pertenece a la clase “Address". Se observa que el tipo de propiedad es “DatatypeProperty” el cual representa un literal.\hfill \break 
+En el Cuadro \ref{lst:3-2} se muestra la definición actual de la propiedad “countryName” que pertenece a la clase “Address". Se observa que el tipo de propiedad es “DatatypeProperty” el cual representa un literal.\hfill \break 
 
 \noindent\begin{minipage}[c]{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Definicion de la propiedad countryName, label={lst:3-2},  numbers=left,  numberstyle=\tiny\color{mygray},
@@ -85,7 +85,7 @@ En el cuadro \ref{lst:3-2} se muestra la definición actual de la propiedad “c
  \end{lstlisting}
 \end{minipage}
 
- En el cuadro {lst:caso3-3} se muestra una posible solución al inconveniente mencionado. Primeramente se debe renombrar la propiedad \textit{countryName} a \textit{country} para que de esta forma denote la relación con un país y no con el nombre del país solamente. Luego se debe cambiar el rango de valores de \textit{rdfs: range xsd:string}  a \textit{rdfs:range :Country }donde \textit{Country} se refiere a una nueva clase a ser definida en la ontología. Esta última será la que represente al concepto “País”. Luego deberá definirse una instancia del país (por cada país que exista en la fuente de datos) de tipo \textit{Country}. Finalmente faltaría relacionar este recurso con otro semejante dentro de la Web Semántica, en este caso se puede realizar con los datos disponibles en Wikidata a través de la sentencia \textit{owl:sameAs wd:Q733} donde \textit{wd:Q733} es el identificador único (URI) de Paraguay en Wikidata.\hfill \break
+ En el uadro {lst:caso3-3} se muestra una posible solución al inconveniente mencionado. Primeramente se debe renombrar la propiedad \textit{countryName} a \textit{country} para que de esta forma denote la relación con un país y no con el nombre del país solamente. Luego se debe cambiar el rango de valores de \textit{rdfs: range xsd:string}  a \textit{rdfs:range :Country }donde \textit{Country} se refiere a una nueva clase a ser definida en la ontología. Esta última será la que represente al concepto “País”. Luego deberá definirse una instancia del país (por cada país que exista en la fuente de datos) de tipo \textit{Country}. Finalmente faltaría relacionar este recurso con otro semejante dentro de la Web Semántica, en este caso se puede realizar con los datos disponibles en Wikidata a través de la sentencia \textit{owl:sameAs wd:Q733} donde \textit{wd:Q733} es el identificador único (URI) de Paraguay en Wikidata.\hfill \break
 
 \noindent\begin{minipage}[c]{\textwidth}
  \begin{lstlisting}[captionpos=b, caption=Declaracion de la Clase Country, label={lst:caso3-3},  numbers=left,  numberstyle=\tiny\color{mygray},

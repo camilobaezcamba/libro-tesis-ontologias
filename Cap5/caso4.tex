@@ -2,7 +2,7 @@
 
 En este caso se pretende demostrar la capacidad de reutilización e inferencia para la integración de datos. Utilizamos la fuente de Procesos Licitatorios de la DNCP y la fuente de Procesos Licitatorios de Zaragoza, donde ambos reutilizan la ontología de Public Contract dentro de sus respectivas ontologías.
 
-Para obtener las convocatorias de la DNCP es necesario que el Punto SPARQL utiliza el motor de inferencia ya que los datos no están anotados directamente con la propiedad \textit{pc:Tender} pero sí están anotados con \textit{ocds:Tender} la cual, en la ontología de OCDS, está definida como una subclase de \textit{pc:Tender} (como se muestra en el cuadro \ref{lst:caso4-1}). \hfill \break
+Para obtener las convocatorias de la DNCP es necesario que el Punto SPARQL utiliza el motor de inferencia ya que los datos no están anotados directamente con la propiedad \textit{pc:Tender} pero sí están anotados con \textit{ocds:Tender} la cual, en la ontología de OCDS, está definida como una subclase de \textit{pc:Tender} (como se muestra en el Cuadro \ref{lst:caso4-1}). \hfill \break
 
 \noindent\begin{minipage}[c]{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Extension de la ontologia reutilizando PC, label={lst:caso4-1},  numbers=left,  numberstyle=\tiny\color{mygray},
@@ -16,7 +16,7 @@ Para obtener las convocatorias de la DNCP es necesario que el Punto SPARQL utili
 \end{minipage}
  
 
- La consulta realizada en el cuadro  consiste en listar los primeros 6 contratos encontrados (3 de Paraguay y 3 de Zaragoza)”.
+ La consulta realizada en el Cuadro  consiste en listar los primeros 6 contratos encontrados (3 de Paraguay y 3 de Zaragoza)”.
  
 \noindent\begin{minipage}[c]{\textwidth}
  \begin{lstlisting}[captionpos=b, caption=Consulta a dos fuentes de datos utilizando el mismo concepto, label={lst:caso4-2},  numbers=left,  numberstyle=\tiny\color{mygray},
