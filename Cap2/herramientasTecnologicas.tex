@@ -1,6 +1,6 @@
 \section{Herramientas tecnológicas}
 \subsection{Protégé}
-Protégé es una herramienta de código libre para desarrolladores de ontologías y permite crear sistemas de base de conocimientos. El editor consiste en una interfaz de usuario gráfica donde podemos crear y editar clases, instancias, propiedades y las restricciones. Nos permite guardar la ontología en varios formatos como XML, RDF, TTL y OWL. En la Figura \ref{img:protege} se muestra una captura de pantalla de la herramienta
+Protégé es una herramienta de código libre para desarrolladores de ontologías y permite crear sistemas de base de conocimientos. El editor consiste en una interfaz gráfica de usuario donde podemos crear y editar clases, instancias, propiedades y restricciones. Nos permite guardar la ontología en varios formatos como XML, RDF, TTL y OWL. En la Figura \ref{img:protege} se muestra una captura de pantalla de la herramienta.
 
 \begin{figure}[h!]
     \centering
@@ -21,12 +21,12 @@ Además se utilizó una herramienta de visualización gráfica de ontologías ll
     
 
 \subsection{Apache Jena}
-Jena es un \textit{Framework} implementado en JAVA para construir aplicaciones de la Web Semántica. Provee una librería para ayudar a desarrolladores a manejar RDF, RDFS, RDFa, OWL y SPARQL y está alineada con las recomendaciones de la W3C. Jena incluye un motor de inferencias basada en reglas para realizar los razonamientos basados en OWL y RDFS, además de una variedad de estrategias para el almacenamiento de triplas RDF en memoria y en disco.
+Jena es un \textit{Framework} implementado en JAVA para construir aplicaciones de la Web Semántica. Provee una librería para la manipulación de datos en RDF, RDFS, RDFa, OWL y SPARQL, y está alineada con las recomendaciones de la W3C. Jena incluye un motor de inferencias basado en reglas para realizar los razonamientos basados en OWL y RDFS, además de una variedad de estrategias para el almacenamiento de triplas RDF en memoria y en disco.
 
 \subsection{Consulta de datos con SPARQL}
-Para consultar triplas basadas en RDF han surgido varios lenguajes de consulta, pero SPARQL es el más ampliamente utilizado y fue estandarizado por la W3C. Una consulta SPARQL es formulada usando patrones de grafos que pueden ser combinados con operaciones algebraicas como unión, opcional, filtro, etc. El resultado de la consulta es una lista de relaciones que pueden estar expresadas en tablas o en RDF.
+Para consultar triplas basadas en RDF han surgido varios lenguajes de consulta, pero SPARQL es el más ampliamente utilizado y fue estandarizado por la W3C \cite{SPARQLDpoc:online}. Una consulta SPARQL es formulada usando patrones de grafos que pueden ser combinados con operaciones algebraicas como unión, opcional, filtro, etc. El resultado de la consulta es una lista de relaciones que pueden estar expresadas en tablas o en RDF.
 
-A forma de explicar la semántica y sintaxis completa de este lenguaje en el Cuadro \ref{lst:consulta-sparql} se muestra en un ejemplo la utilización del lenguaje realizando una consulta básica a la base de datos de DBPEDIA \cite{DBpedia:online} donde se listaron los nombres, fechas de nacimiento, fallecimiento y las URIs de personas nacidas en Paraguay antes de 1900, ordenadas por nombre.\hfill \break
+A forma de explicar la semántica y sintaxis completa de este lenguaje, en el Cuadro \ref{lst:consulta-sparql} se muestra en un ejemplo la utilización del lenguaje realizando una consulta básica a la base de datos de DBPEDIA \cite{DBpedia:online} donde se listaron los nombres, fechas de nacimiento, fallecimiento y las URIs de personas nacidas en Paraguay antes de 1900, ordenadas por nombre.\hfill \break
 
 \lstset{
     language=SPARQL
@@ -53,6 +53,6 @@ ORDER BY ?name
 \end{lstlisting}
 \end{minipage}
 
-En las primeras líneas se pueden ver los prefijos de las ontologías utilizadas en la consulta, luego se presentan las triplas que componen las restricciones de la consulta. Está fuera del alcance de este documento la explicación detallada de la sintaxis de SPARQL.
+En las líneas 1 al 4 se pueden ver los prefijos de las ontologías utilizadas en la consulta, luego se presentan las triplas que componen las restricciones de la consulta. Está fuera del alcance de este documento la explicación detallada de la sintaxis de SPARQL.
 
-Apache Jena Fuseki es un servidor o punto SPARQL que además provee un motor de inferencias de datos. Corre en un sistema operativo como una aplicación web Java (archivo WAR) así como también en un servidor. Provee el protocolo de consulta y actualización SPARQL 1.1 así como también el protocolo de\textit{ SPARQL Graph Store}.
+Apache Jena Fuseki es un Servidor o Punto SPARQL que además provee un motor de inferencias. Se ejecuta como una aplicación web Java (archivo WAR). Provee el protocolo de consulta y actualización SPARQL 1.1 así como también el protocolo de \textit{SPARQL Graph Store}.

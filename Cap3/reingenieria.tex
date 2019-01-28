@@ -165,7 +165,7 @@ Para el concepto \textit{Value} del OCDS, que representan valores monetarios, se
 
 En cuanto a la implementación, se optó por mantener \textit{Value} y \textit{Currency} como \textit{DataType properties} para mantener la simplicidad de nuestra ontología.
 
-Para el concepto \textit{Period}, que representan periodos de tiempo se utilizó el patrón \textsc{Time Interval}. El patrón describe un intervalo de tiempo que contiene una fecha de inicio, una fecha de fin y una fecha del intervalo. Un posible uso del patrón sería la fecha “Agosto del 2018” tiene un fecha de inicio “1 de Agosto” y una fecha de fin “31 de Agosto”.En la implementación se omitió la propiedad Intervalo de tiempo, ya que no es necesaria para este este dominio. El modelo se puede ver en la Figura \ref{img:Modelo de Intervalo de precio}
+Para el concepto \textit{Period}, que representan periodos de tiempo se utilizó el patrón \textsc{Time Interval}. El patrón describe un intervalo de tiempo que contiene una fecha de inicio, una fecha de fin y una fecha del intervalo. Un posible uso del patrón sería la fecha “Agosto del 2018” tiene un fecha de inicio “1 de Agosto” y una fecha de fin “31 de Agosto”. En la implementación se omitió la propiedad Intervalo de tiempo, ya que no es necesaria para este este dominio. El modelo se puede ver en la Figura \ref{img:Modelo de Intervalo de precio}.
 
 \begin{figure}[ht!]
     \centering
@@ -175,7 +175,7 @@ Para el concepto \textit{Period}, que representan periodos de tiempo se utilizó
     
 \end{figure}
 
-Para la relación que existe entre \textit{Planning, Tender, Award, Contract e Implementation}, que tienen una relación de dependencia y de secuencia, se utilizó el patrón \textit{Sequence}. El patrón describe una secuencia de hecho a través de las propiedades Precede, Precede Directamente, Antecede y Antecede Directamente. Por ejemplo, decidir qué camisa utilizare precede directamente a colocarse la camisa, y precede a colocarse la corbata. En la Figura \ref{img:Modelo de dependencia y secuencia} se presenta el diagrama del patrón. Se utilizó este patrón para describir la secuencia del proceso de contrataciones.
+Para la relación que existe entre \textit{Planning, Tender, Award, Contract e Implementation}, que tienen una relación de dependencia y de secuencia, se utilizó el patrón \textit{Sequence}. El patrón describe una secuencia de hecho a través de las propiedades Precede, Precede Directamente, Antecede y Antecede Directamente. Por ejemplo, decidir qué camisa utilizaré precede directamente a colocarse la camisa, y precede a colocarse la corbata. En la Figura \ref{img:Modelo de dependencia y secuencia} se presenta el diagrama del patrón. Se utilizó este patrón para describir la secuencia del proceso de contrataciones.
 
 \begin{figure}[ht!]
     \centering
@@ -189,9 +189,9 @@ Para la relación que existe entre \textit{Planning, Tender, Award, Contract e I
 
 Una vez concluido el modelo conceptual de la ontología procedemos a la construcción de la misma utilizando el lenguaje OWL y la herramienta Protégé.
 
-Dentro de la fase de búsqueda de recursos Ontológicos, se encontró una ontología desarrollada por un colaborador al proyecto OCDS, la ontología siguió una transformación directa de JSON SCHEMA del estándar, la misma representa un punto de partida para seguir desarrollando la ontología. De esta manera además queremos incentivar la colaboración y hacer partícipe a toda la comunidad del OCDS.
+Dentro de la fase de búsqueda de recursos Ontológicos, se encontró una ontología desarrolladas\footnote{https://github.com/ColinMaudry/open-contracting-ld} por un colaborador al proyecto OCD, la ontología siguió una transformación directa de JSON SCHEMA del estándar, la misma representa un punto de partida para seguir desarrollando la ontología. De esta manera además queremos incentivar la colaboración y hacer partícipe a toda la comunidad del OCDS.
 
-El primer paso fue importar la ontología elaborada por Collin al software Protégé. Al hacer esto el software reestructuró el código de la ontología e hizo inferencias básicas detalladas a continuación. La estructura del documento del cual se partió estaba agrupada según conceptos semánticos relacionados. Protégé estructuró la ontología según sean \textit{Annotation Property, DataType Property u Object property} y luego ordenó de forma alfabética tomando como referencia el nombre de la propiedad.
+El primer paso fue importar la ontología al software Protégé. Al hacer esto el software reestructuró el código de la ontología e hizo inferencias básicas detalladas a continuación. La estructura del documento del cual se partió estaba agrupada según conceptos semánticos relacionados. Protégé estructuró la ontología según sean \textit{Annotation Property, DataType Property u Object property} y luego ordenó de forma alfabética tomando como referencia el nombre de la propiedad.
 
 Se encontraron algunas inconsistencias sintácticas dentro de la ontología, debido a que la misma fue hecha sin utilizar ninguna herramienta para desarrollo de ontologías, lo cual da lugar a errores sintácticos. Por ejemplo, el rango de la clase \textit{FormerValue} estaba definido como \textit{xsd:Integer}, Protégé infiere de que se trataba de un nuevo tipo de dato,  debido a que no existe este tipo de dato sino que debe ser \textit{xsd:integer}. Así también otro error en el documento en donde se escribió \textit{commnent} en lugar de \textit{commnent}, inmediatamente Protégé infiere como un nuevo tipo de dato. Como aprendizaje, el uso de una herramienta ontológica como Protégé nos ayuda a prevenir errores de sintaxis en la creación de la ontología y además acelera el proceso de desarrollo gracias a una interfaz gráfica que nos ayuda a distinguir entre Clases, \textit{DataType Properties} por citar algunas funcionalidades.
 
