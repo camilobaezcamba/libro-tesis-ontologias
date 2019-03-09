@@ -4,7 +4,7 @@ En este apartado se dará un resumen de las metodologías más utilizadas para l
 
 \subsection{Ontology Development 101}
 
-Esta metodología describe una serie de pasos y recomendaciones a la hora de crear una ontología. 
+Esta metodología describe una serie de pasos y recomendaciones a tener en cuenta al crear una ontología. 
 
 Se describen a continuación los pasos:
 \begin{description}
@@ -17,7 +17,7 @@ Se describen a continuación los pasos:
 \item[Paso 7:] Crear instancias.
 \end{description}
 
-Además la guía propone algunas buenas prácticas de desarrollo de ontologías relacionadas a la definición de clases como la correcta creación de jerarquías, herencias múltiples,  cuándo crear una clase o una propiedad, cuando es una instancia o una clase, etc. También algunos delineamientos sobre las propiedades como valores por defecto, cardinalidad, etc. Por último, una serie de convenciones de nombres dentro de la ontología. La metodología no tiene en cuenta el proceso de especificación ni el mantenimiento de la ontología.
+Además, la guía propone algunas buenas prácticas de desarrollo de ontologías relacionadas a la definición de clases como la correcta creación de jerarquías, herencias múltiples,  cuándo crear una clase o una propiedad, cuando es una instancia o una clase, etc. También algunos delineamientos sobre las propiedades como valores por defecto, cardinalidad, etc. Por último, una serie de convenciones de nombres dentro de la ontología. La metodología no tiene en cuenta el proceso de especificación ni el mantenimiento de la ontología.
 
 \subsection{OntoKnowledge} 
 
@@ -53,7 +53,7 @@ La metodología propone un ciclo de vida incremental y cíclico como se muestra 
 
 Esta metodología incluye la identificación del proceso del desarrollo de una ontología, que consiste en una serie de actividades, el ciclo de vida basado en el refinamiento de un prototipo y técnicas para llevar a cabo cada actividad durante el mantenimiento, el desarrollo y el soporte de las actividades. Todas las actividades están basadas en el proceso de desarrollo de software y las utilizadas en metodologías de ingeniería de conocimiento.
 
-En la Figura \ref{img:methontology} se puede ver los estados de todo el ciclo de vida de la ontología.
+En la Figura \ref{img:methontology} se pueden ver los estados de todo el ciclo de vida de la ontología.
 
 \begin{figure}[h!]
     \centering
@@ -88,7 +88,6 @@ La metodología presenta los siguientes componentes:
     \item Una serie de guías metodológicas para procesos y actividades como el reuso de recursos ontológicos y no-ontológicos, la especificación de los requerimientos, la planificación, etc. Los procesos y actividades están representados en la Figura \ref{img:neon ciclo de vida} con cajas y círculos de color.
 \end{itemize}
 
-A continuación se presenta el glosario de términos:
 \begin{figure}[h!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas-NeonActivities}
@@ -96,18 +95,17 @@ A continuación se presenta el glosario de términos:
     \label{img:neon actividades}
     \end{figure}
 
-
 A continuación se presentan los nueve escenarios que propone NeOn.
 
 \begin{description}
     \item[Escenario 1] El escenario va desde la especificación hasta la implementación. La ontología es desarrollada desde el principio, esto significa sin utilizar ninguna base de conocimiento ya construida.
-    \item[Escenario 2] Reuso y Reingeniería de recursos no-ontológicos. Este escenario cubre el caso donde los desarrolladores analizan recursos no-ontológicos, y deciden según los requerimientos, qué recurso no-ontológico se puede reutilizar para construir esta ontología. Este escenario también realiza una reingeniería del recurso seleccionado.
+    \item[Escenario 2] Reuso y Reingeniería de recursos no-ontológicos. Este escenario cubre el caso donde los desarrolladores analizan recursos no-ontológicos y deciden según los requerimientos, qué recurso no-ontológico se puede reutilizar para construir esta ontología. Este escenario también contempla una reingeniería del recurso seleccionado.
     \item[Escenario 3] Reuso de recursos ontológicos. En este escenario los desarrolladores reusan recursos ontológicos, esto se puede hacer de tres maneras: reuso total, reuso de módulos y/o reuso de sentencias.
-    \item[Escenario 4] Reuso y reingeniería de recursos ontológicos.Aquí, los desarrolladores hacen tanto un reuso como una reingeniería de los recursos ontológicos.
+    \item[Escenario 4] Reuso y reingeniería de recursos ontológicos. Aquí, los desarrolladores hacen tanto un reuso como una reingeniería de los recursos ontológicos.
     \item[Escenario 5] Reuso y unión de recursos ontológicos. Este escenario es propicio cuando se eligen muchas ontologías del mismo dominio de conocimiento para reutilizar y se quiere crear una nueva ontología a partir de ellas.
     \item[Escenario 6] Reuso, unión y reingeniería de recursos ontológicos. Similar al escenario 5, aquí los desarrolladores realizan un proceso de reingeniería antes de unir los recursos reutilizados.
     \item[Escenario 7] Reusos de patrones de diseño de ontologías (ODP). En este escenario se utilizan repositorios de ODP para reutilizarlos.
-    \item[Escenario 8] Reestructuración de recursos ontológicos. Se reestructuran recursos ontológicos, esto significa modularizar, recortar, extender y/o especializar el recurso ontológico para integrarla a la ontología construida.
+    \item[Escenario 8] Reestructuración de recursos ontológicos. Se reestructuran recursos ontológicos. Esto significa modularizar, recortar, extender y/o especializar el recurso ontológico para integrarla a la ontología construida.
     \item[Escenario 9] Localización de un recurso ontológico. En este escenario se adapta una ontología a otros lenguajes u otras culturas o comunidades, produciendo así una ontología multilenguaje.
 \end{description}
 
@@ -145,22 +143,27 @@ Los escenarios están ligados a un modelo dentro del ciclo de vida, como se mues
 \resizebox{15cm}{!} {
 \begin{tabular}{|l|c|c|c|c|c|}
 \hline
- & \multicolumn{1}{m{2cm}|}{Modelo de 4-fases} & \multicolumn{1}{m{2cm}}{Modelo de 5-fases} & \multicolumn{1}{|m{2cm}|}{Modelo de 5-fases + mezcla} & \multicolumn{1}{m{2cm}}{Modelo de 6-fases} & \multicolumn{1}{|m{2cm}|}{Modelo de 6-fases + mezcla} \\ \hline
- Escenario 1 & x & & & & \\ \hline
- Escenario 2 & & & & x & \\ \hline
- Escenario 3 & & x & & & \\ \hline
- Escenario 4 & & & & x & \\ \hline
- Escenario 5 & & & x & & \\ \hline
- Escenario 6 & & & & & x \\ \hline
- Escenario 7 & & & & x & \\ \hline
- Escenario 8 & & & x & & \\ \hline
- Escenario 9 & & & x & & \\ \hline
+ & \multicolumn{1}{m{2cm}|}{\textbf{Modelo de 4-fases}} & \multicolumn{1}{m{2cm}}{\textbf{Modelo de 5-fases}} & \multicolumn{1}{|m{2cm}|}{\textbf{Modelo de 5-fases + mezcla}} & \multicolumn{1}{m{2cm}}{\textbf{Modelo de 6-fases}} & \multicolumn{1}{|m{2cm}|}{\textbf{Modelo de 6-fases + mezcla}} \\ \hline
+ \textbf{Escenario 1} & x & & & & \\ \hline
+ \textbf{Escenario 2} & & & & x & \\ \hline
+ \textbf{Escenario 3} & & x & & & \\ \hline
+ \textbf{Escenario 4} & & & & x & \\ \hline
+ \textbf{Escenario 5} & & & x & & \\ \hline
+ \textbf{Escenario 6} & & & & & x \\ \hline
+ \textbf{Escenario 7} & & & & x & \\ \hline
+ \textbf{Escenario 8} & & & x & & \\ \hline
+ \textbf{Escenario 9} & & & x & & \\ \hline
 \end{tabular}
 }
 \end{table}
 
-Cabe mencionar que estos escenarios se pueden combinar de maneras diferentes y flexibles, y que cualquier combinación de escenarios debería incluir el Escenario 1 porque este escenario está compuesto por las actividades centrales que deben realizarse en cualquier desarrollo de ontología.
-En la Tabla \ref{tab:comparacion} se presenta un Cuadro comparativo con las metodologías introducida en las secciones anteriores. 
+
+Cabe mencionar que estos escenarios se pueden combinar de maneras diferentes y flexibles, y que cualquier combinación de escenarios debería incluir el Escenario 1 porque este escenario está compuesto por las actividades centrales que deben realizarse en cualquier desarrollo de ontología.  
+
+En la Tabla \ref{tab:comparacion} se presenta un cuadro comparativo con las metodologías introducidas en las secciones anteriores. 
+
+En cuanto a la madurez y completitud de cada una podemos decir que la metodología NeOn es la más completa y madura, ya que la misma está basada en metodologías de desarrollo de software y metodologías de ingeniería de conocimiento.
+
 
 \begin{table}[!htb]
 \centering
@@ -169,17 +172,17 @@ En la Tabla \ref{tab:comparacion} se presenta un Cuadro comparativo con las meto
 \resizebox{15cm}{!} {
 \begin{tabular}{|l|l|l|l|l|}
 \hline
-\multicolumn{1}{|m{3cm}|}{Metodología/ Criterios} & \multicolumn{1}{m{3cm}}{Ontology Development 101} & \multicolumn{1}{|m{3cm}|}{OntoKnowledge} & \multicolumn{1}{m{3cm}}{Methontology} & \multicolumn{1}{|m{3cm}|}{NeOn Methodology} \\ \hline
-\multicolumn{1}{|m{3cm}|}{Colaboración} & \multicolumn{1}{m{3cm}}{No} & \multicolumn{1}{|m{3cm}|}{No} & \multicolumn{1}{m{3cm}}{No} & \multicolumn{1}{|m{3cm}|}{Si} \\ \hline
-\multicolumn{1}{|m{3cm}|}{Especificación} & \multicolumn{1}{m{3cm}}{Solo Preguntas de competencias} & \multicolumn{1}{|m{3cm}|}{Explícito} & \multicolumn{1}{m{3cm}}{Solo Preguntas de competencias} & \multicolumn{1}{|m{3cm}|}{Explícito} \\ \hline
-\multicolumn{1}{|m{3cm}|}{Planeamiento} & \multicolumn{1}{m{3cm}}{No} & \multicolumn{1}{|m{3cm}|}{No} & \multicolumn{1}{m{3cm}}{No proveído} & \multicolumn{1}{|m{3cm}|}{Proveído} \\ \hline
-\multicolumn{1}{|m{3cm}|}{Reuso de recursos ontológicos} & \multicolumn{1}{m{3cm}}{No proveído, solo algunos delineamientos} & \multicolumn{1}{|m{3cm}|}{No proveído, solo algunos delineamientos} & \multicolumn{1}{m{3cm}}{No proveído, solo algunos delineamientos} & \multicolumn{1}{|m{3cm}|}{Proveído} \\ \hline
-\multicolumn{1}{|m{3cm}|}{Detalles de la Metodología} & \multicolumn{1}{m{3cm}}{Pocos Detalles} & \multicolumn{1}{|m{3cm}|}{Algunos detalles} & \multicolumn{1}{m{3cm}}{Algunos detalles} & \multicolumn{1}{|m{3cm}|}{Muchos detalles} \\ \hline
-\multicolumn{1}{|m{3cm}|}{Dependiente de aplicación} & \multicolumn{1}{m{3cm}}{Independiente} & \multicolumn{1}{|m{3cm}|}{Independiente} & \multicolumn{1}{m{3cm}}{Independiente} & \multicolumn{1}{|m{3cm}|}{Independiente} \\ \hline
-\multicolumn{1}{|m{3cm}|}{Audiencia} & \multicolumn{1}{m{3cm}}{Estudiantes y practicantes de ontologías} & \multicolumn{1}{|m{3cm}|}{Ingenieros en Ontologías} & \multicolumn{1}{m{3cm}}{Ingenieros en Ontologías e investigadores} & \multicolumn{1}{|m{3cm}|}{Ingenieros en sistemas, Ontologías y público en general} \\ \hline
+\multicolumn{1}{|m{3cm}|}{ \textbf{ Metodología/ Criterios}} & \multicolumn{1}{m{3cm}}{\textbf{Ontology Development 101}} & \multicolumn{1}{|m{3cm}|}{\textbf{OntoKnowledge}} & \multicolumn{1}{m{3cm}}{\textbf{Methontology}} & \multicolumn{1}{|m{3cm}|}{\textbf{NeOn}} \\ \hline
+\multicolumn{1}{|m{3cm}|}{\textbf{Colaboración}} & \multicolumn{1}{m{3cm}}{No} & \multicolumn{1}{|m{3cm}|}{No} & \multicolumn{1}{m{3cm}}{No} & \multicolumn{1}{|m{3cm}|}{Si} \\ \hline
+\multicolumn{1}{|m{3cm}|}{\textbf{Especificación}} & \multicolumn{1}{m{3cm}}{Solo Preguntas de competencias} & \multicolumn{1}{|m{3cm}|}{Explícito} & \multicolumn{1}{m{3cm}}{Solo Preguntas de competencias} & \multicolumn{1}{|m{3cm}|}{Explícito} \\ \hline
+\multicolumn{1}{|m{3cm}|}{\textbf{Planeamiento}} & \multicolumn{1}{m{3cm}}{No} & \multicolumn{1}{|m{3cm}|}{No} & \multicolumn{1}{m{3cm}}{No proveído} & \multicolumn{1}{|m{3cm}|}{Proveído} \\ \hline
+\multicolumn{1}{|m{3cm}|}{\textbf{Reuso de recursos ontológicos}} & \multicolumn{1}{m{3cm}}{No proveído, solo algunos delineamientos} & \multicolumn{1}{|m{3cm}|}{No proveído, solo algunos delineamientos} & \multicolumn{1}{m{3cm}}{No proveído, solo algunos delineamientos} & \multicolumn{1}{|m{3cm}|}{Proveído} \\ \hline
+\multicolumn{1}{|m{3cm}|}{\textbf{Detalles de la Metodología}} & \multicolumn{1}{m{3cm}}{Pocos Detalles} & \multicolumn{1}{|m{3cm}|}{Algunos detalles} & \multicolumn{1}{m{3cm}}{Algunos detalles} & \multicolumn{1}{|m{3cm}|}{Muchos detalles} \\ \hline
+\multicolumn{1}{|m{3cm}|}{\textbf{Dependiente de aplicación}} & \multicolumn{1}{m{3cm}}{Independiente} & \multicolumn{1}{|m{3cm}|}{Independiente} & \multicolumn{1}{m{3cm}}{Independiente} & \multicolumn{1}{|m{3cm}|}{Independiente} \\ \hline
+\multicolumn{1}{|m{3cm}|}{\textbf{Audiencia}} & \multicolumn{1}{m{3cm}}{Estudiantes y practicantes de ontologías} & \multicolumn{1}{|m{3cm}|}{Ingenieros en Ontologías} & \multicolumn{1}{m{3cm}}{Ingenieros en Ontologías e investigadores} & \multicolumn{1}{|m{3cm}|}{Ingenieros en sistemas, Ontologías y público en general} \\ \hline
 
 \end{tabular}
 }
 \end{table}
 
-En la Tabla \ref{tab:comparacion} cabe destacar que las 4 metodologías son las más populares dentro del desarrollo de las ontologías. En cuanto a la madurez y completitud de cada una podemos decir que la metodología NeOn es la más completa y madura, ya que la misma está basada en metodologías de desarrollo de software y metodologías de ingeniería de conocimiento.
+

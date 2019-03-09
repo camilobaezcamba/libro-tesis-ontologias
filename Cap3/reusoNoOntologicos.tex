@@ -20,7 +20,7 @@ Se utilizó el portal de datos abiertos de la DNCP \cite{DatosAbiDNCP:online}, o
     \item Plataforma de Contrataciones Electrónica, destinada a empresas y personas que deseen presentarse o conocer algún proceso de contratación.
 \end{enumerate}
 
-Los datos publicados poseen un diccionario de datos y una ontología creada por la DNCP, la cual sirve como contexto para la API desarrollada. Además la DNCP implementó una API siguiendo el estándar OCDS, que posee un esquema de publicación bien definida en JSON Schema.
+Los datos publicados poseen un diccionario de datos y una ontología creada por la DNCP, la cual sirve como contexto para la API desarrollada. Además la DNCP implementó una API siguiendo el estándar OCDS, que posee un esquema de publicación bien definido en JSON Schema.
 
 \subsection{Evaluación de recursos no-ontológicos}
 Se eligió el OCDS como recurso no-ontológico a evaluar puesto que el principal objetivo de este trabajo es que la ontología desarrollada sea compatible con dicho estándar de modelo de datos. Para realizar la evaluación se procedió a la extracción de las entradas léxicas, luego al cálculo de precisión y alcance para por último evaluar la factibilidad de reuso del recurso.  A continuación se explica en detalle cada paso.
@@ -54,7 +54,7 @@ Para calcular la cobertura y la precisión del recurso no-ontológico se realiz�
 
 Esto da una cobertura de 0.59 y una precisión de 0.57. 
 
-\subsection{Evaluación y selección del recurso no-ontológico}
+\subsection{Selección del recurso no-ontológico}
 
 Como se puede ver en el esquema del OCDS\footnote{http://standard.open-contracting.org/latest/en/schema/release/}, el mismo posee una especificación formal de la sintaxis de cada una de las propiedades, ya que por medio de un validador construido por la OCP\footnote{http://standard.open-contracting.org/validator/} podemos verificar si el objeto validado cumple con los requerimientos sintácticos de publicación del estándar.
 
@@ -77,4 +77,4 @@ Las principales diferencias de cobertura entre los conceptos de la DNCP y la OCD
 
     
 
-El OCDS es implementado a nivel internacional, tiene una comunidad de colaboradores expertos en el dominio de distintos países, implementadores que dan al estándar una validez en cuanto a la aceptación de los términos, posee listas de correos y un sistema de gestión de cambios y mejoras activo en la plataforma Github\footnote{https://github.com/open-contracting/standard}. La intención de este trabajo es que la ontología sea utilizada no solamente sea utilizada por la DNCP sino por cualquier ente que realice procesos licitatorios, además, la DNCP está utilizando este estándar para publicación de datos orientados a desarrolladores. Con todo esto se aprecia que la cobertura es suficiente para utilizar el OCDS como recurso no-ontológico para nuestra ontología sacrificando así algunos detalles específicos de implementación local. Estos detalles más específicos se podrían cubrir a través del reuso y extensión de la ontología desarrollada en un futuro trabajo.
+El OCDS es implementado a nivel internacional, tiene una comunidad de colaboradores expertos en el dominio de distintos países, implementadores que dan al estándar una validez en cuanto a la aceptación de los términos, posee listas de correos y un sistema de gestión de cambios y mejoras activo en la plataforma Github\footnote{https://github.com/open-contracting/standard}. La intención de este trabajo es que la ontología sea utilizada no solamente por la DNCP sino por cualquier ente que realice procesos licitatorios, además, la DNCP está utilizando este estándar para publicación de datos orientados a desarrolladores. Con todo esto se aprecia que la cobertura es suficiente para utilizar el OCDS como recurso no-ontológico para nuestra ontología sacrificando así algunos detalles específicos de implementación local. Estos detalles más específicos se podrían cubrir a través del reuso y extensión de la ontología desarrollada en un futuro trabajo.
