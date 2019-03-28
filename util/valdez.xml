@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="file:///base/data/home/apps/s%7Erdf-translator/2.408516547054015808/rodrivaldez5">
+    <foaf:givenname>Rodrigo</foaf:givenname>
+    <foaf:title>Software Developer</foaf:title>
+    <foaf:nick>Rodri</foaf:nick>
+    <foaf:name xml:lang="en">Rodrigo Valdez</foaf:name>
+    <foaf:family_name>Valdez</foaf:family_name>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+</rdf:RDF>
