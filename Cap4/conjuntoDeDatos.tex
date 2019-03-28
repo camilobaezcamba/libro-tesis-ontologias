@@ -2,15 +2,15 @@
 
 Para probar el funcionamiento de la ontología creada se procedió al uso de una parte de la ontología implementada por la DNCP correspondiente a los proveedores del estado. Con el conjunto de datos de Proveedores podemos obtener datos adicionales sobre algún proveedor que se está presentando en algún proceso licitatorio.
 
-Se utilizó para esto la API V2 de proveedores disponible en el siguiente enlace  , dicha API ya se encuentra publicada con el formato JSON-LD. Se realizaron consultas para obtener todos los registros de proveedores del estado y volcarlos a la base de datos MongoDB. Luego, utilizando la librería Jena, se procedió a convertir los objetos JSON-LD a RDF para posteriormente almacenarlos en la base de datos TDB.
+Se utilizó para esto la API V2 de proveedores \footnote{\url{https://www.contrataciones.gov.py/datos/api/v2/doc/proveedores/}}, dicha API ya se encuentra publicada con el formato JSON-LD. Se realizaron consultas para obtener todos los registros de proveedores del estado y volcarlos a la base de datos MongoDB. Luego, utilizando la librería Jena, se procedió a convertir los objetos JSON-LD a RDF para posteriormente almacenarlos en la base de datos TDB.
 
 Al momento de realizar las pruebas de interoperabilidad solamente se trabajó con un subconjunto (100) de los procesos licitatorios del año 2016. De esta manera se logró realizar consultas rápidas ya que se partió de una base de datos ligera y la intención fue probar la interoperabilidad semántica entre distintas fuentes de datos. Esto es meramente experimental y no fue una prioridad mejorar los tiempos de respuesta.
 
 Como se había explicado anteriormente hemos utilizado los conjuntos de datos de Procesos Licitatorios y Proveedores para realizar consultas sobre el Punto SPARQL. A continuación expondremos algunos inconvenientes y las soluciones aplicadas referente a la manipulación de datos.
 
-Para obtener los datos de la Api V2 de la DNCP se procedió a registrarnos de manera a poder realizar peticiones sin limitaciones.
+Para obtener los datos de la API V2 de la DNCP se procedió a registrarnos de manera a poder realizar peticiones sin limitaciones.
 
-Al realizar la consulta a la api “Buscador de licitaciones” pasando como rango de fechas 01/01/2016 - 31/12/2016 se encontró que existen alrededor de 12.000 procesos licitatorios.
+Al realizar la consulta a la API “Buscador de licitaciones” pasando como rango de fechas 01/01/2016 - 31/12/2016 se encontró que existen alrededor de 12.000 procesos licitatorios.
 Dicho servicio retorna datos mínimos de cada proceso licitatorio de manera paginada, en este caso 1000. Luego, a partir del id de llamado (identificador único) se procedió a realizar las consultas al servicio de “Licitaciones” el cual está alineado al OCDS (estándar en el cual se basa la ontología desarrollada) para obtener los datos de manera más detallada.
 
 En este proceso se identificaron varios inconvenientes en la comunicación con los servicios. El tiempo de respuesta se ve afectado por la cantidad de datos solicitados y por el intervalo de tiempo entre estas solicitudes de datos. Entonces se procedió a ajustar los parámetros de las peticiones, logrando conseguir un tiempo óptimo con las siguientes salvedades.
@@ -18,7 +18,7 @@ En este proceso se identificaron varios inconvenientes en la comunicación con l
 \begin{enumerate}
 
     \item Obtener los id de llamado (Buscador) de manera paginada (1000 registros).
-    \item Cada 1000 registros obtenidos, lanzar 100 solicitudes paralelas de procesos licitatorio (Servicio OCDS) y esperar la respuesta de todas las peticiones para volver a realizar otras 100 solicitudes hasta completar el lote.
+    \item Cada 1000 registros obtenidos, lanzar 100 solicitudes paralelas de procesos licitatorios (Servicio OCDS) y esperar la respuesta de todas las peticiones para volver a realizar otras 100 solicitudes hasta completar el lote.
     \item A medida que se obtienen los procesos licitatorios se almacenan en la Base de datos MongoDB.
   
 \end{enumerate}

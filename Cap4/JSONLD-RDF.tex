@@ -1,27 +1,53 @@
 \section{De JSON-LD a RDF}
 
-La conversión de JSON-LD a RDF es un proceso directo. El sujeto (en JSON-LD), que podría ser usado como objeto en otra tripla, es definido por la propiedad @id, todas las demás propiedades son convertidas en predicado del objeto RDF resultante. Finalmente, los valores literales son extraídos directamente de la propiedad o del valor @value de la propiedad (si lo tuviere). Una propiedad puede tener también definido el lenguaje (@language) y/o tipo de informacion (@type).
+La conversión de JSON-LD a RDF es un proceso directo. El sujeto (en JSON-LD), que podría ser usado como objeto en otra tripla, es definido por la propiedad @id, todas las demás propiedades son convertidas en predicado del objeto RDF resultante. Finalmente, los valores literales son extraídos directamente de la propiedad o del valor @value de la propiedad (si lo tuviere). Una propiedad puede tener también definido el lenguaje (@language) y/o tipo de información (@type).
 
-Por ejemplo en la Figura \ref{img:EjemploBaranJSONLD} se muestra un objeto JSON-LD, que posee un contexto definido dentro del mismo objeto, este contexto también podría estar definido dentro de un documento diferente y referenciado a través de una URI. Tomemos como ejemplo la propiedad foaf:name, la misma se convierte en predicado y el objeto toma el valor del literal “Benjamin Baran” definido en el idioma inglés según especifica @language.
-
-
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=150mm]{figuras/BaranJSONLD.png}
-    \caption{Objeto JSON-LD}
-    \label{img:EjemploBaranJSONLD}
-    \end{figure}
+Por ejemplo en el cuadro \ref{lst:EjemploValdezJSONLD} se muestra un objeto JSON-LD, que posee un contexto definido dentro del mismo objeto, este contexto también podría estar definido dentro de un documento diferente y referenciado a través de una URI. Tomemos como ejemplo la propiedad foaf:name, la misma se convierte en predicado y el objeto toma el valor del literal “Rodrigo Valdez” definido en el idioma inglés según especifica @language. El cuadro \ref{lst:ValdezRDF} muestra el resultado de la conversión de JSON-LD a RDF/N-QUADS.
 
 
+\begin{minipage}{\textwidth}
+    \begin{lstlisting}[captionpos=b, caption=Objeto JSON-LD. , label=lst:EjemploValdezJSONLD, language=json,firstnumber=1,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\footnotesize\ttfamily,frame=single]
+{
+	"@context": {
+	"@base":"http://pol.una.py/members/"
+	"foaf": "http://xmlns.com/foaf/0.1/",
+	"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+	"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+	"xsd": "http://www.w3.org/2001/XMLSchema#"
+	},
+	"@id": "rodrivaldez5",
+	"@type": "foaf:Person",
+	"foaf:family_name": "Valdez",
+	"foaf:givenname": "Rodrigo",
+	"foaf:name": {
+		"@language": "en",
+		"@value": "Rodrigo Valdez"
+	} ,
+	"foaf:nick": "Rodri",
+	"foaf:title": "Software Developer"
+}
+
+        \end{lstlisting}
+    \end{minipage}
 
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=150mm]{figuras/BaranRDF.png}
-    \caption{Grafo RDF}
-    \label{img:EjemploBaranRDF}
-    \end{figure}
+\noindent\begin{minipage}{\textwidth}
+\begin{lstlisting}[captionpos=b, caption=Ejemplo en RDF/N-Quads, label=lst:ValdezRDF,  numbers=left,  numberstyle=\tiny\color{mygray},
+    basicstyle=\tiny,frame=single]
+<http://pol.una.py/members/rodrivaldez5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<http://pol.una.py/members/rodrivaldez5> <http://xmlns.com/foaf/0.1/family_name> "Valdez" .
+<http://pol.una.py/members/rodrivaldez5> <http://xmlns.com/foaf/0.1/givenname> "Rodrigo" .
+<http://pol.una.py/members/rodrivaldez5> <http://xmlns.com/foaf/0.1/name> "Rodrigo Valdez"@en .
+<http://pol.una.py/members/rodrivaldez5> <http://xmlns.com/foaf/0.1/nick> "Rodri" .
+<http://pol.una.py/members/rodrivaldez5> <http://xmlns.com/foaf/0.1/title> "Software Developer" .
+
+\end{lstlisting}
+\end{minipage}
+
+
+
+
 
 
 

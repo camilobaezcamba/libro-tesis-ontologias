@@ -1,16 +1,15 @@
-\section{Web Semántica y Ontologías}
 
-\subsection{Open Data}
+\section{Open Data}
 
 Open Data se refiere al hecho de mantener los datos publicados en internet de tal manera a cumplir con algunos requisitos para que éstos puedan ser utilizados y reutilizados en cualquier momento y desde cualquier sitio \cite{bauer2011linked}.
 
-\subsubsection{Linked Open Data (LOD)}
+\subsection{Linked Open Data (LOD)}
 
-Linked Open Data se enfoca en un método de publicación de datos abiertos estructurados para que puedan ser interconectados. Para lograr esto se utilizan las tecnologías como RDF, RDFa, etc. para estructurar los datos, utilizando URIs para identificar los datos individualmente. Tim Berners Lee define un modelo de 5 estrellas para clasificar e identificar el grado de publicación de datos abiertos.
+Linked Open Data se enfoca en un método de publicación de datos abiertos estructurados para que puedan ser interconectados. Para lograr esto se utilizan las tecnologías como RDF, RDFa, etc. para estructurar los datos, utilizando URIs para identificar los datos individualmente. Tim Berners Lee define un modelo de 5 estrella \cite{Linke48:online} para clasificar e identificar el grado de publicación de datos abiertos.
 
 \begin{table}[!htb]
 \centering
-\caption{Modelo de publicación de 5 estrellas}
+\caption{Modelo de publicación de 5 estrellas. \cite{Linke48:online}}
 \label{modelo-5-estrellas}
 \resizebox{15cm}{!} {
 \begin{tabular}{|c|l|}
@@ -24,27 +23,32 @@ Linked Open Data se enfoca en un método de publicación de datos abiertos estru
 }
 \end{table}
 
-\subsection{La Web Semántica}
-La Web Semántica consiste en una serie de estándares y tecnologías propuestas por la W3C que promueven el uso de formatos de datos común y además de un protocolo de datos dentro de la web que nos permite compartir y reusar datos -procesables por máquinas- a través de la web. Se puede pensar la Web Semántica como una manera eficiente de representar datos en la web.
+\section{La Web Semántica}
+La Web Semántica consiste en una serie de estándares y tecnologías propuestas por la W3C que promueven el uso de formatos de datos común y además de un protocolo de datos dentro de la web que nos permite compartir y reusar datos -procesables por máquinas- a través de la web. Se puede pensar la Web Semántica como una manera eficiente de representar datos en la web.\cite{TimBernersLeee}\cite{Shadbolt:2006}
 
-El principal problema de los datos en la web es la dificultad de su utilización a gran escala, ya que no siempre se aplican estándares de publicación de datos de manera a que facilite su procesamiento. Por otra parte, los datos enlazados a través de identificadores comunes en la web nos dan la capacidad de consultar datos de distintas fuentes y contestar preguntas complejas pero interpretar el significado de los mismos no resulta una tarea sencilla. Es por eso que las ontologías juegan un rol fundamental en la web semántica, ya que gracias a ellas podemos representar conocimiento legible y entendible por máquinas y humanos en la web.
+El principal problema de los datos en la web es la dificultad de su utilización a gran escala, ya que no siempre se aplican estándares de publicación de datos de manera a que facilite su procesamiento. Por otra parte, los datos enlazados a través de identificadores comunes en la web nos dan la capacidad de consultar datos de distintas fuentes y contestar preguntas complejas pero interpretar el significado de los mismos no resulta una tarea sencilla. Es por eso que las ontologías juegan un rol fundamental en la Web Semántica, ya que gracias a ellas podemos representar conocimiento legible y entendible por máquinas y humanos en la web.
 
-\subsection{Ontologías}
+\section{Interoperabilidad Semántica}
+\label{section:interoperabilidadsemantica}
+La interoperabilidad es la capacidad de dos o más sistemas de compartir y usar la  información. En la interoperabilidad semántica, los sistemas deben poder intercambiar información de tal manera que el significado del dato sea accesible y comprendido correctamente por cualquier sistema (o persona)\cite{Interoperability}\cite{Schulz2013HowOC}. Al contrario, la interoperabilidad sintáctica se preocupa en el intercambio de datos estructurados -a través de un estándar o formato común- a fin de lograr la interoperabilidad.
+Para lograr la interoperabilidad semántica hacemos uso de ontologías, las mismas nos permiten representar un modelo de datos que refleja un dominio de conocimiento dado.
+
+\section{Ontologías}
 Las ontologías son utilizadas para la representación del conocimiento, logrando así que la información esté representada de forma a que pueda ser interpretada por los computadores y humanos \cite{horrocks2011kr}. En ella se definen los conceptos de un determinado dominio, sus propiedades y relaciones entre los mismos, así también reglas para combinar términos y relaciones que permitan extender el vocabulario.
 A continuación se pone a conocimiento algunas definiciones hechas acerca de las ontologías en el ámbito de sistemas de información.
 
 \cite{gruber1993translation} definió originalmente el concepto de ontología como “Una especificación explícita de una conceptualización”. \cite{borst1997construction} definió una ontología como “Una especificación formal de una conceptualización compartida”. La definición que se eligió en este trabajo es la de \cite{studer1998knowledge}: “Una ontología se define como una especificación formal y explícita de una conceptualización compartida”.  En esta definición, conceptualización se refiere a un modelo abstracto de algún fenómeno del mundo derivado de la identificación de sus conceptos relevantes; explícita se refiere a que los tipos de conceptos y las restricciones usadas sobre ellos se definen explícitamente; formal se refiere a que la ontología debe ser “legible” por una computadora; y compartida refleja que una ontología capta un conocimiento consensual. \cite{guarino1998formal} también definió como “Un conjunto de axiomas lógicos diseñados para tener en cuenta el significado deseado de un vocabulario”.
 
-Actualmente existen ontologías para diversos dominios de conocimiento. Algunas de las más representativas son: \textit{Simple Knowledge Organization System} (SKOS) \cite{isaac2009skos}, \textit{ Friend of a Friend} (FOAF) \cite{brickley2012foaf}, \textit{Good Relations}, \cite{hepp2008goodrelations}, MGED Ontology \cite{whetzel2006mged} y National Cancer Institute Ontology \cite{golbeck2011national}. Así también existen ontologías que no pertenecen a un dominio específico (de alto nivel) y describen conceptos generales como DOLCE \cite{Masolo02thewonderweb}.
+Actualmente existen ontologías para diversos dominios de conocimiento. Algunas de las más representativas son: \textit{Simple Knowledge Organization System} (SKOS) \cite{isaac2009skos}, \textit{ Friend of a Friend} (FOAF) \cite{brickley2012foaf}, \textit{Good Relations}, \cite{hepp2008goodrelations}, MGED Ontology \cite{whetzel2006mged} y National Cancer Institute Ontology \cite{golbeck2011national}. Así también existen ontologías que no pertenecen a un dominio específico (de alto nivel) y describen conceptos generales como DOLCE\cite{dolce} \cite{Masolo02thewonderweb}.
 La ontología posee varios usos en Ciencias de la Computación, como ser en el ámbito legal, médico, científico y otros, pero ganó mayor popularidad en el ámbito de la Web Semántica. A continuación veremos las ontologías en el caso de uso de la web semántica.
 
 
-\subsection{Ontologías en la Web Semántica}
-Uno de los principios fundamentales de las ontologías dentro de la web semántica es su reutilización y extensión, esto significa utilizar conceptos de otras ontologías, siempre y cuando sea posible, mejorando el procesamiento y la integración de datos enlazados. En lugar de duplicar esfuerzos definiendo conceptos y propiedades que ya fueron definidos en otra otología, se puede referenciar a estos elementos dentro de la nueva ontología. 
+\section{Ontologías en la Web Semántica}
+Uno de los principios fundamentales de las ontologías dentro de la web semántica es su reutilización y extensión \cite{Thorsen2015OntologiesIT}, esto significa utilizar conceptos de otras ontologías, siempre y cuando sea posible, mejorando el procesamiento y la integración de datos enlazados. En lugar de duplicar esfuerzos definiendo conceptos y propiedades que ya fueron definidos en otra otología, se puede referenciar a estos elementos dentro de la nueva ontología. 
 
-Existe una variedad de tipos de ontologías que dependen del nivel de formalidad, razonamiento y la cantidad de restricciones. En el caso más simple una ontología puede describir una jerarquía de conceptos vinculados por relaciones de subsunción y en casos más sofisticados incluir axiomas para expresar relaciones entre conceptos y restringir la interpretación pretendida.
+Existe una variedad de tipos de ontologías que dependen del nivel de formalidad, razonamiento y la cantidad de restricciones\cite{Giunchiglia2009LightweightO} \cite{Obrst}. En el caso más simple una ontología puede describir una jerarquía de conceptos vinculados por relaciones de subsunción y en casos más sofisticados incluir axiomas para expresar relaciones entre conceptos y restringir la interpretación pretendida.
 
-Las ontologías para la Web Semántica son de tipo ligeras en términos de niveles de formalidad y normalmente pequeñas en tamaño haciéndolas fáciles de manejar y mantener. El poder de expresión de una ontología en la Web Semántica debe ser adecuado, el lenguaje debe ser tan expresivo como para poder describir conceptos con suficiente detalle, pero no tan expresivo como para perder la capacidad de razonamiento. Una ontología más formal o expresiva es computacionalmente más costosa, por lo que se debe encontrar un equilibrio entre los dos puntos. En la Figura \ref{img:expresividad complejidad } se puede ver el espectro de ontologías según su expresividad y complejidad computacional, en donde el lenguaje OWL y la Lógica de Descripciones se encuentran dentro de las más expresivas y costosas computacionalmente.
+Las ontologías para la Web Semántica son de tipo ligeras en términos de niveles de formalidad y normalmente pequeñas en tamaño haciéndolas fáciles de manejar y mantener\cite{Thorsen2015OntologiesIT}. El poder de expresión de una ontología en la Web Semántica debe ser adecuado, el lenguaje debe ser tan expresivo como para poder describir conceptos con suficiente detalle, pero no tan expresivo como para perder la capacidad de razonamiento\cite{reasonableSemantic}. Una ontología más formal o expresiva es computacionalmente más costosa, por lo que se debe encontrar un equilibrio entre los dos puntos. En la Figura \ref{img:expresividad complejidad } se puede ver el espectro de ontologías según su expresividad y complejidad computacional, en donde el lenguaje OWL y la Lógica de Descripciones se encuentran dentro de las más expresivas y costosas computacionalmente.
 La capacidad de razonamiento es importante para asegurar la calidad de la ontología construida, por ejemplo, en la etapa de diseño puede ser utilizada para probar si existen conceptos contradictorios y derivar nuevas relaciones.
 
 Las formas de representar ontologías en la Web Semántica son diversas en cuanto a lenguajes y formas de serialización, a continuación se presenta algunas de ellas.
@@ -52,18 +56,18 @@ Las formas de representar ontologías en la Web Semántica son diversas en cuant
     \begin{figure}[ht!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas-ComplejidadOntologica}
-    \caption{Expresividad vs Complejidad}
+    \caption{Expresividad vs Complejidad. Adaptación de \cite{Giunchiglia2009LightweightO} \cite{Obrst}}
     \label{img:expresividad complejidad }
     \end{figure}
 
 
 
-\subsection{RDF y RDFS (RDF)}
+\section{RDF y RDFS (RDF)}
 
-Marco de Descripción de Recursos, RDF por sus siglas \textit{Resource Description Framework}  \cite{rdf}, es un framework para representar información en la Web Semántica. El lenguaje RDF forma parte de la W3C's \textit{Semantic Web Activity} y es recomendado por la W3C. El modelo de datos RDF está diseñado para que sea procesable por computadoras. 
+Marco de Descripción de Recursos, RDF por sus siglas \textit{Resource Description Framework}  \cite{rdf}, es un framework para representar información en la Web Semántica. El lenguaje RDF forma parte de la W3C's \textit{Semantic Web Activity} y es recomendado por la W3C \cite{Semantic20:online}. El modelo de datos RDF está diseñado para que sea procesable por computadoras. 
 
 RDF nos permite representar modelos de datos basados en grafos, los cuales son representados en triplas. Las triplas RDF contienen tres componentes:
-El sujeto, que puede ser una referencia tipo URI o un Blank Node
+El sujeto, que puede ser una referencia tipo URI o un \textit{Blank Node}
 El predicado, que es una referencia tipo URI
 El objeto que puede ser una referencia tipo URI, un literal o un \textit{Blank Node}
 
@@ -124,7 +128,7 @@ En el Cuadro \ref{lst:n-quads} se muestra un ejemplo de triplas en formato RDF/N
 \end{lstlisting}
 \end{minipage}
 
-En linea 1, <http://www.rodrivaldez5.com/> es el sujeto, <http://schema.org/image> es el predicado y <http://www.rodrivaldez5.com/images/rodri.png> es el objeto, donde el objeto en este caso es una URI. En la línea 2 se puede ver que el objeto se trata de un dato literal de tipo String.  A continuación se presenta JSON-LD, una forma de representación de datos compatible con RDF.
+En linea 1, <http://www.rodrivaldez5.com/> es el sujeto, <http://schema.org/image>  es el predicado y <http://www.rodrivaldez5.com/images/rodri.png>  es el objeto, donde el objeto en este caso es una URI. En la línea 2 se puede ver que el objeto se trata de un dato literal de tipo String.  A continuación se presenta JSON-LD, una forma de representación de datos compatible con RDF.
 
 \subsection{Serialización JSON-LD}
 
@@ -245,7 +249,7 @@ El formato JSON es ampliamente utilizado y preferido por los desarrolladores en 
 \begin{table}[!htb]
 \footnotesize
 \centering
-\caption{Preferencias de uso de serialización RDF y JSON-LD}
+\caption{Preferencias de uso de serialización RDF y JSON-LD \cite{RDFANDJS70:online}}
 \label{prefencia-uso}
 \resizebox{15cm}{!} {
 \begin{tabular}{|l|l|l|}
@@ -262,23 +266,23 @@ El formato JSON es ampliamente utilizado y preferido por los desarrolladores en 
 
 
 
-\subsection{\textit{Web Ontology Language }(OWL)}
+\section{\textit{Web Ontology Language }(OWL)}
 OWL es un estándar internacional para codificar e intercambiar ontologías y es diseñado para soportar la Web Semántica.
 
-OWL es el lenguaje de representación de conocimientos recomendado por la W3C y es una extensión de RDFS, dándole mayor expresividad a través de operaciones booleanas (intersección, unión, complemento), restricciones de cardinalidad, cuantificación existencial, etc. El mismo está basado en lenguajes de representación de conocimientos llamados Lógica de Descripciones (DL). DL es un lenguaje formal usado para construir ontologías y permite declarar conocimiento de un dominio específico e incluir reglas de razonamiento para poder procesarlo \cite{kalibatiene2011survey}.
+Es el lenguaje de representación de conocimientos recomendado por la W3C y es una extensión de RDFS, dándole mayor expresividad a través de operaciones booleanas (intersección, unión, complemento), restricciones de cardinalidad, cuantificación existencial, etc. El mismo está basado en lenguajes de representación de conocimientos llamados Lógica de Descripciones (DL, por sus siglas en inglés \textit{Description Logic}). DL es un lenguaje formal usado para construir ontologías y permite declarar conocimiento de un dominio específico e incluir reglas de razonamiento para poder procesarlo \cite{kalibatiene2011survey}.
 
 Al estar basado en DL, OWL nos trae consigo las siguientes ventajas
 \begin{itemize}
     \item Expresividad: La Lógica de Descripciones nos permite tener expresiones complejas de los conceptos a modelar.
-    \item Razonador Automático: la Lógica de Descripciones está basado en lógica formal, eso nos permite desarrollar razonadores capaces de verificar la consistencia de la ontológica e inferir nuevo conocimiento.
+    \item Razonador Automático: La Lógica de Descripciones está basado en lógica formal, eso nos permite desarrollar razonadores capaces de verificar la consistencia de la ontológica e inferir nuevo conocimiento.
 \end{itemize}
 
 OWL posee tres sub lenguajes: OWL Lite, OWL DL y OWL Full. Todos permiten describir clases, propiedades e instancias pero difieren uno de otro en el nivel de especificación requerido. OWL Lite está diseñado para usuarios cuyas necesidades de modelado sean simples. OWL DL es lo más cercano a una DL expresiva manteniendo la completitud computacional, esto significa que la ontología es procesable computacionalmente. OWL Full posee mayor expresividad sacrificando la completitud computacional de la ontología. En la Figura \ref{img:subclases owl} se muestra la relación entre los tres sublenguajes.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=150mm]{figuras/Diagramas-OwlSubClasses}
-    \caption{Subclases OWL}
+    \includegraphics[width=150mm]{figuras/Diagramas-OwlSubClasses.png}
+    \caption{Subclases OWL. \cite{owllevels}}
     \label{img:subclases owl}
     \end{figure}
 
