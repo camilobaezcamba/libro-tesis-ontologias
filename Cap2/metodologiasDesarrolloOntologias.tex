@@ -1,10 +1,11 @@
 \section{Metodologías para el desarrollo de Ontologías}
 
-En este apartado se dará un resumen de las metodologías más utilizadas para la creación de una ontología; Ontology Development 101, OntoKnowledge , Methontology, y NeOn. Luego se realizará un análisis y elección según los requerimientos de este trabajo.
+En este apartado se dará un resumen de las metodologías más utilizadas para la creación de una ontología; Ontology Development 101 (ver \ref{subsection:101}), OntoKnowledge (ver \ref{subsection:ontoknowledge}), Methontology (ver \ref{subsection:methontology}), y NeOn (ver \ref{subsection:neon}). Luego se realizará un análisis y elección según los requerimientos de este trabajo.
 
 \subsection{Ontology Development 101}
+\label{subsection:101}
 
-Esta metodología describe una serie de pasos y recomendaciones a tener en cuenta al crear una ontología. 
+Esta metodología describe una serie de pasos y recomendaciones a tener en cuenta al crear una ontología]\cite{noy2001ontology,}. 
 
 Se describen a continuación los pasos:
 \begin{description}
@@ -20,8 +21,9 @@ Se describen a continuación los pasos:
 Además, la guía propone algunas buenas prácticas de desarrollo de ontologías relacionadas a la definición de clases como la correcta creación de jerarquías, herencias múltiples,  cuándo crear una clase o una propiedad, cuando es una instancia o una clase, etc. También algunos delineamientos sobre las propiedades como valores por defecto, cardinalidad, etc. Por último, una serie de convenciones de nombres dentro de la ontología. La metodología no tiene en cuenta el proceso de especificación ni el mantenimiento de la ontología.
 
 \subsection{OntoKnowledge} 
+\label{subsection:ontoknowledge}
 
-Ontoknowledge propone crear ontologías teniendo en cuenta su uso posterior en sistemas de administración de conocimiento, por tanto las ontologías creadas son dependientes de la aplicación. La metodología incluye la identificación de metas a ser logradas a través de herramientas de control basadas en los escenarios de usos.
+Ontoknowledge\cite{On-to-knowledge} propone crear ontologías teniendo en cuenta su uso posterior en sistemas de administración de conocimiento, por tanto las ontologías creadas son dependientes de la aplicación. La metodología incluye la identificación de metas a ser logradas a través de herramientas de control basadas en los escenarios de usos.
 
 El proceso que propone la metodología se puede resumir en los siguientes pasos:
 
@@ -45,20 +47,21 @@ La metodología propone un ciclo de vida incremental y cíclico como se muestra 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas-OntoKnowledgeProcess}
-    \caption{Ciclo de vida de OntoKnowledge}
+    \caption{Ciclo de vida de OntoKnowledge. \cite{ontoKnowledgeFig}}
     \label{img:ontoknowledge}
     \end{figure}
 
 \subsection{Methontology}
+\label{subsection:methontology}
 
-Esta metodología incluye la identificación del proceso del desarrollo de una ontología, que consiste en una serie de actividades, el ciclo de vida basado en el refinamiento de un prototipo y técnicas para llevar a cabo cada actividad durante el mantenimiento, el desarrollo y el soporte de las actividades. Todas las actividades están basadas en el proceso de desarrollo de software y las utilizadas en metodologías de ingeniería de conocimiento.
+Methontology\cite{fernandez1997methontology} incluye la identificación del proceso del desarrollo de una ontología, que consiste en una serie de actividades, el ciclo de vida basado en el refinamiento de un prototipo y técnicas para llevar a cabo cada actividad durante el mantenimiento, el desarrollo y el soporte de las actividades. Todas las actividades están basadas en el proceso de desarrollo de software y las utilizadas en metodologías de ingeniería de conocimiento.
 
 En la Figura \ref{img:methontology} se pueden ver los estados de todo el ciclo de vida de la ontología.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas-MethontologyProcess}
-    \caption{Ciclo de vida de Methontology}
+    \caption{Ciclo de vida de Methontology\cite{Corcho2003BuildingLO}}
     \label{img:methontology}
     \end{figure}
     
@@ -79,6 +82,7 @@ A continuación se describen algunas de las principales actividades:
 
 
 \subsection{NeOn}
+\label{subsection:neon}
 Esta metodología incluye métodos, técnicas y herramientas para llevar a cabo actividades para el proceso de desarrollo de una red ontológica. Está enfocada en la especificación de los requerimientos, la planificación y el reuso de recursos ontológicos y no-ontológicos \cite{suarez2010neon}.
 
 La metodología presenta los siguientes componentes:
@@ -112,7 +116,7 @@ A continuación se presentan los nueve escenarios que propone NeOn.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=150mm]{figuras/Diagramas-NeonProcess}
-    \caption{Ciclo de vida de NeOn}
+    \caption{Ciclo de vida de NeOn \cite{Suarez-Figueroa:2012:OEN:2341178}}
     \label{img:neon ciclo de vida}
     \end{figure}
 
