@@ -6,8 +6,7 @@ Para este caso se utilizó la fuente de datos de procesos licitatorios y la onto
 
 
 \noindent\begin{minipage}[c]{\textwidth}
-\begin{lstlisting}[captionpos=b, caption=Extension de la ontologia utilizando restricciones ontologicas, label={lst:caso5-1},  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+\begin{lstlisting}[captionpos=b, caption=Extension de la ontologia utilizando restricciones ontologicas, label={lst:caso5-1},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 INSERT DATA {
     ocds:PLConContrato rdfs:subClassOf ocds:Release ; 
     owl:equivalentClass    [ 
@@ -25,8 +24,7 @@ INSERT DATA {
  De esta manera basta solo con realizar la consulta SPARQL presentada en el Cuadro \ref{lst:caso5-2} para obtener todos los procesos licitatorios con al menos un contrato. La restricción consigue filtrar solo los \textit{Release} cuya propiedad \textit{contracts} tiene al menos una instancia.\hfill \break
 
 \noindent\begin{minipage}[c]{\textwidth}
- \begin{lstlisting}[captionpos=b, caption=Consulta SPARQL utilizando la Clase PLConContrato, label=lst:caso5-2,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+ \begin{lstlisting}[captionpos=b, caption=Consulta SPARQL utilizando la Clase PLConContrato, label=lst:caso5-2,  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 SELECT  *
     WHERE
       { ?a  ?b  ocds:PLConContrato }

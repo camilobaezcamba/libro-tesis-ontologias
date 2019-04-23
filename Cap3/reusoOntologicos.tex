@@ -102,8 +102,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
 
 \noindent\begin{minipage}{\textwidth}
 
-\begin{lstlisting}[captionpos=b, caption={Reutilización de la Clase Document}, label={lst:sparql1},  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+\begin{lstlisting}[captionpos=b, caption={Reutilización de la Clase Document}, label={lst:sparql1},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 :Document rdf:type owl:Class ;
     rdfs:subClassOf foaf:Document .
 \end{lstlisting}
@@ -112,8 +111,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
  Al mismo tiempo se reutilizaron de la ontología \textit{Public Contract}, los conceptos de \textit{Tender} y \textit{Contract} de un proceso licitatorio(Cuadro \ref{lst:sparql2}).\hfill \break
 
 \noindent\begin{minipage}{\textwidth}
- \begin{lstlisting}[captionpos=b, caption={Conceptos de Tender y Contract}, label={lst:sparql2},  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+ \begin{lstlisting}[captionpos=b, caption={Conceptos de Tender y Contract}, label={lst:sparql2},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 :Tender rdf:type owl:Class ;
     rdfs:subClassOf pc:Tender .
 :Contract rdf:type owl:Class ;
@@ -124,8 +122,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
  \textit{Good Relations} es una ontología para modelar compras de bienes y servicios a través de internet, por lo que también se procedió a la reutilización de los conceptos \textit{gr:Offering, gr:BusinessEntity y gr:PriceSpecification} (Cuadro \ref{lst:sparql3}).\hfill \break
 
 \noindent\begin{minipage}{\textwidth}
- \begin{lstlisting}[captionpos=b, caption={Conceptos de Organization y Price}, label={lst:sparql3},  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+ \begin{lstlisting}[captionpos=b, caption={Conceptos de Organization y Price}, label={lst:sparql3},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 :Item rdf:type owl:Class ;
     rdfs:subClassOf gr:Offering .
 :Organization rdf:type owl:Class ;
@@ -140,8 +137,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
  Se reutilizó la ontología de Schema.org para conceptos básicos como los presentados el Cuadro \ref{lst:sparql4}.\hfill \break
 
 \noindent\begin{minipage}{\textwidth}
- \begin{lstlisting}[captionpos=b, caption={Reutilización de Schema.org}, label={lst:sparql4},  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+ \begin{lstlisting}[captionpos=b, caption={Reutilización de Schema.org}, label={lst:sparql4},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 :Address rdf:type owl:Class ;
     rdfs:subClassOf sch:PostalAddress .
 :ContactPoint rdf:type owl:Class ;
@@ -153,8 +149,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
 
 
 \noindent\begin{minipage}{\textwidth}
- \begin{lstlisting}[captionpos=b, caption={Reutilización del patrón de Secuencia}, label={lst:sparql5},  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+ \begin{lstlisting}[captionpos=b, caption={Reutilización del patrón de Secuencia}, label={lst:sparql5},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 :planningPrecedes rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf seq:directlyPrecedes ;
     rdfs:domain :Planning ;

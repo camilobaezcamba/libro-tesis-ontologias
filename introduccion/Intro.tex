@@ -1,12 +1,13 @@
 %!TEX root = ../main.tex
 \chapter{Introducción}
 \label{chap:introduccion}
-Según el reporte de la Open Contracting Partnership (OCP), los Gobiernos de todo el mundo gastan un estimado de 9.5 billones de dólares anualmente mediante contratos. Sin embargo, en la mayoría de los países, la información sobre estos contratos no está disponible para el escrutinio público, haciendo al proceso de contratación vulnerable a la corrupción y la mala gestión. Además, los países que sí lo hacen, no proveen un contexto apropiado para entender, reutilizar e integrar dichos datos con otros.
+Según el reporte de la Open Contracting Partnership\footnote{https://www.open-contracting.org/?lang=es} (OCP), los Gobiernos de todo el mundo gastan un estimado de 9.5 billones de dólares anualmente mediante contratos públicos. Sin embargo, en la mayoría de los países, la información sobre estos contratos no está disponible para el escrutinio público, haciendo al proceso de contratación vulnerable a la corrupción y la mala gestión. Además, los países que sí lo hacen, no proveen un contexto apropiado para entender, reutilizar e integrar dichos datos con otros.
 
-Debido a la creciente importancia de publicar los datos de contrataciones públicas los Estados crean portales de datos con el fin de transparentar los procesos y establecer mecanismos para que la ciudadanía, empresas y organizaciones puedan ejercer un rol de contralores y a la vez facilitar a los entes gubernamentales a contratar bienes y servicios. Este es el caso del portal Tender Electronic Daily (TED) en la Unión Europea, República Checa, y la Municipalidad de Palmares en Costa Rica. En Paraguay, estos datos pueden ser obtenidos desde el Portal de Datos Abiertos de la Dirección Nacional de Contrataciones Públicas (DNCP).
+Debido a la creciente importancia de publicar los datos de contrataciones públicas los Estados crean portales de datos con el fin de transparentar los procesos y establecer mecanismos para que la ciudadanía, empresas y organizaciones puedan ejercer un rol de contralores y a la vez facilitar a los entes gubernamentales a contratar bienes y servicios. Este es el caso del portal Tender Electronic Daily \footnote{https://ted.europa.eu/TED/main/HomePage.do} (TED) en la Unión Europea y República Checa \footnote{https://opentender.eu/cz/}. En Paraguay, estos datos pueden ser obtenidos desde el Portal de Datos Abiertos de la Dirección Nacional de Contrataciones Públicas \footnote{https://www.contrataciones.gov.py/datos} (DNCP).
 
-Según Svátek, los datos de contrataciones públicas son importantes dentro de la Web Semántica porque unifican dos esferas muy diferentes como son: las necesidades públicas por un lado y la oferta de productos y servicios del sector privado por el otro; este escenario es idóneo para la utilización de modelos de datos, metodologías y fuentes de información publicadas de forma independiente. Además, la gran cantidad de datos de contrataciones públicas da lugar para aplicar diversos métodos de análisis de datos que van desde estadísticas agregadas en forma de barras hasta análisis más exhaustivos de minería de datos.
-Este trabajo nace con la intención de crear una ontología capaz de mejorar la accesibilidad a la información pública, y que dicha información sea comprensible por máquinas con el fin de brindar mayor desarrollo y transparencia al proceso de contrataciones públicas.
+
+Según Svátek \cite{svatek2014linked}, los datos de contrataciones públicas son importantes dentro de la Web Semántica \ref{Semantic20:online} porque unifican dos esferas muy diferentes como son: las necesidades públicas por un lado y la oferta de productos y servicios del sector privado por el otro; este escenario es idóneo para la utilización de modelos de datos, metodologías y fuentes de información publicadas de forma independiente. Además, la gran cantidad de datos de contrataciones públicas da lugar para aplicar diversos métodos de análisis de datos que van desde estadísticas agregadas en forma de barras hasta análisis más exhaustivos de minería de datos.
+Este trabajo nace con la intención de crear una ontología capaz de mejorar la accesibilidad a la información pública, y que dicha información sea comprensible por máquinas con el fin de brindar mayor desarrollo y transparencia al proceso de contrataciones públicas. 
 
 
 
@@ -32,22 +33,22 @@ El objetivo general es verificar experimentalmente la interoperabilidad semánti
     \item[O1.] Identificar y comparar las bases de representación de conocimiento asociadas al dominio de Contrataciones Públicas.
     \item[O2.] Describir el proceso de modelado de una ontología utilizando una base de representación de conocimiento de dominio.
     \item[O3.] Modelar un sistema de extracción y consultas de datos del dominio de Contrataciones Públicas con capacidad de integración semántica.
-    \item[O4.] Mostrar la expresividad e interoperabilidad semantica de datos utilizando la ontología desarrollada.
+    \item[O4.] Mostrar la expresividad e interoperabilidad semántica de datos utilizando la ontología desarrollada.
 \end{description} 
 
 
 \section{Contribuciones}
 \label{Contribuciones}
 \begin{itemize}
-\item \label{contrib:1}Sistema de extracción y manipulación de datos de Procesos Licitatorios con capacidad de integración con fuentes externas de datos como Wikidata.
-\item \label{contrib:2}Descripción del proceso de modelado de una Ontología reutilizando un recurso no-ontológico basado en JSON-SCHEMA.
-\item \label{contrib:3}Una Ontología basada en el Open Contracting Data Standard.
+\item \label{contrib:1}Sistema de extracción y manipulación de datos de Procesos Licitatorios con capacidad de integración con fuentes externas de datos como Wikidata\footnote{https://www.wikidata.org/wiki/Wikidata:Main_Page}.
+\item \label{contrib:2}Descripción del proceso de modelado de una Ontología reutilizando un recurso no-ontológico basado en JSON-SCHEMA\cite {JSONSche10:online}.
+\item \label{contrib:3}Una Ontología basada en el Open Contracting Data Standard \cite{OCDSReleaseSchema:online}.
 \item \label{contrib:4}Descripciones experimentales de la pragmática de incorporación, uso y reuso de ontologías para aumentar la interoperabilidad en los datos publicados.
 
 \end{itemize}
  
 
 \section{Estructura del documento}
-El trabajo está estructurado de la siguiente manera; en  en el  Capítulo \ref{chap:Marco Teorico}  trataremos el marco teórico del trabajo abordando los temas de la Web Semántica, las ontologías, sus metodologías y herramientas relacionadas. En el Capítulo \ref{chap:Desarrollo de la Ontologia} se mostrará el proceso de modelado de la ontología, en el Capítulo \ref{chap:Implementación de la Ontologia} se describira la implementación el entorno tecnológico de experimentación para luego en el Capítulo  \ref{chap:Contexto experimental} mostrar las pruebas realizadas a los datos utilizando la ontología desarrollada. En el Capítulo \ref{chap:conclusiones} se evaluará el cumplimiento de los objetivos propuestos, las conclusiones finales y futuros trabajos que pudieran abordarse. Al final de este documento  se  incluyen las referencias bibliográficas utilizadas para su elaboración y el anexo que provee información complementaria al trabajo.
+El trabajo está estructurado de la siguiente manera; en  en el  Capítulo \ref{chap:Marco Teorico}  trataremos el marco teórico del trabajo abordando los temas de la Web Semántica, las ontologías, sus metodologías y herramientas relacionadas. En el Capítulo \ref{chap:Desarrollo de la Ontologia} se mostrará el proceso de modelado de la ontología, en el Capítulo \ref{chap:Implementación de la Ontologia} se describirá la implementación el entorno tecnológico de experimentación para luego en el Capítulo  \ref{chap:Contexto experimental} mostrar las pruebas realizadas a los datos utilizando la ontología desarrollada. En el Capítulo \ref{chap:conclusiones} se evaluará el cumplimiento de los objetivos propuestos, las conclusiones finales y futuros trabajos que pudieran abordarse. Al final de este documento  se  incluyen las referencias bibliográficas utilizadas para su elaboración y el anexo que provee información complementaria al trabajo.
 
 

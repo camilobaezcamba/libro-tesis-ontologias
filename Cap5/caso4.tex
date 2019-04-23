@@ -5,8 +5,7 @@ En este caso se pretende demostrar la capacidad de reutilización e inferencia p
 Para obtener las convocatorias de la DNCP es necesario que el Punto SPARQL utiliza el motor de inferencia ya que los datos no están anotados directamente con la propiedad \textit{pc:Tender} pero sí están anotados con \textit{ocds:Tender} la cual, en la ontología de OCDS, está definida como una subclase de \textit{pc:Tender} (como se muestra en el Cuadro \ref{lst:caso4-1}). \hfill \break
 
 \noindent\begin{minipage}[c]{\textwidth}
-\begin{lstlisting}[captionpos=b, caption=Extensión de la ontología reutilizando PC, label={lst:caso4-1},  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+\begin{lstlisting}[captionpos=b, caption=Extensión de la ontología reutilizando PC, label={lst:caso4-1},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 ###  http://purl.org/onto-ocds/ocds#Tender
 :Tender rdf:type owl:Class ;
         rdfs:subClassOf pc:Tender ;
@@ -19,14 +18,13 @@ Para obtener las convocatorias de la DNCP es necesario que el Punto SPARQL utili
  La consulta realizada en el Cuadro \ref{lst:caso4-2} consiste en listar los primeros 6 contratos encontrados (3 de Paraguay y 3 de Zaragoza)”.
  
 \noindent\begin{minipage}[c]{\textwidth}
- \begin{lstlisting}[captionpos=b, caption=Consulta a dos fuentes de datos utilizando el mismo concepto, label={lst:caso4-2},  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
-select ?tender
-where {
+ \begin{lstlisting}[captionpos=b, caption=Consulta a dos fuentes de datos utilizando el mismo concepto, label={lst:caso4-2},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
+SELECT ?tender
+WHERE {
     #Paraguay
-    { select * 
-    where 
-    {?tender ?b pc:Tender } limit 3 
+    { SELECT * 
+    WHERE 
+    {?tender ?b pc:Tender } LIMIT 3 
     }
     UNION 
     { 

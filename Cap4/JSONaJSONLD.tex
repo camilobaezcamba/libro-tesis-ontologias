@@ -25,8 +25,7 @@ Dado que la definición de los contextos se da en forma de cascada, es decir se 
 A continuación se muestra la colisión entre conceptos, donde amount (del objeto budget) se refiere al valor monetario (número y moneda) del presupuesto, y la siguiente propiedad amount (del objeto amount) se refiere al valor numérico específicamente.\hfill \break
 
 \noindent\begin{minipage}{\textwidth}
-\begin{lstlisting}[captionpos=b, caption=Objeto JSON con colisión semántica entre conceptos, label=lst:oJson,language=json,firstnumber=1,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\linespread{0.8}\footnotesize\ttfamily,frame=single]
+\begin{lstlisting}[captionpos=b, caption=Objeto JSON con colisión semántica entre conceptos, label=lst:oJson,language=json,firstnumber=1,  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
     "budget": {
         "description": "Adquisicion de Scanner",
         "amount": {
@@ -38,19 +37,18 @@ A continuación se muestra la colisión entre conceptos, donde amount (del objet
 \end{minipage}
 \noindent
 \begin{minipage}{\textwidth}
-    \begin{lstlisting}[captionpos=b, caption=Objeto JSON-LD. Sin colisión semántica entre conceptos , label=lst:oJsonLd, language=json,firstnumber=1,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
-        "budget": {
-            "@context": "http://purl.org/onto-ocds/ocds/context-budget.json",
-            "@type": "Budget",
-            "description": "Adquisicion de Scanner",
-            "amount": {
-                "@context": "http://purl.org/onto-ocds/ocds/context-value.json",
-                "@type": "Value",
-                "amount": 12000000,
-                "currency": "PYG"
-           }
-       }   
+    \begin{lstlisting}[captionpos=b, caption=Objeto JSON-LD. Sin colisión semántica entre conceptos , label=lst:oJsonLd, language=json,firstnumber=1,  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
+    "budget": {
+        "@context": "http://purl.org/onto-ocds/ocds/context-budget.json",
+        "@type": "Budget",
+        "description": "Adquisicion de Scanner",
+        "amount": {
+            "@context": "http://purl.org/onto-ocds/ocds/context-value.json",
+            "@type": "Value",
+            "amount": 12000000,
+            "currency": "PYG"
+       }
+   }   
         \end{lstlisting}
     \end{minipage}
 

@@ -5,13 +5,12 @@ Se pretende demostrar la integración e interoperabilidad con una ontología esp
 La consulta realizada en el Cuadro  \ref{lst:caso3-1}consiste en obtener la cantidad de todos los Procesos Licitatorios cuyos proveedores residen en países que no son limítrofes con Paraguay, agrupando estas cantidades de acuerdo al país.
 
 \noindent\begin{minipage}[c]{\textwidth}
-\begin{lstlisting}[captionpos=b, caption=Integracion con una fuente de datos externa utilizando dos ontologias, label=lst:caso3-1,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
-select *
-    where {
+\begin{lstlisting}[captionpos=b, caption=Integracion con una fuente de datos externa utilizando dos ontologias, label=lst:caso3-1,  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
+SELECT *
+    WHERE {
       {
-      select ?label (COUNT(?label) AS ?cantidad)
-    where {
+      SELECT ?label (COUNT(?label) AS ?cantidad)
+    WHERE {
     ?plicitatorio rdf:type ocds:Release;
                   ocds:contracts ?contract.
       ?contract ocds:contractSuppliers ?org.
@@ -29,7 +28,7 @@ select *
                 }        
         }
         }
-        } group by ?label
+        } GROUP BY ?label
       }
     
     }
@@ -73,8 +72,7 @@ En la Figura \ref{img:caso3Resultado2} se ve el resultado si se suprime el filtr
 En el Cuadro \ref{lst:3-2} se muestra la definición actual de la propiedad “countryName” que pertenece a la clase “Address". Se observa que el tipo de propiedad es “DatatypeProperty” el cual representa un literal.\hfill \break 
 
 \noindent\begin{minipage}[c]{\textwidth}
-\begin{lstlisting}[captionpos=b, caption=Definición de la propiedad countryName, label={lst:3-2},  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+\begin{lstlisting}[captionpos=b, caption=Definición de la propiedad countryName, label={lst:3-2},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 ###  http://purl.org/onto-ocds/ocds#countryName
 :countryName rdf:type owl:DatatypeProperty ,
     owl:FunctionalProperty ;
@@ -88,8 +86,7 @@ En el Cuadro \ref{lst:3-2} se muestra la definición actual de la propiedad “c
  En el Cuadro \ref{lst:caso3-3} se muestra una posible solución al inconveniente mencionado. Primeramente se debe renombrar la propiedad \textit{countryName} a \textit{country} para que de esta forma denote la relación con un país y no con el nombre del país solamente. Luego se debe cambiar el rango de valores de \textit{rdfs: range xsd:string}  a \textit{rdfs:range :Country }donde \textit{Country} se refiere a una nueva clase a ser definida en la ontología. Esta última será la que represente al concepto “País”. Luego deberá definirse una instancia del país (por cada país que exista en la fuente de datos) de tipo \textit{Country}. Finalmente faltaría relacionar este recurso con otro semejante dentro de la Web Semántica, en este caso se puede realizar con los datos disponibles en Wikidata a través de la sentencia \textit{owl:sameAs wd:Q733} donde \textit{wd:Q733} es el identificador único (URI) de Paraguay en Wikidata.\hfill \break
 
 \noindent\begin{minipage}[c]{\textwidth}
- \begin{lstlisting}[captionpos=b, caption=Declaración de la Clase Country, label={lst:caso3-3},  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+ \begin{lstlisting}[captionpos=b, caption=Declaración de la Clase Country, label={lst:caso3-3},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 PREFIX wd: <http://www.wikidata.org/entity/>
 ###  http://purl.org/onto-ocds/ocds#country
 :country rdf:type owl:ObjectProperty ,

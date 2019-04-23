@@ -1,11 +1,11 @@
-
-\section{Open Data}
+En esta capítulo abordaremos los conceptos teóricos necesarios para la elaboración de este trabajo. Primeramente veremos los conceptos de Datos Abiertos. Se abordara los estándares y tecnologías a los cuales se definen dentro de la Web Semántica y la interoperabilidad semántica. Por ultimo se abordara la teoría de contracción de ontologías, su aplicación dentro de la web semántica, así como también los formatos de serialización y herramientas para consultar datos.
+\section{Datos Abiertos}
 
 Open Data se refiere al hecho de mantener los datos publicados en internet de tal manera a cumplir con algunos requisitos para que éstos puedan ser utilizados y reutilizados en cualquier momento y desde cualquier sitio \cite{bauer2011linked}.
 
-\subsection{Linked Open Data (LOD)}
+\subsection{Datos Abiertos Enlazados}
 
-Linked Open Data se enfoca en un método de publicación de datos abiertos estructurados para que puedan ser interconectados. Para lograr esto se utilizan las tecnologías como RDF, RDFa, etc. para estructurar los datos, utilizando URIs para identificar los datos individualmente. Tim Berners Lee define un modelo de 5 estrella \cite{Linke48:online} para clasificar e identificar el grado de publicación de datos abiertos.
+Los datos abiertos enlazados se enfocan en un método de publicación de datos abiertos estructurados para que puedan ser interconectados. Para lograr esto se utilizan las tecnologías como RDF, RDFa, etc. para estructurar los datos, utilizando URIs para identificar los datos individualmente. Tim Berners Lee define un modelo de 5 estrella \cite{Linke48:online} para clasificar e identificar el grado de publicación de datos abiertos.
 
 \begin{table}[!htb]
 \centering
@@ -118,8 +118,7 @@ En el Cuadro \ref{lst:n-quads} se muestra un ejemplo de triplas en formato RDF/N
     xs:schema,xs:element,xs:complexType,xs:sequence,xs:attribute}}
     
 \noindent\begin{minipage}{\textwidth}
-\begin{lstlisting}[captionpos=b, caption=Ejemplo en RDF/N-Quads, label=lst:n-quads,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\tiny,frame=single]
+\begin{lstlisting}[captionpos=b, caption=Ejemplo en RDF/N-Quads, label=lst:n-quads,  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 <http://rodrivaldez5.com/> <http://www.w3.org/2000/01/rdf-schema#type> <http://schema.org/person> .  
 <http://www.rodrivaldez5.com/> <http://schema.org/name>"Rodrigo Valdez" .
 <http://www.rodrivaldez5.com/> <http://schema.org/telephone>"0981530572" .
@@ -145,7 +144,7 @@ En el Cuadro \ref{lst:json} se muestra un ejemplo de documento JSON y en el Cuad
 \definecolor{delim}{RGB}{20,105,176}
 \colorlet{numb}{magenta!60!black}
 \lstdefinelanguage{json}{
-    basicstyle=\normalfont\ttfamily,
+    basicstyle=\linespread{0.8}\footnotesize\ttfamily,
     numbers=left,
     numberstyle=\scriptsize,
     stepnumber=1,
@@ -177,8 +176,7 @@ En el Cuadro \ref{lst:json} se muestra un ejemplo de documento JSON y en el Cuad
 
 
 \noindent\begin{minipage}{\textwidth}
-\begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON, label=lst:json,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+\begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON, label=lst:json,  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 {
   "id": "http://www.rodrivaldez5.com/",
   "name": "Rodrigo Valdez",
@@ -190,15 +188,14 @@ En el Cuadro \ref{lst:json} se muestra un ejemplo de documento JSON y en el Cuad
 \end{minipage}
 
 \noindent\begin{minipage}{\textwidth}
-\begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD, label=lst:json-ld,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+\begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD, label=lst:json-ld,  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 {
-"@id": "http://www.rodrivaldez5.com/",
-"@type": "http://schema.org/person",
-"http://schema.org/name": "Rodrigo Valdez",
-"http://schema.org/telephone" : "0981530572",
-"http://schema.org/jobTitle": "Developer",
-"http://schema.org/image":   {"@id": "http://www.rodrivaldez5.com/images/rodri.png"} 
+  "@id": "http://www.rodrivaldez5.com/",
+  "@type": "http://schema.org/person",
+  "http://schema.org/name": "Rodrigo Valdez",
+  "http://schema.org/telephone" : "0981530572",
+  "http://schema.org/jobTitle": "Developer",
+  "http://schema.org/image":   {"@id":  "http://www.rodrivaldez5.com/images/rodri.png"} 
 }
 \end{lstlisting}
 \end{minipage}
@@ -207,8 +204,7 @@ De aquí se puede observar que el principal cambio radica en los nombres de las 
 Además JSON-LD permite crear un contexto que contiene el mapeamiento entre el nombre de la propiedad y la URI, dando como resultado el objeto JSON-LD del Cuadro \ref{lst:json-ld-contexto}. \hfill \break
 
 \noindent\begin{minipage}{\textwidth}
-\begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD con Contexto, label=lst:json-ld-contexto,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+\begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD con Contexto, label=lst:json-ld-contexto,  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 {
   "@context": {
     "name": "http://schema.org/name",  
@@ -232,15 +228,14 @@ Además JSON-LD permite crear un contexto que contiene el mapeamiento entre el n
 El contexto también puede definirse en otro documento diferente y solamente haciendo referencia a éste, quedando el JSON final como se muestra en el Cuadro \ref{lst:json-ld-contexto-referencia}
 
 \noindent\begin{minipage}{\textwidth}
-\begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD con Contexto referenciado, label=lst:json-ld-contexto-referencia,  numbers=left,  numberstyle=\tiny\color{mygray},
-    basicstyle=\footnotesize\ttfamily,frame=single]
+\begin{lstlisting}[captionpos=b, caption=Ejemplo de un documento JSON-LD con Contexto referenciado, label=lst:json-ld-contexto-referencia,  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 {
-"@context": "http://schema.org/",
-"@id": "http://www.rodrivaldez5.com/",
-"http://schema.org/name": "Rodrigo Valdez",
-"http://schema.org/telephone" : "0981530572",
-"http://schema.org/jobTitle": "Developer",
-"http://schema.org/image":   {"@id": "http://www.rodrivaldez5.com/images/rodri.png"} 
+  "@context": "http://schema.org/",
+  "@id": "http://www.rodrivaldez5.com/",
+  "http://schema.org/name": "Rodrigo Valdez",
+  "http://schema.org/telephone" : "0981530572",
+  "http://schema.org/jobTitle": "Developer",
+  "http://schema.org/image":   {"@id": "http://www.rodrivaldez5.com/images/rodri.png"} 
 }
 \end{lstlisting}
 \end{minipage}
