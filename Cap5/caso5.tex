@@ -6,17 +6,19 @@ Para este caso se utilizó la fuente de datos de procesos licitatorios y la onto
 
 
 \noindent\begin{minipage}[c]{\textwidth}
-\begin{lstlisting}[captionpos=b, caption=Extension de la ontologia utilizando restricciones ontologicas, label={lst:caso5-1},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
+\begin{lstlisting}[captionpos=b, caption=Extensión de la ontología utilizando restricciones ontológicas, label={lst:caso5-1},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 INSERT DATA {
     ocds:PLConContrato rdfs:subClassOf ocds:Release ; 
     owl:equivalentClass    [ 
         rdf:type owl:Class ;
         owl:intersectionOf (   
-            ocds:Release [ rdf:type owl:Restriction ;
-                                        owl:onProperty ocds:contracts; 
-                    owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-                            ] )
-                ] .
+            ocds:Release [ 
+                rdf:type owl:Restriction ;
+                owl:onProperty ocds:contracts; 
+                owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            ] 
+        )
+    ] .
 }
     
  \end{lstlisting}
@@ -26,9 +28,9 @@ INSERT DATA {
 \noindent\begin{minipage}[c]{\textwidth}
  \begin{lstlisting}[captionpos=b, caption=Consulta SPARQL utilizando la Clase PLConContrato, label=lst:caso5-2,  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 SELECT  *
-    WHERE
-      { ?a  ?b  ocds:PLConContrato }
-    
+    WHERE { 
+    ?a  ?b  ocds:PLConContrato 
+    }
  \end{lstlisting}
 \end{minipage}
  Esta capacidad de extender la ontología nos permite hacer consultas de manera simple sin la necesidad de hacer modificaciones a los datos y agregando conocimiento de dominio a la ontología

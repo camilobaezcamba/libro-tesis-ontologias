@@ -19,6 +19,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[scaled=0.85]{beramono}
 \usepackage{makecell}
+\usepackage{listingsutf8}
 %\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}}
 
 
@@ -60,17 +61,15 @@
 \definecolor{delim}{RGB}{20,105,176}
 \colorlet{numb}{magenta!60!black}
 
-
 \lstdefinelanguage{json}{
-    basicstyle=\normalfont\ttfamily,
+    basicstyle=\linespread{0.8}\footnotesize\ttfamily,
     numbers=left,
     numberstyle=\scriptsize,
     stepnumber=1,
     numbersep=8pt,
     showstringspaces=false,
     breaklines=true,
-    frame=single,
-   % backgroundcolor=\color{background},
+    frame=lines,
     literate=
      *{0}{{{\color{numb}0}}}{1}
       {1}{{{\color{numb}1}}}{1}
@@ -90,7 +89,36 @@
       {]}{{{\color{delim}{]}}}}{1},
 }
 
+\definecolor{maroon}{rgb}{0.5,0,0}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\lstdefinelanguage{XML}
+{
+  basicstyle=\linespread{0.8}\footnotesize\ttfamily,
+  numberstyle=\scriptsize,
+  morestring=[s]{"}{"},
+  morecomment=[s]{?}{?},
+  morecomment=[s]{!--}{--},
+  commentstyle=\color{darkgreen},
+  moredelim=[s][\color{black}]{>}{<},
+  moredelim=[s][\color{red}]{\ }{=},
+  stringstyle=\color{blue},
+  breaklines=true,
+  identifierstyle=\color{maroon},
+  morekeywords={encoding,
+    xs:schema,xs:element,xs:complexType,xs:sequence,xs:attribute}
+}
 
+\lstdefinelanguage{MySPARQL}{
+  language     = SPARQL,
+  morekeywords = {SERVICE, MINUS, ORDER, GROUP, INSERT, DATA},
+  basicstyle=\linespread{0.8}\footnotesize\ttfamily
+}
+
+\lstset{
+language=SQL,
+morekeywords={PREFIX,java,rdf,rdfs,url},
+inputencoding=utf8/latin1
+}
 
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
@@ -140,9 +168,6 @@
 \usepackage{hyperref}
 
 \newtoks\customtok
-
-
-\lstset{language=SQL,morekeywords={PREFIX,java,rdf,rdfs,url}}
 
 
 \renewcommand*{\newacronymhook}{%

@@ -5,32 +5,30 @@ Se pretende demostrar la integración e interoperabilidad con una ontología esp
 La consulta realizada en el Cuadro  \ref{lst:caso3-1}consiste en obtener la cantidad de todos los Procesos Licitatorios cuyos proveedores residen en países que no son limítrofes con Paraguay, agrupando estas cantidades de acuerdo al país.
 
 \noindent\begin{minipage}[c]{\textwidth}
-\begin{lstlisting}[captionpos=b, caption=Integracion con una fuente de datos externa utilizando dos ontologias, label=lst:caso3-1,  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
+\begin{lstlisting}[captionpos=b, caption=Integración con una fuente de datos externa utilizando dos ontologías, label=lst:caso3-1,  numbers=left, numberstyle=\tiny\color{mygray},frame=single]
 SELECT *
     WHERE {
-      {
-      SELECT ?label (COUNT(?label) AS ?cantidad)
-    WHERE {
-    ?plicitatorio rdf:type ocds:Release;
-                  ocds:contracts ?contract.
-      ?contract ocds:contractSuppliers ?org.
-      ?org ocds:address ?b .
-    ?b ocds:countryName ?label
-          MINUS  { SERVICE <https://query.wikidata.org/sparql>
-                        { 
-        SELECT DISTINCT  (str(?labelWhitLang) as ?label)
-            WHERE
-                { wd:Q733   wdt:P47    ?paislimitrofe .
-                
-                    ?paislimitrofe wdt:P297    ?codigoPais.
-                            ?paislimitrofe     rdfs:label ?labelWhitLang. 
-                    FILTER (langMatches( lang(?labelWhitLang), "ES" ) )
-                }        
+        {
+            SELECT ?label (COUNT(?label) AS ?cantidad)
+            WHERE {
+            ?plicitatorio rdf:type ocds:Release;
+                          ocds:contracts ?contract.
+            ?contract ocds:contractSuppliers ?org.
+            ?org ocds:address ?b .
+            ?b ocds:countryName ?label
+                MINUS  { 
+                    SERVICE <https://query.wikidata.org/sparql>{ 
+                        SELECT DISTINCT  (str(?labelWhitLang) as ?label)
+                            WHERE { 
+                                    wd:Q733 wdt:P47 ?paislimitrofe .
+                                    ?paislimitrofe wdt:P297 ?codigoPais.
+                                    ?paislimitrofe rdfs:label ?labelWhitLang.
+                                    FILTER (langMatches( lang(?labelWhitLang), "ES") )
+                            }        
+                    }
+                }
+            } GROUP BY ?label
         }
-        }
-        } GROUP BY ?label
-      }
-    
     }
  \end{lstlisting}
 \end{minipage}
