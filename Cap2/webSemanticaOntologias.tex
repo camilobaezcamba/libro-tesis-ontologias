@@ -87,7 +87,7 @@ En la Figura \ref{img:componentes rdf } se expone un grafo de ejemplo en el cual
     
 El sujeto es la fuente de la arista y debe ser un recurso. En RDF, un recurso puede ser cualquier cosa que sea identificable de forma única a través de un URI. Comúnmente este identificador es un URL, que es un caso especial de URI. Sin embargo, los URI son más generales que las URL. En particular, no es requerimiento que un URI se pueda utilizar para localizar un documento en Internet. El objeto de una sentencia es el objetivo de la arista. Al igual que el sujeto, puede ser un recurso identificado por un URI, pero alternativamente puede ser un valor literal como una cadena o un número. Los predicados de una sentencia determinan qué tipo de relación se mantiene entre el sujeto y el objeto. También es identificado por un URI.
 
-Un identificador uniforme de recursos (URI por sus siglas inglés \textit{Uniform Resource Identifier}) es una cadena de caracteres que identifica inequívocamente un recurso en particular. 
+Un identificador uniforme de recursos \footnote{https://www.w3.org/wiki/URI} (URI por sus siglas inglés \textit{Uniform Resource Identifier}) es una cadena de caracteres que identifica inequívocamente un recurso en particular. 
 
 Todos los literales tienen una forma léxica que es una cadena \textit{Unicode}. Un literal en un grafo RDF puede presentarse de dos formas:
 \begin{itemize}
@@ -99,7 +99,7 @@ Un \textit{Blank Node} es un nodo en un documento RDF que representa un recurso 
 
 RDF es simplemente un representación sictáctica de datos y no provee significado semántico de los mismos. RDF Schema (RDFS) en cambio es una extensión de RDF que nos permite definir un vocabulario para el uso en modelos de datos RDF, permite definir tipo de clases de un recurso y propiedades que un recurso puede tener, esto a través de un vocabulario que incluye\textit{ rdfs:Class, rdf:Property , rdfs:subClassOf, rdfs:subPropertyOf, rdfs:domain, rdfs:range} y otras propiedades de documentación como son \textit{rdfs:label y rdfs:comment}.
 
-La sintaxis de RDF puede escribirse en distintos formatos de serialización: \textit{RDF/XML, Turtle, TriG, N-Triples, N-Quads y JSON-LD}.
+La sintaxis de RDF puede escribirse en distintos formatos de serialización: \textit{RDF/XML \footnote{https://www.w3.org/TR/2004/NOTE-owl-parsing-20040121/}, Turtle\footnote{https://www.w3.org/TR/turtle/}, N-Triples \footnote{https://www.w3.org/TR/n-triples/}, N-Quads \footnote{https://www.w3.org/TR/n-quads/} y JSON-LD\footnote{https://json-ld.org/spec/latest/json-ld-rdf/}}.
 
 En el Cuadro \ref{lst:n-quads} se muestra un ejemplo de triplas en formato RDF/N-Quads. \hfill \break
 

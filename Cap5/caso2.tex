@@ -3,35 +3,34 @@
 
 Este caso consiste en la integración e interoperabilidad de dos fuentes con semántica enriquecida por el uso de dos ontologías. Se pretende demostrar la facilidad de realizar consultas a dos fuentes de datos a modo de enriquecer la información obtenida.
 
-Se ejecutó una consulta al punto SPARQL que utiliza por un lado la ontología de OCDS y los datos de los procesos licitatorios de la DNCP y por otro lado la ontología desarrollada por la DNCP y los datos de Proveedores. En este caso el publicador de los datos es el mismo, pero las ontologías son distintas.
+Se ejecutó una consulta al Punto SPARQL que utiliza por un lado la ontología de OCDS y los datos de los procesos licitatorios de la DNCP y por otro lado la ontología desarrollada por la DNCP y los datos de Proveedores. En este caso el publicador de los datos es el mismo, pero las ontologías son distintas.
 
 La consulta presentada en el Cuadro \ref{lst:caso2} consiste en obtener datos de una organización cuyo RUC es 80008004-1. Se utiliza el comando SERVICE para realizar consultas a una fuente de datos distinta indicando su URL.
 
 \noindent\begin{minipage}[c]{\textwidth}
 \begin{lstlisting}[captionpos=b, caption={Consulta a dos fuentes de de datos}, label={lst:caso2},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 SELECT  *
-    WHERE
-          {   
-             { SELECT DISTINCT   ?c ?d
-                WHERE
-                  { ?organization
-                              rdf:type          ocds:Organization ;
-                              ocds:identifier    ?identifier .
-                    ?identifier  ocds:identifierId  "80008004-1" .
-                    ?organization
-                              ?a                 ?b
-                    OPTIONAL
-                      { ?b  ?c  ?d }
-                  }
-              }
-            UNION {
-            SERVICE <http://localhost:3030/proveedores_completas_no_inf/sparql>
-                  {  ?empresa  rdf:type  dncp:Proveedor ;
-                          dncp:ruc   "80008004-1" ;
-                          ?x         ?y
+    WHERE {   
+            { 
+                SELECT DISTINCT   ?c ?d
+                WHERE { 
+                    ?organization rdf:type          ocds:Organization ;
+                                  ocds:identifier   ?identifier .
+                    ?identifier   ocds:identifierId "80008004-1" .
+                    ?organization ?a                ?b
+                    OPTIONAL { 
+                        ?b  ?c  ?d 
+                    }
                   }
             }
-         }
+            UNION {
+                SERVICE <http://localhost:3030/proveedores_completas_no_inf/sparql>
+                  {  ?empresa rdf:type dncp:Proveedor ;
+                              dncp:ruc "80008004-1" ;
+                              ?x       ?y
+                  }
+            }
+    }
     
  \end{lstlisting}
 \end{minipage}

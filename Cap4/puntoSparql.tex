@@ -1,8 +1,9 @@
 \section{Punto SPARQL}
+\label{sec:puntosparql}
 
 Para este trabajo se implementó el Jena Fuseki\cite{ApacheJe97:online} en un servidor para realizar las consultas. Cabe mencionar que todo lo desarrollado se hizo en un entorno experimental, como futuro trabajo queda hacer las optimizaciones correspondientes de tiempo de ejecución y uso de recursos para un entorno de producción o industrial.
 
-Se consulta la colección de la base de datos MongDB generada y se utiliza la librería JENA para transformar y convertir la serialización de JSON-LD a RDF. Luego de la serialización se procede a guardar los datos en un TDB, un sistema de almacenamiento y consulta de RDF, para que luego este sirva como insumo para el punto SPARQL implementado utilizando Apache Jena FUSEKI.
+Se consulta la colección de la base de datos MongDB generada y se utiliza la librería JENA para transformar y convertir la serialización de JSON-LD a RDF. Luego de la serialización se procede a guardar los datos en un TDB, un sistema de almacenamiento y consulta de RDF, para que luego este sirva como insumo para el Punto SPARQL implementado utilizando Apache Jena FUSEKI en su versión 2.6.0
 
 Previo al despliegue del servidor fue necesario realizar una serie de configuraciones.
 
@@ -10,10 +11,27 @@ Previo al despliegue del servidor fue necesario realizar una serie de configurac
     \item Se indicaron los conjuntos de datos (TDB).
     \item Se configuraron 2 servicios independientes (Procesos Licitatorios y Proveedores)
     \item Se activaron los servicios de Razonamiento de FUSEKI indicando que utilizaremos las Reglas Básicas de Razonamiento de OWL. 
-    \item Se realizaron ajustes a la cantidad máxima de memoria (RAM) utilizada ya que la configurada por defecto ocasiona interrupciones o paradas inesperadas del servidor. 
+    \item Se realizó un ajuste a la cantidad máxima de memoria (RAM) utilizada. Se configuró en 4048 MB (-Xmx4048M) ya que la configurada por defecto ocasiona interrupciones o paradas inesperadas del servidor. Por defecto tiene definido como máximo 1200 MB (-Xmx1200M). Esta configuración se realizó en el script "fuseki-server" que se encuentra en la raíz del directorio de instalación y fue necesario modificar la variable "JVM\_ARGS"
 
 \end{enumerate}
 
-Una vez desplegado el servidor se procedió a cargar las ontologías correspondientes. Desde este momento el punto SPARQL quedó totalmente configurado para realizar las consultas necesarias.
+La máquina en la cual se realizaron las pruebas tenía las prestaciones técnicas que se muestran en la Tabla \ref{tab:prestaciones_servidor}.
+
+
+\begin{table}[!htb]
+\centering
+    \caption{Prestaciones del servidor utilizado para las pruebas}
+    \label{tab:prestaciones_servidor}
+\begin{tabular}{|l|l|}
+\hline
+ RAM & 16 GB\\\hline
+    Disco duro & SSD 256\\\hline
+    Sistema Operativo & macOS (Mojave), versión: 10.14.3\\\hline
+    Procesador & Intel Core i7 2.6 GHz\\\hline
+\end{tabular}
+\end{table}
+
+
+Una vez desplegado el servidor se procedió a cargar las ontologías correspondientes. Desde este momento el Punto SPARQL quedó totalmente configurado para realizar las consultas necesarias.
 
 La Figura \ref{img:modelo de Implementacion} muestra el proceso de conversión, almacenamiento y disponibilización de datos.

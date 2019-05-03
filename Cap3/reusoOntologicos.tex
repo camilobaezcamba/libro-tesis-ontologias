@@ -12,7 +12,7 @@ Un parámetro importante a la hora de hacerlo es la cantidad de veces que esta y
 Con relación a ontologías más generales y relacionadas de alguna manera al dominio que pudieran ayudar a enriquecer las ontologías desarrolladas se encontraron las siguientes:
 \begin{itemize}
     \item \textit{Organization}\cite{TheOrgan48:online} : Ontología central para las estructuras de una organización, destinada a apoyar la publicación de datos vinculados de la información de la organización en una serie de dominios. Está diseñada para permitir extensiones específicas de dominio para agregar clasificación de organizaciones y roles, así como extensiones para admitir información relacionada, como actividades de la organización.
-    \item \textit{Good Relations}\ref{hepp2008goodrelations} : es un vocabulario estandarizado para datos de productos, precios, tiendas y empresas que pueden integrarse en páginas web estáticas y dinámicas existentes y eso puede ser procesado por otras computadoras. Esto aumenta la visibilidad de sus productos y servicios en la última generación de motores de búsqueda, sistemas de recomendación y otras aplicaciones novedosas.
+    \item \textit{Good Relations}\cite{hepp2008goodrelations} : es un vocabulario estandarizado para datos de productos, precios, tiendas y empresas que pueden integrarse en páginas web estáticas y dinámicas existentes y eso puede ser procesado por otras computadoras. Esto aumenta la visibilidad de sus productos y servicios en la última generación de motores de búsqueda, sistemas de recomendación y otras aplicaciones novedosas.
     \item \textit{DCTERMS}\cite{DCMIDCMI37:online}: Una especificación actualizada de todos los términos de metadatos mantenidos por la Dublin Core Metadata Initiative, que incluye propiedades, esquemas de codificación de vocabulario, esquemas de codificación de sintaxis y clases. 
 \end{itemize}
 
@@ -45,8 +45,7 @@ Tanto LOTED como LOTED2, PCO y PPROC utilizan RDF/XML para la definición de la 
 
 Otra ontología que vale mencionar es la desarrollada por la DNCP, la misma está definida en OWL con la serialización XML. Si bien la misma utilizó el lenguaje OWL como sintaxis, no tuvo en cuenta principios importantes en el modelado y desarrollo de una ontología. Como ejemplo, la ontología desarrollada no tuvo en cuenta el nivel de especificación de los datos, se encuentran definiciones de Clases como \textit{Número, Texto, Fecha, Email,} siendo que estos conceptos podrían modelarse como \textit{DataType Properties} de tipo Texto o Número. De igual manera, la misma representa un diccionario de datos importante y un acercamiento a la formalización sintáctica y semántica de su modelo de datos.
 
-En la  Tabla \ref{tab:comparacion_ontologias} se muestra una comparación entre las 5 ontologías analizadas.
-
+En la  Tabla \ref{tab:comparacion_ontologias} se muestra una comparación entre las 5 ontologías analizadas. Una comparación mas extensa se puede encontrar en el respositorio de archivos \footnote{http://bit.ly/ValdezBaezThesis}.
 
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -60,30 +59,30 @@ En la  Tabla \ref{tab:comparacion_ontologias} se muestra una comparación entre 
     \label{tab:comparacion_ontologias}
     
     \scriptsize 
-    \begin{tabular}{|L{2cm}|C{3cm}|C{3cm}|C{2.5cm}|C{3cm}|}
+    \begin{tabular}{|L{2cm}|C{2.5cm}|C{2.5cm}|C{2cm}|C{2.5cm}|C{2cm}|}
     \hline
-     & LOTED & LOTED2 & PCO & PPROC \\
+     & LOTED & LOTED2 & PCO & PPROC & DNCP \\
     \hline
 
     
-    Cantidad de Axiomas & 172 & 1709 & 450 & 1501 \\
+    Cantidad de Axiomas & 172 & 1709 & 450 & 1501 & 802\\
     \hline
 
-    Cantidad de Clases & 23 & 177 & 22 & 92\\
+    Cantidad de Clases & 23 & 177 & 22 & 92 & 36\\
     \hline
 
-    Lenguaje & OWL (RDF/XML) & OWL (RDF/XML) & OWL(RDF/XML) & OWL (RDF/XML)\\
+    Lenguaje & OWL (RDF/XML) & OWL (RDF/XML) & OWL (RDF/XML) & OWL (RDF/XML) & OWL (RDF/XML)\\
     \hline
     Metodología & Propia & 
     Un enfoque de arriba hacia abajo (extracción de conceptos jurídicos de fuentes legales) y en una de abajo hacia arriba (análisis de las formas estándar).
-     & Propia & Ontology Development 101\\
+     & Propia & Ontology Development 101 & Propia\\
      \hline
-    Cantidad de ontologías reutilizadas & 2 (DBpedia, geonames) & 2 & 7 & 6\\
+    Cantidad de ontologías reutilizadas & 2 (DBpedia, geonames) & 2 & 7 & 6 & 0\\
     \hline
     Propósito de la ontología & Agregar un nivel de estructura a los datos obtenidos de TED & Dar un contexto legal. Permitir la construcción de aplicaciones legales de Web Semántica para contrataciones publicas. & Modelar contratos públicos en general & Incorporar las técnicas
-    semánticas en las herramientas utilizadas por las Administraciones públicas en los procesos de contratación\\
+    semánticas en las herramientas utilizadas por las Administraciones públicas en los procesos de contratación & Base de conocimiento de datos de contrataciones públicas de Paraguay \\
     \hline
-    Ultima versión & 03 Jul. 2012 & 24 Jul. 2013 & 10 Oct. 2012 & (1.0.0)29 Oct. 2014\\
+    Ultima versión & 03 Jul. 2012 & 24 Jul. 2013 & 10 Oct. 2012 & (1.0.0)29 Oct. 2014 & 2016\\
     \hline
     \end{tabular}
     
