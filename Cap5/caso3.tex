@@ -1,8 +1,8 @@
 \section{Caso 3. Dos fuentes de datos donde una es externa y dos ontologías}
+\label{section:caso3}
+Se pretende demostrar la integración e interoperabilidad con una ontología de dominio y una ontología general. Para esto, se utilizaron los datos de Procesos Licitatorios de la DNCP junto con la ontología OCDS, y también los datos disponibles en Wikidata\footnote{https://www.wikidata.org/wiki/Wikidata:Main_Page} junto con su ontología propia. Con esto se enriqueció la fuente de datos primaria a partir de una fuente de datos externa, la cual permitió obtener más información relevante y contextual.
 
-Se pretende demostrar la integración e interoperabilidad con una ontología específica y una genérica. Para esto, se utilizaron los datos de Procesos Licitatorios de la DNCP junto con la ontología OCDS, y también los datos disponibles en Wikidata junto con su ontología propia. Con esto se enriqueció la fuente de datos primaria a partir de una fuente de datos externa, la cual permitió obtener más información relevante y contextual.
-
-La consulta realizada en el Cuadro  \ref{lst:caso3-1}consiste en obtener la cantidad de todos los Procesos Licitatorios cuyos proveedores residen en países que no son limítrofes con Paraguay, agrupando estas cantidades de acuerdo al país.
+La consulta realizada en el Cuadro  \ref{lst:caso3-1} consiste en obtener la cantidad de todos los Procesos Licitatorios cuyos proveedores residen en países que no son limítrofes con Paraguay, agrupando estas cantidades de acuerdo al país.
 
 \noindent\begin{minipage}[c]{\textwidth}
 \begin{lstlisting}[captionpos=b, caption=Integración con una fuente de datos externa utilizando dos ontologías, label=lst:caso3-1,  numbers=left, numberstyle=\tiny\color{mygray},frame=single]
@@ -36,7 +36,7 @@ SELECT *
 Primeramente se seleccionan todos los Procesos Licitatorios junto con el país donde residen (\textit{ocds:countryName}) excluyendo (MINUS) todos los países que sean limítrofes con Paraguay. En Wikidata, wd:Q733 es el identificador de país de Paraguay mientras que wdt:P47 es el identificador de la propiedad “comparte frontera con” y rdf:label es el nombre de país. El comando SERVICE nos permite realizar consultas a otro Punto Sparql, en este caso Wikidata. La única información necesaria para lograr este enlace es conocer la URI que representa el Punto Sparql para así poder realizar consultas sobre los datos externos.
 
 
-Se utilizó el nombre del país en ambos conjuntos de datos como elemento de relación entre países para conseguir suprimir del resultado los países que son limítrofes con Paraguay. Se tomó la decisión de utilizar este atributo debido a que no hay una relación directa entre un país en el conjunto de datos de la DNCP y el mismo país en el conjunto de datos de Wikidata. En la Figura \ref{img:caso3Resultado1} se muestran los resultados obtenidos.
+Se utilizó el nombre del país en ambos conjuntos de datos como elemento de relación entre países para conseguir suprimir del resultado los países que son limítrofes con Paraguay. En la Figura \ref{img:caso3Resultado1} se muestran los resultados obtenidos.
 
 
 \begin{figure}[ht!]
@@ -53,7 +53,7 @@ En la Figura \ref{img:caso3Resultado2} se ve el resultado si se suprime el filtr
  \begin{figure}[ht!]
     \centering
     \includegraphics[width=150mm]{figuras/caso3Resultado2.png}
-    \caption{Despliegue de resultado de la consulta del caso 3}
+    \caption{Despliegue de resultado de la consulta del caso 3. Cantidad de todos los Procesos Licitatorios cuyos proveedores residen en países que no son limítrofes con Paraguay, agrupando estas cantidades de acuerdo al país}
     \label{img:caso3Resultado2}
  \end{figure}
 
@@ -65,7 +65,10 @@ En la Figura \ref{img:caso3Resultado2} se ve el resultado si se suprime el filtr
     \label{img:DiagramaCaso3}
  \end{figure}
 
- Esta consulta podría tener inconvenientes si la forma de escribir del nombre de los país cambiara, es el caso de ISRAEL en la línea 5 de la Figura \ref{img:caso3Resultado1} que se encuentra en mayúsculas. Para evitar esto, lo óptimo sería que los atributos no sean de tipo texto sino más bien sean objetos dentro del conjunto de datos de la DNCP y éstos estén relacionados con otros semejantes dentro de la Web Semántica.
+Se tomó la decisión de utilizar este atributo debido a que no hay una relación directa entre un país en el conjunto de datos de la DNCP y el mismo país en el conjunto de datos de Wikidata, esto se podría mejorar con el técnica de la sección \ref{section:caso2mejora2}.
+
+\subsection{Mejora. Transformación de literales a objetos}
+Esta consulta podría tener inconvenientes si la forma de escribir del nombre de los país cambiara, es el caso de ISRAEL en la línea 5 de la Figura \ref{img:caso3Resultado1} que se encuentra en mayúsculas. Para evitar esto, lo óptimo sería que los atributos no sean de tipo texto sino más bien sean objetos dentro del conjunto de datos de la DNCP y éstos estén relacionados con otros semejantes dentro de la Web Semántica.
 
 En el Cuadro \ref{lst:3-2} se muestra la definición actual de la propiedad “countryName” que pertenece a la clase “Address". Se observa que el tipo de propiedad es “DatatypeProperty” el cual representa un literal.\hfill \break 
 
@@ -81,7 +84,7 @@ En el Cuadro \ref{lst:3-2} se muestra la definición actual de la propiedad “c
  \end{lstlisting}
 \end{minipage}
 
- En el Cuadro \ref{lst:caso3-3} se muestra una posible solución al inconveniente mencionado. Primeramente se debe renombrar la propiedad \textit{countryName} a \textit{country} para que de esta forma denote la relación con un país y no con el nombre del país solamente. Luego se debe cambiar el rango de valores de \textit{rdfs: range xsd:string}  a \textit{rdfs:range :Country }donde \textit{Country} se refiere a una nueva clase a ser definida en la ontología. Esta última será la que represente al concepto “País”. Luego deberá definirse una instancia del país (por cada país que exista en la fuente de datos) de tipo \textit{Country}. Finalmente faltaría relacionar este recurso con otro semejante dentro de la Web Semántica, en este caso se puede realizar con los datos disponibles en Wikidata a través de la sentencia \textit{owl:sameAs wd:Q733} donde \textit{wd:Q733} es el identificador único (URI) de Paraguay en Wikidata.\hfill \break
+ En el Cuadro \ref{lst:caso3-3} se muestra una solución al inconveniente mencionado. Primeramente se debe renombrar la propiedad \textit{countryName} a \textit{country} para que de esta forma denote la relación con un país y no con el nombre del país solamente. Luego se debe cambiar el rango de valores de \textit{rdfs: range xsd:string}  a \textit{rdfs:range :Country }donde \textit{Country} se refiere a una nueva clase a ser definida en la ontología. Esta última será la que represente al concepto “País”. Luego deberá definirse una instancia del país (por cada país que exista en la fuente de datos) de tipo \textit{Country}. Finalmente faltaría relacionar este recurso con otro semejante dentro de la Web Semántica, en este caso se puede realizar con los datos disponibles en Wikidata a través de la sentencia \textit{owl:sameAs wd:Q733} donde \textit{wd:Q733} es el identificador único (URI) de Paraguay en Wikidata.\hfill \break
 
 \noindent\begin{minipage}[c]{\textwidth}
  \begin{lstlisting}[captionpos=b, caption=Declaración de la Clase Country, label={lst:caso3-3},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
