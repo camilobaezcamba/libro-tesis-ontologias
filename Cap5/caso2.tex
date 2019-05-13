@@ -60,7 +60,7 @@ A continuación se presentan las mejoras obtenidas con relación a los datos pub
  \subsection{Mejora 1. Igualdad semántica de propiedades}
  Se puede observar que ambas fuentes de datos se relacionan entre sí a partir de la propiedad \textit{ocds:identifierId} y \textit{dncp:ruc}. Sin bien es posible realizar esta relación debido a que un experto de dominio puede deducir que ambas propiedades denotan los mismos valores, esta igualdad no está explícitamente definida en la ontología. 
  
- En el caso que se desee expresar de manera explícita esta información bastaría agregar la propiedad \textit{owl:equivalentProperty}\footnote{https://www.w3.org/TR/owl-ref/#equivalentProperty-def} a la definición de la propiedad \textit{identifierId}. Un ejemplo de cómo quedaría la definición de la propiedad \textit{identifierId} puede verse en el Cuadro \ref{lst:caso2-2}. Con esto es posible utilizar indistintamente cualquiera de las dos propiedades para referirse a la misma relación.\hfill \break
+ En el caso que se desee expresar de manera explícita esta información bastaría agregar la propiedad \textit{owl:equivalentProperty}  a la definición de la propiedad \textit{identifierId}. Un ejemplo de cómo quedaría la definición de la propiedad \textit{identifierId} puede verse en el Cuadro \ref{lst:caso2-2}. Con esto es posible utilizar indistintamente cualquiera de las dos propiedades para referirse a la misma relación.\hfill \break
 
 \noindent\begin{minipage}{\textwidth}
  \begin{lstlisting}[captionpos=b, caption={Declaración de equivalencia semántica entre dncp:ruc y ocds:identifierID}, label=lst:caso2-2,  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
