@@ -30,17 +30,17 @@ En la Figura \ref{img:caso1Resultado} se muestran los resultados obtenidos. Los 
 
 En la línea 3 del Cuadro \ref{lst:caso1} encontramos la restricción cuya intención es asegurar que el recurso se trate de un Release, esto es posible debido a la utilización de la ontología desarrollada. En la línea 4 se consulta por el conjunto de triplas que cumplan la condición de tener como sujeto la URI del proceso licitatorio, osea el primer nivel del árbol. Con la sentencia de la línea 5 se obtienen las triplas que tengan como sujeto el objeto proveniente del resultado de la primera sentencia. En otras otras palabras, se obtienen datos provenientes del segundo nivel del árbol. Haciendo esta segunda sentencia opcional, se puede también desplegar aquellas triplas que no tienen un segundo nivel en el árbol, por ende se muestran los datos directos del Proceso Licitatorio.
 
-En este caso se muestran las siguientes mejoras de trabajar con triplas RDF y ontologías
+En este caso se muestran las siguientes mejoras de trabajar con triplas RDF y ontologías. L ontontologias son xxlksandf agrandara kajsndfkjlnasdxxxx
 
-\subsection{Mejora 1.Consultas sin conocer las propiedades del concepto }
+\subsection{Mejora 1: Consultas sin conocer las propiedades del concepto}
 
 Podemos ver en el Cuadro \ref{lst:caso1}, que no es necesario conocer las propiedades, tipos de datos ni relaciones existentes entre los conceptos para realizar la consulta, es decir nos permite realizar consultas donde el modelo de datos no es necesariamente conocido. El único dato necesario fue la URI de un Proceso de Contratación. En cambio, si comparamos con una consulta en una base de datos relacional, para obtener todos los datos de un Proceso de Contratación, se requeriría realizar un JOIN entre varias tablas relacionadas.  Para poder realizar esto necesitaríamos conocer cuáles son las tablas involucradas y cuáles son las columnas para aplicar el JOIN correctamente En este caso, un JOIN con la tabla del Planificación, Convocatoria, Adjudicación, Contrato  y el Proceso de  Contratación en sí.
 
-\subsection{Mejora 2. Nivel de granularidad de la información}
+\subsection{Mejora 2: Nivel de granularidad de la información}
 
 A diferencia de una consulta a una API REST tradicional, gracias a SPARQL podemos elegir hasta qué grado de detalle de datos mostrar. Agregando una linea de código más, se podría extender la granularidad de los datos al tercer nivel y así sucesivamente, o elegir específicamente qué rama del árbol expandir.
 
-\subsection{Mejora 3. Semántica de los nodos y sus relaciones}
+\subsection{Mejora 3: Semántica de los nodos y sus relaciones}
 
 Como el grafo está enriquecido por una ontología, se puede extraer el significado de cada uno de los objetos, como ejemplo, sabemos que el nodo ":b01" de la Figura \ref{img:caso1Diagrama} es de tipo "ocds:Organization", por lo tanto corresponde a una organización, y la relación entre el proceso licitatorio y la organización es de tipo "ocds:buyer", por lo que se puede decir que la organización a la que se refiere es la organización compradora del producto o servicio. De otra manara, no habría forma que un sistema computacional entienda el significado de los nodos y su relación entre ambos .
     
