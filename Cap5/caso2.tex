@@ -57,7 +57,7 @@ SELECT  *
 
 A continuación se presentan las mejoras obtenidas con relación a los datos publicados en el portal de datos de la DNCP.
  
- \subsection{Mejora 1. Igualdad semántica de propiedades}
+ \subsection{Mejora 1: Igualdad semántica de propiedades}
  Se puede observar que ambas fuentes de datos se relacionan entre sí a partir de la propiedad \textit{ocds:identifierId} y \textit{dncp:ruc}. Sin bien es posible realizar esta relación debido a que un experto de dominio puede deducir que ambas propiedades denotan los mismos valores, esta igualdad no está explícitamente definida en la ontología. 
  
  En el caso que se desee expresar de manera explícita esta información bastaría agregar la propiedad \textit{owl:equivalentProperty}  a la definición de la propiedad \textit{identifierId}. Un ejemplo de cómo quedaría la definición de la propiedad \textit{identifierId} puede verse en el Cuadro \ref{lst:caso2-2}. Con esto es posible utilizar indistintamente cualquiera de las dos propiedades para referirse a la misma relación.\hfill \break
@@ -97,7 +97,7 @@ Propiedaddncp:ruc & 80008004-1 &  Código Único del Contribuyente de la Secreta
     
  Sin Embargo, Que dos individuos tengan una propiedad con el mismo valor no necesariamente implica que se trate del mismo individuo. En ontologías, a menos que haya una sentencia que indique que dos individuos son iguales o diferentes, no se puede asumir ninguna de las dos situaciones. Esto situación da pie a la mejora 2.
 
- \subsection{Mejora 2. Igualdad semántica de instancias}
+ \subsection{Mejora 2: Igualdad semántica de instancias}
  \label{section:caso2mejora2}
  Como en la fuente de datos no está definida la equivalencia entre ambas instancias, entonces los datos obtenidos de las distintas fuentes deben ser asumidos como iguales por el conocimiento del experto de dominio. La forma de expresar explícitamente la igualdad semántica entre dos instancias seria agregando la sentencia de Cuadro \ref{lst:caso2-1}. En la Figura \ref{img:DiagramaCaso3} se observa como quedaría esta unión semántica entre ambas instancias. Esto aseguraría de que una maquina pueda interpretar la equivalencia entre ambas instancias. 
  

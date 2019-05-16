@@ -33,7 +33,7 @@ SELECT *
  \end{lstlisting}
 \end{minipage}
 
-Primeramente se seleccionan todos los Procesos Licitatorios junto con el país donde residen (\textit{ocds:countryName}) excluyendo (MINUS) todos los países que sean limítrofes con Paraguay. En Wikidata, wd:Q733 es el identificador de país de Paraguay mientras que wdt:P47 es el identificador de la propiedad “comparte frontera con” y rdf:label es el nombre de país. El comando SERVICE nos permite realizar consultas a otro Punto Sparql, en este caso Wikidata. La única información necesaria para lograr este enlace es conocer la URI que representa el Punto Sparql para así poder realizar consultas sobre los datos externos.
+Primeramente se seleccionan todos los Procesos Licitatorios junto con el país donde residen (\textit{ocds:countryName}) excluyendo (MINUS) todos los países que sean limítrofes con Paraguay. En Wikidata, wd:Q733 es el identificador de país de Paraguay mientras que wdt:P47 es el identificador de la propiedad “comparte frontera con” y rdf:label es el nombre de país. El comando SERVICE nos permite realizar consultas a otro Punto SPARQL, en este caso Wikidata. La única información necesaria para lograr este enlace es conocer la URI que representa el Punto SPARQL para así poder realizar consultas sobre los datos externos.
 
 
 Se utilizó el nombre del país en ambos conjuntos de datos como elemento de relación entre países para conseguir suprimir del resultado los países que son limítrofes con Paraguay. En la Figura \ref{img:caso3Resultado1} se muestran los resultados obtenidos.
@@ -67,7 +67,7 @@ En la Figura \ref{img:caso3Resultado2} se ve el resultado si se suprime el filtr
 
 Se tomó la decisión de utilizar este atributo debido a que no hay una relación directa entre un país en el conjunto de datos de la DNCP y el mismo país en el conjunto de datos de Wikidata, esto se podría mejorar con el técnica de la sección \ref{section:caso2mejora2}.
 
-\subsection{Mejora. Transformación de literales a objetos}
+\subsection{Mejora: Transformación de literales a objetos}
 Esta consulta podría tener inconvenientes si la forma de escribir del nombre de los país cambiara, es el caso de ISRAEL en la línea 5 de la Figura \ref{img:caso3Resultado1} que se encuentra en mayúsculas. Para evitar esto, lo óptimo sería que los atributos no sean de tipo texto sino más bien sean objetos dentro del conjunto de datos de la DNCP y éstos estén relacionados con otros semejantes dentro de la Web Semántica.
 
 En el Cuadro \ref{lst:3-2} se muestra la definición actual de la propiedad “countryName” que pertenece a la clase “Address". Se observa que el tipo de propiedad es “DatatypeProperty” el cual representa un literal.\hfill \break 
