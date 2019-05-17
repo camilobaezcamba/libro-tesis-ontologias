@@ -1,0 +1,144 @@
+\noindent\begin{minipage}{\textwidth}
+ \begin{lstlisting}[captionpos=b, caption={Extracto de código de la ontología OCDSPY}, label={lst:ocdspyAnexo},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
+@prefix : <http://purl.org/onto-ocds/ocds#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pc: <http://purl.org/procurement/public-contracts#> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix sch: <http://schema.org#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix seq: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://purl.org/onto-ocds/ocds#> .
+
+<http://purl.org/onto-ocds/ocds#> rdf:type owl:Ontology ;
+                            owl:imports <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
+                            dcterms:author <https://twitter.com/CMaudry> ;
+                            dcterms:license <https://creativecommons.org/licenses/by/2.0/> ;
+                            foaf:homepage <https://github.com/ColinMaudry/open-contracting-ld> ;
+                            dcterms:title "Schema for an Open Contracting Release"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/onto-ocds/ocds#Organization
+:Organization rdf:type owl:Class ;
+              owl:equivalentClass gr:BusinessEntity ;
+              rdfs:comment "An organization."@en ;
+              rdfs:label "Organization"@en .
+
+###  http://purl.org/onto-ocds/ocds#DocumentType
+:DocumentType rdf:type owl:Class ;
+              rdfs:comment "This list provides details of the documents that publishers may wish to provide at various points their contracting process."@en ;
+              rdfs:label "Codelist Document Type"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/onto-ocds/ocds#documentType
+:documentType rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Document ;
+              rdfs:range :DocumentType ;
+              rdfs:comment "A classification of the document described taken from the [documentType codelist](http://standard.open-contracting.org/latest/en/schema/codelists/#document-type). Values from the provided codelist should be used wherever possible, though extended values can be provided if the codelist does not have a relevant code."@en ;
+              rdfs:label "Document type"@en .
+
+###  http://purl.org/onto-ocds/ocds#documentUrl
+:documentUrl rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Document ;
+             rdfs:range dcterms:URI ;
+             rdfs:comment "Direct link to the document or attachment. The server providing access to this document should be configured to correctly report the document mime type."@en ;
+             rdfs:label "Document URL"@en .
+
+###  http://purl.org/onto-ocds/ocds#datePublished
+:datePublished rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Document ;
+               rdfs:range xsd:dateTime ;
+               rdfs:comment "The date on which the document was first published. This is particularly important for legally important documents such as notices of a tender."@en ;
+               rdfs:label "Publication date"@en .
+
+###  http://purl.org/onto-ocds/ocds#documentDateModified
+:documentDateModified rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain :Document ;
+                      rdfs:range xsd:dateTime ;
+                      rdfs:comment "Date that the document was last modified"@en ;
+                      rdfs:label "Document modification date"@en .
+
+###  http://purl.org/onto-ocds/ocds#documentDescription
+:documentDescription rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain :Document ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "A short description of the document. We recommend descriptions do not exceed 250 words. In the event the document is not accessible online, the description field can be used to describe arrangements for obtaining a copy of the document."@en ;
+                     rdfs:label "Document description"@en .
+
+###  http://purl.org/onto-ocds/ocds#documentId
+:documentId rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Document ;
+            rdfs:range xsd:integer ,
+                       xsd:string ;
+            rdfs:comment "A local, unique identifier for this document. This field is used to keep track of multiple revisions of a document through the compilation from release to record mechanism."@en ;
+            rdfs:label "Document ID"@en .
+
+###  http://purl.org/onto-ocds/ocds#documentLanguage
+:documentLanguage rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :Document ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "Specifies the language of the linked document using either two-digit [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), or extended [BCP47 language tags](http://www.w3.org/International/articles/language-tags/). The use of two-letter codes from [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) is strongly recommended unless there is a clear user need for distinguishing the language subtype."@en ;
+                  rdfs:label "Document language"@en .
+
+###  http://purl.org/onto-ocds/ocds#documentTitle
+:documentTitle rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Document ;
+               rdfs:range xsd:string ;
+               rdfs:comment "The document title."@en ;
+               rdfs:label "Document title"@en .
+
+###  http://purl.org/onto-ocds/ocds#format
+:format rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :Document ;
+        rdfs:range xsd:string ;
+        rdfs:comment "The format of the document taken from the [IANA Media Types code list](http://www.iana.org/assignments/media-types/), with the addition of one extra value for 'offline/print', used when this document entry is being used to describe the offline publication of a document. Use values from the template column. Links to web pages should be tagged 'text/html'."@en ;
+        rdfs:label "Format"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+
+###  http://purl.org/onto-ocds/ocds#documentTypeAwardNotice
+:documentTypeAwardNotice rdf:type owl:NamedIndividual ,
+                                  :DocumentType ;
+                         dcterms:title "Award Notice"@en ;
+                         rdfs:comment "The formal notice that gives details of the contract award. This may be a link to a downloadable document, to a web page, or to an official gazette in which the notice is contained."@en ;
+                         rdfs:label "awardNotice"@en .
+
+
+###  http://purl.org/onto-ocds/ocds#documentTypeTenderNotice
+:documentTypeTenderNotice rdf:type owl:NamedIndividual ,
+                                   :DocumentType ;
+                          dcterms:title "Tender Notice"@en ;
+                          rdfs:comment "The formal notice that gives details of a tender. This may be a link to a downloadable document, to a web page, or to an official gazette in which the notice is contained."@en ;
+                          rdfs:label "tenderNotice"@en .
+\end{lstlisting}
+\end{minipage}
