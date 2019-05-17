@@ -20,6 +20,8 @@
 \usepackage[scaled=0.85]{beramono}
 \usepackage{makecell}
 \usepackage{listingsutf8}
+\usepackage[toc,page]{appendix}
+
 
 
 %\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}}
@@ -219,6 +221,11 @@ morekeywords={PREFIX,java,rdf,rdfs,url}
 \renewcommand{\lstlistingname}{Cuadro}
 \renewcommand{\lstlistlistingname}{Índice de \lstlistingname s}
 
+% Renombra titulos de Anexos.
+\renewcommand{\appendixpagename}{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixname}{Anexo}
+
 % Tabla de contenidos
 \tableofcontents
 % Lista de figuras
@@ -262,7 +269,8 @@ morekeywords={PREFIX,java,rdf,rdfs,url}
 	
 % los capitulos que incluyas a partir de aqui aparecen 
 % como apendices
-% \include{anexos/main}
+\include{anexos/main}
+
 % estos comandos generan la bibliografica
 \printbibliography
 \end{document}
