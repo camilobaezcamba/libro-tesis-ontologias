@@ -7,7 +7,7 @@ Aquí se pretende dar una demostración de cómo realizar una consulta simple a 
 En el Cuadro \ref{lst:caso1} se muestra la consulta realizada al Punto SPARQL.
 
 \noindent\begin{minipage}[t]{\textwidth}
-\begin{lstlisting}[captionpos=b, caption={Tripas referentes al proceso licitatorio cuyo identificador es 302438}, label={lst:caso1},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
+\begin{lstlisting}[captionpos=b, caption={Triplas referentes al proceso licitatorio cuyo identificador es 302438}, label={lst:caso1},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 SELECT *  
 WHERE {    	
     <http://www.cont...e/302438-adquisicion-semillas-gdc-1> rdf:type ocds:Release .
@@ -30,7 +30,7 @@ En la Figura \ref{img:caso1Resultado} se muestran los resultados obtenidos. Los 
 
 En la línea 3 del Cuadro \ref{lst:caso1} encontramos la restricción cuya intención es asegurar que el recurso se trate de un Release, esto es posible debido a la utilización de la ontología desarrollada. En la línea 4 se consulta por el conjunto de triplas que cumplan la condición de tener como sujeto la URI del proceso licitatorio, osea el primer nivel del árbol. Con la sentencia de la línea 5 se obtienen las triplas que tengan como sujeto el objeto proveniente del resultado de la primera sentencia. En otras otras palabras, se obtienen datos provenientes del segundo nivel del árbol. Haciendo esta segunda sentencia opcional, se puede también desplegar aquellas triplas que no tienen un segundo nivel en el árbol, por ende se muestran los datos directos del Proceso Licitatorio.
 
-En este caso se muestran las siguientes mejoras de trabajar con triplas RDF y ontologías. L ontontologias son xxlksandf agrandara kajsndfkjlnasdxxxx
+En este caso se muestran las siguientes mejoras de trabajar con triplas RDF y ontologías.
 
 \subsection{Mejora 1: Consultas sin conocer las propiedades del concepto}
 
@@ -48,6 +48,6 @@ Como el grafo está enriquecido por una ontología, se puede extraer el signific
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=150mm]{figuras/caso1Resultado.png}
-    \caption{Despliegue de resultado de la consulta de l caso 1}
+    \caption{Despliegue de resultado de la consulta del caso 1}
     \label{img:caso1Resultado}
  \end{figure}
