@@ -3,11 +3,11 @@
  Los datos abiertos son datos que pueden ser utilizados, reutilizados y redistribuidos libremente por cualquier persona, y que se encuentran sujetos, cuando más, al requerimiento de atribución y de compartirse de la misma manera en que aparecen\cite{bauer2011linked} \cite{OpenDataHandBook:online}.
  
 
-A través de los datos abiertos son importantes porque gracias a ellos se puede lograr la interoperabilidad, que significa que diversos sistemas y organizaciones puedan trabajar juntos e integrar diferentes conjuntos de datos. Esta habilidad de integrar componentes es esencial para construir sistemas complejos y grandes\cite{OpenDataHandBook:online}.
+Los datos abiertos son importantes porque gracias a ellos se puede lograr la interoperabilidad, que significa que diversos sistemas y organizaciones puedan trabajar juntos e integrar diferentes conjuntos de datos. Esta habilidad de integrar componentes es esencial para construir sistemas complejos y grandes\cite{OpenDataHandBook:online}.
 
 \subsection{Datos Abiertos Enlazados}
 
-Los datos abiertos enlazados se enfocan en un método de publicación de datos abiertos estructurados para que puedan ser interconectados. Para lograr esto se utilizan las tecnologías como RDF, RDFa, etc. para estructurar los datos, utilizando URIs para identificar los datos individualmente. Tim Berners Lee define un modelo de 5 estrella \cite{Linke48:online} para clasificar e identificar el grado de publicación de datos abiertos.
+Los datos abiertos enlazados se enfocan en un método de publicación de datos abiertos estructurados para que puedan ser interconectados. Para lograr esto se utilizan las tecnologías como RDF, RDFa, etc. para estructurar los datos, utilizando URIs para identificar los datos individualmente. Tim Berners Lee define un modelo de 5 estrella \cite{Linke48:online} para clasificar e identificar el grado de publicación de datos abiertos, en la Tabla \ref{modelo-5-estrellas} se exponden son cinco niveles de apertura de datos.
 
 \begin{table}[!htb]
 \centering
@@ -28,11 +28,11 @@ Los datos abiertos enlazados se enfocan en un método de publicación de datos a
 \section{La Web Semántica}
 La Web Semántica consiste en una serie de estándares y tecnologías propuestas por la W3C\cite{Semantic20:online} que promueven el uso de formatos de datos común y además de un protocolo de datos dentro de la web que nos permite compartir y reusar datos -procesables por máquinas- a través de la web. Se puede pensar la Web Semántica como una manera eficiente de representar datos en la web\cite{TimBernersLeee}\cite{Shadbolt:2006}.
 
-El principal problema de los datos en la web es la dificultad de su utilización a gran escala, ya que no siempre se aplican estándares de publicación de datos de manera a que facilite su procesamiento. Por otra parte, los datos enlazados a través de identificadores comunes en la web nos dan la capacidad de consultar datos de distintas fuentes y contestar preguntas complejas pero interpretar el significado de los mismos no resulta una tarea sencilla. Es por eso que las ontologías juegan un rol fundamental en la Web Semántica, ya que gracias a ellas podemos representar conocimiento legible y entendible por máquinas y humanos en la web.
+El principal problema de los datos en la web es la dificultad de su utilización a gran escala, ya que no siempre se aplican estándares de publicación de datos de manera a que facilite su procesamiento. Por otra parte, los datos enlazados a través de identificadores comunes en la web nos dan la capacidad de consultar datos de distintas fuentes y contestar preguntas complejas, sin embargo interpretar el significado de los mismos no resulta una tarea sencilla. Es por eso que las ontologías juegan un rol fundamental en la Web Semántica, ya que gracias a ellas podemos representar conocimiento legible y entendible por máquinas y humanos en la web.
 
 \section{Interoperabilidad Semántica}
 \label{section:interoperabilidadsemantica}
-La interoperabilidad es la capacidad de dos o más sistemas de compartir y usar la  información. En la interoperabilidad semántica, los sistemas deben poder intercambiar información de tal manera que el significado del dato sea accesible y comprendido correctamente por cualquier sistema (o persona)\cite{Interoperability}\cite{Schulz2013HowOC}. Al contrario, la interoperabilidad sintáctica se preocupa en el intercambio de datos estructurados -a través de un estándar o formato común- a fin de lograr la interoperabilidad.
+La interoperabilidad es la capacidad de dos o más sistemas de compartir y usar la  información. En la interoperabilidad semántica, los sistemas deben poder intercambiar información de tal manera que el significado del dato sea accesible y comprendido correctamente por cualquier sistema (o persona)\cite{Interoperability}\cite{Schulz2013HowOC}. Al contrario, la interoperabilidad sintáctica se preocupa del intercambio de datos estructurados -a través de un estándar o formato común- a fin de lograr la interoperabilidad.
 Para lograr la interoperabilidad semántica hacemos uso de ontologías, las mismas nos permiten representar un modelo de datos que refleja un dominio de conocimiento dado.
 
 \section{Ontologías}
@@ -46,7 +46,7 @@ La ontología posee varios usos en Ciencias de la Computación, como ser en el �
 
 
 \section{Ontologías en la Web Semántica}
-Uno de los principios fundamentales de las ontologías dentro de la web semántica es su reutilización y extensión \cite{Thorsen2015OntologiesIT}, esto significa reutilizar conceptos definidos otras ontologías, siempre y cuando sea posible, mejorando el procesamiento y la integración de datos enlazados. En lugar de duplicar esfuerzos definiendo conceptos y propiedades que ya fueron definidos en otra ontología, se puede referenciar a estos elementos dentro de la nueva ontología. 
+Uno de los principios fundamentales de las ontologías dentro de la Web Semántica es su reutilización y extensión \cite{Thorsen2015OntologiesIT}, esto significa reutilizar conceptos definidos otras ontologías, siempre y cuando sea posible, mejorando el procesamiento y la integración de datos enlazados. En lugar de duplicar esfuerzos definiendo conceptos y propiedades que ya fueron definidos en otra ontología, se puede referenciar a estos elementos dentro de la nueva ontología. 
 
 Existe una variedad de tipos de ontologías que dependen del nivel de formalidad, razonamiento y la cantidad de restricciones\cite{Giunchiglia2009LightweightO} \cite{Obrst}. En el caso más simple una ontología puede describir una jerarquía de conceptos vinculados por relaciones de subsunción y en casos más sofisticados incluir axiomas para expresar relaciones entre conceptos y restringir la interpretación pretendida.
 
@@ -71,9 +71,9 @@ Marco de Descripción de Recursos, RDF por sus siglas \textit{Resource Descripti
 RDF nos permite representar modelos de datos basados en grafos, los cuales son representados en triplas. Las triplas RDF contienen tres componentes:
 
 \begin{itemize}
-  \item El sujeto, que puede ser una referencia tipo URI o un \textit{Blank Node}
-  \item El predicado, que es una referencia tipo URI
-  \item El objeto que puede ser una referencia tipo URI, un literal o un \textit{Blank Node}
+  \item El sujeto, que puede ser una referencia tipo URI o un \textit{Blank Node}.
+  \item El predicado, que es una referencia tipo URI.
+  \item El objeto que puede ser una referencia tipo URI, un literal o un \textit{Blank Node}.
 \end{itemize}
 
 
@@ -87,7 +87,9 @@ En la Figura \ref{img:componentes rdf } se expone un grafo de ejemplo en el cual
     \label{img:componentes rdf }
     \end{figure}
     
-El sujeto es la fuente de la arista y debe ser un recurso. En RDF, un recurso puede ser cualquier cosa que sea identificable de forma única a través de un URI. Comúnmente este identificador es un URL, que es un caso especial de URI. Sin embargo, los URI son más generales que las URL. En particular, no es requerimiento que un URI se pueda utilizar para localizar un documento en Internet. El objeto de una sentencia es el objetivo de la arista. Al igual que el sujeto, puede ser un recurso identificado por un URI, pero alternativamente puede ser un valor literal como una cadena o un número. Los predicados de una sentencia determinan qué tipo de relación se mantiene entre el sujeto y el objeto. También es identificado por un URI.
+El sujeto es la fuente de la arista y debe ser un recurso. En RDF, un recurso puede ser cualquier cosa que sea identificable de forma única a través de un URI. Comúnmente este identificador es un URL, que es un caso especial de URI. Sin embargo, los URI son más generales que las URL. En particular, no es requerimiento que un URI se pueda utilizar para localizar un documento en Internet. El objeto de una sentencia es el objetivo de la arista. Al igual que el sujeto, puede ser un recurso identificado por un URI, pero alternativamente puede ser un valor literal como una cadena o un número. 
+
+Los predicados de una sentencia determinan qué tipo de relación se mantiene entre el sujeto y el objeto. También es identificado por un URI. A continuacion se explicaran brevemente algunos conceptos presentados.
 
 Un identificador uniforme de recursos \footnote{https://www.w3.org/wiki/URI} (URI por sus siglas inglés \textit{Uniform Resource Identifier}) es una cadena de caracteres que identifica inequívocamente un recurso en particular. 
 
@@ -218,7 +220,7 @@ El formato JSON es ampliamente utilizado y preferido por los desarrolladores en 
 
 
 
-\section{\textit{Web Ontology Language }(OWL)}
+\section{\textit{ Web Ontology Language }(OWL)}
 OWL es un estándar internacional para codificar e intercambiar ontologías y es diseñado para soportar la Web Semántica.
 
 Es el lenguaje de representación de conocimientos recomendado por la W3C y es una extensión de RDFS, dándole mayor expresividad a través de operaciones booleanas (intersección, unión, complemento), restricciones de cardinalidad, cuantificación existencial, etc. El mismo está basado en lenguajes de representación de conocimientos llamados Lógica de Descripciones (DL, por sus siglas en inglés \textit{Description Logic}). DL es un lenguaje formal usado para construir ontologías y permite declarar conocimiento de un dominio específico e incluir reglas de razonamiento para poder procesarlo \cite{kalibatiene2011survey}.
@@ -229,7 +231,7 @@ Al estar basado en DL, OWL nos trae consigo las siguientes ventajas
     \item Razonador Automático: La Lógica de Descripciones está basado en lógica formal, eso nos permite desarrollar razonadores capaces de verificar la consistencia de la ontológica e inferir nuevo conocimiento.
 \end{itemize}
 
-OWL posee tres sub lenguajes: OWL Lite, OWL DL y OWL Full. Todos permiten describir clases, propiedades e instancias pero difieren uno de otro en el nivel de especificación requerido. OWL Lite está diseñado para usuarios cuyas necesidades de modelado sean simples. OWL DL es lo más cercano a una DL expresiva manteniendo la completitud computacional, esto significa que la ontología es procesable computacionalmente. OWL Full posee mayor expresividad sacrificando la completitud computacional de la ontología. En la Figura \ref{img:subclases owl} se muestra la relación entre los tres sublenguajes.
+OWL posee tres sub lenguajes\cite{owllevels}: OWL Lite, OWL DL y OWL Full. Todos permiten describir clases, propiedades e instancias pero difieren uno de otro en el nivel de especificación requerido. OWL Lite está diseñado para usuarios cuyas necesidades de modelado sean simples. OWL DL es lo más cercano a una DL expresiva manteniendo la completitud computacional, esto significa que la ontología es procesable computacionalmente. OWL Full posee mayor expresividad sacrificando la completitud computacional de la ontología. En la Figura \ref{img:subclases owl} se muestra la relación entre los tres sublenguajes.
 
 \begin{figure}[h!]
     \centering
