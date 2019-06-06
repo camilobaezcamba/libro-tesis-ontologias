@@ -1,10 +1,9 @@
-En esta capítulo abordaremos los conceptos teóricos necesarios para la elaboración de este trabajo. Primeramente veremos los conceptos de Datos Abiertos. Se abordara los estándares y tecnologías a los cuales se definen dentro de la Web Semántica y la interoperabilidad semántica. Por ultimo se abordara la teoría de contracción de ontologías, su aplicación dentro de la web semántica, así como también los formatos de serialización y herramientas para consultar datos.
 \section{Datos Abiertos}
 
- Los datos abiertos son datos que pueden ser utilizados, reutilizados y redistribuidos libremente por cualquier persona, y que se encuentran sujetos, cuando más, al requerimiento de atribución y de compartirse de la misma manera en que aparecen. \cite{bauer2011linked} \cite{OpenDataHandBook:online}.
+ Los datos abiertos son datos que pueden ser utilizados, reutilizados y redistribuidos libremente por cualquier persona, y que se encuentran sujetos, cuando más, al requerimiento de atribución y de compartirse de la misma manera en que aparecen\cite{bauer2011linked} \cite{OpenDataHandBook:online}.
  
 
-A través de los datos abiertos son importantes porque gracias a ellos se puede lograr la interoperabilidad, que significa que diversos sistemas y organizaciones puedan trabajar juntos e integrar diferentes conjuntos de datos. Esta habilidad de integrar componentes es esencial para construir sistemas complejos y grandes.\cite{OpenDataHandBook:online}.
+A través de los datos abiertos son importantes porque gracias a ellos se puede lograr la interoperabilidad, que significa que diversos sistemas y organizaciones puedan trabajar juntos e integrar diferentes conjuntos de datos. Esta habilidad de integrar componentes es esencial para construir sistemas complejos y grandes\cite{OpenDataHandBook:online}.
 
 \subsection{Datos Abiertos Enlazados}
 
@@ -12,7 +11,7 @@ Los datos abiertos enlazados se enfocan en un método de publicación de datos a
 
 \begin{table}[!htb]
 \centering
-\caption{Modelo de publicación de 5 estrellas. \cite{Linke48:online}}
+\caption{Modelo de publicación de 5 estrellas\cite{Linke48:online}.}
 \label{modelo-5-estrellas}
 \resizebox{15cm}{!} {
 \begin{tabular}{|c|l|}
@@ -27,7 +26,7 @@ Los datos abiertos enlazados se enfocan en un método de publicación de datos a
 \end{table}
 
 \section{La Web Semántica}
-La Web Semántica consiste en una serie de estándares y tecnologías propuestas por la W3C\cite{Semantic20:online} que promueven el uso de formatos de datos común y además de un protocolo de datos dentro de la web que nos permite compartir y reusar datos -procesables por máquinas- a través de la web. Se puede pensar la Web Semántica como una manera eficiente de representar datos en la web.\cite{TimBernersLeee}\cite{Shadbolt:2006}
+La Web Semántica consiste en una serie de estándares y tecnologías propuestas por la W3C\cite{Semantic20:online} que promueven el uso de formatos de datos común y además de un protocolo de datos dentro de la web que nos permite compartir y reusar datos -procesables por máquinas- a través de la web. Se puede pensar la Web Semántica como una manera eficiente de representar datos en la web\cite{TimBernersLeee}\cite{Shadbolt:2006}.
 
 El principal problema de los datos en la web es la dificultad de su utilización a gran escala, ya que no siempre se aplican estándares de publicación de datos de manera a que facilite su procesamiento. Por otra parte, los datos enlazados a través de identificadores comunes en la web nos dan la capacidad de consultar datos de distintas fuentes y contestar preguntas complejas pero interpretar el significado de los mismos no resulta una tarea sencilla. Es por eso que las ontologías juegan un rol fundamental en la Web Semántica, ya que gracias a ellas podemos representar conocimiento legible y entendible por máquinas y humanos en la web.
 
@@ -37,10 +36,10 @@ La interoperabilidad es la capacidad de dos o más sistemas de compartir y usar 
 Para lograr la interoperabilidad semántica hacemos uso de ontologías, las mismas nos permiten representar un modelo de datos que refleja un dominio de conocimiento dado.
 
 \section{Ontologías}
-Las ontologías son utilizadas para la representación del conocimiento, logrando así que la información esté representada de forma a que pueda ser interpretada por los computadores y humanos \cite{horrocks2011kr}. En ella se definen los conceptos de un determinado dominio, sus propiedades y relaciones entre los mismos, así también reglas para combinar términos y relaciones que permitan extender el vocabulario.
+Las ontologías son utilizadas para la representación del conocimiento, logrando así que la información esté representada de forma a que pueda ser interpretada por los computadores y humanos\cite{horrocks2011kr}. En ella se definen los conceptos de un determinado dominio, sus propiedades y relaciones entre los mismos, así también reglas para combinar términos y relaciones que permitan extender el vocabulario.
 A continuación se pone a conocimiento algunas definiciones hechas acerca de las ontologías en el ámbito de sistemas de información.
 
-Gruber\cite{gruber1993translation} definió originalmente el concepto de ontología como “Una especificación explícita de una conceptualización”. Borst \cite{borst1997construction} definió una ontología como “Una especificación formal de una conceptualización compartida”. La definición que se eligió en este trabajo es la de Studer \cite{studer1998knowledge}: “Una ontología se define como una especificación formal y explícita de una conceptualización compartida”.  En esta definición, conceptualización se refiere a un modelo abstracto de algún fenómeno del mundo derivado de la identificación de sus conceptos relevantes; explícita se refiere a que los tipos de conceptos y las restricciones usadas sobre ellos se definen explícitamente; formal se refiere a que la ontología debe ser “legible” por una computadora; y compartida refleja que una ontología capta un conocimiento consensual. Guarino\cite{guarino1998formal} también definió como “Un conjunto de axiomas lógicos diseñados para tener en cuenta el significado deseado de un vocabulario”.
+Gruber\cite{gruber1993translation} definió originalmente el concepto de ontología como “Una especificación explícita de una conceptualización”. Borst\cite{borst1997construction} definió una ontología como “Una especificación formal de una conceptualización compartida”. La definición que se eligió en este trabajo es la de Studer\cite{studer1998knowledge}: “Una ontología se define como una especificación formal y explícita de una conceptualización compartida”.  En esta definición, conceptualización se refiere a un modelo abstracto de algún fenómeno del mundo derivado de la identificación de sus conceptos relevantes; explícita se refiere a que los tipos de conceptos y las restricciones usadas sobre ellos se definen explícitamente; formal se refiere a que la ontología debe ser “legible” por una computadora; y compartida refleja que una ontología capta un conocimiento consensual. Guarino\cite{guarino1998formal} también definió como “Un conjunto de axiomas lógicos diseñados para tener en cuenta el significado deseado de un vocabulario”.
 
 Actualmente existen ontologías para diversos dominios de conocimiento. Algunas de las más representativas son: \textit{Simple Knowledge Organization System} (SKOS) \cite{isaac2009skos}, \textit{ Friend of a Friend} (FOAF) \cite{brickley2012foaf}, \textit{Good Relations}, \cite{hepp2008goodrelations}, MGED Ontology \cite{whetzel2006mged} y National Cancer Institute Ontology \cite{golbeck2011national}. Así también existen ontologías que no pertenecen a un dominio específico (de alto nivel) y describen conceptos generales como DOLCE\cite{dolce} \cite{Masolo02thewonderweb}.
 La ontología posee varios usos en Ciencias de la Computación, como ser en el ámbito legal, médico, científico y otros, pero ganó mayor popularidad en el ámbito de la Web Semántica. A continuación veremos las ontologías en el caso de uso de la web semántica.
