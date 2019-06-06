@@ -1,11 +1,11 @@
 \section{Metodologías para el desarrollo de Ontologías}
 
-En este apartado se dará un resumen de las metodologías más utilizadas para la creación de una ontología; Ontology Development 101 (ver \ref{subsection:101}), OntoKnowledge (ver \ref{subsection:ontoknowledge}), Methontology (ver \ref{subsection:methontology}), y NeOn (ver \ref{subsection:neon}). Luego se realizará un análisis y elección según los requerimientos de este trabajo.
+En este apartado se dará un resumen de las metodologías más utilizadas para la creación de una ontología; Ontology Development 101(ver \ref{subsection:101}), OntoKnowledge(ver \ref{subsection:ontoknowledge}), Methontology(ver \ref{subsection:methontology}), y NeOn(ver \ref{subsection:neon}). Luego se realizará un análisis y elección según los requerimientos de este trabajo.
 
 \subsection{Ontology Development 101}
 \label{subsection:101}
 
-Esta metodología describe una serie de pasos y recomendaciones a tener en cuenta al crear una ontología]\cite{noy2001ontology}. 
+Esta metodología describe una serie de pasos y recomendaciones a tener en cuenta al crear una ontología\cite{noy2001ontology}. 
 
 Se describen a continuación los pasos:
 \begin{description}
@@ -18,7 +18,7 @@ Se describen a continuación los pasos:
 \item[Paso 7:] Crear instancias.
 \end{description}
 
-Además, la guía propone algunas buenas prácticas de desarrollo de ontologías relacionadas a la definición de clases como la correcta creación de jerarquías, herencias múltiples,  cuándo crear una clase o una propiedad, cuando es una instancia o una clase, etc. También algunos delineamientos sobre las propiedades como valores por defecto, cardinalidad, etc. Por último, una serie de convenciones de nombres dentro de la ontología. La metodología no tiene en cuenta el proceso de especificación ni el mantenimiento de la ontología.
+Además, la guía propone algunas buenas prácticas de desarrollo de ontologías relacionadas a la definición de clases como la correcta creación de jerarquías, herencias múltiples,  cuándo crear una clase o una propiedad, cuándo es una instancia o una clase, etc. También algunos delineamientos sobre las propiedades como valores por defecto, cardinalidad, etc. Por último, una serie de convenciones de nombres dentro de la ontología. La metodología no tiene en cuenta el proceso de especificación ni el mantenimiento de la ontología.
 
 \subsection{OntoKnowledge} 
 \label{subsection:ontoknowledge}
@@ -38,7 +38,7 @@ El proceso que propone la metodología se puede resumir en los siguientes pasos:
 \item[Actividad 2:] Formalización de la ontología. La ontología es implementada en un lenguaje ontológico, el lenguaje es seleccionado según los requerimientos del uso de la ontología.
 \end{description}
 
-\textbf{Evaluación.} Este paso sirve para probar la usabilidad de la ontología desarrollada dentro del entorno para la cual fue desarrollada. En este proceso se verifica que se puedan responder las preguntas de competencia y que se satisfagan los requerimientos, además se prueba la ontología en el entorno de software para el cual se desarrolló.
+\textbf{Evaluación.} Este paso sirve para probar la usabilidad de la ontología desarrollada dentro del entorno para la cual fue desarrollado. En este proceso se verifica que se puedan responder las preguntas de competencia y que se satisfagan los requerimientos, además se prueba la ontología en el entorno de software para el cual se desarrolló.
 
 \textbf{Mantenimiento.} En esta etapa es importante recalcar quién es el responsable de mantener la ontología y cómo se debe hacerlo.
 
@@ -54,9 +54,7 @@ La metodología propone un ciclo de vida incremental y cíclico como se muestra 
 \subsection{Methontology}
 \label{subsection:methontology}
 
-Methontology\cite{fernandez1997methontology} incluye la identificación del proceso del desarrollo de una ontología, que consiste en una serie de actividades, el ciclo de vida basado en el refinamiento de un prototipo y técnicas para llevar a cabo cada actividad durante el mantenimiento, el desarrollo y el soporte de las actividades. Todas las actividades están basadas en el proceso de desarrollo de software y las utilizadas en metodologías de ingeniería de conocimiento.
-
-En la Figura \ref{img:methontology} se pueden ver los estados de todo el ciclo de vida de la ontología.
+Methontology\cite{fernandez1997methontology} incluye la identificación del proceso del desarrollo de una ontología, que consiste en una serie de actividades, el ciclo de vida basado en el refinamiento de un prototipo y técnicas para llevar a cabo cada actividad durante el mantenimiento, el desarrollo y el soporte de las actividades. Todas las actividades están basadas en el proceso de desarrollo de software y las utilizadas en metodologías de ingeniería de conocimiento. En la Figura \ref{img:methontology} se pueden ver los estados de todo el ciclo de vida de la ontología.
 
 \begin{figure}[h!]
     \centering
@@ -72,7 +70,7 @@ A continuación se describen algunas de las principales actividades:
 
 \begin{enumerate}
 \item \textbf{Especificación:} Especificar el propósito de la ontologías, esto incluye usuarios, contexto, nivel de formalidad esperado y granularidad. El resultado de esta fase es un documento de especificación de la ontología en lenguaje natural.
-\item \textbf{Adquisición} de conocimiento: Esto ocurre en paralelo a las demás fases, pero específicamente en la parte de especificación. Se consultan libros, manuales, tablas, otras ontologías y expertos para adquirir conocimientos sobre el área a modelar.
+\item \textbf{Adquisición de conocimiento}: Esto ocurre en paralelo a las demás fases, pero específicamente en la parte de especificación. Se consultan libros, manuales, tablas, otras ontologías y expertos para adquirir conocimientos sobre el área a modelar.
 \item \textbf{Conceptualización:} Se identifican los términos según sean conceptos, instancias, relaciones o propiedades para crear un modelo conceptual del dominio.
 \item \textbf{Integración:} En esta fase se considera el reuso de términos de otras ontologías para no volver a definir y ahorrar trabajo.
 \item \textbf{Implementación:} La ontología es representada formalmente en un lenguaje tipo OWL o RDFS.
@@ -87,7 +85,7 @@ Esta metodología incluye métodos, técnicas y herramientas para llevar a cabo 
 
 La metodología presenta los siguientes componentes:
 \begin{itemize}
-    \item Un glosario: Identifica y define los procesos y actividades que pueden estar dentro de el desarrollo de una ontología. En la Figura \ref{img:neon actividades} se muestra la lista de procesos y actividades divididas según la fase de desarrollo.
+    \item Un glosario: Identifica y define los procesos y actividades que pueden estar dentro del desarrollo de una ontología. En la Figura \ref{img:neon actividades} se muestra la lista de procesos y actividades divididas según la fase de desarrollo.
     \item Nueve escenarios para el desarrollo de ontologías. Se identificaron nueve escenarios flexibles para el desarrollo de ontologías, donde cada escenario está compuesto de diferentes procesos y actividades. En la Figura \ref{img:neon ciclo de vida} se distinguen las relaciones entre las actividades y los escenarios donde las fechas dirigidas con círculos numerados asociados representan los diferentes escenarios. 
     \item Una serie de guías metodológicas para procesos y actividades como el reuso de recursos ontológicos y no-ontológicos, la especificación de los requerimientos, la planificación, etc. Los procesos y actividades están representados en la Figura \ref{img:neon ciclo de vida} con cajas y círculos de color. En la figura se puede identificar qué procesos y actividades corresponden a qué escenario.
 \end{itemize}
@@ -103,7 +101,7 @@ A continuación se presentan los nueve escenarios que propone NeOn.
 
 \begin{description}
     \item[Escenario 1] El escenario va desde la especificación hasta la implementación. La ontología es desarrollada desde el principio, esto significa sin utilizar ninguna base de conocimiento ya construida.
-    \item[Escenario 2] Reuso y Reingeniería de recursos no-ontológicos. Este escenario cubre el caso donde los desarrolladores analizan recursos no-ontológicos y deciden según los requerimientos, qué recurso no-ontológico se puede reutilizar para construir esta ontología. Este escenario también contempla una reingeniería del recurso seleccionado.
+    \item[Escenario 2] Reuso y Reingeniería de recursos no-ontológicos. Los recursos no-ontológicos (NOR)\cite{ReusoRecursoNoOntologico} representan recursos de conocimiento cuya semántica no fue formalizada por una ontología. Estos NORs contienen conocimientos de un dominio en particular y representan algún grado de consenso colectivo. Este escenario cubre el caso donde los desarrolladores analizan recursos no-ontológicos y deciden según los requerimientos, qué recurso no-ontológico se puede reutilizar para construir esta ontología. Este escenario también contempla una reingeniería del recurso seleccionado.
     \item[Escenario 3] Reuso de recursos ontológicos. En este escenario los desarrolladores reusan recursos ontológicos, esto se puede hacer de tres maneras: reuso total, reuso de módulos y/o reuso de sentencias.
     \item[Escenario 4] Reuso y reingeniería de recursos ontológicos. Aquí, los desarrolladores hacen tanto un reuso como una reingeniería de los recursos ontológicos.
     \item[Escenario 5] Reuso y unión de recursos ontológicos. Este escenario es propicio cuando se eligen muchas ontologías del mismo dominio de conocimiento para reutilizar y se quiere crear una nueva ontología a partir de ellas.

@@ -5,30 +5,30 @@
 
 
 
-Según el reporte de \textit{Open Contracting Partnership}(OCP)\footnote{https://www.open-contracting.org/?lang=es}, los Gobiernos de todo el mundo gastan un estimado de 9.5 billones de dólares anualmente mediante contratos públicos. Sin embargo, en la mayoría de los países, la información sobre estos contratos no está disponible para el escrutinio público, haciendo al proceso de contratación vulnerable a la corrupción y la mala gestión. Además, los países que sí lo hacen, no proveen un contexto apropiado para entender, reutilizar e integrar dichos datos con otros.
+Según el reporte de \textit{Open Contracting Partnership}(OCP)\footnote{https://www.open-contracting.org/?lang=es}, los Gobiernos de todo el mundo gastan un estimado de 9.5 billones de dólares anualmente mediante contratos públicos en bienes y servicios. Sin embargo, en la mayoría de los países, la información sobre estos contratos no está disponible para el escrutinio público, haciendo al proceso de contratación vulnerable a la corrupción y la mala gestión. Además, los países que sí lo hacen, no proveen un contexto apropiado para entender, reutilizar e integrar dichos datos con otros.
 
-Debido a la creciente importancia de publicar los datos de contrataciones públicas los Estados crean portales de datos con el fin de transparentar los procesos y establecer mecanismos para que la ciudadanía, empresas y organizaciones puedan ejercer un rol de contralores y a la vez facilitar a los entes gubernamentales a contratar bienes y servicios. Este es el caso del portal \textit{Tender Electronic Daily} (TED)\footnote{https://ted.europa.eu/TED/main/HomePage.do}  en la Unión Europea y República Checa \footnote{https://opentender.eu/cz/}. En Paraguay, estos datos pueden ser obtenidos desde el Portal de Datos Abiertos de la Dirección Nacional de Contrataciones Públicas \footnote{https://www.contrataciones.gov.py/datos} (DNCP).
+Debido a la creciente importancia de publicar los datos de contrataciones públicas los Estados crean portales de datos con el fin de transparentar los procesos y establecer mecanismos para que la ciudadanía, empresas y organizaciones puedan ejercer el rol de contralores y a la vez facilitar a los entes gubernamentales a contratar bienes y servicios. Este es el caso del portal \textit{Tender Electronic Daily} (TED)\footnote{https://ted.europa.eu/TED/main/HomePage.do}  en la Unión Europea y República Checa\footnote{https://opentender.eu/cz/}. En Paraguay, estos datos pueden ser obtenidos desde el Portal de Datos Abiertos de la Dirección Nacional de Contrataciones Públicas \footnote{https://www.contrataciones.gov.py/datos} (DNCP).
 
-Esta enorme cantidad de datos están disponibles en sistemas con representaciones de datos distintas, provocando problemas al momento de interoperar. Interoperabilidad se refiere a que un sistema pueda procesar de manera automática y consistente datos de otros sistemas para enriquecer y complementar la información. Esto se logra a través de la Web Semántica \cite{Semantic20:online}, que es el conjunto de estándares y tecnologías que añade de manera formal el significado y la relación que existe entre los datos de manera a que éstos puedan ser procesables por máquinas.
+Esta enorme cantidad de datos está disponible en sistemas con representaciones de datos distintas, provocando problemas al momento de interoperar. Por Interoperabilidad se entiede un sistema pueda procesar de manera automática y consistente datos de otros sistemas para enriquecer y complementar la información. Esto se logra a través de la Web Semántica \cite{Semantic20:online}, que es el conjunto de estándares y tecnologías que añade de manera formal el significado y la relación que existe entre los datos de manera a que éstos puedan ser procesables por máquinas.
 
 Según Svátek \cite{svatek2014linked}, los datos de contrataciones públicas son importantes dentro de la Web Semántica \cite{Semantic20:online} porque unifican dos esferas muy diferentes como son: las necesidades públicas por un lado y la oferta de productos y servicios del sector privado por el otro; este escenario es idóneo para la utilización de modelos de datos, metodologías y fuentes de información publicadas de forma independiente. Además, la gran cantidad de datos de contrataciones públicas da lugar para aplicar diversos métodos de análisis de datos que van desde estadísticas agregadas en forma de barras hasta análisis más exhaustivos de minería de datos.
-Este trabajo nace con la intención de crear un modelo de datos formal capaz de mejorar la accesibilidad a la información pública, y que dicha información sea comprensible por máquinas con el fin de brindar mayor desarrollo y transparencia al proceso de contrataciones públicas. 
+Este trabajo nace con la intención de crear un modelo de datos formal, capaz de mejorar la accesibilidad a la información pública, y que dicha información sea comprensible por máquinas con el fin de brindar mayor desarrollo y transparencia al proceso de contrataciones públicas. 
 
 
 \section{Justificación}
 
-Debido a la gran cantidad de datos disponibles en internet, la integración entre sistemas de información heterogéneos que disponibilizan estos datos se vuelve un problema complejo de resolver para poder quitar provecho de los mismos. 
+Debido a la gran cantidad de datos disponibles en internet, la integración entre sistemas de información heterogéneos que disponibilizan estos datos se vuelve un problema complejo de resolver. 
 
-Este desafío puede ser abordado a través de tecnologías de la Web Semántica, en ella se integran estándares y herramientas necesarias para la disponibilización de recursos en la web de manera a que sean entendibles por máquinas y a la vez haciendo posible la integración de recursos de diferentes fuentes. 
+Este desafío puede ser abordado a través de tecnologías de la Web Semántica. En ella se integran estándares y herramientas necesarias para la disponibilización de recursos en la web, de manera a que sean entendibles por máquinas, y a la vez hace posible la integración de recursos de diferentes fuentes. 
 
-Las ontologías proveen una modelo de descripción de significado de los datos que no depende de un contexto en particular y puede ser interpretado tanto por sistemas de información como por personas, logrando así la interoperabilidad semántica. En informática, una ontología se refiere a una definición formal de tipos, propiedades y relaciones entre conceptos de un dominio de conocimiento en particular
+Las ontologías proveen un modelo de descripción de significado de los datos que no depende de un contexto en particular y puede ser interpretado tanto por sistemas de información como por personas, logrando así la interoperabilidad semántica. En informática, una ontología se refiere a una definición formal de tipos, propiedades y relaciones entre conceptos de un dominio de conocimiento en particular.
 
 El problema computacional que se quiere resolver es la interoperabilidad sintáctica y semántica de datos de un dominio de conocimiento en particular con datos de distintas fuentes de publicación y de distintos dominios de conocimiento. El trabajo pretende modelar una ontología para brindar una capa de semántica formal a un estándar de datos abiertos para la publicación de datos estructurados llamado \textit{Open Contracting Data Standard}(OCDS), aplicado a datos de la DNCP utilizando metodologías y herramientas para el desarrollo de ontologías. 
 
 
 \section{Objetivos}
 
-El objetivo general es verificar experimentalmente la interoperabilidad semántica de datos establecida por una ontología desarrollada con base en un protocolo de intercambio de datos.
+El objetivo general es verificar experimentalmente la interoperabilidad semántica de datos establecida por una ontología desarrollada en base a un protocolo de intercambio de datos.
 
 A partir del objetivo general se identificaron las siguientes preguntas de investigación.
 
@@ -39,7 +39,7 @@ A partir del objetivo general se identificaron las siguientes preguntas de inves
     \item[P4.] ¿De qué manera ayuda a la interoperabilidad semántica publicar datos en formato de triplas o grafos?
     \item[P5.] ¿Es posible la reutilización de otras ontologías de dominio?
     \item[P6.] ¿Es posible enriquecer los datos  de una fuente de un dominio de conocimiento con otra fuente de datos externa?
-    \item[P7.] ¿De que manera una ontología puede lograr la interpretación y la inferencia automática de datos?
+    \item[P7.] ¿De qué manera una ontología puede lograr la interpretación y la inferencia automática de datos?
     
 \end{description} 
 
@@ -47,9 +47,9 @@ Las preguntas de investigación se enmarcaron en los siguientes objetivos espec�
 
 \begin{description}
     \item[O1.] Identificar y comparar las bases de representación de conocimiento asociadas al dominio de Contrataciones Públicas.
-    \item[O2.] Describir el proceso de modelado de una ontología utilizando una base de representación de conocimiento de dominio.
+    \item[O2.] Describir el proceso de modelado de una ontología, utilizando una base de representación de conocimiento de dominio.
     \item[O3.] Modelar un sistema de extracción y consultas de datos del dominio de Contrataciones Públicas con capacidad de integración semántica.
-    \item[O4.] Mostrar a través de un conjunto de casos la expresividad e interoperabilidad semántica de datos utilizando la ontología desarrollada.
+    \item[O4.] Mostrar, a través de un conjunto de casos, la expresividad e interoperabilidad semántica de datos utilizando la ontología desarrollada.
 \end{description} 
 
 
@@ -68,6 +68,6 @@ Como resultante del trabajo se realizaron las siguientes contribuciones.
  
 
 \section{Estructura del documento}
-El trabajo está estructurado de la siguiente manera; en  en el  Capítulo \ref{chap:Marco Teorico}  trataremos el marco teórico del trabajo abordando los temas de la Web Semántica, las ontologías, sus metodologías y herramientas relacionadas. En el Capítulo \ref{chap:Desarrollo de la Ontologia} se mostrará el proceso de modelado de la ontología, en el Capítulo \ref{chap:Implementación de la Ontologia} se describirá la implementación el entorno tecnológico de experimentación para luego en el Capítulo  \ref{chap:Contexto experimental} mostrar las pruebas realizadas a los datos utilizando la ontología desarrollada. En el Capítulo \ref{chap:conclusiones} se evaluará el cumplimiento de los objetivos propuestos, las conclusiones finales y futuros trabajos que pudieran abordarse. Al final de este documento  se  incluyen las referencias bibliográficas utilizadas para su elaboración y el anexo que provee información complementaria al trabajo.
+El trabajo está estructurado de la siguiente manera; en  en el  Capítulo \ref{chap:Marco Teorico}  trataremos el marco teórico del trabajo abordando los temas de la Web Semántica, las ontologías, sus metodologías y herramientas relacionadas para luego en el Capítulo\ref{chap:MaterialesYMetodos} se expondrá la forma en que se abordarán los objetivos propuestos. En el Capítulo \ref{chap:Desarrollo de la Ontologia}, se mostrará el proceso de modelado de la ontología. En el Capítulo \ref{chap:Implementación de la Ontologia}, se describirá la implementación el entorno tecnológico de experimentación para luego en el Capítulo  \ref{chap:Contexto experimental} mostrar las pruebas realizadas a los datos utilizando la ontología desarrollada. En el Capítulo \ref{chap:conclusiones}, se evaluará el cumplimiento de los objetivos propuestos, las conclusiones finales y futuros trabajos que pudieran abordarse. Al final de este documento  se  incluyen las referencias bibliográficas utilizadas para su elaboración y el anexo que provee información complementaria al trabajo.
 
 
