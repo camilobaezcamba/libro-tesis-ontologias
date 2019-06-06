@@ -39,7 +39,7 @@ En este trabajo se pone bajo análisis las ontologías de LOTED 2 , LOTED, Publi
 
 La ontología mas referenciada, esto significa la ontología tiene mayor cantidad de reutilización, en el sector de contrataciones públicas es la Public Contract Ontology (PCO)\cite{klimek2012lod2}  ya que ofrece un medio de expresión para describir los conceptos básicos de este dominio logrando así que otras ontologías puedan extender de ésta fácilmente. Otra ontología que cabe mencionar es la ontología LOTED  ya que fue desarrollada para enriquecer los datos de licitaciones, expuestas por el sistema TED, con enlaces a Geonames y DBpedia. A continuación de LOTED y viendo la necesidad de dar un contexto legal al ámbito de contrataciones fue desarrollada la ontología LOTED2\cite{distinto2014loted2} cuyo principal objetivo es la representación de los conceptos jurídicos relacionados al dominio de las contrataciones públicas, por esto puede resultar un tanto difícil su utilización.
 
-La ontología PPROC \cite{munoz2016pproc}fue desarrollada siguiendo las especificaciones de OWL, utiliza clases de PCO, así como también de otras ontologías como  \textit{Organization Ontology, Schema.org, SKOS} y para la definición de conceptos relacionados a ofertas realizadas utiliza Good Relations. Uno de los objetivos específicos de PPROC es la publicación del perfil del contratante de las administraciones que participan en los proceso de licitación.
+La ontología PPROC \cite{munoz2016pproc} fue desarrollada siguiendo las especificaciones de OWL, utiliza clases de PCO, así como también de otras ontologías como  \textit{Organization Ontology, Schema.org, SKOS} y para la definición de conceptos relacionados a ofertas realizadas utiliza Good Relations. Uno de los objetivos específicos de PPROC es la publicación del perfil del contratante de las administraciones que participan en los proceso de licitación.
 
 Tanto LOTED como LOTED2, PCO y PPROC utilizan RDF/XML para la definición de la ontología debido a su fuerte poder de describir los atributos de los recursos. 
 
@@ -55,13 +55,13 @@ En la  Tabla \ref{tab:comparacion_ontologias} se muestra una comparación entre 
 
 
 \begin{table}[!htb]
-    \caption{Comparación entre las ontologías LOTED, LOTED2, PCO , PPROC, DNCP y OCDSPY.}
+    \caption{Comparación entre las ontologías LOTED, LOTED2, PCO , PPROC, DNCP y OCDSV0.}
     \label{tab:comparacion_ontologias}
     
     \scriptsize 
     \begin{tabular}{|L{1.5cm}|C{1.8cm}|C{2cm}|C{1.8cm}|C{1.8cm}|C{1.8cm}|C{1.8cm}|}
     \hline
-     & LOTED & LOTED2 & PCO & PPROC & DNCP  & OCDS 0 \\
+     & LOTED & LOTED2 & PCO & PPROC & DNCP  & OCDSV0 \\
     \hline
 
     
@@ -82,7 +82,7 @@ En la  Tabla \ref{tab:comparacion_ontologias} se muestra una comparación entre 
     Propósito de la ontología & Agregar un nivel de estructura a los datos obtenidos de TED & Dar un contexto legal. Permitir la construcción de aplicaciones legales de Web Semántica para contrataciones publicas. & Modelar contratos públicos en general & Incorporar las técnicas
     semánticas en las herramientas utilizadas por las Administraciones públicas en los procesos de contratación & Base de conocimiento de datos de contrataciones públicas de Paraguay & Base de conocimiento de datos de contrataciones públicas de Paraguay \\
     \hline
-    Ultima versión & 03 Jul. 2012 & 24 Jul. 2013 & 10 Oct. 2012 & (1.0.0)29 Oct. 2014 & 2016 & 2016\\
+    Ultima versión & 03 Jul. 2012 & 24 Jul. 2013 & 10 Oct. 2012 & (1.0.0)29 Oct. 2014 & 2016 & 23 Ago. 2018\\
     \hline
     \end{tabular}
     
@@ -109,7 +109,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
 \end{lstlisting}
 \end{minipage}
 
- Al mismo tiempo se reutilizaron de la ontología \textit{Public Contract}, los conceptos de \textit{Tender} y \textit{Contract} de un proceso licitatorio(Cuadro \ref{lst:sparql2}).\hfill \break
+ Al mismo tiempo se reutilizaron de la ontología \textit{Public Contract}, los conceptos de \textit{Tender} y \textit{Contract} de un proceso licitatorio (Cuadro \ref{lst:sparql2}).\hfill \break
 
 \noindent\begin{minipage}{\textwidth}
  \begin{lstlisting}[captionpos=b, caption={Conceptos de Tender y Contract}, label={lst:sparql2},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
@@ -135,7 +135,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
  \end{lstlisting}
 \end{minipage}
 
- Se reutilizó la ontología de Schema.org para conceptos básicos como los presentados el Cuadro \ref{lst:sparql4}.\hfill \break
+ Se reutilizó la ontología de Schema.org para conceptos básicos como los presentados en el Cuadro \ref{lst:sparql4}.\hfill \break
 
 \noindent\begin{minipage}{\textwidth}
  \begin{lstlisting}[captionpos=b, caption={Reutilización de Schema.org}, label={lst:sparql4},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
@@ -164,31 +164,31 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
 
 Estos enunciados utilizados fueron elegidos teniendo en cuenta todas las ontologías del dominio y también la forma de reuso que existían entre las mismas. 
 
-Con esto se concluyó con la reutilización de ontologías, paso necesario para poder enriquecer la semántica de la ontología desarrollada. La Figura \ref{img:grafo ontologia desarrolla} es una representación visual en forma de grafo de la ontología desarrolla. A continuación, se procederá al uso de la ontología desarrollada y posteriores pruebas con la misma.
+Con esto se concluyó con la reutilización de ontologías, paso necesario para poder enriquecer la semántica de la ontología desarrollada. La Figura \ref{img:grafo ontologia desarrolla} es una representación visual en forma de grafo de la ontología desarrolla. En la Tabla \ref{tab:comparacion_ontologias_ocdspy} se muestra una pequeña comparación entre las ontologías OCDSV0 y OCDSPY. Allí se observa que la cantidad final de axiomas y clases aumentó luego de haber finalizado el desarrollo de la ontología OCDSPY. En el siguiente capítulo se procederá al uso de la ontología desarrollada y posteriormente se realizarán pruebas con la misma.
 
 
 \begin{table}[!htb]
     \centering
-    \caption{Ontologia desarrollada.}
-    \label{tab:comparacion_ontologias}
+    \caption{Comparación entre la ontología OCDSV0 y la ontología desarrollada OCDSPY}
+    \label{tab:comparacion_ontologias_ocdspy}
     \scriptsize 
     \begin{tabular}{|L{6cm}|C{2.5cm}|C{2.5cm}|}
     \hline
-     &  OCDS 0  & OCDSPY \\
+     &  OCDSV0 & OCDSPY \\
     \hline
-    Cantidad de Axiomas & 1210 & 1210 \\
+    Cantidad de Axiomas & 587 & 1210 \\
     \hline
-    Cantidad de Clases & 36 & 36 \\
+    Cantidad de Clases & 22 & 36 \\
     \hline
     Lenguaje & OWL (RDF/TTL) & OWL (RDF/TTL) \\
     \hline
-    Metodología & NeOn & NeOn \\
+    Metodología & Propia (no especificada) & NeOn \\
      \hline
-    Cantidad de ontologías reutilizadas & 6 & 6\\
+    Cantidad de ontologías reutilizadas & 0 & 6\\
     \hline
-    Propósito de la ontología & Agregar un nivel de semántico al OCDS  & Agregar un nivel de semántico al OCDS \\
+    Propósito de la ontología & Agregar un nivel semántico al OCDS  & Agregar un nivel semántico al OCDS \\
     \hline
-    Ultima versión & 07 Nov. 2018 & 07 Nov. 2018 \\
+    Ultima versión & 23 Agosto 2018 & 24 Abril 2019 \\
     \hline
     \end{tabular}
     \bigskip
