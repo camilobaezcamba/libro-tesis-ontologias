@@ -201,7 +201,7 @@ Una propiedad de objeto (\textit{ObjectProperty}) se utiliza para conectar pares
 
 Una propiedad funcional (\textit{FunctionalProperty}) es una propiedad que solamente puede tener un valor Y por cada instancia X, por ejemplo no puede haber dos valores distintos Y1 e Y2 tal que los pares (X,Y1) y (X,Y2) sean instancias de esta propiedad. Tanto los “ObjectProperty” como los \textit{DataTypeProperty} pueden ser declarados como \textit{FunctionalProperty}.
 
-Una consideración importante es que para los \textit{DataType Properties} no es necesario definir como la propiedad functional ya que la mayoría de los motores de razonamiento pueden deducir que dos literales son distintos. Ejemplo: un razonador puede inferir que  el literal “1” es distinto que  "2".
+Una consideración importante es que para los \textit{DataType Properties} no es necesario definir como la propiedad functional ya que la mayoría de los motores de razonamiento pueden deducir que dos literales son distintos. Ejemplo: un razonador puede inferir que  el literal “1” es distinto que “2”.
 En la ontología desarrollada se utilizó la propiedad \textit{FunctionalProperty} en aquellas que solo aceptan un objeto o valor, por ejemplo la relacion entre Planificacion(\textit{Planning}) y presupuesto(\textit{Budget}) es una relación funcional ya que existe solo un presupuesto para una planificacion específica, como muestra el Cuadro \ref{lst:planning-budget}. Asi se agregó dicha restricción a las demas relaciones que cumplian con esa condición.
 
 \noindent\begin{minipage}[c]{\textwidth}
