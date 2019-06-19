@@ -8,19 +8,19 @@ En esta sección se desarrolla la búsqueda, evaluación y selección de recurso
 
 En el proceso de búsqueda de documentación y estándares del dominio de Contrataciones Públicas se encontró que la DNCP implementa una API utilizando el estándar de publicación de datos de contrataciones públicas internacional \textit{Open Contracting Data Standard} (OCDS). La intención de la OCP fue crear un estándar que formaliza la sintaxis y no la semántica de cada concepto, a través de JSON Schema\cite{JSONSche10:online}, que es un vocabulario que permite anotar y validar documentos JSON. El estándar posee conceptos explícitamente definidos en lenguaje natural, por lo que la semántica esta definida pero no formalizada como ontología, por ello se lo consideró un recurso no-ontológico. Cabe recordar que cuando se habla de formal, se habla de legible por máquina. 
 
-OCDS es un estándar amigable y flexible para estructurar información de Contrataciones Públicas y es mantenido por la OCP. El estándar describe qué, cuándo y cómo disponibilizar datos y documentos asociados en las diferentes fases del proceso de contratación. El proyecto promueve la divulgación y participación en las contrataciones públicas creando un estándar abierto de datos simple. OCDS posee un esquema de datos detallado de todos los conceptos así como también la estructura de los datos divulgados, dicho esquema esta disponible el sitio web del estándar \cite{OCDSReleaseSchema:online}. Este esquema ayuda a las personas a comprender todos los campos publicados. Además el estándar posee un guía de implementación de modo a facilitar la implementación\footnote{http://standard.open-contracting.org/latest/en/implementation/}.
+OCDS es un estándar amigable y flexible para estructurar información de Contrataciones Públicas y es mantenido por la OCP. El estándar describe qué, cuándo y cómo disponibilizar datos y documentos asociados en las diferentes fases del proceso de contratación. El proyecto promueve la divulgación y participación en las contrataciones públicas creando un estándar abierto de datos simple. OCDS posee un esquema de datos detallado de todos los conceptos así como también la estructura de los datos divulgados, dicho esquema se encuentra disponible en el sitio web del estándar \cite{OCDSReleaseSchema:online}. Este esquema ayuda a las personas a comprender todos los campos publicados. Además el estándar posee un guía de implementación\footnote{http://standard.open-contracting.org/latest/en/implementation/} a modo de facilitar y agilizar el proceso.
 
-En Paraguay,  el portal de datos abiertos de la DNCP \cite{DatosAbiDNCP:online}, organismo del estado que publica datos de los procesos de contrataciones , ha implementado el estándar y publica sus datos orientados a diferentes tipos de usuarios:
+En Paraguay,  el portal de datos abiertos de la DNCP \cite{DatosAbiDNCP:online}, organismo del estado que publica datos de los procesos de contrataciones, ha implementado el estándar y publica sus datos orientados a diferentes tipos de usuarios:
 
 
 \begin{enumerate}
-    \item Lista de datos. Con el fin de que los usuarios que necesitan ver, analizar y descargar en formato CSV los datos detallados de todos los registros de contrataciones.
+    \item Lista de datos. Con el fin de brindar información a los usuarios que deseen observar, analizar y descargar en formato CSV los datos detallados de los registros de contrataciones.
     \item Visualizaciones de datos para usuarios que deseen ver estadísticas e información agregada.
-    \item Una API para desarrolladores que permite manipular datos en formato JSON y JSON-LD de manera programática para cualquier otro uso.
+    \item Una API para desarrolladores que permite manipular datos en formato JSON y JSON-LD de manera programática.
     \item Plataforma de Contrataciones Electrónica, destinada a empresas y personas que deseen presentarse o conocer algún proceso de contratación.
 \end{enumerate}
 
-Los datos publicados poseen un diccionario de datos y una ontología creada por la DNCP, la cual sirve como contexto para la API desarrollada.Esto significa que la DNCP ya realizo un primer trabajo publicando sus datos en formato JSON-LD. Además la DNCP implementó una API siguiendo el estándar OCDS, que posee un esquema de publicación bien definido en JSON Schema.
+Los datos publicados poseen un diccionario y una ontología creada por la DNCP, la cual sirve como contexto para la API desarrollada. Esto significa que la DNCP ya realizó un primer trabajo publicando sus datos en formato JSON-LD. Además la DNCP implementó una API siguiendo el estándar OCDS, que posee un esquema de publicación bien definido en JSON Schema.
 
 
 \subsection{Evaluación de recursos no-ontológicos}
@@ -29,7 +29,7 @@ Se eligió el OCDS como recurso no-ontológico a evaluar puesto que el principal
 \subsubsection{Extracción de entradas léxicas}
 La meta de esta tarea es extraer las entradas léxicas de los recursos no-ontológicos. Para realizarla, es necesario tomar como entrada los recursos no-ontológicos y extraer sus entradas léxicas usando herramientas de extracción de terminología.	
 			
-Del esquema JSON de la versión 1 del OCDS se hizo una lista de todas las propiedades del mismo. Para este trabajo consideramos que cada propiedad del esquema consiste en una entrada léxica, donde una entrada léxica corresponde a un concepto o relación dentro del dominio de conocimiento. Asi como nuestra nuestro trabajo \footnote{http://bit.ly/ValdezBaezThesis}, se encontraron 142 propiedades, omitiendo las propiedades repetidas y datos transaccionales del estándar que no representan entradas léxicas, la lista se reduce a 114.
+Del esquema JSON de la versión 1 del OCDS se hizo una lista de todas las propiedades del mismo. Para este trabajo consideramos que cada propiedad del esquema consiste en una entrada léxica, donde una entrada léxica corresponde a un concepto o relación dentro del dominio de conocimiento. Así como nuestra nuestro trabajo \footnote{http://bit.ly/ValdezBaezThesis}, se encontraron 142 propiedades, omitiendo las propiedades repetidas y datos transaccionales del estándar que no representan entradas léxicas, la lista se reduce a 114. Se define datos o propiedades transaccionales a las propiedades de id, url y otros semejantes que no tienen valor semántico, sino que los mismos corresponden a identificadores transaccionales de los objetos.
 
 \subsubsection{Cálculo de precisión y alcance}
 
@@ -40,7 +40,7 @@ El objetivo de esta tarea es calcular la precisión de los recursos no-ontológi
     \item \textit{ORSD Terminology} como el conjunto de términos identificados incluidos en el ORSD. 
 \end{itemize}
 
-Para obtener el número de términos de la especificación de requisitos de ontología (ORSDTerminology) se creó una lista unificada de todas las propiedades encontradas en el diccionario de datos del portal de datos abiertos de la DNCP.  Se encontraron 129 propiedades, de la misma manera que en el OCDS se omitieron propiedades repetidas y datos transaccionales, dejándonos con un total de 109 entradas léxicas. Éstas representan el dominio de conocimiento que se quiere representar con la ontología a construir.
+Para obtener el número de términos de la especificación de requisitos de ontología (ORSDTerminology) se creó una lista unificada de todas las propiedades encontradas en el diccionario de datos del portal de datos abiertos de la DNCP.  Se encontraron 129 propiedades, de la misma manera que en el OCDS se omitieron propiedades repetidas y datos transaccionales, dejándonos con un total de 109 entradas léxicas, dicho trabajo se encuentra en el repositorio de este trabajo\footnote{http://bit.ly/ValdezBaezThesis}. Éstas representan el dominio de conocimiento que se quiere representar con la ontología a construir.
 
 \begin{table}[!htb]
 \centering

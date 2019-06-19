@@ -1,7 +1,7 @@
 \section{Caso 5. Expresividad semántica de la ontología. }
 \label{section:caso5}
 
-El termino expresividad se refiere al hecho de poder realizar consultas en términos semánticos o sea a través de conceptos reales. De no ser así, para hacer una consulta a la fuente de datos el experto necesita:
+El término expresividad se refiere al hecho de poder realizar consultas en términos semánticos o sea a través de conceptos reales. De no ser así, para hacer una consulta a la fuente de datos el experto necesita:
 
 \begin{enumerate}
     \item Conocer toda la estructura de datos.
@@ -12,12 +12,12 @@ El termino expresividad se refiere al hecho de poder realizar consultas en térm
 Todo esto requiere mayor tiempo y puede crear un sesgo en la interpretación del experto. En este caso la expresividad semántica de la ontología asegura la correcta interpretación de los datos y facilita la consulta de los mismos.
 
 
-\subsection{Mejora: Definición de un nuevo concepto}
+\subsection{Mejora: Definición de un nuevo concepto y mejora en la expresividad}
 Se puede extender la expresividad semántica de la ontología actualizando el modelo ontológico sin que implique un alto costo debido a que éste se encuentra desacoplado de los datos.
 
 Para probar este caso se utilizó la fuente de datos de procesos licitatorios y la ontología OCDSPY.  Se creó el  concepto  de “Proceso Licitatorio con Contrato”, que se refiere al hecho de que un Proceso Licitatorio ya se encuentra con al menos un contrato firmado.
 
-Se define el concepto a través de una una clase (\textit{PLConContrato}) a partir de una restricción de propiedad. Esta clase se define como una subclase de \textit{Release}, que tiene como restricción todas las instancias de la clase \textit{Release} que tengan al menos una relación en la propiedad \textit{ocds:contracts}.
+Se define el concepto a través de una clase (\textit{PLConContrato}) a partir de una restricción de propiedad. Esta clase se define como una subclase de \textit{Release}, que tiene como restricción todas las instancias de la clase \textit{Release} que tengan al menos una relación en la propiedad \textit{ocds:contracts}.
 
 En el Cuadro \ref{lst:caso5-1} se muestra cómo a través del Punto SPARQL introducimos a la ontología el concepto “Proceso Licitatorio”. Esta extensión de la ontología se dio luego del desarrollo de la misma, demostrando también la forma en que la ontología puede ir expandiéndose a medida que se necesite.
 

@@ -2,7 +2,7 @@
 
 Para probar el funcionamiento de la ontología creada se procedió al uso de una parte de la ontología implementada por la DNCP correspondiente a los proveedores del estado. Con el conjunto de datos de Proveedores podemos obtener datos adicionales sobre algún proveedor que se está presentando en algún proceso licitatorio.
 
-Se utilizó para esto la API V2 de proveedores \footnote{\url{https://www.contrataciones.gov.py/datos/api/v2/doc/proveedores/}}, dicha API ya se encuentra publicada con el formato JSON-LD. Se realizaron consultas para obtener todos los registros de proveedores del estado y volcarlos a la base de datos MongoDB. Luego, utilizando la librería Jena, se procedió a convertir los objetos JSON-LD a RDF para posteriormente almacenarlos en la base de datos TDB.
+Se utilizó para esto la API V2 de proveedores\footnote{\url{https://www.contrataciones.gov.py/datos/api/v2/doc/proveedores/}}, dicha API ya se encuentra publicada con el formato JSON-LD utilizando la ontología de la DNCP. Se realizaron consultas para obtener todos los registros de proveedores del estado y volcarlos a la base de datos MongoDB. Luego, utilizando la librería Jena, se procedió a convertir los objetos JSON-LD a RDF para posteriormente almacenarlos en la base de datos TDB.
 
 Al momento de realizar las pruebas de interoperabilidad solamente se trabajó con un subconjunto (100) de los procesos licitatorios del año 2016. De esta manera se logró realizar consultas rápidas ya que se partió de una base de datos ligera y la intención fue probar la interoperabilidad semántica entre distintas fuentes de datos. Esto es meramente experimental y no fue una prioridad mejorar los tiempos de respuesta.
 

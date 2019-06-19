@@ -1,8 +1,8 @@
 \section{Contexto JSON-LD}
 
-Como se vió anteriormente, existen varias formas de serialización de RDF, en contraste a XML, JSON-LD fue diseñado para ser un formato de intercambio de datos ligero e independiente del lenguaje y es lo suficientemente expresivo como para soportar los conceptos de RDF, además requiere poco esfuerzo para los desarrolladores transformar un documento JSON a JSON-LD. 
+Como se vió anteriormente, existen varias formas de serialización de RDF, en contraste a XML, JSON-LD fue diseñado para ser un formato de intercambio de datos ligero e independiente del lenguaje y es lo suficientemente expresivo como para soportar los conceptos de RDF, además requiere poco esfuerzo para los desarrolladores transformar un documento JSON a JSON-LD \cite{JSONLDJS41:online}. 
 
-Para dar contexto a un objeto JSON es necesario agregar el atributo @context. Éste puede darse de dos formas, definiendo la estructura del contexto como valor de la propiedad, o haciendo referencia (URI) a un documento que contiene la definición del contexto.
+Para dar contexto a un objeto JSON es necesario agregar el atributo @context. Éste puede darse de dos formas, definiendo la estructura del contexto como valor de la propiedad, o haciendo referencia (URI) a un documento que contiene la definición del contexto como ya se vió en la sección \ref{section:serializacion_jsonld}.
 
 Se puede ir agregando @context a los objetos hijos de forma recursiva. Esto es muy importante debido a que se pueden sobrescribir los contextos exclusivamente para un objeto en particular sin que afecte a la definición de los demás. Más adelante en este capítulo se abordará cada uno de los temas.
 

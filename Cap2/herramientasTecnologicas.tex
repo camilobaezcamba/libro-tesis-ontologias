@@ -25,7 +25,7 @@ Además se utilizó una herramienta de visualización gráfica de ontologías ll
 
 \subsection{Apache Jena}
 \label{subsection:jena}
-Jena es un \textit{Framework} implementado en JAVA para construir aplicaciones de la Web Semántica. Provee una librería para la manipulación de datos en RDF, RDFS, RDFa, OWL y SPARQL, y está alineada con las recomendaciones de la W3C\cite{Semantic20:online}. Jena incluye un motor de inferencias basado en reglas para realizar los razonamientos basados en OWL y RDFS, además de una variedad de estrategias para el almacenamiento de triplas RDF en memoria y en disco.
+Jena\footnote{https://jena.apache.org} es un \textit{Framework} implementado en JAVA para construir aplicaciones de la Web Semántica. Provee una librería para la manipulación de datos en RDF, RDFS, RDFa, OWL y SPARQL, y está alineada con las recomendaciones de la W3C\cite{Semantic20:online}. Jena incluye un motor de inferencias basado en reglas para realizar los razonamientos basados en OWL y RDFS, además de una variedad de estrategias para el almacenamiento de triplas RDF en memoria y en disco.
 
 \subsection{Consulta de datos con SPARQL}
 \label{subsection:fuseki}
@@ -60,4 +60,4 @@ ORDER BY ?name
 
 En las líneas 1 al 4 se pueden ver los prefijos de las ontologías utilizadas en la consulta, luego se presentan las triplas que componen las restricciones de la consulta. Está fuera del alcance de este documento la explicación detallada de la sintaxis de SPARQL que puede ser consultada en las recomendaciones de W3C\footnote{https://www.w3.org/TR/rdf-sparql-query/}.
 
-Apache Jena Fuseki es un Servidor o Punto SPARQL que además provee un motor de inferencias. Se ejecuta como una aplicación web Java (archivo WAR). Provee el protocolo de consulta y actualización SPARQL 1.1 \footnote{https://www.w3.org/TR/sparql11-query/} así como también el protocolo de \textit{SPARQL Graph Store}\footnote{https://www.w3.org/TR/sparql11-http-rdf-update/}.
+Apache Jena Fuseki\footnote{https://jena.apache.org/documentation/fuseki2/index.html} es un Servidor o Punto SPARQL que además provee un motor de inferencias. Se ejecuta como una aplicación web Java (archivo WAR). Provee el protocolo de consulta y actualización SPARQL 1.1 \footnote{https://www.w3.org/TR/sparql11-query/} así como también el protocolo de \textit{SPARQL Graph Store}\footnote{https://www.w3.org/TR/sparql11-http-rdf-update/}.

@@ -21,11 +21,11 @@ El OCDS se centra en las siguientes necesidades del usuario:
     \item Control de la eficacia de la prestación de servicios. 
 \end{itemize}
 
-El OCDS posee un sitio web donde se encuentra documentado todo el estándar, soportando los idiomas español, inglés y francés. Además posee una guía de implementación del estándar \footnote{http://standard.open-contracting.org/latest/en/implementation/}, un validador de la estructura sintáctica del mismo \footnote{http://standard.open-contracting.org/review/} y un mecanismo de gestión de extensiones \footnote{http://standard.open-contracting.org/latest/en/extensions/}.
+El OCDS posee un sitio web\footnote{http://standard.open-contracting.org/latest/en/} donde se encuentra documentado todo el estándar, soportando los idiomas español, inglés y francés. Además posee una guía de implementación del estándar\footnote{http://standard.open-contracting.org/latest/en/implementation/}, un validador de la estructura sintáctica del mismo\footnote{http://standard.open-contracting.org/review/} y un mecanismo de gestión de extensiones\footnote{http://standard.open-contracting.org/latest/en/extensions/}.
 
 \subsubsection{Modelo conceptual}
 
-En esta actividad se identifica el esquema de recursos así como también los componentes conceptuales y sus relaciones. Además se crea un modelo conceptual dividido por bloques de conceptos relacionados. El conocimiento se expresa mediante representaciones primitivas de conceptos y relaciones entre conceptos. A continuación se representa la conceptualización teniendo como base el OCDS.
+En esta actividad se identifica el esquema de recursos así como también los componentes conceptuales y sus relaciones. Además se crea un modelo conceptual dividido por bloques de conceptos relacionados. El conocimiento se expresa mediante representaciones primitivas de conceptos y relaciones entre conceptos. A continuación se representa la conceptualización de los principales elementos del dominio teniendo como base el OCDS.
 
 Un proceso de contratación se define como toda la información relativa a la planificación, la licitación, las adjudicaciones, los contratos y la ejecución de contratos relacionados con un solo proceso de iniciación.
 
@@ -42,7 +42,7 @@ Las etapas son correlativas, esto significa que necesariamente debe de existir l
 
 Además de estas etapas existe otro concepto importante que es el bloque de Organización, que puede corresponder tanto al comprador como al oferente. Esta Organización puede estar ligada a cualquiera de las etapas del proceso de contratación. A continuación se detallan cada una de las etapas.
 \paragraph{Planificación (\textit{Planning})}\hfill \break
-Este bloque contiene información necesaria para describir los antecedentes de un proceso de contratación y puede incluir detalles del presupuesto del que se extraen los fondos o proyectos relacionados. Todo proceso de contratación posee una única planificación, dicha planificación tiene un presupuesto (budget) asociado donde finalmente se indica el valor o monto estimado para la adquisición del bien o servicio. Un diagrama de los componentes principales de la clase Planificación puede verse en la Figura \ref{img:Fase de Planificacion}.
+Este bloque contiene información necesaria para describir los antecedentes de un proceso de contratación y puede incluir detalles del presupuesto del que se extraen los fondos o proyectos relacionados. Todo proceso de contratación posee una única planificación, dicha planificación tiene un presupuesto (budget), asociado donde finalmente se indica el valor o monto estimado para la adquisición del bien o servicio. Un diagrama de los componentes principales de la clase Planificación puede verse en la Figura \ref{img:Fase de Planificacion}.
 
 \begin{figure}[htbp!]
     \centering
@@ -52,7 +52,7 @@ Este bloque contiene información necesaria para describir los antecedentes de u
 \end{figure}
 
 \paragraph{Convocatoria (\textit{Tender})}\hfill \break
-Este bloque incluye detalles del anuncio indicando que una organización tiene la intención de abastecerse de algunos bienes o servicios y establecer uno o más contratos para estos. Todo proceso de contratación posee una única convocatoria, dicha convocatoria tiene asociada la organización involucrada en el proceso. Además, la convocatoria indica los ítems requeridos, el período establecido, los documentos utilizados, las adendas que pudieran haberse realizado sobre la convocatoria original y la lista de hitos. Se observa el esquema en la Figura \ref{img:Fase de Convocatoria}
+Este bloque incluye detalles del anuncio indicando que una organización tiene la intención de abastecerse de algunos bienes o servicios y establecer uno o más contratos para estos. Todo proceso de contratación posee una única convocatoria activa, dicha convocatoria tiene asociada la organización involucrada en el proceso. Además, la convocatoria indica los ítems requeridos, el período establecido, los documentos utilizados, las adendas que pudieran haberse realizado sobre la convocatoria original y la lista de hitos. Se observa el esquema en la Figura \ref{img:Fase de Convocatoria}
 
 \begin{figure}[htbp!]
     \centering
@@ -92,12 +92,14 @@ Los releases son acumulativos, es decir, durante un proceso de contratación se 
 Una vez que un release ha sido publicado no puede cambiar. La información actualizada debe ser compartida a través de un nuevo release.
 Los releases pueden ser publicados a través de un único sistema o de manera distribuida por diferentes sistemas, pero todos éstos deben estar relacionados a partir de un identificador único denominado Open Contracting ID (OCID).
 
-\paragraph{\textit{Releases}}\hfill \break
+\paragraph{\textit{Record}}\hfill \break
+\label{record}
+
 Un registro (\textit{Record}) de contratación provee una instantánea del proceso de contratación en un punto dado en el tiempo, que reúne todas las versiones por las cuales pasó ese proceso en un solo lugar.
 Un Record contiene tres elementos clave: 
 \begin{itemize}
     \item Una lista de todos los releases asociados a un proceso de contratación en particular, 
-    \item Un release compilado que contiene la última versión de los datos,
+    \item Un \textit{Compiled Release} o que contiene la última versión de los datos,
     \item Una versión histórica de releases que contiene la historia con todos los cambios realizados sobre los datos.
 \end{itemize}
 
@@ -118,6 +120,7 @@ Un Record Package es un esquema de agrupación para la publicación de Records, 
 
 
 \subsubsection{Transformación del recurso no-ontológico}
+El proceso de transformación consistió en tomar como entrada el recurso no-ontológico (OCDS) y por medio de procesos de modelado convertirlo a un recurso ontológico analizando todos y cada uno de los conceptos. 
 En esta sección se utilizaron los patrones de diseño para seguir construyendo un modelo conceptual y luego proseguir con la implementación de la ontología. 
 \paragraph{Búsqueda de Patrones de Diseño}\hfill \break
 El objetivo de este paso es buscar posibles patrones de diseño que conviertan el recurso no-ontológico en un modelo conceptual. 
@@ -133,9 +136,9 @@ Los patrones que son relevantes son aquellos que involucran tiempo, dinero, empr
     \item Boleta de Pago\footnote{http://ontologydesignpatterns.org/wiki/Submissions:Invoice} 
 \end{enumerate}
 
-Además se investigaron otros patrones de reingeniería, pero ninguno de éstos se adecuaba ya que están orientados a patrones jerárquicos de diseño y el dominio modela una secuencia o proceso. 
+Además se investigaron otros patrones de reingeniería, pero ninguno de éstos se adecuaba ya que están orientados a patrones jerárquicos de diseño y el dominio modela una secuencia o proceso. Esto se debe a que las ontologías tiene dificultad en modelar procesos que implican cambios en el tiempo\cite{Rock2019}.
 
-Se creó un patrón de conversión del estándar de documentacion JSON SCHEMA http://json-schema.org/ a un modelo ontológico. El patrón de conversión tiene los siguientes lineamientos.
+Se creó un patrón de conversión del estándar de documentación JSON SCHEMA http://json-schema.org/ a un modelo ontológico. El patrón de conversión tiene los siguientes lineamientos.
 
 \begin{itemize}
     \item Todos los objetos JSON del esquema son potenciales conceptos de la ontología desarrollada. Un Objeto JSON será considerado como clase o individuo en el modelo conceptual.
@@ -150,7 +153,7 @@ Se creó un patrón de conversión del estándar de documentacion JSON SCHEMA ht
 
 El esquema del OCDS posee una lista de códigos (\textit{Codelist}) de dos tipos; abiertos y cerrados. Los \textit{Codelist} Abiertos proveen códigos sugeridos, los publicadores pueden extender esta lista con nuevos códigos sin el consenso de otros publicadores. Mientras que los \textit{Codelist} Cerrados proveen códigos mandatorios, los publicadores solo pueden utilizar los valores de la lista oficial, cambios a \textit{Codelist} Cerrados deben hacerse a través de la gobernanza y revisión de la lista. Esta lista de códigos fueron transformados utilizando el patrón mencionado a continuación. 
 
-Para los \textit{Codelist} Abiertos se los convirtió en \textit{individuals}, en otros términos, instancias de los conceptos. Para los \textit{Codelist} Cerrados se los convirtió en \textit{Enumerated Classes}. Las \textit{Enumerated Classes} impiden la declaración de nuevos individuos que pertenecen a esta clase, siendo así más restrictivos.
+Para los \textit{Codelist} Abiertos se los convirtió en \textit{individuals}, en otros términos, instancias de los conceptos. Para los \textit{Codelist} Cerrados se los convirtió en \textit{Enumerated Classes}. Las \textit{Enumerated Classes} impiden la declaración de nuevos individuos que pertenecen a esta clase, siendo así más restrictivos. Esto hace que si se quisiera agregar una nueva clase, se debería de extender la ontología.
 \paragraph{Utilización de patrones}\hfill \break
 Por último, se consideraron los patrones mencionados anteriormente para los siguientes conceptos:
 Para el concepto \textit{Value} del OCDS, que representan valores monetarios, se utilizó el patrón \textit{Price}. El patrón describe el precio de alguna entidad, dicho precio contiene un valor y una moneda. En la Figura \ref{img:Modelo de Precio} se muestra el diagrama del patrón.
@@ -175,7 +178,7 @@ Para el concepto \textit{Period}, que representan periodos de tiempo se utilizó
     
 \end{figure}
 
-Para la relación que existe entre \textit{Planning, Tender, Award, Contract e Implementation}, que tienen una relación de dependencia y de secuencia, se utilizó el patrón \textit{Sequence}. El patrón describe una secuencia de hecho a través de las propiedades Precede, Precede Directamente, Antecede y Antecede Directamente. Por ejemplo, decidir qué camisa utilizaré precede directamente a colocarse la camisa, y precede a colocarse la corbata. En la Figura \ref{img:Modelo de dependencia y secuencia} se presenta el diagrama del patrón. Se utilizó este patrón para describir la secuencia del proceso de contrataciones.
+Para la relación que existe entre \textit{Planning, Tender, Award, Contract e Implementation}, que tienen una relación de dependencia y de secuencia, se utilizó el patrón \textit{Sequence}\footnote{http://www.ontologydesignpatterns.org/cp/owl/sequence.owl}. El patrón describe una secuencia de hecho a través de las propiedades Precede, Precede Directamente, Antecede y Antecede Directamente. Por ejemplo, decidir qué camisa utilizaré precede directamente a colocarse la camisa, y precede a colocarse la corbata. En la Figura \ref{img:Modelo de dependencia y secuencia} se presenta el diagrama del patrón. Se utilizó este patrón para describir la secuencia del proceso de contrataciones.
 
 \begin{figure}[ht!]
     \centering
@@ -187,9 +190,9 @@ Para la relación que existe entre \textit{Planning, Tender, Award, Contract e I
 
 \subsubsection{Construcción de la ontología}
 
-Una vez concluido el modelo conceptual de la ontología procedemos a la construcción de la misma utilizando el lenguaje OWL y la herramienta Protégé.
+Una vez concluido el modelo conceptual de la ontología se procedió a la construcción de la misma utilizando el lenguaje OWL y la herramienta Protégé.
 
-Dentro de la fase de búsqueda de recursos ontológicos, se encontró una ontología desarrollada \footnote{https://github.com/ColinMaudry/open-contracting-ld} por un colaborador del proyecto OCDS, la ontología siguió una transformación directa de JSON SCHEMA del estándar, la misma representa un punto de partida para seguir desarrollando la ontología. A esta ontología inicial la llamamos OCDSV0. De esta manera además queremos incentivar la colaboración y hacer partícipe a toda la comunidad del OCDS.
+Dentro de la fase de búsqueda de recursos ontológicos, se encontró una ontología desarrollada\footnote{https://github.com/ColinMaudry/open-contracting-ld} por un colaborador del proyecto OCDS, la ontología siguió una transformación directa de JSON SCHEMA del estándar, la misma representa un punto de partida para seguir desarrollando la ontología. A esta ontología inicial la llamamos OCDSV0. De esta manera además queremos incentivar la colaboración y hacer partícipe a toda la comunidad del OCDS.
 
 El primer paso fue importar la ontología al software Protégé. Al hacer esto el software reestructuró el código de la ontología e hizo inferencias básicas detalladas a continuación. La estructura del documento del cual se partió estaba agrupada según conceptos semánticos relacionados. Protégé estructuró la ontología según sean \textit{Annotation Property, DataType Property u Object property} y luego ordenó de forma alfabética tomando como referencia el nombre de la propiedad.
 
@@ -201,11 +204,11 @@ Una propiedad de objeto (\textit{ObjectProperty}) se utiliza para conectar pares
 
 Una propiedad funcional (\textit{FunctionalProperty}) es una propiedad que solamente puede tener un valor Y por cada instancia X, por ejemplo no puede haber dos valores distintos Y1 e Y2 tal que los pares (X,Y1) y (X,Y2) sean instancias de esta propiedad. Tanto los “ObjectProperty” como los \textit{DataTypeProperty} pueden ser declarados como \textit{FunctionalProperty}.
 
-Una consideración importante es que para los \textit{DataType Properties} no es necesario definir como la propiedad functional ya que la mayoría de los motores de razonamiento pueden deducir que dos literales son distintos. Ejemplo: un razonador puede inferir que  el literal “1” es distinto que “2”.
-En la ontología desarrollada se utilizó la propiedad \textit{FunctionalProperty} en aquellas que solo aceptan un objeto o valor, por ejemplo la relacion entre Planificacion(\textit{Planning}) y presupuesto(\textit{Budget}) es una relación funcional ya que existe solo un presupuesto para una planificacion específica, como muestra el Cuadro \ref{lst:planning-budget}. Asi se agregó dicha restricción a las demas relaciones que cumplian con esa condición.
+Una consideración importante es que para los \textit{DataType Properties} no es necesario definir como propiedad funcional ya que la mayoría de los motores de razonamiento pueden deducir que dos literales son distintos. Ejemplo: un razonador puede inferir que  el literal “1” es distinto que “2”.
+En la ontología desarrollada se utilizó la propiedad \textit{FunctionalProperty} en aquellas que sólo aceptan un objeto o valor, por ejemplo la relación entre Planificación(\textit{Planning}) y presupuesto(\textit{Budget}) es una relación funcional ya que existe sólo un presupuesto para una planificación específica, como muestra el Cuadro \ref{lst:planning-budget}. Asi se agregó dicha restricción a las demás relaciones que cumplían con esa condición.\hfill \break
 
 \noindent\begin{minipage}[c]{\textwidth}
-    \begin{lstlisting}[captionpos=b, caption=Relacion Funcional entre Planificación y presupuesto, label={lst:planning-budget},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
+    \begin{lstlisting}[captionpos=b, caption=Relación Funcional entre Planificación y presupuesto, label={lst:planning-budget},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
         ###  http://purl.org/onto-ocds/ocds#budget
         :budget rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
@@ -217,6 +220,6 @@ En la ontología desarrollada se utilizó la propiedad \textit{FunctionalPropert
 \end{minipage}
 
 
-El motor de inferencia agregó un axioma indicando que rdf:descriptions es igual a \textit{owl:AnnotationProperty}, que es una manera de anotar información descriptiva de la propiedad. Además se utilizó la propiedad \textit{rdf:Resource}, clase que no existe en en el estándar RDF, debería indicar la clase RDFS \textit{ rdfs:Resource} para indicar hipervínculos. En este caso se vió que semánticamente se adecua mejor la propiedad \textit{DCTERMS:URI}.
+El motor de inferencia agregó un axioma indicando que rdf:descriptions es igual a \textit{owl:AnnotationProperty}, que es una manera de anotar información descriptiva de la propiedad. Además se utilizó la propiedad \textit{rdf:Resource}, clase que no existe en en el estándar RDF, debería indicar la clase RDFS \textit{ rdfs:Resource} para indicar hipervínculos. En este caso se observó que semánticamente se adecua mejor la propiedad \textit{DCTERMS:URI}.
 
-Así, se pudo construir la ontología base partir de un recurso No-Ontológico como ser el Open Contracting Data Estándar. En el siguiente apartado se abocará a la búsqueda y reutilización de recursos Ontológicos para enriquecer la ontología desarrollada.
+De esta forma, una vez terminado el proceso de análisis exhaustivo, de corrección de inconsistencias y de especificar a un nivel más bajo las relaciones de las propiedades de las clases se pudo construir una ontología base a partir de un recurso no-ontológico como ser el Open Contracting Data Estandar. En el siguiente apartado se abocará a la búsqueda y reutilización de recursos Ontológicos para enriquecer la ontología desarrollada.
