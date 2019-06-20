@@ -29,17 +29,35 @@ A continuación hablaremos del estándar utilizado como recurso no ontológico p
 
 El \textit{Open Contracting Data Standard} (OCDS)\footnote{http://standard.open-contracting.org}  es un estándar amigable y flexible para estructurar información de Contrataciones Públicas y es mantenido por la OCP. El estándar describe qué, cuándo y cómo disponibilizar datos y documentos asociados en las diferentes fases del proceso de contratación. El proyecto promueve la divulgación y participación en las contrataciones públicas creando un estándar abierto de datos simple. OCDS posee un esquema de datos detallado de todos los conceptos así como también la estructura de los datos divulgados, dicho esquema esta disponible el sitio web del estándar \cite{OCDSReleaseSchema:online}. Este esquema ayuda a las personas a comprender todos los campos publicados. Además el estándar posee un guía de implementación a modo de facilitar la implementación\footnote{http://standard.open-contracting.org/latest/en/implementation/}.
 
-El estándar ha ganado especial popularidad en los últimos años y fue implementado por mas de 15 países \footnote{https://www.open-contracting.org/resources/es-version-1-1-resumen-sobre-actualizacion-del-estandar/} países hasta el año 2017, donde Paraguay es un de ellos. Es por eso que el mismo ha sido elegido como base de conocimiento principal de dominio de contrataciones públicas.
+El estándar ha ganado especial popularidad en los últimos años y fue implementado por más de 15 países \footnote{https://www.open-contracting.org/resources/es-version-1-1-resumen-sobre-actualizacion-del-estandar/} países hasta el año 2017, donde Paraguay es un de ellos. Es por eso que el mismo ha sido elegido como base de conocimiento principal de dominio de contrataciones públicas.
 
 \section{Planteamiento del problema}
 \label{section:planteamientoDelProblema}
 
-A partir del escenario visto en el portal de Datos Abiertos de la DNCP y la implementación del OCDS en este portal, nace la pregunta de qué manera se puede lograr una mejor interoperabilidad de datos de distintas fuentes a fin de obtener, de manera automática, información valiosa para lograr mayor transparencia y mejor toma de decisiones. Así como lo mostrado en el capitulo anterior, esto se puede lograr aplicando conceptos de la web semántica y desarrollando una ontología que permita lograr esta interoperabilidad semántica. 
+A partir del escenario visto en el portal de Datos Abiertos de la DNCP y la implementación del OCDS en este portal nace la pregunta de qué manera se puede lograr una mejor interoperabilidad de datos de distintas fuentes a fin de obtener, de manera automática, información valiosa para lograr mayor transparencia y mejor toma de decisiones. Así como lo mostrado en el capítulo anterior, esto se puede lograr aplicando conceptos de la Web Semántica y desarrollando una ontología que permita lograr esta interoperabilidad semántica. 
+
+En la Figura \ref{img:materialesymetodos} se expone el proceso desarrollado para lograr los objetivos propuestos. Se agrupó en tres fases principales que son: investigación, desarrollo y verificación.
+
+En la fase de investigación se procedió al estudio del estado del arte, luego a la identificación de las ontologías del dominio existentes y de las metodologías de desarrollo de ontologías. Por último se realizó un análisis de la fuente de datos de la DNCP.
+
+En la fase de desarrollo se procedió a desarrollar la ontología basada en el OCDS, luego a la extracción de los datos de prueba para su posterior conversión y almacenamiento y por último se procedió a la creación de un punto de consulta SPARQL.
+
+Por último se procedió a la verificación de lo desarrollado formulando preguntas experimentales expresadas en casos de uso de la ontología y el posterior análisis y conclusión del trabajo. En este punto cabe destacar que al proceder a la verificación de las preguntas experimentales se evidenció la necesidad de volver al proceso de desarrollo de la ontología aplicando algunos ajustes y mejoras detectadas introduciendo así un ciclo iterativo en el proceso hasta concluir exitosamente.
+
+
+En las siguientes secciones se dará una breve reseña acerca del desarrollo de la ontología y el despliegue de los resultados. 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=150mm]{figuras/Diagramas-MaterialesYMetrodos.png}
+    \caption{Modelo de Ciclo de Vida de desarrollo de la ontología.}
+    \label{img:materialesymetodos}
+\end{figure}
 
 \section{Desarrollo de la ontología}
 \label{section:desarrolloOntologia}
 
-Parte fundamental de este trabajo consiste en el desarrollo de una ontología basada en el estándar de publicación de datos OCDS. Al estándar, como veremos mas adelante en este trabajo, se lo clasificó como un recurso no ontológico, ya que formaliza la sintaxis pero describe en lenguaje natural y no en lenguaje formal, la semántica del dominio de conocimiento. 
+Parte fundamental de este trabajo consiste en el desarrollo de una ontología basada en el estándar de publicación de datos OCDS. Al estándar, como veremos más adelante en este trabajo, se lo clasificó como un recurso no ontológico, ya que formaliza la sintaxis pero describe en lenguaje natural y no en lenguaje formal, la semántica del dominio de conocimiento. 
 
 Se utilizó como guía metodológica de desarrollo de ontología principal NeOn, ya que la misma, según lo que se muestra en la Tabla  \ref{tab:comparacion}, posee mayor especificación en las actividades a desarrollar  y contempla los casos de reuso de recursos ontológicos y no-ontológicos. 
 
