@@ -34,7 +34,7 @@ En este caso se muestran las siguientes mejoras de trabajar con triplas RDF y on
 
 \subsection{Mejora 1: Consultas sin conocer las propiedades del concepto}
 
-Podemos ver en el Cuadro \ref{lst:caso1}, que no es necesario conocer las propiedades, tipos de datos ni relaciones existentes entre los conceptos para realizar la consulta, es decir nos permite realizar consultas donde el modelo de datos no es necesariamente conocido. El único dato necesario fue la URI de un Proceso de Contratación. En cambio, si comparamos con una consulta en una base de datos relacional, para obtener todos los datos de un Proceso de Contratación, se requeriría realizar un JOIN entre varias tablas relacionadas.  Para poder realizar esto necesitaríamos conocer cuáles son las tablas involucradas y cuáles son las columnas para aplicar el JOIN correctamente En este caso, un JOIN con la tabla del Planificación, Convocatoria, Adjudicación, Contrato  y el Proceso de  Contratación en sí.
+Podemos ver en el Cuadro \ref{lst:caso1}, que no es necesario conocer las propiedades, tipos de datos ni relaciones existentes entre los conceptos para realizar la consulta, es decir nos permite realizar consultas donde el modelo de datos no es necesariamente conocido. El único dato necesario fue la URI de un Proceso de Contratación. En cambio, si comparamos con una consulta en una base de datos relacional, para obtener todos los datos de un Proceso de Contratación, se requeriría realizar un JOIN entre varias tablas relacionadas.  Para poder realizar esto necesitaríamos conocer cuáles son las tablas involucradas y cuáles son las columnas para aplicar el JOIN correctamente. En este caso, un JOIN con las tablas de Planificación, Convocatoria, Adjudicación, Contrato y el Proceso de Contratación en sí.
 
 \subsection{Mejora 2: Nivel de granularidad de la información}
 
@@ -42,7 +42,7 @@ A diferencia de una consulta a una API REST tradicional, gracias a SPARQL podemo
 
 \subsection{Mejora 3: Semántica de los nodos y sus relaciones}
 
-Como el grafo está enriquecido por una ontología, se puede extraer el significado de cada uno de los objetos, como ejemplo, sabemos que el nodo “:b01” de la Figura \ref{img:caso1Diagrama} es de tipo “ocds:Organization”, por lo tanto corresponde a una organización, y la relación entre el proceso licitatorio y la organización es de tipo “ocds:buyer”, por lo que se puede decir que la organización a la que se refiere es la organización compradora del producto o servicio. De otra manara, no habría forma que un sistema computacional entienda el significado de los nodos y su relación entre ambos .
+Como el grafo está enriquecido por una ontología, se puede extraer el significado de cada uno de los objetos, como ejemplo, sabemos que el nodo “:b01” de la Figura \ref{img:caso1Diagrama} es de tipo “ocds:Organization”, por lo tanto corresponde a una organización, y la relación entre el proceso licitatorio y la organización es de tipo “ocds:buyer”, por lo que se puede decir que la organización a la que se refiere es la organización compradora del producto o servicio. De otra manera, no habría forma que un sistema computacional entienda el significado de los nodos y su relación entre ambos.
     
 
 \begin{figure}[ht!]
