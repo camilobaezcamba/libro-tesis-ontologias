@@ -2,39 +2,39 @@
 \chapter{Materiales y Métodos}
 \label{chap:MaterialesYMetodos}
 
-En este capítulo se mostrarán los recursos necesarios y los pasos seguidos para llegar a los objetivos propuestos en este trabajo. Se describen a lo largo de este capítulo; La principal fuente de datos utilizada (DNCP \cite{DatosAbiDNCP:online}, ver sección \ref{section:portalDNCP}) y el principal recurso no ontológico utilizado (OCDS, ver sección \ref{section:OCDS}) para el desarrollo de la ontología. Así también una breve reseña del proceso de desarrollo de la ontología (ver sección \ref{section:desarrolloOntologia}), luego explicamos el proceso de despliegue y análisis de los resultados (ver sección \ref{section:despliegue}).
+En este capítulo se mostrarán los recursos necesarios y los pasos seguidos para llegar a los objetivos propuestos en este trabajo. Se describen a lo largo de este capítulo; La principal fuente de datos utilizada (DNCP \cite{DatosAbiDNCP:online}, ver sección \ref{section:portalDNCP}) y el principal recurso no-ontológico utilizado (OCDS, ver sección \ref{section:OCDS}) para el desarrollo de la ontología. Así también una breve reseña del proceso de desarrollo de la ontología (ver sección \ref{section:desarrolloOntologia}), luego se explica el proceso de despliegue y análisis de los resultados (ver sección \ref{section:despliegue}).
 
 \section{Portal de Datos Abiertos de la DNCP}
 \label{section:portalDNCP}
 
-En Paraguay, la DNCP \cite{DatosAbiDNCP:online}, organismo del estado que publica datos de los procesos de contrataciones, posee un portal de datos abiertos donde publica datos en tiempo real de los estados de las licitaciones públicas del país. 
+En Paraguay, la DNCP \cite{DatosAbiDNCP:online}, organismo del estado que publica datos de los procesos de contrataciones, posee un portal de datos abiertos donde publica datos en tiempo real las licitaciones públicas del país. 
 
-Esta plataforma es fundamental para este y otros trabajos de investigación basados en datos de contrataciones ya que posee los datos de prueba y el escenario de caso de uso. En el proceso se realizaron reuniones e intercambios de correos electrónicos tanto con el equipo técnico encargado de mantener el portal, como el equipo legal de la dirección a fin de conocer el contexto, las funcionalidad, las limitantes y las necesidades de la institución. De no tener este contacto directo, el objetivo de este trabajo pudo haber sido comprometido.
+Esta plataforma es fundamental para este y otros trabajos de investigación basados en datos de contrataciones ya que posee los datos de prueba y el escenario de caso de uso. En el proceso se realizaron reuniones e intercambios de correos electrónicos tanto con el equipo técnico encargado de mantener el portal, como el equipo legal de la Dirección a fin de conocer el contexto, las funcionalidades, las limitantes y las necesidades de la institución. De no tener este contacto directo, el objetivo de este trabajo pudo haber sido comprometido.
 
 La plataforma posee las siguientes características y funcionalidades principales
 
 \begin{enumerate}
-    \item Lista de datos. Con el fin de que los usuarios que necesitan ver, analizar y descargar en formato CSV los datos detallados de todos los registros de contrataciones.
+    \item Lista de datos. Con el fin de que los usuarios puedan observar, analizar y descargar en formato CSV los datos detallados de todos los registros de contrataciones.
     \item Visualizaciones de datos para usuarios que deseen ver estadísticas e información agregada.
     \item Una API para desarrolladores que permite manipular datos en formato JSON y JSON-LD de manera programática para cualquier otro uso.
-    \item Plataforma de Contrataciones Electrónica, destinada a empresas y personas que deseen presentarse o conocer algún proceso de contratación.
+    \item Plataforma de Contrataciones Electrónicas, destinada a empresas y personas que deseen presentarse o conocer algún proceso de contratación.
 \end{enumerate}
 
 Los datos publicados poseen un diccionario y una ontología creada por la DNCP, la cual sirve como contexto para la API desarrollada. Además la DNCP implementó una API siguiendo el estándar OCDS, que posee un esquema de publicación bien definido en JSON Schema.
 
-A continuación hablaremos del estándar utilizado como recurso no ontológico para el desarrollo de la ontología.
+A continuación hablaremos del estándar utilizado como recurso no-ontológico para el desarrollo de la ontología.
 
 \section{Open Contracting Data Standard}
 \label{section:OCDS}
 
-El \textit{Open Contracting Data Standard} (OCDS)\footnote{http://standard.open-contracting.org}  es un estándar amigable y flexible para estructurar información de Contrataciones Públicas y es mantenido por la OCP. El estándar describe qué, cuándo y cómo disponibilizar datos y documentos asociados en las diferentes fases del proceso de contratación. El proyecto promueve la divulgación y participación en las contrataciones públicas creando un estándar abierto de datos simple. OCDS posee un esquema de datos detallado de todos los conceptos así como también la estructura de los datos divulgados, dicho esquema esta disponible el sitio web del estándar \cite{OCDSReleaseSchema:online}. Este esquema ayuda a las personas a comprender todos los campos publicados. Además el estándar posee un guía de implementación a modo de facilitar la implementación\footnote{http://standard.open-contracting.org/latest/en/implementation/}.
+El \textit{Open Contracting Data Standard} (OCDS)\footnote{http://standard.open-contracting.org}  es un estándar amigable y flexible para estructurar información de Contrataciones Públicas y es mantenido por la OCP. El estándar describe qué, cuándo y cómo disponibilizar datos y documentos asociados en las diferentes fases del proceso de contratación. El proyecto promueve la divulgación y participación en las contrataciones públicas creando un estándar abierto de datos simple. OCDS posee un esquema de datos detallado de todos los conceptos así como también la estructura de los datos divulgados, dicho esquema está disponible en el sitio web del estándar \cite{OCDSReleaseSchema:online}. Este esquema ayuda a las personas a comprender todos los campos publicados. Además el estándar posee un guía de implementación a modo de facilitar la implementación\footnote{http://standard.open-contracting.org/latest/en/implementation/}.
 
 El estándar ha ganado especial popularidad en los últimos años y fue implementado por más de 15 países \footnote{https://www.open-contracting.org/resources/es-version-1-1-resumen-sobre-actualizacion-del-estandar/} países hasta el año 2017, donde Paraguay es un de ellos. Es por eso que el mismo ha sido elegido como base de conocimiento principal de dominio de contrataciones públicas.
 
 \section{Planteamiento del problema}
 \label{section:planteamientoDelProblema}
 
-A partir del escenario visto en el portal de Datos Abiertos de la DNCP y la implementación del OCDS en este portal nace la pregunta de qué manera se puede lograr una mejor interoperabilidad de datos de distintas fuentes a fin de obtener, de manera automática, información valiosa para lograr mayor transparencia y mejor toma de decisiones. Así como lo mostrado en el capítulo anterior, esto se puede lograr aplicando conceptos de la Web Semántica y desarrollando una ontología que permita lograr esta interoperabilidad semántica. 
+A partir del escenario visto en el portal de Datos Abiertos de la DNCP y la implementación del OCDS en este portal nace la pregunta de qué manera se puede lograr una mejor interoperabilidad de datos de distintas fuentes a fin de obtener, de manera automática, información valiosa para lograr transparencia y mejor toma de decisiones. Así como lo mostrado en el capítulo anterior, esto se puede lograr aplicando conceptos de la Web Semántica y desarrollando una ontología que permita lograr esta interoperabilidad semántica. 
 
 En la Figura \ref{img:materialesymetodos} se expone el proceso desarrollado para lograr los objetivos propuestos. Se agrupó en tres fases principales que son: investigación, desarrollo y verificación.
 
@@ -57,11 +57,11 @@ En las siguientes secciones se dará una breve reseña acerca del desarrollo de 
 \section{Desarrollo de la ontología}
 \label{section:desarrolloOntologia}
 
-Parte fundamental de este trabajo consiste en el desarrollo de una ontología basada en el estándar de publicación de datos OCDS. Al estándar, como veremos más adelante en este trabajo, se lo clasificó como un recurso no ontológico, ya que formaliza la sintaxis pero describe en lenguaje natural y no en lenguaje formal, la semántica del dominio de conocimiento. 
+Parte fundamental de este trabajo consiste en el desarrollo de una ontología basada en el estándar de publicación de datos OCDS. Al estándar, como veremos más adelante en este trabajo, se lo clasificó como un recurso no-ontológico, ya que formaliza la sintaxis pero describe en lenguaje natural y no en lenguaje formal la semántica del dominio de conocimiento. 
 
 Se utilizó como guía metodológica de desarrollo de ontología principal NeOn, ya que la misma, según lo que se muestra en la Tabla  \ref{tab:comparacion}, posee mayor especificación en las actividades a desarrollar  y contempla los casos de reuso de recursos ontológicos y no-ontológicos. 
 
-Así como lo anticipa la metodología, el desarrollo de una ontología no es un proceso lineal, a lo largo de todo este trabajo, la misma es alterada y mejorada constantemente para lograr los objetivos propuestos. En el Capítulo \ref{chap:Desarrollo de la Ontologia} se describirá en detalle todo el proceso para llegar al producto final que representa la mayor contribución de este trabajo.
+Así como lo anticipa la metodología, el desarrollo de una ontología no es un proceso lineal.A lo largo de todo este trabajo, la ontología es alterada y mejorada constantemente para lograr los objetivos propuestos. En el Capítulo \ref{chap:Desarrollo de la Ontologia} se describirá en detalle todo el proceso para llegar al producto final que representa la mayor contribución de este trabajo.
 
 \section{Despliegue y Análisis de Resultados}
 \label{section:despliegue}
@@ -72,7 +72,7 @@ Con los datos disponibles para la consulta, describimos 5 casos de uso de los da
 
 %\input{Cap3/requerimientos}
 
-\section{Discusión del Capitulo}
+\section{Discusión del capítulo}
 
 En este capítulo se mostraron los recursos necesarios y los pasos seguidos para la llegar a los objetivos propuestos en este trabajo. Se detalló la importancia de la fuente de datos utilizada, el estándar de datos utilizado como base de conocimiento principal y la herramienta metodológica para el desarrollo de la ontología. Además de la manera en que se pretende mostrar la forma de uso del producto desarrollado.
 

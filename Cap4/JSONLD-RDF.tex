@@ -2,7 +2,7 @@
 
 La conversión de JSON-LD a RDF es un proceso directo. El sujeto (en JSON-LD), que podría ser usado como objeto en otra tripla, es definido por la propiedad @id, todas las demás propiedades son convertidas en predicado del objeto RDF resultante. Finalmente, los valores literales son extraídos directamente de la propiedad o del valor @value de la propiedad (si lo tuviere). Una propiedad puede tener también definido el lenguaje (@language) y/o tipo de información (@type).
 
-Por ejemplo en el Cuadro \ref{lst:EjemploValdezJSONLD} se muestra un objeto JSON-LD, que posee un contexto definido dentro del mismo objeto, este contexto también podría estar definido dentro de un documento diferente y referenciado a través de una URI. Tomemos como ejemplo la propiedad foaf:name, la misma se convierte en predicado y el objeto toma el valor del literal “Rodrigo Valdez” definido en el idioma inglés según especifica @language. El cuadro \ref{lst:ValdezRDF} muestra el resultado de la conversión de JSON-LD a RDF/N-QUADS.
+Por ejemplo en el Cuadro \ref{lst:EjemploValdezJSONLD} se muestra un objeto JSON-LD, que posee un contexto definido dentro del mismo objeto, este contexto también podría estar definido dentro de un documento diferente y referenciado a través de una URI. Se toma como ejemplo la propiedad foaf:name, la misma se convierte en predicado y el objeto toma el valor del literal “Rodrigo Valdez” definido en el idioma inglés según especifica @language. El cuadro \ref{lst:ValdezRDF} muestra el resultado de la conversión de JSON-LD a RDF/N-QUADS.
 
 
 \noindent\begin{minipage}{\textwidth}

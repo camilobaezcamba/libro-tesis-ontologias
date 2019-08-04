@@ -1,5 +1,5 @@
 \section{Herramientas tecnológicas}
-En esta sección presentaremos las herramientas tecnológicas estudiadas para el desarrollo de este trabajo. Se presenta un editor de ontologías llamado Protégé (ver \ref{subsection:protege}), un visualizador de ontologías en formato de grafo llamado VOWL (ver \ref{subsection:vowl}), un framework para la manipulación de datos en RDF, RDFS y OWL llamado Apache Jena (ver \ref{subsection:jena}) y una herramienta para realizar consultas SPARQL llamado Apache Jena Fuseki (ver \ref{subsection:fuseki}) .
+En esta sección presentaremos las herramientas tecnológicas estudiadas para el desarrollo de este trabajo. Se presenta un editor de ontologías llamado Protégé (ver sección \ref{subsection:protege}), un visualizador de ontologías en formato de grafo llamado VOWL (ver sección \ref{subsection:vowl}), un framework para la manipulación de datos en RDF, RDFS y OWL llamado Apache Jena (ver sección \ref{subsection:jena}) y una herramienta para realizar consultas SPARQL llamado Apache Jena Fuseki (ver sección \ref{subsection:fuseki}) .
 \subsection{Protégé}
 \label{subsection:protege}
 Protégé\footnote{https://protege.stanford.edu/} es una herramienta de código libre para desarrolladores de ontologías y permite crear sistemas de base de conocimientos. El editor consiste en una interfaz gráfica de usuario donde podemos crear y editar clases, instancias, propiedades y restricciones. Nos permite guardar la ontología en varios formatos como XML, RDF, TTL y OWL. En la Figura \ref{img:protege} se muestra una captura de pantalla de la herramienta.
@@ -14,7 +14,7 @@ Protégé\footnote{https://protege.stanford.edu/} es una herramienta de código 
 
 \subsection{Visual Notation for OWL}
 \label{subsection:vowl}
-Además se utilizó una herramienta de visualización gráfica de ontologías llamada \textit{Visual Notation for OWL} (VOWL) \footnote{http://vowl.visualdataweb.org/} en su versión Web para visualizar de forma gráfica las ontologías estudiadas, en la Figura \ref{img:webvowl} se presenta una captura de pantalla de la herramienta utilizando como ejemplo una ontología llamada FOAF.
+Además se utilizó una herramienta de visualización gráfica de ontologías llamada \textit{Visual Notation for OWL} (VOWL) \footnote{http://vowl.visualdataweb.org/} en su versión Web para visualizar de forma gráfica las ontologías estudiadas. En la Figura \ref{img:webvowl} se presenta una captura de pantalla de la herramienta utilizando como ejemplo una ontología llamada FOAF.
 
 \begin{figure}[h!]
     \centering
@@ -30,7 +30,7 @@ Jena\footnote{https://jena.apache.org} es un \textit{Framework} implementado en 
 
 \subsection{Consulta de datos con SPARQL}
 \label{subsection:fuseki}
-Para consultar triplas basadas en RDF han surgido varios lenguajes de consulta, pero SPARQL es el más ampliamente utilizado y fue estandarizado por la W3C \cite{SPARQLDpoc:online}. Una consulta SPARQL es formulada usando patrones de grafos que pueden ser combinados con operaciones algebraicas como unión, opcional, filtro, etc. El resultado de la consulta es una lista de relaciones que pueden estar expresadas en tablas o en RDF.
+Para consultar triplas basadas en RDF han surgido varios lenguajes de consulta, pero SPARQL es el más ampliamente utilizado y fue estandarizado por la W3C \cite{SPARQLDpoc:online}. Una consulta SPARQL es formulada usando patrones de grafos que pueden ser combinados con operaciones algebráicas como unión, opcional, filtro, etc. El resultado de la consulta es una lista de relaciones que pueden estar expresadas en tablas o en RDF.
 
 A forma de explicar la semántica y sintaxis completa de este lenguaje, en el Cuadro \ref{lst:consulta-sparql} se muestra en un ejemplo la utilización del lenguaje realizando una consulta básica a la base de datos de DBPEDIA \cite{DBpedia:online} donde se listaron los nombres, fechas de nacimiento, fallecimiento y las URIs de personas nacidas en Paraguay antes de 1900, ordenadas por nombre.\hfill \break
 
@@ -59,6 +59,6 @@ ORDER BY ?name
 \end{lstlisting}
 \end{minipage}
 
-En las líneas 1 al 4 se pueden ver los prefijos de las ontologías utilizadas en la consulta, luego se presentan las triplas que componen las restricciones de la consulta. Está fuera del alcance de este documento la explicación detallada de la sintaxis de SPARQL que puede ser consultada en las recomendaciones de W3C\footnote{https://www.w3.org/TR/rdf-sparql-query/}.
+En las líneas del 1 al 4 se pueden ver los prefijos de las ontologías utilizadas en la consulta, luego se presentan las triplas que componen las restricciones de la consulta. Está fuera del alcance de este documento la explicación detallada de la sintaxis de SPARQL que puede ser consultada en las recomendaciones de W3C\footnote{https://www.w3.org/TR/rdf-sparql-query/}.
 
 Apache Jena Fuseki\footnote{https://jena.apache.org/documentation/fuseki2/index.html} es un Servidor o Punto SPARQL que además provee un motor de inferencias. Se ejecuta como una aplicación web Java (archivo WAR). Provee el protocolo de consulta y actualización SPARQL 1.1 \footnote{https://www.w3.org/TR/sparql11-query/} así como también el protocolo de \textit{SPARQL Graph Store}\footnote{https://www.w3.org/TR/sparql11-http-rdf-update/}.

@@ -1,6 +1,6 @@
-\section{Metodologías para el desarrollo de Ontologías}
+\section{Metodologías para el desarrollo de ontologías}
 
-En este apartado se dará un resumen de las metodologías más utilizadas para la creación de una ontología; Ontology Development 101(ver \ref{subsection:101}), OntoKnowledge(ver \ref{subsection:ontoknowledge}), Methontology(ver \ref{subsection:methontology}), y NeOn(ver \ref{subsection:neon}). Luego se realizará un análisis y elección según los requerimientos de este trabajo.
+En este apartado se dará un resumen de las metodologías más utilizadas para la creación de una ontología; Ontology Development 101(ver \ref{subsection:101}), OntoKnowledge(ver \ref{subsection:ontoknowledge}), Methontology(ver \ref{subsection:methontology}) y NeOn(ver \ref{subsection:neon}). Luego se realizará un análisis y elección según los requerimientos de este trabajo.
 
 \subsection{Ontology Development 101}
 \label{subsection:101}
@@ -27,9 +27,9 @@ Ontoknowledge\cite{On-to-knowledge} propone crear ontologías teniendo en cuenta
 
 El proceso que propone la metodología se puede resumir en los siguientes pasos:
 
-\textbf{Estudio de Factibilidad.} Esta debe ser aplicada a toda la aplicación y debe llevarse a cabo antes del desarrollo de la ontología. Aquí se identifica el problema y las áreas de oportunidades, se selecciona la mejor área de enfoque para la solución.
+\textbf{Estudio de Factibilidad.} Debe ser aplicado a toda la aplicación y debe llevarse a cabo antes del desarrollo de la ontología. Aquí se identifica el problema y las áreas de oportunidades, se selecciona la mejor área de enfoque para la solución.
 
-\textbf{Patada Inicial.} El resultado de este proceso es el Documento de Especificación de Requerimientos de la Ontología (ORSD). Se describen las metas y el dominio de la ontología, líneas de diseño (convenciones de nombres), lista de recursos disponibles (libros, revistas, documentación, etc), potenciales usuarios y casos de uso, así como las aplicaciones que utilizarán la ontología. Para esto se propone crear una lista de preguntas de competencia las cuales debe satisfacer la ontología creada. Los conceptos y relaciones más importantes son identificados en un nivel informal. También se debe de buscar ontologías para su potencial reuso, la metodología no provee un delineamiento para identificar dichas ontologías.
+\textbf{Patada Inicial.} El resultado de este proceso es el Documento de Especificación de Requerimientos de la Ontología (de sus siglas en inglés ORSD). Se describen las metas y el dominio de la ontología, líneas de diseño (convenciones de nombres), lista de recursos disponibles (libros, revistas, documentación, etc), potenciales usuarios y casos de uso, así como las aplicaciones que utilizarán la ontología. Para esto se propone crear una lista de preguntas de competencia las cuales debe satisfacer la ontología creada. Los conceptos y relaciones más importantes son identificados en un nivel informal. También se debe buscar ontologías para su potencial reuso, la metodología no provee un delineamiento para identificar dichas ontologías.
 
 \textbf{Refinamiento.} Aquí se construye una ontología sólida orientada a la aplicación acorde al proceso de especificación. Este proceso se divide en dos actividades:
 
@@ -38,7 +38,7 @@ El proceso que propone la metodología se puede resumir en los siguientes pasos:
 \item[Actividad 2:] Formalización de la ontología. La ontología es implementada en un lenguaje ontológico, el lenguaje es seleccionado según los requerimientos del uso de la ontología.
 \end{description}
 
-\textbf{Evaluación.} Este paso sirve para probar la usabilidad de la ontología desarrollada dentro del entorno para la cual fue desarrollado. En este proceso se verifica que se puedan responder las preguntas de competencia y que se satisfagan los requerimientos, además se prueba la ontología en el entorno de software para el cual se desarrolló.
+\textbf{Evaluación.} Este paso sirve para probar la usabilidad de la ontología dentro del entorno para la cual fue desarrollada. En este proceso se verifica que se puedan responder las preguntas de competencia y que se satisfagan los requerimientos. 
 
 \textbf{Mantenimiento.} En esta etapa es importante recalcar quién es el responsable de mantener la ontología y cómo se debe hacerlo.
 
@@ -46,7 +46,7 @@ La metodología propone un ciclo de vida incremental y cíclico como se muestra 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=150mm]{figuras/Diagramas-OntoKnowledgeProcess}
+    \includegraphics[width=150mm]{figuras/Diagramas-OntoKnowledgeProcess.png}
     \caption{Ciclo de vida de OntoKnowledge. \cite{ontoKnowledgeFig}}
     \label{img:ontoknowledge}
     \end{figure}
@@ -54,7 +54,7 @@ La metodología propone un ciclo de vida incremental y cíclico como se muestra 
 \subsection{Methontology}
 \label{subsection:methontology}
 
-Methontology\cite{fernandez1997methontology} incluye la identificación del proceso del desarrollo de una ontología, que consiste en una serie de actividades, el ciclo de vida basado en el refinamiento de un prototipo y técnicas para llevar a cabo cada actividad durante el mantenimiento, el desarrollo y el soporte de las actividades. Todas las actividades están basadas en el proceso de desarrollo de software y las utilizadas en metodologías de ingeniería de conocimiento. En la Figura \ref{img:methontology} se pueden ver los estados de todo el ciclo de vida de la ontología.
+Methontology\cite{fernandez1997methontology} incluye la identificación del proceso de desarrollo de una ontología (que consiste en una serie de actividades), el ciclo de vida basado en el refinamiento de un prototipo y técnicas para llevar a cabo cada actividad durante el mantenimiento, el desarrollo y el soporte de las actividades. Todas las actividades están basadas en el proceso de desarrollo de software y las utilizadas en metodologías de ingeniería de conocimiento. En la Figura \ref{img:methontology} se pueden ver los estados de todo el ciclo de vida de la ontología.
 
 \begin{figure}[h!]
     \centering
@@ -69,7 +69,7 @@ La metodología propone un ciclo de vida basado en prototipos que permite agrega
 A continuación se describen algunas de las principales actividades:
 
 \begin{enumerate}
-\item \textbf{Especificación:} Especificar el propósito de la ontologías, esto incluye usuarios, contexto, nivel de formalidad esperado y granularidad. El resultado de esta fase es un documento de especificación de la ontología en lenguaje natural.
+\item \textbf{Especificación:} Especificar el propósito de la ontología, esto incluye usuarios, contexto, nivel de formalidad esperado y granularidad. El resultado de esta fase es un documento de especificación de la ontología en lenguaje natural.
 \item \textbf{Adquisición de conocimiento}: Esto ocurre en paralelo a las demás fases, pero específicamente en la parte de especificación. Se consultan libros, manuales, tablas, otras ontologías y expertos para adquirir conocimientos sobre el área a modelar.
 \item \textbf{Conceptualización:} Se identifican los términos según sean conceptos, instancias, relaciones o propiedades para crear un modelo conceptual del dominio.
 \item \textbf{Integración:} En esta fase se considera el reuso de términos de otras ontologías para no volver a definir y ahorrar trabajo.
@@ -101,13 +101,13 @@ A continuación se presentan los nueve escenarios que propone NeOn.
 
 \begin{description}
     \item[Escenario 1] El escenario va desde la especificación hasta la implementación. La ontología es desarrollada desde el principio, esto significa sin utilizar ninguna base de conocimiento ya construida.
-    \item[Escenario 2] Reuso y Reingeniería de recursos no-ontológicos. Los recursos no-ontológicos (NOR)\cite{ReusoRecursoNoOntologico} representan recursos de conocimiento cuya semántica no fue formalizada por una ontología. Estos NORs contienen conocimientos de un dominio en particular y representan algún grado de consenso colectivo. Este escenario cubre el caso donde los desarrolladores analizan recursos no-ontológicos y deciden según los requerimientos, qué recurso no-ontológico se puede reutilizar para construir esta ontología. Este escenario también contempla una reingeniería del recurso seleccionado.
+    \item[Escenario 2] Reuso y Reingeniería de recursos no-ontológicos. Los recursos no-ontológicos (NOR)\cite{ReusoRecursoNoOntologico} representan recursos de conocimiento cuya semántica no fue formalizada por una ontología. Estos NOR contienen conocimientos de un dominio en particular y representan algún grado de consenso colectivo. Este escenario cubre el caso donde los desarrolladores analizan recursos no-ontológicos y deciden según los requerimientos, qué recurso no-ontológico se puede reutilizar para construir esta ontología. Este escenario también contempla una reingeniería del recurso seleccionado.
     \item[Escenario 3] Reuso de recursos ontológicos. En este escenario los desarrolladores reusan recursos ontológicos, esto se puede hacer de tres maneras: reuso total, reuso de módulos y/o reuso de sentencias.
     \item[Escenario 4] Reuso y reingeniería de recursos ontológicos. Aquí, los desarrolladores hacen tanto un reuso como una reingeniería de los recursos ontológicos.
     \item[Escenario 5] Reuso y unión de recursos ontológicos. Este escenario es propicio cuando se eligen muchas ontologías del mismo dominio de conocimiento para reutilizar y se quiere crear una nueva ontología a partir de ellas.
     \item[Escenario 6] Reuso, unión y reingeniería de recursos ontológicos. Similar al escenario 5, aquí los desarrolladores realizan un proceso de reingeniería antes de unir los recursos reutilizados.
-    \item[Escenario 7] Reusos de patrones de diseño de ontologías (ODP)\footnote{http://ontologydesignpatterns.org/wiki/Main\_Page}. En este escenario se utilizan repositorios de ODP para reutilizarlos.
-    \item[Escenario 8] Reestructuración de recursos ontológicos. Se reestructuran recursos ontológicos. Esto significa modularizar, recortar, extender y/o especializar el recurso ontológico para integrarla a la ontología construida.
+    \item[Escenario 7] Reuso de patrones de diseño de ontologías ( de sus siglas en inglés ODP)\footnote{http://ontologydesignpatterns.org/wiki/Main\_Page}. En este escenario se utilizan repositorios de ODP para reutilizarlos.
+    \item[Escenario 8] Reestructuración de recursos ontológicos. Esto significa modularizar, recortar, extender y/o especializar el recurso ontológico para integrarlo a la ontología construida.
     \item[Escenario 9] Localización de un recurso ontológico. En este escenario se adapta una ontología a otros lenguajes u otras culturas o comunidades, produciendo así una ontología multilenguaje.
 \end{description}
 
@@ -123,7 +123,7 @@ El ciclo de vida es un modelo que describe cómo construir y mantener un proyect
 
 \begin{itemize}
     \item Modelo de ciclo de vida de tipo cascada: En este modelo cada fase debe ser culminada antes de avanzar a la siguiente, no se permite retroceso excepto en el caso de la fase de mantenimiento. Este modelo es ideal cuando el tiempo de desarrollo es acotado y el dominio de conocimiento a modelar es bien conocido.
-    \item Modelo de ciclo de vida de tipo iterativo-incremental: cada iteración es similar al modelo de cascada. Es ideal cual existe mucha incertidumbre acerca del alcance de la ontología a modelar.
+    \item Modelo de ciclo de vida de tipo iterativo-incremental: Cada iteración es similar al modelo de cascada. Es ideal cuando existe mucha incertidumbre acerca del alcance de la ontología a modelar.
 \end{itemize}
 
 A continuación exponemos los 5 modelos de ciclo de vida:	
@@ -175,14 +175,14 @@ En cuanto a la madurez y completitud de cada una podemos decir que la metodolog�
 \resizebox{15cm}{!} {
 \begin{tabular}{|l|l|l|l|l|}
 \hline
-\multicolumn{1}{|m{3cm}|}{ \textbf{ Metodología/ Criterios}} & \multicolumn{1}{m{3cm}}{\textbf{Ontology Development 101}} & \multicolumn{1}{|m{3cm}|}{\textbf{OntoKnowledge}} & \multicolumn{1}{m{3cm}}{\textbf{Methontology}} & \multicolumn{1}{|m{3cm}|}{\textbf{NeOn}} \\ \hline
+\multicolumn{1}{|m{3cm}|}{ \textbf{ Metodología/ Criterios}} & \multicolumn{1}{m{3cm}}{\textbf{Ontology Development 101}} & \multicolumn{1}{|m{3.3cm}|}{\textbf{OntoKnowledge}} & \multicolumn{1}{m{3cm}}{\textbf{Methontology}} & \multicolumn{1}{|m{3cm}|}{\textbf{NeOn}} \\ \hline
 \multicolumn{1}{|m{3cm}|}{\textbf{Colaboración}} & \multicolumn{1}{m{3cm}}{No} & \multicolumn{1}{|m{3cm}|}{No} & \multicolumn{1}{m{3cm}}{No} & \multicolumn{1}{|m{3cm}|}{Si} \\ \hline
-\multicolumn{1}{|m{3cm}|}{\textbf{Especificación}} & \multicolumn{1}{m{3cm}}{Solo Preguntas de competencias} & \multicolumn{1}{|m{3cm}|}{Explícito} & \multicolumn{1}{m{3cm}}{Solo Preguntas de competencias} & \multicolumn{1}{|m{3cm}|}{Explícito} \\ \hline
+\multicolumn{1}{|m{3cm}|}{\textbf{Especificación}} & \multicolumn{1}{m{3cm}}{Solo preguntas de competencias} & \multicolumn{1}{|m{3cm}|}{Explícito} & \multicolumn{1}{m{3cm}}{Solo Preguntas de competencias} & \multicolumn{1}{|m{3cm}|}{Explícito} \\ \hline
 \multicolumn{1}{|m{3cm}|}{\textbf{Planeamiento}} & \multicolumn{1}{m{3cm}}{No} & \multicolumn{1}{|m{3cm}|}{No} & \multicolumn{1}{m{3cm}}{No proveído} & \multicolumn{1}{|m{3cm}|}{Proveído} \\ \hline
 \multicolumn{1}{|m{3cm}|}{\textbf{Reuso de recursos ontológicos}} & \multicolumn{1}{m{3cm}}{No proveído, solo algunos delineamientos} & \multicolumn{1}{|m{3cm}|}{No proveído, solo algunos delineamientos} & \multicolumn{1}{m{3cm}}{No proveído, solo algunos delineamientos} & \multicolumn{1}{|m{3cm}|}{Proveído} \\ \hline
-\multicolumn{1}{|m{3cm}|}{\textbf{Detalles de la Metodología}} & \multicolumn{1}{m{3cm}}{Pocos Detalles} & \multicolumn{1}{|m{3cm}|}{Algunos detalles} & \multicolumn{1}{m{3cm}}{Algunos detalles} & \multicolumn{1}{|m{3cm}|}{Muchos detalles} \\ \hline
+\multicolumn{1}{|m{3cm}|}{\textbf{Detalles de la Metodología}} & \multicolumn{1}{m{3cm}}{Pocos detalles} & \multicolumn{1}{|m{3cm}|}{Algunos detalles} & \multicolumn{1}{m{3cm}}{Algunos detalles} & \multicolumn{1}{|m{3cm}|}{Muchos detalles} \\ \hline
 \multicolumn{1}{|m{3cm}|}{\textbf{Dependiente de aplicación}} & \multicolumn{1}{m{3cm}}{Independiente} & \multicolumn{1}{|m{3cm}|}{Independiente} & \multicolumn{1}{m{3cm}}{Independiente} & \multicolumn{1}{|m{3cm}|}{Independiente} \\ \hline
-\multicolumn{1}{|m{3cm}|}{\textbf{Audiencia}} & \multicolumn{1}{m{3cm}}{Estudiantes y practicantes de ontologías} & \multicolumn{1}{|m{3cm}|}{Ingenieros en Ontologías} & \multicolumn{1}{m{3cm}}{Ingenieros en Ontologías e investigadores} & \multicolumn{1}{|m{3cm}|}{Ingenieros en sistemas, Ontologías y público en general} \\ \hline
+\multicolumn{1}{|m{3cm}|}{\textbf{Audiencia}} & \multicolumn{1}{m{3cm}}{Estudiantes y practicantes de ontologías} & \multicolumn{1}{|m{3cm}|}{Ingenieros en ontologías} & \multicolumn{1}{m{3cm}}{Ingenieros en Ontologías e investigadores} & \multicolumn{1}{|m{3cm}|}{Ingenieros en sistemas, ontologías y público en general} \\ \hline
 
 \end{tabular}
 }

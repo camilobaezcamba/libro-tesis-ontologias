@@ -1,22 +1,23 @@
 
-\section{Reuso de Recursos Ontológicos}
+\section{Reuso de recursos ontológicos}
 Los pasos para el reuso de una ontología son la búsqueda, análisis y comparación de ontologías desarrolladas y luego la selección e integración de las ontologías a reutilizar. Al mismo tiempo existen distintas maneras de reutilizar una ontología, como veremos más adelante. 
 
-\subsection{Búsqueda de Ontologías}
+\subsection{Búsqueda de ontologías}
 \label{section:busqueda de ontologias}
 
-Un parámetro importante a la hora de reutilizar ontologías es la cantidad de veces que esta ya fue reutilizada. \textit{Linked Open Vocabularies}(LOV)\footnote{https://lov.linkeddata.es/dataset/lov/} es un repositorio de ontologías bien curado y estable mantenido por la \textit{Open Knowledge Foundation}  (OKF) que nos muestra la cantidad de conexiones entre las ontologías.
+Un parámetro importante a la hora de reutilizar ontologías es la cantidad de veces que esta ya fue reutilizada. \textit{Linked Open Vocabularies}(LOV)\footnote{https://lov.linkeddata.es/dataset/lov/} es un repositorio de ontologías bien curado y estable mantenido por la \textit{Open Knowledge Foundation}  (OKF) que nos muestra la cantidad de conexiones entre las ontologías. Se utilizó dicho repositorio para hacer un análisis de la cantidad de reusos que posee una ontología.
 
-\subsubsection{Ontologías Relacionadas}
+\subsubsection{Ontologías relacionadas}
 
 Con relación a ontologías más generales y relacionadas de alguna manera al dominio que pudieran ayudar a enriquecer las ontologías desarrolladas se encontraron las siguientes:
 \begin{itemize}
-    \item \textit{Organization}\cite{TheOrgan48:online} : Ontología central para las estructuras de una organización, destinada a apoyar la publicación de datos vinculados de la información de la organización en una serie de dominios. Está diseñada para permitir extensiones específicas de dominio para agregar clasificación de organizaciones y roles, así como extensiones para admitir información relacionada, como actividades de la organización.
-    \item \textit{Good Relations}\cite{hepp2008goodrelations} : es un vocabulario estandarizado para datos de productos, precios, tiendas y empresas que pueden integrarse en páginas web estáticas y dinámicas existentes que puede ser procesado por otras computadoras. Esto aumenta la visibilidad de sus productos y servicios en la última generación de motores de búsqueda, sistemas de recomendación y otras aplicaciones.
-    \item \textit{DCTERMS}\cite{DCMIDCMI37:online}: Una especificación actualizada de todos los términos de metadatos mantenidos por la Dublin Core Metadata Initiative, que incluye propiedades, esquemas de codificación de vocabulario, esquemas de codificación de sintaxis y clases. 
+    \item \textit{Organization}\cite{TheOrgan48:online}: Ontología central para las estructuras de una organización, destinada a apoyar la publicación de datos vinculados de la información de una organización en una serie de dominios. Está diseñada para permitir extensiones específicas de dominio para agregar clasificación de organizaciones y roles, así como extensiones para admitir información relacionada, como actividades de la organización.
+    \item \textit{Good Relations}\cite{hepp2008goodrelations}: es un vocabulario estandarizado para datos de productos, precios, tiendas y empresas que pueden integrarse en páginas web estáticas y dinámicas existentes, que puede ser procesado por otras computadoras. Esto aumenta la visibilidad de sus productos y servicios en la última generación de motores de búsqueda, sistemas de recomendación y otras aplicaciones.
+    \item \textit{DCTERMS}\cite{DCMIDCMI37:online}: Es una especificación actualizada de todos los términos de metadatos mantenidos por la Dublin Core Metadata Initiative\footnote{https://www.dublincore.org/} que incluye propiedades, esquemas de codificación de vocabulario, esquemas de codificación de sintaxis y clases. 
 \end{itemize}
 
 \subsubsection{Ontologías del dominio de Contrataciones Públicas.}
+Haciendo una búsqueda más exhaustiva dentro del dominio de contrataciones públicas a través de internet se pudo identificar también las ontologías LOTED 2 y la ontología desarrollada por la DNCP.
 
 Observando LOV dentro del dominio de estudio, se realizó una búsqueda a través de la etiqueta “Contract”, teniendo como resultado los siguientes recursos ontológicos:
 
@@ -32,20 +33,17 @@ Observando LOV dentro del dominio de estudio, se realizó una búsqueda a travé
     \item DNCP - Ontologia desarrollada por la DNCP\footnote{https://www.contrataciones.gov.py/datos/def/dncp.owl}
 \end{enumerate}
 
-
-Haciendo una búsqueda más exhaustiva dentro del dominio de contrataciones públicas a través de internet se pudo identificar también las ontologías LOTED 2 y la ontología desarrollada por la DNCP.
-
 En este trabajo se pone bajo análisis las ontologías de LOTED 2 , LOTED, Public Contract y PPROC, esta última es la más reciente y en su desarrollo se tomó en cuenta la experiencia de las primeras. Por último también se pone bajo consideración la ontología de la DNCP.
 
-La ontología más referenciada, esto significa que la ontología tiene mayor cantidad de reutilización, en el sector de contrataciones públicas es la Public Contract Ontology (PCO)\cite{klimek2012lod2}  ya que ofrece un medio de expresión para describir los conceptos básicos de este dominio logrando así que otras ontologías puedan extender de ésta fácilmente. Otra ontología que cabe mencionar es la ontología LOTED  ya que fue desarrollada para enriquecer los datos de licitaciones, expuestas por el sistema TED, con enlaces a Geonames y DBpedia. A continuación de LOTED y viendo la necesidad de dar un contexto legal al ámbito de contrataciones fue desarrollada la ontología LOTED2\cite{distinto2014loted2} cuyo principal objetivo es la representación de los conceptos jurídicos relacionados al dominio de las contrataciones públicas, por esto puede resultar un tanto difícil su utilización.
+La ontología más referenciada, esto significa que la ontología tiene mayor cantidad de reutilización, en el sector de contrataciones públicas es la Public Contract Ontology (PCO)\cite{klimek2012lod2}  ya que ofrece un medio de expresión para describir los conceptos básicos de este dominio logrando así que otras ontologías puedan extender de ésta fácilmente. Otra ontología que cabe mencionar es la ontología LOTED, ya que fue desarrollada para enriquecer los datos de licitaciones, expuestas por el sistema TED, con enlaces a Geonames\footnote{https://www.geonames.org/} y DBpedia\footnote{https://wiki.dbpedia.org/}. A continuación de LOTED y viendo la necesidad de dar un contexto legal al ámbito de contrataciones fue desarrollada la ontología LOTED2\cite{distinto2014loted2} cuyo principal objetivo es la representación de los conceptos jurídicos relacionados al dominio de las contrataciones públicas.
 
-La ontología PPROC \cite{munoz2016pproc} fue desarrollada siguiendo las especificaciones de OWL, utiliza clases de PCO, así como también de otras ontologías como  \textit{Organization Ontology, Schema.org, SKOS} y para la definición de conceptos relacionados a ofertas realizadas utiliza \textit{Good Relations}. Uno de los objetivos específicos de PPROC es la publicación del perfil del contratante de las administraciones que participan en los proceso de licitación.
+La ontología PPROC\cite{munoz2016pproc} fue desarrollada siguiendo las especificaciones de OWL, utiliza clases de PCO, así como también de otras ontologías como  \textit{Organization Ontology, Schema.org, SKOS} y para la definición de conceptos relacionados a ofertas realizadas utiliza \textit{Good Relations}. Uno de los objetivos específicos de PPROC es la publicación del perfil del contratante de las administraciones que participan en los proceso de licitación.
 
-Tanto LOTED como LOTED2, PCO y PPROC utilizan RDF/XML para la definición de la ontología debido a su fuerte poder de describir los atributos de los recursos. 
+Tanto LOTED como LOTED2, PCO y PPROC utilizan RDF/XML para la definición de la ontología debido a su poder de describir los atributos de los recursos. 
 
-Otra ontología que vale mencionar es la desarrollada por la DNCP, la misma está definida en OWL con la serialización XML. Si bien la misma utilizó el lenguaje OWL como sintaxis, no tuvo en cuenta principios importantes en el modelado y desarrollo de una ontología.  Como ejemplo, la ontología desarrollada no tuvo en cuenta el nivel de especificación de los datos, se encuentran definiciones de Clases como \textit{Número, Texto, Fecha, Email,} siendo que estos conceptos podrían modelarse como \textit{DataType Properties} de tipo Texto o Número. De igual manera, la misma representa un diccionario de datos importante y un acercamiento a la formalización sintáctica y semántica de su modelo de datos.
+Otra ontología que vale mencionar es la desarrollada por la DNCP, la misma está definida en OWL con la serialización XML. Si bien la misma utilizó el lenguaje OWL como sintaxis, no tuvo en cuenta principios en el modelado y desarrollo de una ontología. Como ejemplo, la ontología desarrollada no tuvo en cuenta el nivel de especificación de los datos, se encuentran definiciones de Clases como \textit{Número, Texto, Fecha, Email,} siendo que estos conceptos podrían modelarse como \textit{DataType Properties} de tipo Texto o Número. De igual manera, la misma representa una base de conocimiento y un acercamiento a la formalización sintáctica y semántica de su modelo de datos.
 
-En la  Tabla \ref{tab:comparacion_ontologias} se muestra una comparación entre las cinco ontologías analizadas. Una comparación mas extensa se puede encontrar en el repositorio de archivos\footnote{http://bit.ly/ValdezBaezThesis} y en la Tabla \ref{tab:comparacionOntologiasAnexo} del Anexo \ref{chap:comparaciondeOntologias}.
+En la Tabla \ref{tab:comparacion_ontologias} se muestra una comparación entre las cinco ontologías analizadas. Una comparación mas extensa se puede encontrar en el repositorio de archivos\footnote{http://bit.ly/ValdezBaezThesis} y en la Tabla \ref{tab:comparacionOntologiasAnexo} del Anexo \ref{chap:comparaciondeOntologias}.
 
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -87,16 +85,17 @@ En la  Tabla \ref{tab:comparacion_ontologias} se muestra una comparación entre 
     \end{tabular}
     
     \bigskip
-    \small\textit{Nota}. Cabe destacar que todas utilizan OWL(RDF/XML) como lenguaje de desarrollo. LOTED2 tiene mayor cantidad de axiomas y cantidad de clases definidas.
+    \small\textit{Nota}. Cabe destacar que todas utilizan OWL(RDF/XML) como lenguaje de desarrollo. LOTED2 tiene mayor cantidad de axiomas y cantidad de clases definida.
     \end{table}
 
-    \subsection{Reutilización de Ontologías}
+    A continuación se detalla el proceso en el cual se utilizan las ontologías existentes.
 
+    \subsection{Reutilización de ontologías}
 
     Según NeOn, las ontologías pueden ser reutilizadas de varias maneras según la necesidad:
     
     \begin{enumerate}
-       \item se puede utilizar la totalidad de una ontología que cumple con las expectativas para construir la nueva ontología.
+       \item Se puede utilizar la totalidad de una ontología que cumple con las expectativas para construir la nueva ontología.
         \item  En ciertos casos sólo se necesita utilizar un módulo o una parte de la ontología ya que podrían haber conceptos que interesen y otros que no, por lo tanto no se utilizaría en su totalidad.
         \item  Por último, para tener mayor control de los conceptos reutilizados, se puede utilizar la ontología a nivel de enunciado o tripla, importando solamente el enunciado que interese. 
     \end{enumerate}
@@ -111,7 +110,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
 
 \noindent\begin{minipage}{\textwidth}
 
-\begin{lstlisting}[captionpos=b, caption={Reutilización de la Clase Document}, label={lst:sparql1},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
+\begin{lstlisting}[captionpos=b, caption={Reutilización de la Clase \textit{Document}}, label={lst:sparql1},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 :Document rdf:type owl:Class ;
     rdfs:subClassOf foaf:Document .
 \end{lstlisting}
@@ -120,7 +119,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
  Al mismo tiempo se reutilizaron de la ontología \textit{Public Contract Ontology}\cite{klimek2012lod2}, los conceptos de \textit{Tender} y \textit{Contract} de un proceso licitatorio (Cuadro \ref{lst:sparql2}).\hfill \break
 
 \noindent\begin{minipage}{\textwidth}
- \begin{lstlisting}[captionpos=b, caption={Conceptos de Tender y Contract}, label={lst:sparql2},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
+ \begin{lstlisting}[captionpos=b, caption={Conceptos de \textit{Tender} y \textit{Contract}}, label={lst:sparql2},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 :Tender rdf:type owl:Class ;
     rdfs:subClassOf pc:Tender .
 :Contract rdf:type owl:Class ;
@@ -131,7 +130,7 @@ Para los documentos correspondientes a cada fase del proceso licitatorio se hizo
  \textit{Good Relations}\cite{hepp2008goodrelations} es una ontología para modelar compras de bienes y servicios a través de internet, por lo que también se procedió a la reutilización de los conceptos \textit{gr:Offering, gr:BusinessEntity y gr:PriceSpecification} (Cuadro \ref{lst:sparql3}).\hfill \break
 
 \noindent\begin{minipage}{\textwidth}
- \begin{lstlisting}[captionpos=b, caption={Conceptos de Organization y Price}, label={lst:sparql3},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
+ \begin{lstlisting}[captionpos=b, caption={Conceptos de \textit{Organization} y \textit{Price} }, label={lst:sparql3},  numbers=left,  numberstyle=\tiny\color{mygray},frame=single]
 :Item rdf:type owl:Class ;
     rdfs:subClassOf gr:Offering .
 :Organization rdf:type owl:Class ;
@@ -210,13 +209,13 @@ Con esto se concluyó con la reutilización de ontologías, paso necesario para 
 
     \begin{figure}[ht!]
         \includegraphics[width=150mm]{figuras/zoomTender.png}
-        \caption{Acercamiento del Grafo de la ontología desarrollada en Convocatoria.}
+        \caption{Acercamiento en Convocatoria (\textit{Tender}) del grafo de la ontología desarrollada.}
         \label{img:zoomTender}
         \end{figure}
 
 
         \begin{figure}[ht!]
             \includegraphics[width=150mm]{figuras/zoomContract.png}
-            \caption{Acercamiento del Grafo de la ontología desarrollada en Contracto.}
+            \caption{Acercamiento en Contrato (\textit{Contract}) del grafo de la ontología desarrollada.}
             \label{img:zoomContract}
             \end{figure}
