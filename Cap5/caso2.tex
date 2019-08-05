@@ -1,7 +1,7 @@
 \section{Caso 2. Dos fuentes de datos y dos ontologías.}
 \label{section:caso2}
 
-Este caso consiste en la integración e interoperabilidad de dos fuentes con semántica enriquecida por el uso de dos ontologías. Se pretende demostrar la facilidad de realizar consultas a dos fuentes de datos a modo de enriquecer la información obtenida. El caso presenta una situación en el que un mismo proveedor de datos posee dos fuentes de datos distintas, que tienen que interoperar entre si a modo de enriquecer la información obtenida. Este escenario es muy común ya que normalmente aunque nos referimos a un mismo organismo publicador de datos éste posee sistemas de información distintos que pueden o no estar interconectados.
+Este caso consiste en la integración e interoperabilidad de dos fuentes con semántica enriquecida por el uso de dos ontologías. Se pretende demostrar la facilidad de realizar consultas a dos fuentes de datos a modo de enriquecer la información obtenida. El caso presenta una situación en el que un mismo proveedor de datos posee dos fuentes de datos distintas, que tienen que interoperar entre si a modo de enriquecer la información obtenida. Este escenario es muy común ya que normalmente, aunque nos referimos a un mismo organismo publicador de datos, éste posee sistemas de información distintos que pueden o no estar interconectados.
 
 
 En el capítulo \ref{chap:Implementación de la Ontologia} se desarrolló un sistema que recogió estos datos y los almacenó en dos almacenes de datos distintos y los disponibilizó en dos Puntos SPARQL distintos. En este caso el publicador de los datos es el mismo, pero las ontologías son distintas. Se ejecutó una consulta al Punto SPARQL que utiliza por un lado la ontología de OCDS y los datos de los procesos licitatorios de la DNCP y por otro lado la ontología desarrollada por la DNCP y los datos de Proveedores. En la Figura \ref{img:Diagramacaso2Endpoint} se puede describir gráficamente la situación. Si bien es posible que el mismo proveedor conozca y pueda interconectar internamente entre si ambas fuentes de datos a través de comandos SQL, esto no es verdad para un agente externo de la DNCP, que es el caso dentro de la web semántica, quien no conoce los datos y posee únicamente estos dos puntos de accesos independientes uno de otro.
@@ -77,8 +77,7 @@ A continuación se presentan las mejoras obtenidas con relación a los datos pub
  \end{lstlisting}
 \end{minipage}
 
- Las propiedades equivalentes (\textit{owl:equivalentProperty}) tienen los mismos valores, pero pueden ser semánticamente diferentes, en este caso \textit{dncp:ruc} y \textit{ocds:identifierId} tienen el mismo valor, y \textit{dncp:ruc} se refiere al “Código Único del Contribuyente (RUC) de la Secretaría de Estado y Tributación (SET)” y \textit{ocds:identifierID} se refiere al “Identificador Único de la Organización”. Equivalencia no quiere decir que sean iguales. Para indicar que dos propiedades son iguales se debe utilizar la propiedad \textit{owl:sameAs}
- En la Tabla \ref{table:semanticaID} se expresa la comparación entre las propiedades mencionadas.
+ Las propiedades equivalentes (\textit{owl:equivalentProperty}) tienen los mismos valores, pero pueden ser semánticamente diferentes, en este caso \textit{dncp:ruc} y \textit{ocds:identifierId} tienen el mismo valor, y \textit{dncp:ruc} se refiere al “Código Único del Contribuyente (RUC) de la Secretaría de Estado y Tributación (SET)” y \textit{ocds:identifierID} se refiere al “Identificador Único de la Organización”. Equivalencia no quiere decir que sean iguales. Para indicar que dos propiedades son iguales se debe utilizar la propiedad \textit{owl:sameAs}. En la Tabla \ref{table:semanticaID} se expresa la comparación entre las propiedades mencionadas.
 
  \begin{table}[!htb]
     \centering
@@ -97,11 +96,11 @@ dncp:ruc & 80008004-1 &  Código Único del Contribuyente de la Secretaría de E
     }
     \end{table}
     
- Sin Embargo, Que dos individuos tengan una propiedad con el mismo valor no necesariamente implica que se trate del mismo individuo. En ontologías, a menos que haya una sentencia que indique que dos individuos son iguales o diferentes, no se puede asumir ninguna de las dos situaciones. Esto situación da pie a la mejora 2.
+ Sin embargo, que dos individuos tengan una propiedad con el mismo valor no necesariamente implica que se trate del mismo individuo. En ontologías, a menos que haya una sentencia que indique que dos individuos son iguales o diferentes, no se puede asumir ninguna de las dos situaciones. Esto situación da pie a la mejora 2.
 
  \subsection{Mejora 2: Igualdad semántica de instancias}
  \label{section:caso2mejora2}
- Como en la fuente de datos no está definida la equivalencia entre ambas instancias, entonces los datos obtenidos de las distintas fuentes deben ser asumidos como iguales por el conocimiento del experto de dominio. La forma de expresar explícitamente la igualdad semántica entre dos instancias seria agregando la sentencia de Cuadro \ref{lst:caso2-1}. En la Figura \ref{img:DiagramaCaso3} se observa como quedaría esta unión semántica entre ambas instancias. Esto aseguraría de que una maquina pueda interpretar la equivalencia entre ambas instancias. 
+ Como en la fuente de datos no está definida la equivalencia entre ambas instancias, entonces los datos obtenidos de las distintas fuentes deben ser asumidos como iguales por el conocimiento del experto de dominio. La forma de expresar explícitamente la igualdad semántica entre dos instancias sería agregando la sentencia del Cuadro \ref{lst:caso2-1}. Esto aseguraría de que una máquina pueda interpretar la equivalencia entre ambas instancias. 
  
  
 \noindent\begin{minipage}[c]{\textwidth}
@@ -120,6 +119,6 @@ owl:sameAs <http://www.contrataciones.gov.py/datos/id/proveedores/fax-comtel-srl
 
 Cabe mencionar, que no se debe hacer una cambio de la sintaxis o de la estructura de los mismos, que podría hacerse llamando a ambas instancias o propiedades con el mismo identificador o mismo nombre de propiedad, sino que solamente bastará por hacer esa conexión semántica.
 
-En este caso se observa que ambos conjuntos de datos pertenecen al mismo Proveedor/Publicador y los datos de las organizaciones se complementan en cuanto a información se refiere. Por una parte podemos obtener datos como el nombre del punto de contacto (\textit{ocds:contactPointName}), email y teléfono. Por otra parte se pueden obtener datos como el código de tipo de proveedor, el cual en este ejemplo es “SRL”. 
+En este caso se observa que ambos conjuntos de datos pertenecen al mismo Proveedor/Publicador y los datos de las organizaciones se complementan en cuanto a información se refiere. Por una parte se pueden obtener datos como el nombre del punto de contacto (\textit{ocds:contactPointName}), email y teléfono. Por otra parte se pueden obtener datos como el código de tipo de proveedor, el cual en este ejemplo es “SRL”. 
 
     

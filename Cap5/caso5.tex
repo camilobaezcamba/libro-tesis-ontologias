@@ -6,7 +6,7 @@ El término expresividad se refiere al hecho de poder realizar consultas en tér
 \begin{enumerate}
     \item Conocer toda la estructura de datos.
     \item Analizar e interpretar la estructura.
-    \item Crear una consulta que responda a la pregunta que quiera hacer.
+    \item Crear una consulta que responda a la pregunta que quiera realizar.
 \end{enumerate}
 
 Todo esto requiere mayor tiempo y puede crear un sesgo en la interpretación del experto. En este caso la expresividad semántica de la ontología asegura la correcta interpretación de los datos y facilita la consulta de los mismos.
@@ -19,9 +19,9 @@ Para probar este caso se utilizó la fuente de datos de procesos licitatorios y 
 
 Se define el concepto a través de una clase (\textit{PLConContrato}) a partir de una restricción de propiedad. Esta clase se define como una subclase de \textit{Release}, que tiene como restricción todas las instancias de la clase \textit{Release} que tengan al menos una relación en la propiedad \textit{ocds:contracts}.
 
-En el Cuadro \ref{lst:caso5-1} se muestra cómo a través del Punto SPARQL introducimos a la ontología el concepto “Proceso Licitatorio”. Esta extensión de la ontología se dio luego del desarrollo de la misma, demostrando también la forma en que la ontología puede ir expandiéndose a medida que se necesite.
+En el Cuadro \ref{lst:caso5-1} se muestra cómo a través del Punto SPARQL se introdujo a la ontología el concepto “Proceso Licitatorio con Contrato”. Esta extensión de la ontología se dio luego del desarrollo de la misma, demostrando también la forma en que la ontología puede ir expandiéndose a medida que se necesite.
 
-Esta capacidad de extender la ontología nos permite hacer consultas de manera simple sin la necesidad de hacer modificaciones a los datos ni a su estructura y agregando conocimiento de dominio a la ontología.
+Esta capacidad de extender la ontología permite hacer consultas de manera simple sin la necesidad de hacer modificaciones a los datos ni a su estructura y agregando conocimiento de dominio a la ontología.
 
 \hfill \break
 

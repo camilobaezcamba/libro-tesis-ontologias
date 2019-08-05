@@ -6,9 +6,9 @@ Se utilizó para esto la API V2 de proveedores\footnote{\url{https://www.contrat
 
 Al momento de realizar las pruebas de interoperabilidad solamente se trabajó con un subconjunto (100) de los procesos licitatorios del año 2016. De esta manera se logró realizar consultas rápidas ya que se partió de una base de datos ligera y la intención fue probar la interoperabilidad semántica entre distintas fuentes de datos. Esto es meramente experimental y no fue una prioridad mejorar los tiempos de respuesta.
 
-Como se había explicado anteriormente hemos utilizado los conjuntos de datos de Procesos Licitatorios y Proveedores para realizar consultas sobre el Punto SPARQL. A continuación expondremos algunos inconvenientes y las soluciones aplicadas referente a la manipulación de datos.
+Como se había explicado anteriormente se han utilizado los conjuntos de datos de Procesos Licitatorios y Proveedores para realizar consultas sobre el Punto SPARQL. A continuación expondremos algunos inconvenientes y las soluciones aplicadas referente a la manipulación de datos.
 
-Para obtener los datos de la API V2 de la DNCP se procedió a registrarnos de manera a poder realizar peticiones sin limitaciones.
+Para obtener los datos de la API V2\footnote{\url{https://www.contrataciones.gov.py/datos/api/v2/}} de la DNCP se procedió a registrar una aplicación de manera a poder realizar peticiones sin limitaciones.
 
 Al realizar la consulta a la API “Buscador de licitaciones” pasando como rango de fechas 01/01/2016 - 31/12/2016 se encontró que existen alrededor de 12.000 procesos licitatorios.
 Dicho servicio retorna datos mínimos de cada proceso licitatorio de manera paginada, en este caso 1000. Luego, a partir del id de llamado (identificador único) se procedió a realizar las consultas al servicio de “Licitaciones” el cual está alineado al OCDS (estándar en el cual se basa la ontología desarrollada) para obtener los datos de manera más detallada.
@@ -19,7 +19,7 @@ En este proceso se identificaron varios inconvenientes en la comunicación con l
 
     \item Obtener los id de llamado (Buscador) de manera paginada (1000 registros).
     \item Cada 1000 registros obtenidos, lanzar 100 solicitudes paralelas de procesos licitatorios (Servicio OCDS) y esperar la respuesta de todas las peticiones para volver a realizar otras 100 solicitudes hasta completar el lote.
-    \item A medida que se obtienen los procesos licitatorios se almacenan en la Base de datos MongoDB.
+    \item A medida que se obtienen los procesos licitatorios se almacenan en la Base de Datos MongoDB.
   
 \end{enumerate}
 
